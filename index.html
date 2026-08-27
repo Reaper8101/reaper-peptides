@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Reaper BioLabs | Albuquerque, NM</title>
+  <title>Reaper BioLabs | Evolution Engineered</title>
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -19,7 +19,6 @@
   >
 
   <style>
-
     :root {
       --bg: #020303;
       --panel: #080909;
@@ -68,6 +67,8 @@
       text-transform: uppercase;
     }
 
+    /* SCIENCE BACKGROUND */
+
     .science-layer {
       position: fixed;
       inset: 0;
@@ -106,8 +107,7 @@
       max-width: 470px;
       padding: 38px 30px;
       text-align: center;
-      background:
-        linear-gradient(145deg, rgba(14,15,15,.98), rgba(4,4,4,.98));
+      background: linear-gradient(145deg, rgba(14,15,15,.98), rgba(4,4,4,.98));
       border: 1px solid #303030;
       border-top: 4px solid var(--red);
       border-radius: 10px;
@@ -122,6 +122,16 @@
 
     .age-logo span {
       color: var(--red);
+    }
+
+    .age-slogan {
+      margin-top: 4px;
+      color: #aaa;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
     }
 
     .age-box h2 {
@@ -281,10 +291,6 @@
       text-transform: uppercase;
     }
 
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
     /* HERO */
 
     header {
@@ -309,24 +315,23 @@
         linear-gradient(rgba(255,0,0,.12) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,0,0,.12) 1px, transparent 1px);
       background-size: 55px 55px;
-      mask-image:
-        radial-gradient(circle at center, black 10%, transparent 75%);
+      mask-image: radial-gradient(circle at center, black 10%, transparent 75%);
     }
 
     .hero-art {
       position: absolute;
-      top: 10px;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: min(880px, 100%);
-      height: 465px;
+      width: min(920px, 100%);
+      height: 560px;
       object-fit: cover;
-      object-position: center top;
-      opacity: .88;
+      object-position: center 8%;
+      opacity: .92;
       filter:
-        contrast(1.15)
+        contrast(1.08)
         brightness(.72)
-        saturate(.85);
+        saturate(.95);
     }
 
     .hero-overlay {
@@ -335,32 +340,32 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(2,3,3,.04),
-          rgba(2,3,3,.1) 30%,
-          rgba(2,3,3,.72) 58%,
-          #020303 88%
+          rgba(2,3,3,.02),
+          rgba(2,3,3,.08) 25%,
+          rgba(2,3,3,.58) 52%,
+          #020303 84%
         );
     }
 
     .hud {
       position: absolute;
-      top: 65px;
+      top: 55px;
       left: 50%;
-      width: 430px;
-      height: 430px;
+      width: 455px;
+      height: 455px;
       transform: translateX(-50%);
-      border: 1px solid rgba(255,40,40,.24);
+      border: 1px solid rgba(255,40,40,.27);
       border-radius: 50%;
       box-shadow:
-        0 0 45px rgba(200,0,0,.08),
-        inset 0 0 50px rgba(200,0,0,.04);
+        0 0 45px rgba(200,0,0,.10),
+        inset 0 0 50px rgba(200,0,0,.05);
     }
 
     .hud::before {
       content: "";
       position: absolute;
       inset: 30px;
-      border: 1px dashed rgba(255,50,50,.23);
+      border: 1px dashed rgba(255,50,50,.24);
       border-radius: 50%;
       animation: rotateHud 35s linear infinite;
     }
@@ -368,7 +373,7 @@
     .hud::after {
       content: "";
       position: absolute;
-      inset: 75px;
+      inset: 78px;
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 50%;
     }
@@ -378,47 +383,18 @@
       to { transform: rotate(360deg); }
     }
 
-    .hud-tick {
-      position: absolute;
-      width: 45px;
-      height: 2px;
-      background: rgba(255,40,40,.5);
-    }
-
-    .hud-tick.t1 {
-      top: 210px;
-      left: -22px;
-    }
-
-    .hud-tick.t2 {
-      top: 210px;
-      right: -22px;
-    }
-
-    .hud-tick.t3 {
-      left: 192px;
-      top: -1px;
-      transform: rotate(90deg);
-    }
-
-    .hud-tick.t4 {
-      left: 192px;
-      bottom: -1px;
-      transform: rotate(90deg);
-    }
-
     .scan-line {
       position: absolute;
       left: 50%;
-      top: 80px;
-      width: min(720px, 90%);
+      top: 75px;
+      width: min(760px, 92%);
       height: 1px;
       transform: translateX(-50%);
       background:
         linear-gradient(
           90deg,
           transparent,
-          rgba(255,20,20,.9),
+          rgba(255,20,20,.95),
           transparent
         );
       box-shadow: 0 0 12px rgba(255,0,0,.6);
@@ -440,159 +416,16 @@
       }
 
       100% {
-        transform: translateX(-50%) translateY(390px);
+        transform: translateX(-50%) translateY(430px);
         opacity: 0;
       }
-    }
-
-    .hero-dna {
-      position: absolute;
-      width: 120px;
-      height: 360px;
-      top: 105px;
-      opacity: .22;
-    }
-
-    .hero-dna.left {
-      left: 7%;
-    }
-
-    .hero-dna.right {
-      right: 7%;
-      transform: scaleX(-1);
-    }
-
-    .dna-strand {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          transparent 0 10px,
-          rgba(255,40,40,.8) 10px 19px,
-          transparent 19px 33px
-        );
-    }
-
-    .dna-strand.s1 {
-      left: 30px;
-      transform: skewY(16deg);
-    }
-
-    .dna-strand.s2 {
-      right: 30px;
-      transform: skewY(-16deg);
-    }
-
-    .dna-rung {
-      position: absolute;
-      left: 29px;
-      width: 60px;
-      height: 1px;
-      background: rgba(255,40,40,.35);
-    }
-
-    .dna-rung.r1 { top: 55px; }
-    .dna-rung.r2 { top: 105px; }
-    .dna-rung.r3 { top: 155px; }
-    .dna-rung.r4 { top: 205px; }
-    .dna-rung.r5 { top: 255px; }
-    .dna-rung.r6 { top: 305px; }
-
-    .tech-readout {
-      position: absolute;
-      color: rgba(255,255,255,.38);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: .68rem;
-      letter-spacing: 1.7px;
-      text-transform: uppercase;
-      line-height: 1.6;
-    }
-
-    .tech-readout strong {
-      color: rgba(255,50,50,.65);
-      font-weight: 700;
-    }
-
-    .readout-left {
-      left: 5%;
-      bottom: 200px;
-      text-align: left;
-    }
-
-    .readout-right {
-      right: 5%;
-      bottom: 200px;
-      text-align: right;
-    }
-
-    .hero-molecule {
-      position: absolute;
-      width: 85px;
-      height: 85px;
-      opacity: .3;
-    }
-
-    .hero-molecule.hm1 {
-      top: 95px;
-      left: 20%;
-    }
-
-    .hero-molecule.hm2 {
-      top: 165px;
-      right: 20%;
-      transform: rotate(45deg);
-    }
-
-    .hero-molecule span {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border: 1px solid #ff2d2d;
-      border-radius: 50%;
-    }
-
-    .hero-molecule span:nth-child(1) {
-      top: 0;
-      left: 36px;
-    }
-
-    .hero-molecule span:nth-child(2) {
-      left: 0;
-      bottom: 8px;
-    }
-
-    .hero-molecule span:nth-child(3) {
-      right: 0;
-      bottom: 8px;
-    }
-
-    .hero-molecule::before,
-    .hero-molecule::after {
-      content: "";
-      position: absolute;
-      top: 46px;
-      width: 51px;
-      height: 1px;
-      background: #ff2d2d;
-    }
-
-    .hero-molecule::before {
-      left: 2px;
-      transform: rotate(-45deg);
-    }
-
-    .hero-molecule::after {
-      right: 2px;
-      transform: rotate(45deg);
     }
 
     .hero {
       position: relative;
       z-index: 10;
       max-width: 950px;
-      padding-top: 285px;
+      padding-top: 380px;
     }
 
     .hero-tech {
@@ -622,18 +455,34 @@
       letter-spacing: 9px;
     }
 
-    .hero-division {
-      margin-top: 27px;
-      color: #b3b3b3;
+    .new-slogan {
+      margin-top: 25px;
+      color: #e4e4e4;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: .9rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
 
-    .hero-division span {
-      color: #ff3d3d;
+    .new-slogan::before,
+    .new-slogan::after {
+      content: "";
+      display: inline-block;
+      width: 38px;
+      height: 1px;
+      margin: 0 12px 4px;
+      background: var(--red);
+    }
+
+    .hero-division {
+      margin-top: 18px;
+      color: #8f8f8f;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
     }
 
     .hero-modes {
@@ -641,7 +490,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     .hero-mode {
@@ -657,32 +506,23 @@
 
     .research-badge {
       display: inline-block;
-      margin-top: 25px;
-      padding: 10px 18px;
+      margin-top: 22px;
+      padding: 9px 16px;
       border: 1px solid var(--red);
       border-radius: 4px;
       color: #ff4141;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1rem;
+      font-size: .9rem;
       font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .tagline {
-      margin-top: 19px;
-      color: #ddd;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 4px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
     }
 
     .location {
-      margin-top: 9px;
+      margin-top: 12px;
       color: #ff3333;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1rem;
+      font-size: .95rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -707,7 +547,7 @@
     }
 
     .section-shell::before {
-      content: "RBL // RESEARCH INTERFACE";
+      content: "RBL // EVOLUTION ENGINEERED";
       position: absolute;
       top: 12px;
       right: 18px;
@@ -761,6 +601,8 @@
       margin-right: 7px;
       font-size: .55rem;
     }
+
+    /* COMPOUND CARDS */
 
     .products {
       display: grid;
@@ -863,6 +705,8 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+
+    /* DETAILS */
 
     .details-grid {
       display: grid;
@@ -1006,6 +850,8 @@
       font-size: .82rem;
     }
 
+    /* ABOUT */
+
     .about {
       max-width: none;
       background: #070808;
@@ -1037,6 +883,8 @@
     .notice strong {
       color: #ff4141;
     }
+
+    /* CONTACT */
 
     .contact {
       text-align: center;
@@ -1071,6 +919,8 @@
       font-size: .88rem;
     }
 
+    /* FOOTER */
+
     footer {
       padding: 42px 20px;
       text-align: center;
@@ -1083,6 +933,15 @@
       font-family: "Barlow Condensed", sans-serif;
       font-size: 1.35rem;
       letter-spacing: 2px;
+    }
+
+    .footer-slogan {
+      margin-top: 6px;
+      color: #aaa;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     footer p {
@@ -1101,7 +960,6 @@
     /* TABLET */
 
     @media (max-width: 1000px) {
-
       .products {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1109,11 +967,6 @@
       .details-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .hero-dna {
-        opacity: .12;
-      }
-
     }
 
     /* MOBILE */
@@ -1139,17 +992,19 @@
 
       header {
         min-height: 64vh;
-        padding: 55px 12px 35px;
+        padding: 48px 12px 30px;
       }
 
       .hero-art {
-        height: 300px;
+        width: 100%;
+        height: 310px;
+        object-position: center 8%;
       }
 
       .hud {
-        width: 270px;
-        height: 270px;
-        top: 44px;
+        width: 275px;
+        height: 275px;
+        top: 38px;
       }
 
       .hud::before {
@@ -1160,43 +1015,14 @@
         inset: 48px;
       }
 
-      .hud-tick {
-        display: none;
-      }
-
-      .hero-dna,
-      .readout-left,
-      .readout-right {
-        display: none;
-      }
-
-      .hero-molecule {
-        opacity: .12;
-      }
-
-      .hero-molecule.hm1 {
-        left: 2%;
-        top: 80px;
-      }
-
-      .hero-molecule.hm2 {
-        right: 2%;
-        top: 120px;
-      }
-
-      .scan-line {
-        width: 88%;
-        top: 65px;
-      }
-
       .hero {
-        padding-top: 205px;
+        padding-top: 220px;
       }
 
       .hero-tech {
-        font-size: .58rem;
-        letter-spacing: 1.7px;
-        margin-bottom: 6px;
+        font-size: .56rem;
+        letter-spacing: 1.6px;
+        margin-bottom: 5px;
       }
 
       .brand-text {
@@ -1208,39 +1034,45 @@
         letter-spacing: 4px;
       }
 
+      .new-slogan {
+        margin-top: 15px;
+        font-size: .77rem;
+        letter-spacing: 2px;
+      }
+
+      .new-slogan::before,
+      .new-slogan::after {
+        width: 18px;
+        margin: 0 6px 3px;
+      }
+
       .hero-division {
-        margin-top: 18px;
-        font-size: .68rem;
-        letter-spacing: 1.5px;
+        margin-top: 10px;
+        font-size: .6rem;
+        letter-spacing: 1.3px;
       }
 
       .hero-modes {
         gap: 5px;
-        margin-top: 11px;
+        margin-top: 9px;
       }
 
       .hero-mode {
-        font-size: .58rem;
-        padding: 4px 7px;
+        font-size: .55rem;
+        padding: 4px 6px;
       }
 
       .research-badge {
-        margin-top: 14px;
-        padding: 7px 10px;
-        font-size: .72rem;
-        letter-spacing: 1px;
-      }
-
-      .tagline {
         margin-top: 12px;
-        font-size: .7rem;
-        letter-spacing: 1.5px;
+        padding: 6px 9px;
+        font-size: .65rem;
+        letter-spacing: .8px;
       }
 
       .location {
-        margin-top: 5px;
-        font-size: .72rem;
-        letter-spacing: 1.2px;
+        margin-top: 6px;
+        font-size: .7rem;
+        letter-spacing: 1.1px;
       }
 
       section {
@@ -1399,11 +1231,9 @@
       footer {
         padding: 28px 14px;
       }
-
     }
 
     @media (max-width: 390px) {
-
       .card p {
         font-size: .64rem;
       }
@@ -1411,11 +1241,8 @@
       .detail-name {
         font-size: .88rem;
       }
-
     }
-
   </style>
-
 </head>
 
 
@@ -1434,6 +1261,10 @@
 
       <div class="age-logo">
         REAPER <span>BIOLABS</span>
+      </div>
+
+      <div class="age-slogan">
+        Evolution Engineered
       </div>
 
       <h2>
@@ -1493,13 +1324,11 @@
 
 
   <div class="mobile-menu" id="mobileMenu">
-
     <a href="#home" onclick="closeMenu()">Home</a>
     <a href="#compounds" onclick="closeMenu()">Compounds</a>
     <a href="#details" onclick="closeMenu()">Details</a>
     <a href="#about" onclick="closeMenu()">About</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
-
   </div>
 
 
@@ -1510,69 +1339,15 @@
     <div class="hero-grid"></div>
 
     <img
-      src="reaper-hero.png"
+      src="reaper-biolabs-hero-v2.png"
       class="hero-art"
-      alt=""
+      alt="Reaper BioLabs"
     >
 
     <div class="hero-overlay"></div>
 
-    <div class="hud">
-      <div class="hud-tick t1"></div>
-      <div class="hud-tick t2"></div>
-      <div class="hud-tick t3"></div>
-      <div class="hud-tick t4"></div>
-    </div>
-
+    <div class="hud"></div>
     <div class="scan-line"></div>
-
-    <div class="hero-dna left">
-      <div class="dna-strand s1"></div>
-      <div class="dna-strand s2"></div>
-      <div class="dna-rung r1"></div>
-      <div class="dna-rung r2"></div>
-      <div class="dna-rung r3"></div>
-      <div class="dna-rung r4"></div>
-      <div class="dna-rung r5"></div>
-      <div class="dna-rung r6"></div>
-    </div>
-
-    <div class="hero-dna right">
-      <div class="dna-strand s1"></div>
-      <div class="dna-strand s2"></div>
-      <div class="dna-rung r1"></div>
-      <div class="dna-rung r2"></div>
-      <div class="dna-rung r3"></div>
-      <div class="dna-rung r4"></div>
-      <div class="dna-rung r5"></div>
-      <div class="dna-rung r6"></div>
-    </div>
-
-    <div class="hero-molecule hm1">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="hero-molecule hm2">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="tech-readout readout-left">
-      <strong>RBL.SEQ // 01</strong><br>
-      CELLULAR RESEARCH NODE<br>
-      SIGNAL ACTIVE<br>
-      MATRIX STATUS: ONLINE
-    </div>
-
-    <div class="tech-readout readout-right">
-      <strong>RBL.MTX // 27</strong><br>
-      BIOMOLECULAR SYSTEM<br>
-      ANALYSIS MODE<br>
-      GRID COORD: 35.08N
-    </div>
 
     <div class="hero">
 
@@ -1585,9 +1360,12 @@
         <span>BIOLABS</span>
       </div>
 
+      <div class="new-slogan">
+        Evolution Engineered
+      </div>
+
       <div class="hero-division">
-        <span>RBL</span>
-        // Cellular Research Division
+        Science • Precision • Evolution
       </div>
 
       <div class="hero-modes">
@@ -1608,10 +1386,6 @@
 
       <div class="research-badge">
         For Research Purposes Only
-      </div>
-
-      <div class="tagline">
-        Research • Science • Innovation
       </div>
 
       <div class="location">
@@ -1664,9 +1438,7 @@
             A dual GIP and GLP-1 receptor agonist studied extensively
             in metabolic and glucose-regulation research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1680,9 +1452,7 @@
             Investigated for activity involving GLP-1, GIP
             and glucagon receptor pathways in metabolic research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1696,9 +1466,7 @@
             A peptide blend commonly discussed in relation
             to tissue repair, collagen and recovery research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1712,9 +1480,7 @@
             A synthetic peptide studied in aging biology,
             cellular regulation and telomere-related research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1728,9 +1494,7 @@
             A mitochondria-targeted peptide investigated
             for mitochondrial function and cellular energy research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1744,9 +1508,7 @@
             A naturally occurring coenzyme involved
             in cellular energy metabolism and redox processes.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1760,9 +1522,7 @@
             A mitochondria-derived peptide investigated
             for cellular metabolism and metabolic signaling.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1776,9 +1536,7 @@
             A growth hormone-releasing hormone analog
             investigated for growth-hormone signaling research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1792,9 +1550,7 @@
             A growth hormone secretagogue investigated
             for interactions involving ghrelin receptors.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
         <div class="card">
@@ -1808,9 +1564,7 @@
             A short peptide studied primarily in experimental
             neuroscience and cellular-regulation research.
           </p>
-          <div class="card-label">
-            Research Information Only
-          </div>
+          <div class="card-label">Research Information Only</div>
         </div>
 
       </div>
@@ -1843,7 +1597,6 @@
       <p class="section-intro">
         Compound name, vial amount and corresponding identifier.
       </p>
-
 
       <div class="details-grid">
 
@@ -1961,9 +1714,7 @@
         </div>
 
         <div class="detail-card">
-          <div class="detail-name">
-            CJC-1295 Without DAC
-          </div>
+          <div class="detail-name">CJC-1295 Without DAC</div>
           <div class="detail-mg">5 mg</div>
           <div class="detail-id">45</div>
           <div class="vial">
@@ -2092,11 +1843,17 @@
   </section>
 
 
+  <!-- FOOTER -->
+
   <footer>
 
     <strong>
       REAPER BIOLABS
     </strong>
+
+    <div class="footer-slogan">
+      Evolution Engineered
+    </div>
 
     <p>
       Albuquerque, New Mexico
@@ -2129,30 +1886,22 @@
     function checkExistingApproval() {
 
       const approvalTime =
-        localStorage.getItem(
-          approvalKey
-        );
+        localStorage.getItem(approvalKey);
 
       if (!approvalTime) {
         return;
       }
 
       const timePassed =
-        Date.now() -
-        parseInt(approvalTime);
+        Date.now() - parseInt(approvalTime);
 
-      if (
-        timePassed <
-        approvalDuration
-      ) {
+      if (timePassed < approvalDuration) {
 
         unlockSite();
 
       } else {
 
-        localStorage.removeItem(
-          approvalKey
-        );
+        localStorage.removeItem(approvalKey);
 
       }
 
@@ -2162,14 +1911,10 @@
     function verifyAge() {
 
       const input =
-        document.getElementById(
-          "birthdate"
-        );
+        document.getElementById("birthdate");
 
       const message =
-        document.getElementById(
-          "ageMessage"
-        );
+        document.getElementById("ageMessage");
 
       if (!input.value) {
 
@@ -2181,13 +1926,9 @@
       }
 
       const birthdate =
-        new Date(
-          input.value +
-          "T00:00:00"
-        );
+        new Date(input.value + "T00:00:00");
 
-      const today =
-        new Date();
+      const today = new Date();
 
       let age =
         today.getFullYear() -
@@ -2208,9 +1949,7 @@
           dayDifference < 0
         )
       ) {
-
         age--;
-
       }
 
       if (age >= 18) {
@@ -2235,59 +1974,33 @@
     function unlockSite() {
 
       document
-        .getElementById(
-          "ageGate"
-        )
-        .style
-        .display =
-        "none";
+        .getElementById("ageGate")
+        .style.display = "none";
 
-      document
-        .body
-        .classList
-        .remove(
-          "locked"
-        );
+      document.body
+        .classList.remove("locked");
 
     }
 
 
-    function changeReta(
-      button,
-      mg,
-      lot
-    ) {
+    function changeReta(button, mg, lot) {
 
       document
-        .querySelectorAll(
-          ".strength-tab"
-        )
+        .querySelectorAll(".strength-tab")
         .forEach(
           tab =>
-            tab.classList.remove(
-              "active"
-            )
+            tab.classList.remove("active")
         );
 
-      button
-        .classList
-        .add(
-          "active"
-        );
+      button.classList.add("active");
 
       document
-        .getElementById(
-          "retaMg"
-        )
-        .textContent =
-        mg;
+        .getElementById("retaMg")
+        .textContent = mg;
 
       document
-        .getElementById(
-          "retaLot"
-        )
-        .textContent =
-        lot;
+        .getElementById("retaLot")
+        .textContent = lot;
 
     }
 
@@ -2296,8 +2009,7 @@
 
       document
         .getElementById("mobileMenu")
-        .classList
-        .toggle("open");
+        .classList.toggle("open");
 
     }
 
@@ -2306,8 +2018,7 @@
 
       document
         .getElementById("mobileMenu")
-        .classList
-        .remove("open");
+        .classList.remove("open");
 
     }
 
