@@ -8,16 +8,33 @@
   <title>Reaper BioLabs | Albuquerque, NM</title>
 
   <style>
+    :root {
+      --bg: #030303;
+      --panel: #090909;
+      --panel2: #0e0e0e;
+      --red: #e00000;
+      --red-dark: #7d0000;
+      --text: #f4f4f4;
+      --muted: #a5a5a5;
+      --border: #292929;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: #f5f5f5;
+      background:
+        radial-gradient(circle at top, rgba(150,0,0,.10), transparent 35%),
+        #030303;
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -25,29 +42,44 @@
       overflow: hidden;
     }
 
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       AGE GATE
+    ========================== */
+
     #ageGate {
       position: fixed;
       inset: 0;
-      z-index: 9999;
+      z-index: 99999;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
+
       background:
-        radial-gradient(circle at center, rgba(150, 0, 0, .3), transparent 55%),
-        rgba(0, 0, 0, .97);
+        radial-gradient(circle at center, rgba(170,0,0,.28), transparent 50%),
+        rgba(0,0,0,.98);
     }
 
     .age-box {
       width: 100%;
-      max-width: 460px;
-      background: linear-gradient(145deg, #111, #070707);
-      border: 1px solid #333;
-      border-top: 4px solid #b80000;
-      border-radius: 12px;
+      max-width: 470px;
       padding: 38px 28px;
       text-align: center;
-      box-shadow: 0 20px 70px rgba(0, 0, 0, .7);
+
+      background:
+        linear-gradient(145deg, #111, #050505);
+
+      border: 1px solid #3a3a3a;
+      border-top: 4px solid var(--red);
+      border-radius: 12px;
+
+      box-shadow:
+        0 0 40px rgba(190,0,0,.10),
+        0 25px 80px rgba(0,0,0,.8);
     }
 
     .age-logo {
@@ -55,37 +87,36 @@
       font-weight: 900;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: white;
-      text-shadow:
-        0 0 10px #ff0000,
-        0 0 25px #8b0000;
     }
 
     .age-logo span {
-      color: #d40000;
+      color: var(--red);
     }
 
     .age-box h2 {
       margin-top: 20px;
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .age-box p {
-      color: #aaa;
       margin-top: 10px;
+      color: var(--muted);
     }
 
-    .age-research {
+    .age-badge {
       display: inline-block;
-      margin-top: 16px;
-      padding: 7px 12px;
-      border: 1px solid #7d0000;
+      margin-top: 17px;
+      padding: 7px 13px;
+
+      color: #ff3e3e;
+      border: 1px solid #8d0000;
       border-radius: 4px;
-      color: #ff4b4b;
-      font-size: .8rem;
+
+      font-size: .75rem;
       font-weight: bold;
-      letter-spacing: 1.3px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
     }
 
@@ -93,17 +124,19 @@
       display: block;
       margin-top: 25px;
       margin-bottom: 8px;
-      color: #ddd;
       font-weight: bold;
     }
 
     .age-box input {
       width: 100%;
       padding: 14px;
+
       background: #050505;
       color: white;
+
       border: 1px solid #444;
       border-radius: 6px;
+
       font-size: 1rem;
     }
 
@@ -111,323 +144,725 @@
       width: 100%;
       margin-top: 20px;
       padding: 14px;
-      border: none;
+
+      border: 1px solid #ff2424;
       border-radius: 6px;
-      background: #b80000;
+
+      background: #a90000;
       color: white;
-      font-weight: bold;
+
       font-size: 1rem;
-      letter-spacing: 1px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+
       cursor: pointer;
       transition: .2s;
     }
 
     .age-button:hover {
-      background: #e00000;
+      background: var(--red);
     }
 
     #ageMessage {
-      margin-top: 15px;
       min-height: 24px;
-      color: #ff4b4b;
+      margin-top: 15px;
+      color: #ff5555;
       font-weight: bold;
     }
 
     .age-note {
-      margin-top: 18px;
-      font-size: .8rem;
+      margin-top: 15px;
       color: #666;
+      font-size: .8rem;
     }
 
+    /* =========================
+       NAV
+    ========================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 5%;
+
+      background: rgba(3,3,3,.92);
+      border-bottom: 1px solid #1d1d1d;
+
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
     header {
-      min-height: 90vh;
+      min-height: 85vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      padding: 70px 20px;
+
       text-align: center;
-      padding: 40px 20px;
+
       background:
-        radial-gradient(circle at center, rgba(150, 0, 0, .32), transparent 55%),
-        linear-gradient(to bottom, #0d0000, #050505);
+        radial-gradient(circle at center, rgba(170,0,0,.22), transparent 45%),
+        linear-gradient(to bottom, rgba(15,0,0,.8), #030303);
     }
 
     .hero {
-      max-width: 900px;
+      max-width: 950px;
+    }
+
+    .hero-mark {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 2px solid var(--red);
+      transform: rotate(45deg);
+
+      box-shadow: 0 0 35px rgba(220,0,0,.18);
+    }
+
+    .hero-skull {
+      transform: rotate(-45deg);
+      font-size: 3.2rem;
     }
 
     .logo {
-      font-size: clamp(3rem, 10vw, 7rem);
+      font-size: clamp(3.4rem, 10vw, 7.8rem);
+      line-height: .9;
+
       font-weight: 900;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+
       text-transform: uppercase;
-      color: #ffffff;
+
       text-shadow:
-        0 0 10px #ff0000,
-        0 0 30px #8b0000;
+        0 0 10px rgba(255,0,0,.15),
+        0 0 35px rgba(120,0,0,.18);
     }
 
     .logo span {
-      color: #d40000;
-    }
-
-    .tagline {
-      margin-top: 12px;
-      font-size: 1.2rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #cccccc;
+      display: block;
+      margin-top: 16px;
+      color: var(--red);
+      letter-spacing: 8px;
     }
 
     .research-badge {
       display: inline-block;
-      margin-top: 22px;
-      padding: 9px 16px;
-      border: 1px solid #8c0000;
-      background: rgba(110, 0, 0, .13);
+      margin-top: 28px;
+      padding: 10px 18px;
+
+      border: 1px solid var(--red);
       border-radius: 4px;
-      color: #ff4141;
+
+      color: #ff4040;
+
       font-size: .85rem;
       font-weight: bold;
-      letter-spacing: 1.6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin-top: 22px;
+
+      color: #ddd;
+
+      font-size: 1.05rem;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
 
     .location {
-      margin-top: 20px;
-      color: #ff3b3b;
+      margin-top: 12px;
+
+      color: #ff3131;
+
       font-weight: bold;
-      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
     section {
-      max-width: 1150px;
+      max-width: 1220px;
       margin: auto;
       padding: 75px 20px;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2.3rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
+    .section-shell {
+      padding: 45px 28px;
 
-    .red {
-      color: #e00000;
+      background:
+        linear-gradient(145deg, rgba(14,14,14,.96), rgba(5,5,5,.96));
+
+      border: 1px solid #7e0000;
+      border-radius: 12px;
     }
 
     .section-label {
       text-align: center;
-      color: #ff4747;
-      font-size: .78rem;
+
+      color: #ff3535;
+
+      font-size: .76rem;
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-top: 6px;
+
+      text-align: center;
+
+      font-size: 2.25rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .section-intro {
-      max-width: 750px;
-      margin: 0 auto 45px;
+      max-width: 800px;
+      margin: 10px auto 38px;
+
       text-align: center;
-      color: #aaa;
+      color: var(--muted);
     }
+
+    /* =========================
+       COMPOUND INFO
+    ========================== */
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+
+      gap: 14px;
     }
 
     .card {
-      background: linear-gradient(145deg, #111, #080808);
-      border: 1px solid #292929;
-      border-top: 3px solid #b80000;
-      padding: 28px 22px;
-      border-radius: 10px;
+      min-height: 235px;
+      padding: 25px 19px;
+
+      display: flex;
+      flex-direction: column;
+
+      background:
+        linear-gradient(145deg, #0d0d0d, #050505);
+
+      border: 1px solid #6f0000;
+      border-radius: 8px;
+
       transition: .25s;
-      min-height: 195px;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #c60000;
-      box-shadow: 0 10px 30px rgba(180, 0, 0, .18);
+      transform: translateY(-4px);
+
+      border-color: var(--red);
+
+      box-shadow:
+        0 10px 30px rgba(160,0,0,.14);
     }
 
-    .card-label {
-      color: #a50000;
-      font-size: .68rem;
-      font-weight: bold;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
+    .compound-icon {
+      width: 55px;
+      height: 55px;
+
+      margin: 0 auto 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--red);
+
+      border: 1px solid var(--red);
+      border-radius: 50%;
+
+      font-size: 1.6rem;
     }
 
     .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      color: #fff;
+      text-align: center;
+
+      font-size: 1.25rem;
+      letter-spacing: .5px;
     }
 
     .card p {
-      color: #aaa;
-      font-size: .95rem;
+      margin-top: 10px;
+
+      flex: 1;
+
+      text-align: center;
+      color: #bbb;
+      font-size: .92rem;
     }
 
+    .card-label {
+      margin-top: 18px;
+      padding-top: 12px;
+
+      border-top: 1px solid #4a0000;
+
+      text-align: center;
+
+      color: #ff3030;
+
+      font-size: .64rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       LOT / DETAIL SECTION
+    ========================== */
+
+    .lot-section {
+      padding-top: 10px;
+    }
+
+    .lot-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(145px, 1fr));
+
+      gap: 12px;
+
+      margin-top: 35px;
+    }
+
+    .lot-card {
+      min-height: 290px;
+      padding: 18px 12px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(180deg, #0e0e0e, #050505);
+
+      border: 1px solid #850000;
+      border-radius: 8px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lot-card::before {
+      content: "";
+      position: absolute;
+
+      width: 100px;
+      height: 100px;
+
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background:
+        radial-gradient(circle, rgba(200,0,0,.22), transparent 65%);
+    }
+
+    .lot-name {
+      min-height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: .84rem;
+      font-weight: bold;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .lot-mg {
+      margin-top: 8px;
+
+      color: #ff3434;
+
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .lot-number {
+      margin-top: 3px;
+
+      color: #f3f3f3;
+
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* CSS vial */
+
+    .vial {
+      width: 72px;
+      height: 128px;
+
+      margin: 22px auto 0;
+
+      position: relative;
+
+      border: 2px solid #aaa;
+      border-radius: 8px 8px 14px 14px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(255,255,255,.12),
+          rgba(255,255,255,.02) 25%,
+          rgba(255,255,255,.05) 70%,
+          rgba(255,255,255,.14)
+        );
+
+      box-shadow:
+        inset 0 0 14px rgba(255,255,255,.05),
+        0 0 25px rgba(180,0,0,.15);
+    }
+
+    .vial::before {
+      content: "";
+
+      position: absolute;
+
+      width: 58px;
+      height: 18px;
+
+      top: -18px;
+      left: 5px;
+
+      background:
+        linear-gradient(#777, #1d1d1d);
+
+      border: 2px solid #aaa;
+      border-radius: 7px 7px 3px 3px;
+    }
+
+    .vial-label {
+      position: absolute;
+
+      left: 7px;
+      right: 7px;
+      top: 44px;
+
+      padding: 8px 4px;
+
+      background: #080808;
+
+      border: 1px solid #7a0000;
+
+      color: #eee;
+
+      font-size: .56rem;
+      font-weight: bold;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .vial-label strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #ff2626;
+
+      font-size: .7rem;
+    }
+
+    .lot-note {
+      max-width: 760px;
+      margin: 32px auto 0;
+
+      text-align: center;
+
+      color: #777;
+      font-size: .82rem;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
     .about {
-      background: #0b0b0b;
-      border-top: 1px solid #1d1d1d;
-      border-bottom: 1px solid #1d1d1d;
+      background: #080808;
+
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
     }
 
     .about-inner {
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
       text-align: center;
     }
 
-    .about p {
-      color: #bbb;
+    .about-inner p {
       margin-top: 20px;
+      color: #bbb;
     }
 
     .notice {
-      margin-top: 35px;
-      border-left: 4px solid #b90000;
-      background: #111;
-      padding: 18px;
+      margin-top: 30px;
+      padding: 20px;
+
       text-align: left;
+
+      background: #101010;
+
+      border-left: 4px solid var(--red);
+
       color: #999;
       font-size: .9rem;
     }
 
     .notice strong {
-      color: #ff4747;
+      color: #ff4141;
     }
+
+    /* =========================
+       CONTACT
+    ========================== */
 
     .contact {
       text-align: center;
+
       background:
-        radial-gradient(circle at center, rgba(130, 0, 0, .18), transparent 60%),
-        #070707;
+        radial-gradient(circle at center, rgba(150,0,0,.13), transparent 55%);
     }
 
     .contact p {
-      color: #aaa;
-      margin: 10px 0 25px;
-    }
-
-    .contact-research {
-      color: #ff4747 !important;
-      font-size: .82rem;
-      font-weight: bold;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-bottom: 18px !important;
+      margin-top: 10px;
+      color: var(--muted);
     }
 
     .email-button {
       display: inline-block;
-      background: #b80000;
-      color: #fff;
-      text-decoration: none;
+
+      margin-top: 25px;
       padding: 15px 32px;
-      border: 1px solid #e00000;
+
+      text-decoration: none;
+
+      background: #a90000;
+      color: white;
+
+      border: 1px solid #ff3030;
       border-radius: 6px;
+
       font-weight: bold;
       letter-spacing: 1.5px;
-      transition: .25s;
+
+      transition: .2s;
     }
 
     .email-button:hover {
-      background: #e00000;
+      background: var(--red);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(200, 0, 0, .25);
     }
 
     .email-address {
       display: block;
-      margin-top: 18px;
+      margin-top: 14px;
+
       color: #777;
-      font-size: .9rem;
+      font-size: .88rem;
     }
 
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
-      padding: 45px 20px;
+      padding: 40px 20px;
+
       text-align: center;
-      background: #020202;
-      border-top: 1px solid #1d1d1d;
+
+      background: #010101;
+
+      border-top: 1px solid #222;
     }
 
     footer strong {
-      display: block;
-      color: #d40000;
-      font-size: 1.25rem;
-      margin-bottom: 8px;
+      color: var(--red);
+
+      font-size: 1.1rem;
+      letter-spacing: 2px;
     }
 
     footer p {
+      margin-top: 8px;
+
       color: #777;
-      font-size: .9rem;
+      font-size: .82rem;
     }
 
-    .footer-research {
-      margin-top: 15px;
-      color: #a30000 !important;
-      font-size: .8rem !important;
+    .footer-warning {
+      color: #ff3030 !important;
+
       font-weight: bold;
-      letter-spacing: 1.3px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    @media (max-width: 600px) {
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 760px) {
+
+      nav {
+        padding: 12px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
       header {
         min-height: 75vh;
       }
 
+      .hero-mark {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hero-skull {
+        font-size: 2.4rem;
+      }
+
       .tagline {
-        font-size: .85rem;
+        font-size: .75rem;
         letter-spacing: 2px;
       }
 
+      .location {
+        font-size: .85rem;
+      }
+
       section {
-        padding: 55px 18px;
+        padding: 55px 15px;
+      }
+
+      .section-shell {
+        padding: 32px 14px;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.65rem;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
       }
 
       .card {
         min-height: auto;
       }
 
+      .lot-grid {
+        grid-template-columns:
+          repeat(2, minmax(0,1fr));
+      }
+
+      .lot-card {
+        min-height: 280px;
+      }
+
       .age-logo {
         font-size: 2rem;
       }
     }
+
+    @media (max-width: 420px) {
+
+      .lot-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
   </style>
+
 </head>
+
 
 <body class="locked">
 
-  <!-- AGE GATE -->
+
+  <!-- =========================
+       AGE GATE
+  ========================== -->
 
   <div id="ageGate">
+
     <div class="age-box">
 
       <div class="age-logo">
         REAPER <span>BIOLABS</span>
       </div>
 
-      <h2>Age Verification Required</h2>
+      <h2>
+        Age Verification Required
+      </h2>
 
       <p>
         You must be 18 years of age or older to access this website.
       </p>
 
-      <div class="age-research">
+      <div class="age-badge">
         18+ • For Research Purposes Only
       </div>
 
@@ -455,25 +890,56 @@
       </div>
 
     </div>
+
   </div>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       NAV
+  ========================== -->
 
-  <header>
+  <nav>
+
+    <div class="nav-logo">
+      REAPER <span>BIOLABS</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#compounds">Compounds</a>
+      <a href="#details">Details</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header id="home">
 
     <div class="hero">
 
-      <div class="logo">
-        REAPER <span>BIOLABS</span>
+      <div class="hero-mark">
+        <div class="hero-skull">
+          💀
+        </div>
       </div>
 
-      <div class="tagline">
-        Research • Science • Innovation
+      <div class="logo">
+        REAPER
+        <span>BIOLABS</span>
       </div>
 
       <div class="research-badge">
         For Research Purposes Only
+      </div>
+
+      <div class="tagline">
+        Research • Science • Innovation
       </div>
 
       <div class="location">
@@ -485,116 +951,193 @@
   </header>
 
 
-  <!-- COMPOUNDS -->
+  <!-- =========================
+       COMPOUND INFORMATION
+  ========================== -->
 
-  <section>
+  <section id="compounds">
 
-    <div class="section-label">
-      Research Information Only
-    </div>
+    <div class="section-shell">
 
-    <h2>
-      Compound <span class="red">Information</span>
-    </h2>
-
-    <p class="section-intro">
-      Educational information covering peptides, metabolic compounds,
-      mitochondrial research and emerging areas of biomedical science.
-      Information presented here is intended for research and educational
-      purposes only.
-    </p>
-
-
-    <div class="products">
-
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Tirzepatide</h3>
-        <p>
-          A dual GIP and GLP-1 receptor agonist studied extensively
-          in metabolic and glucose-regulation research.
-        </p>
+      <div class="section-label">
+        Research Information Only
       </div>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Retatrutide</h3>
-        <p>
-          Investigated for activity involving GLP-1, GIP and
-          glucagon receptor pathways in metabolic research.
-        </p>
-      </div>
+      <h2>
+        Compound Information
+      </h2>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>KLOW</h3>
-        <p>
-          A peptide blend commonly discussed in relation to
-          tissue repair, collagen and recovery research.
-        </p>
-      </div>
+      <p class="section-intro">
+        Educational information covering peptides, metabolic compounds,
+        mitochondrial research and emerging areas of biomedical science.
+        For research and educational purposes only.
+      </p>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Epitalon</h3>
-        <p>
-          A synthetic peptide studied in aging biology,
-          cellular regulation and telomere-related research.
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>SS-31</h3>
-        <p>
-          A mitochondria-targeted peptide investigated for
-          mitochondrial function and cellular energy research.
-        </p>
-      </div>
+      <div class="products">
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>NAD+</h3>
-        <p>
-          A naturally occurring coenzyme involved in cellular
-          energy metabolism, redox reactions and DNA-associated processes.
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>MOTS-C</h3>
-        <p>
-          A mitochondria-derived peptide investigated for
-          cellular metabolism, energy regulation and metabolic signaling.
-        </p>
-      </div>
+        <div class="card">
+          <div class="compound-icon">⌬</div>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Tesamorelin</h3>
-        <p>
-          A growth hormone-releasing hormone analog studied
-          for its effects on growth-hormone signaling and body composition.
-        </p>
-      </div>
+          <h3>Tirzepatide</h3>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Ipamorelin</h3>
-        <p>
-          A growth hormone secretagogue investigated for
-          its interaction with ghrelin receptors and growth-hormone release.
-        </p>
-      </div>
+          <p>
+            A dual GIP and GLP-1 receptor agonist studied extensively
+            in metabolic and glucose-regulation research.
+          </p>
 
-      <div class="card">
-        <div class="card-label">Research Information Only</div>
-        <h3>Pinealon</h3>
-        <p>
-          A short peptide studied primarily in experimental
-          neuroscience, cellular regulation and aging-related research.
-        </p>
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">⌬</div>
+
+          <h3>Retatrutide</h3>
+
+          <p>
+            Investigated for activity involving GLP-1, GIP and
+            glucagon receptor pathways in metabolic research.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">🧬</div>
+
+          <h3>KLOW</h3>
+
+          <p>
+            A peptide blend commonly discussed in relation to
+            tissue repair, collagen and recovery research.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">◉</div>
+
+          <h3>Epitalon</h3>
+
+          <p>
+            A synthetic peptide studied in aging biology,
+            cellular regulation and telomere-related research.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">◌</div>
+
+          <h3>SS-31</h3>
+
+          <p>
+            A mitochondria-targeted peptide investigated for
+            mitochondrial function and cellular energy research.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">⬡</div>
+
+          <h3>NAD+</h3>
+
+          <p>
+            A naturally occurring coenzyme involved in cellular
+            energy metabolism, redox reactions and DNA-associated processes.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">◍</div>
+
+          <h3>MOTS-C</h3>
+
+          <p>
+            A mitochondria-derived peptide investigated for
+            cellular metabolism, energy regulation and metabolic signaling.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">⌬</div>
+
+          <h3>CJC-1295 Without DAC</h3>
+
+          <p>
+            A growth hormone-releasing hormone analog investigated
+            for effects involving growth-hormone signaling
+            and pituitary activity.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">⌬</div>
+
+          <h3>Ipamorelin</h3>
+
+          <p>
+            A growth hormone secretagogue investigated for
+            interaction with ghrelin receptors and growth-hormone release.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="compound-icon">◉</div>
+
+          <h3>Pinealon</h3>
+
+          <p>
+            A short peptide studied primarily in experimental
+            neuroscience, cellular regulation and aging-related research.
+          </p>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+        </div>
+
+
       </div>
 
     </div>
@@ -602,9 +1145,311 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       COMPOUND DETAILS / LOT INFO
+  ========================== -->
 
-  <section class="about">
+  <section id="details" class="lot-section">
+
+    <div class="section-shell">
+
+      <div class="section-label">
+        Research Compound Details
+      </div>
+
+      <h2>
+        Compound Details & Lot Information
+      </h2>
+
+      <p class="section-intro">
+        Compound name, vial amount and corresponding lot identifier.
+      </p>
+
+
+      <div class="lot-grid">
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Tirzepatide
+          </div>
+
+          <div class="lot-mg">
+            15 mg
+          </div>
+
+          <div class="lot-number">
+            45
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Retatrutide
+          </div>
+
+          <div class="lot-mg">
+            10 mg
+          </div>
+
+          <div class="lot-number">
+            60
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Retatrutide
+          </div>
+
+          <div class="lot-mg">
+            30 mg
+          </div>
+
+          <div class="lot-number">
+            110
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            KLOW
+          </div>
+
+          <div class="lot-mg">
+            80 mg
+          </div>
+
+          <div class="lot-number">
+            100
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Epitalon
+          </div>
+
+          <div class="lot-mg">
+            40 mg
+          </div>
+
+          <div class="lot-number">
+            80
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            SS-31
+          </div>
+
+          <div class="lot-mg">
+            45 mg
+          </div>
+
+          <div class="lot-number">
+            120
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            NAD+
+          </div>
+
+          <div class="lot-mg">
+            500 mg
+          </div>
+
+          <div class="lot-number">
+            40
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            MOTS-C
+          </div>
+
+          <div class="lot-mg">
+            10 mg
+          </div>
+
+          <div class="lot-number">
+            40
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            CJC-1295 Without DAC
+          </div>
+
+          <div class="lot-mg">
+            5 mg
+          </div>
+
+          <div class="lot-number">
+            45
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Ipamorelin
+          </div>
+
+          <div class="lot-mg">
+            5 mg
+          </div>
+
+          <div class="lot-number">
+            30
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="lot-card">
+
+          <div class="lot-name">
+            Pinealon
+          </div>
+
+          <div class="lot-mg">
+            10 mg
+          </div>
+
+          <div class="lot-number">
+            50
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER</strong>
+              BIOLABS
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="lot-note">
+        For research identification and informational purposes only.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about" class="about">
 
     <div class="about-inner">
 
@@ -613,7 +1458,7 @@
       </div>
 
       <h2>
-        About <span class="red">Reaper BioLabs</span>
+        About Reaper BioLabs
       </h2>
 
       <p>
@@ -623,18 +1468,26 @@
       </p>
 
       <p>
-        Content provided by Reaper BioLabs is intended for research
-        and educational purposes only.
+        Content presented by Reaper BioLabs is intended for
+        research and educational purposes only.
       </p>
 
       <div class="notice">
-        <strong>FOR RESEARCH PURPOSES ONLY.</strong><br><br>
+
+        <strong>
+          FOR RESEARCH PURPOSES ONLY.
+        </strong>
+
+        <br><br>
 
         Information provided on this website is educational in nature
         and is not medical advice. Compounds discussed may have different
-        regulatory statuses, approved uses and safety profiles. Consult an
-        appropriately licensed healthcare professional regarding medical
-        diagnosis or treatment.
+        regulatory statuses, approved uses and safety profiles.
+
+        <br><br>
+
+        Not intended for human consumption or self-treatment.
+
       </div>
 
     </div>
@@ -642,21 +1495,19 @@
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
-  <section class="contact">
+  <section id="contact" class="contact">
 
     <div class="section-label">
-      Reaper BioLabs
+      Research & Educational Inquiries
     </div>
 
     <h2>
-      Contact <span class="red">Reaper BioLabs</span>
+      Contact Reaper BioLabs
     </h2>
-
-    <p class="contact-research">
-      Research & Educational Inquiries
-    </p>
 
     <p>
       Questions about the information presented on this site?
@@ -677,7 +1528,9 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -689,84 +1542,152 @@
       Albuquerque, New Mexico
     </p>
 
-    <p class="footer-research">
-      For Research Purposes Only • Not Medical Advice
+    <p class="footer-warning">
+      For Research Purposes Only
     </p>
 
-    <p style="margin-top:12px;">
+    <p>
+      Not for human consumption • Not medical advice
+    </p>
+
+    <p>
       © 2026 Reaper BioLabs
     </p>
 
   </footer>
 
 
-  <!-- AGE VERIFICATION SCRIPT -->
+  <!-- =========================
+       AGE VERIFICATION
+  ========================== -->
 
   <script>
-    const approvalKey = "reaperBioLabsAgeApproved";
-    const approvalDuration = 30 * 24 * 60 * 60 * 1000;
+
+    const approvalKey =
+      "reaperBioLabsAgeApproved";
+
+    const approvalDuration =
+      30 * 24 * 60 * 60 * 1000;
+
 
     function checkExistingApproval() {
-      const approvalTime = localStorage.getItem(approvalKey);
+
+      const approvalTime =
+        localStorage.getItem(approvalKey);
 
       if (!approvalTime) return;
 
-      const timePassed = Date.now() - parseInt(approvalTime);
+
+      const timePassed =
+        Date.now() - parseInt(approvalTime);
+
 
       if (timePassed < approvalDuration) {
+
         unlockSite();
+
       } else {
+
         localStorage.removeItem(approvalKey);
+
       }
+
     }
 
+
     function verifyAge() {
-      const birthdateInput = document.getElementById("birthdate");
-      const message = document.getElementById("ageMessage");
+
+      const birthdateInput =
+        document.getElementById("birthdate");
+
+      const message =
+        document.getElementById("ageMessage");
+
 
       if (!birthdateInput.value) {
-        message.textContent = "Please enter your date of birth.";
+
+        message.textContent =
+          "Please enter your date of birth.";
+
         return;
+
       }
 
-      const birthdate = new Date(birthdateInput.value + "T00:00:00");
-      const today = new Date();
 
-      let age = today.getFullYear() - birthdate.getFullYear();
+      const birthdate =
+        new Date(
+          birthdateInput.value +
+          "T00:00:00"
+        );
+
+
+      const today =
+        new Date();
+
+
+      let age =
+        today.getFullYear() -
+        birthdate.getFullYear();
+
 
       const monthDifference =
-        today.getMonth() - birthdate.getMonth();
+        today.getMonth() -
+        birthdate.getMonth();
+
 
       const dayDifference =
-        today.getDate() - birthdate.getDate();
+        today.getDate() -
+        birthdate.getDate();
+
 
       if (
         monthDifference < 0 ||
-        (monthDifference === 0 && dayDifference < 0)
+        (
+          monthDifference === 0 &&
+          dayDifference < 0
+        )
       ) {
+
         age--;
+
       }
 
+
       if (age >= 18) {
+
         localStorage.setItem(
           approvalKey,
           Date.now().toString()
         );
 
         unlockSite();
+
       } else {
+
         message.textContent =
           "Access denied. You must be 18 or older.";
+
       }
+
     }
+
 
     function unlockSite() {
-      document.getElementById("ageGate").style.display = "none";
-      document.body.classList.remove("locked");
+
+      document
+        .getElementById("ageGate")
+        .style.display = "none";
+
+      document.body
+        .classList.remove("locked");
+
     }
 
+
     checkExistingApproval();
+
   </script>
+
 
 </body>
 
