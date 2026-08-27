@@ -76,6 +76,19 @@
       margin-top: 10px;
     }
 
+    .age-research {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 7px 12px;
+      border: 1px solid #7d0000;
+      border-radius: 4px;
+      color: #ff4b4b;
+      font-size: .8rem;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
     .age-box label {
       display: block;
       margin-top: 25px;
@@ -165,8 +178,22 @@
       color: #cccccc;
     }
 
+    .research-badge {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 9px 16px;
+      border: 1px solid #8c0000;
+      background: rgba(110, 0, 0, .13);
+      border-radius: 4px;
+      color: #ff4141;
+      font-size: .85rem;
+      font-weight: bold;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
     .location {
-      margin-top: 25px;
+      margin-top: 20px;
       color: #ff3b3b;
       font-weight: bold;
       font-size: 1.05rem;
@@ -189,6 +216,16 @@
       color: #e00000;
     }
 
+    .section-label {
+      text-align: center;
+      color: #ff4747;
+      font-size: .78rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
     .section-intro {
       max-width: 750px;
       margin: 0 auto 45px;
@@ -209,13 +246,22 @@
       padding: 28px 22px;
       border-radius: 10px;
       transition: .25s;
-      min-height: 180px;
+      min-height: 195px;
     }
 
     .card:hover {
       transform: translateY(-5px);
       border-color: #c60000;
       box-shadow: 0 10px 30px rgba(180, 0, 0, .18);
+    }
+
+    .card-label {
+      color: #a50000;
+      font-size: .68rem;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     .card h3 {
@@ -256,6 +302,10 @@
       font-size: .9rem;
     }
 
+    .notice strong {
+      color: #ff4747;
+    }
+
     .contact {
       text-align: center;
       background:
@@ -266,6 +316,15 @@
     .contact p {
       color: #aaa;
       margin: 10px 0 25px;
+    }
+
+    .contact-research {
+      color: #ff4747 !important;
+      font-size: .82rem;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 18px !important;
     }
 
     .email-button {
@@ -311,6 +370,15 @@
     footer p {
       color: #777;
       font-size: .9rem;
+    }
+
+    .footer-research {
+      margin-top: 15px;
+      color: #a30000 !important;
+      font-size: .8rem !important;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
     }
 
     @media (max-width: 600px) {
@@ -359,6 +427,10 @@
         You must be 18 years of age or older to access this website.
       </p>
 
+      <div class="age-research">
+        18+ • For Research Purposes Only
+      </div>
+
       <label for="birthdate">
         Enter your date of birth
       </label>
@@ -400,6 +472,10 @@
         Research • Science • Innovation
       </div>
 
+      <div class="research-badge">
+        For Research Purposes Only
+      </div>
+
       <div class="location">
         Albuquerque, New Mexico
       </div>
@@ -413,6 +489,10 @@
 
   <section>
 
+    <div class="section-label">
+      Research Information Only
+    </div>
+
     <h2>
       Compound <span class="red">Information</span>
     </h2>
@@ -420,12 +500,15 @@
     <p class="section-intro">
       Educational information covering peptides, metabolic compounds,
       mitochondrial research and emerging areas of biomedical science.
+      Information presented here is intended for research and educational
+      purposes only.
     </p>
 
 
     <div class="products">
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Tirzepatide</h3>
         <p>
           A dual GIP and GLP-1 receptor agonist studied extensively
@@ -434,6 +517,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Retatrutide</h3>
         <p>
           Investigated for activity involving GLP-1, GIP and
@@ -442,6 +526,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>KLOW</h3>
         <p>
           A peptide blend commonly discussed in relation to
@@ -450,6 +535,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Epitalon</h3>
         <p>
           A synthetic peptide studied in aging biology,
@@ -458,6 +544,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>SS-31</h3>
         <p>
           A mitochondria-targeted peptide investigated for
@@ -466,6 +553,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>NAD+</h3>
         <p>
           A naturally occurring coenzyme involved in cellular
@@ -474,6 +562,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>MOTS-C</h3>
         <p>
           A mitochondria-derived peptide investigated for
@@ -482,6 +571,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Tesamorelin</h3>
         <p>
           A growth hormone-releasing hormone analog studied
@@ -490,6 +580,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Ipamorelin</h3>
         <p>
           A growth hormone secretagogue investigated for
@@ -498,6 +589,7 @@
       </div>
 
       <div class="card">
+        <div class="card-label">Research Information Only</div>
         <h3>Pinealon</h3>
         <p>
           A short peptide studied primarily in experimental
@@ -516,6 +608,10 @@
 
     <div class="about-inner">
 
+      <div class="section-label">
+        Research & Educational Content
+      </div>
+
       <h2>
         About <span class="red">Reaper BioLabs</span>
       </h2>
@@ -526,12 +622,19 @@
         and emerging biomedical compounds.
       </p>
 
+      <p>
+        Content provided by Reaper BioLabs is intended for research
+        and educational purposes only.
+      </p>
+
       <div class="notice">
-        Information provided on this website is for educational purposes
-        only and is not medical advice. Compounds discussed may have
-        different regulatory statuses, approved uses and safety profiles.
-        Consult an appropriately licensed healthcare professional regarding
-        medical diagnosis or treatment.
+        <strong>FOR RESEARCH PURPOSES ONLY.</strong><br><br>
+
+        Information provided on this website is educational in nature
+        and is not medical advice. Compounds discussed may have different
+        regulatory statuses, approved uses and safety profiles. Consult an
+        appropriately licensed healthcare professional regarding medical
+        diagnosis or treatment.
       </div>
 
     </div>
@@ -543,12 +646,21 @@
 
   <section class="contact">
 
+    <div class="section-label">
+      Reaper BioLabs
+    </div>
+
     <h2>
       Contact <span class="red">Reaper BioLabs</span>
     </h2>
 
+    <p class="contact-research">
+      Research & Educational Inquiries
+    </p>
+
     <p>
-      Questions or inquiries? Get in touch.
+      Questions about the information presented on this site?
+      Get in touch.
     </p>
 
     <a
@@ -577,12 +689,18 @@
       Albuquerque, New Mexico
     </p>
 
+    <p class="footer-research">
+      For Research Purposes Only • Not Medical Advice
+    </p>
+
     <p style="margin-top:12px;">
       © 2026 Reaper BioLabs
     </p>
 
   </footer>
 
+
+  <!-- AGE VERIFICATION SCRIPT -->
 
   <script>
     const approvalKey = "reaperBioLabsAgeApproved";
