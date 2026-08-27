@@ -435,9 +435,56 @@
         #020303;
     }
 
+
+    /*
+      NEW DESKTOP SIDE FADE
+
+      This sits above the hero artwork
+      but below the HUD and title.
+    */
+
+    header::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      z-index: 2;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          to right,
+
+          #020303 0%,
+
+          rgba(2,3,3,.92) 4%,
+
+          rgba(2,3,3,.62) 9%,
+
+          rgba(2,3,3,.26) 14%,
+
+          transparent 20%,
+
+          transparent 80%,
+
+          rgba(2,3,3,.26) 86%,
+
+          rgba(2,3,3,.62) 91%,
+
+          rgba(2,3,3,.92) 96%,
+
+          #020303 100%
+        );
+    }
+
+
     .hero-grid {
       position: absolute;
       inset: 0;
+
+      z-index: 0;
 
       opacity: .14;
 
@@ -465,8 +512,13 @@
         );
     }
 
+
+    /* LOCKED DESKTOP OPTICAL CENTER */
+
     .hero-art {
       position: absolute;
+
+      z-index: 1;
 
       top: -5px;
 
@@ -517,6 +569,8 @@
       position: absolute;
       inset: 0;
 
+      z-index: 2;
+
       background:
         radial-gradient(
           circle at center,
@@ -525,10 +579,14 @@
           rgba(2,3,3,.25) 70%,
           #020303 100%
         );
+
+      pointer-events: none;
     }
 
     .hud {
       position: absolute;
+
+      z-index: 3;
 
       top: 35px;
       left: 50%;
@@ -588,6 +646,8 @@
 
     .scan-line {
       position: absolute;
+
+      z-index: 4;
 
       left: 50%;
       top: 65px;
@@ -1552,6 +1612,16 @@
 
       .mobile-menu {
         top: 58px;
+      }
+
+
+      /*
+        IMPORTANT:
+        desktop side fade is OFF on mobile.
+      */
+
+      header::before {
+        display: none;
       }
 
 
