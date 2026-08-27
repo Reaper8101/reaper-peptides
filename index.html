@@ -56,6 +56,8 @@
       color: var(--white);
 
       line-height: 1.6;
+
+      overflow-x: hidden;
     }
 
     body.locked {
@@ -85,8 +87,9 @@
     .science-layer {
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       pointer-events: none;
+      overflow: hidden;
     }
 
     .hex-field {
@@ -115,6 +118,265 @@
 
       background-size:
         76px 132px;
+    }
+
+    /* =========================================
+       BIOTECH DECORATIVE LAYER
+    ========================================== */
+
+    .bio-decoration {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .dna-helix {
+      position: absolute;
+
+      width: 105px;
+      height: 390px;
+
+      opacity: .13;
+    }
+
+    .dna-helix.left-one {
+      left: 1.5%;
+      top: 950px;
+      transform: rotate(-7deg);
+    }
+
+    .dna-helix.right-one {
+      right: 1%;
+      top: 1780px;
+      transform: rotate(8deg);
+    }
+
+    .dna-helix.left-two {
+      left: 2%;
+      top: 2840px;
+      transform: rotate(4deg);
+      opacity: .09;
+    }
+
+    .dna-rail {
+      position: absolute;
+
+      width: 3px;
+      height: 100%;
+
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0 11px,
+          rgba(255,45,45,.9) 11px 20px,
+          transparent 20px 34px
+        );
+    }
+
+    .dna-rail.one {
+      left: 24px;
+      transform: skewY(17deg);
+    }
+
+    .dna-rail.two {
+      right: 24px;
+      transform: skewY(-17deg);
+    }
+
+    .dna-bar {
+      position: absolute;
+
+      left: 24px;
+
+      width: 56px;
+      height: 1px;
+
+      background:
+        rgba(255,45,45,.46);
+    }
+
+    .dna-bar.b1 { top: 40px; }
+    .dna-bar.b2 { top: 88px; }
+    .dna-bar.b3 { top: 136px; }
+    .dna-bar.b4 { top: 184px; }
+    .dna-bar.b5 { top: 232px; }
+    .dna-bar.b6 { top: 280px; }
+    .dna-bar.b7 { top: 328px; }
+
+    .bio-molecule {
+      position: absolute;
+
+      width: 90px;
+      height: 90px;
+
+      opacity: .14;
+    }
+
+    .bio-molecule.m1 {
+      right: 7%;
+      top: 1180px;
+      transform: rotate(22deg);
+    }
+
+    .bio-molecule.m2 {
+      left: 6%;
+      top: 2300px;
+      transform: rotate(-18deg);
+    }
+
+    .bio-molecule.m3 {
+      right: 10%;
+      top: 3370px;
+      transform: rotate(39deg);
+    }
+
+    .bio-molecule .atom {
+      position: absolute;
+
+      width: 12px;
+      height: 12px;
+
+      border:
+        1px solid #ff3232;
+
+      border-radius: 50%;
+
+      background:
+        rgba(5,5,5,.7);
+
+      box-shadow:
+        0 0 8px rgba(255,0,0,.18);
+    }
+
+    .bio-molecule .a1 {
+      left: 38px;
+      top: 0;
+    }
+
+    .bio-molecule .a2 {
+      left: 0;
+      bottom: 8px;
+    }
+
+    .bio-molecule .a3 {
+      right: 0;
+      bottom: 8px;
+    }
+
+    .bio-molecule::before,
+    .bio-molecule::after {
+      content: "";
+
+      position: absolute;
+
+      top: 48px;
+
+      width: 54px;
+      height: 1px;
+
+      background:
+        rgba(255,40,40,.7);
+    }
+
+    .bio-molecule::before {
+      left: 2px;
+      transform: rotate(-45deg);
+    }
+
+    .bio-molecule::after {
+      right: 2px;
+      transform: rotate(45deg);
+    }
+
+    .bio-readout {
+      position: absolute;
+
+      color:
+        rgba(255,255,255,.14);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: .62rem;
+
+      letter-spacing: 1.7px;
+
+      line-height: 1.55;
+
+      text-transform: uppercase;
+    }
+
+    .bio-readout strong {
+      color:
+        rgba(255,45,45,.3);
+    }
+
+    .bio-readout.r1 {
+      right: 4%;
+      top: 1430px;
+      text-align: right;
+    }
+
+    .bio-readout.r2 {
+      left: 3%;
+      top: 2600px;
+    }
+
+    .bio-readout.r3 {
+      right: 4%;
+      top: 3640px;
+      text-align: right;
+    }
+
+    .crosshair {
+      position: absolute;
+
+      width: 72px;
+      height: 72px;
+
+      border:
+        1px solid rgba(255,40,40,.12);
+
+      border-radius: 50%;
+
+      opacity: .7;
+    }
+
+    .crosshair::before,
+    .crosshair::after {
+      content: "";
+
+      position: absolute;
+
+      background:
+        rgba(255,40,40,.18);
+    }
+
+    .crosshair::before {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+    }
+
+    .crosshair::after {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+    }
+
+    .crosshair.c1 {
+      left: 9%;
+      top: 1650px;
+    }
+
+    .crosshair.c2 {
+      right: 8%;
+      top: 3060px;
     }
 
     /* =========================================
@@ -522,12 +784,17 @@
         );
     }
 
+    /*
+       DESKTOP HERO OPTICAL CENTER:
+       nudged slightly left
+    */
+
     .hero-art {
       position: absolute;
 
       top: -5px;
 
-      left: 50%;
+      left: 49%;
 
       transform:
         translateX(-50%);
@@ -926,6 +1193,11 @@
        SECTIONS
     ========================================== */
 
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
     section {
       max-width: 1250px;
 
@@ -954,6 +1226,9 @@
         1px solid #6c0000;
 
       border-radius: 10px;
+
+      box-shadow:
+        0 0 50px rgba(80,0,0,.04);
     }
 
     .section-shell::before {
@@ -976,6 +1251,23 @@
       font-size: .68rem;
 
       letter-spacing: 2px;
+    }
+
+    .section-shell::after {
+      content: "";
+
+      position: absolute;
+
+      left: -50px;
+      bottom: -50px;
+
+      width: 140px;
+      height: 140px;
+
+      border:
+        1px solid rgba(255,35,35,.06);
+
+      border-radius: 50%;
     }
 
     .section-label {
@@ -1090,6 +1382,28 @@
       border-radius: 7px;
 
       transition: .25s;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 75px;
+      height: 75px;
+
+      right: -40px;
+      top: -40px;
+
+      border:
+        1px solid rgba(255,0,0,.1);
+
+      transform:
+        rotate(45deg);
     }
 
     .card:hover {
@@ -1486,7 +1800,15 @@
     .about {
       max-width: none;
 
-      background: #070808;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(120,0,0,.03),
+          transparent 30%,
+          transparent 70%,
+          rgba(120,0,0,.03)
+        ),
+        #070808;
 
       border-top:
         1px solid #1e1e1e;
@@ -1605,6 +1927,10 @@
 
       border-top:
         1px solid #222;
+
+      position: relative;
+
+      z-index: 1;
     }
 
     footer strong {
@@ -1670,6 +1996,14 @@
           repeat(2,1fr);
       }
 
+      .dna-helix {
+        opacity: .08;
+      }
+
+      .bio-readout {
+        opacity: .6;
+      }
+
     }
 
     /* =========================================
@@ -1706,6 +2040,55 @@
         top: 58px;
       }
 
+      /* MOBILE SCIENCE DECOR */
+
+      .dna-helix.right-one,
+      .dna-helix.left-two,
+      .bio-molecule.m2,
+      .bio-readout.r2,
+      .bio-readout.r3,
+      .crosshair.c2 {
+        display: none;
+      }
+
+      .dna-helix.left-one {
+        width: 70px;
+        height: 260px;
+        left: -19px;
+        top: 720px;
+        opacity: .12;
+      }
+
+      .bio-molecule.m1 {
+        width: 65px;
+        height: 65px;
+        right: -12px;
+        top: 1250px;
+        opacity: .13;
+      }
+
+      .bio-molecule.m3 {
+        width: 60px;
+        height: 60px;
+        right: -10px;
+        top: 2300px;
+        opacity: .1;
+      }
+
+      .bio-readout.r1 {
+        right: 5px;
+        top: 1560px;
+        font-size: .48rem;
+        opacity: .6;
+      }
+
+      .crosshair.c1 {
+        left: -18px;
+        top: 1960px;
+        width: 52px;
+        height: 52px;
+      }
+
       /* MOBILE HERO */
 
       header {
@@ -1726,18 +2109,21 @@
         opacity: .08;
       }
 
-      /* TIGHTER MOBILE CHARACTER CROP */
+      /*
+         MOBILE ALIGNMENT REMAINS
+         THE SUCCESSFUL 48.5%
+      */
 
       .hero-art {
-  position: absolute;
+        position: absolute;
 
-  top: -8px;
+        top: -8px;
 
-  left: 48.5%;
+        left: 48.5%;
 
-  transform:
-    translateX(-50%);
-        
+        transform:
+          translateX(-50%);
+
         width: 100%;
 
         max-width: 440px;
@@ -1840,16 +2226,9 @@
         width: 82%;
       }
 
-      /* REMOVE MICRO TEXT ABOVE TITLE */
-
       .hero-tech {
         display: none;
       }
-
-      /*
-         TITLE NOW OVERLAPS
-         THE BOTTOM OF THE ART
-      */
 
       .hero {
         position: absolute;
@@ -2012,8 +2391,6 @@
         font-size: .48rem;
       }
 
-      /* MOBILE 2-COLUMN COMPOUND GRID */
-
       .products {
         grid-template-columns:
           repeat(
@@ -2065,8 +2442,6 @@
 
         letter-spacing: .45px;
       }
-
-      /* MOBILE DETAILS GRID */
 
       .details-grid {
         grid-template-columns:
@@ -2258,7 +2633,99 @@
   </div>
 
 
-  <!-- AGE VERIFICATION -->
+  <!-- =========================================
+       DECORATIVE BIOTECH BACKGROUND
+  ========================================== -->
+
+  <div class="bio-decoration">
+
+    <div class="dna-helix left-one">
+      <div class="dna-rail one"></div>
+      <div class="dna-rail two"></div>
+      <div class="dna-bar b1"></div>
+      <div class="dna-bar b2"></div>
+      <div class="dna-bar b3"></div>
+      <div class="dna-bar b4"></div>
+      <div class="dna-bar b5"></div>
+      <div class="dna-bar b6"></div>
+      <div class="dna-bar b7"></div>
+    </div>
+
+    <div class="dna-helix right-one">
+      <div class="dna-rail one"></div>
+      <div class="dna-rail two"></div>
+      <div class="dna-bar b1"></div>
+      <div class="dna-bar b2"></div>
+      <div class="dna-bar b3"></div>
+      <div class="dna-bar b4"></div>
+      <div class="dna-bar b5"></div>
+      <div class="dna-bar b6"></div>
+      <div class="dna-bar b7"></div>
+    </div>
+
+    <div class="dna-helix left-two">
+      <div class="dna-rail one"></div>
+      <div class="dna-rail two"></div>
+      <div class="dna-bar b1"></div>
+      <div class="dna-bar b2"></div>
+      <div class="dna-bar b3"></div>
+      <div class="dna-bar b4"></div>
+      <div class="dna-bar b5"></div>
+      <div class="dna-bar b6"></div>
+      <div class="dna-bar b7"></div>
+    </div>
+
+
+    <div class="bio-molecule m1">
+      <span class="atom a1"></span>
+      <span class="atom a2"></span>
+      <span class="atom a3"></span>
+    </div>
+
+    <div class="bio-molecule m2">
+      <span class="atom a1"></span>
+      <span class="atom a2"></span>
+      <span class="atom a3"></span>
+    </div>
+
+    <div class="bio-molecule m3">
+      <span class="atom a1"></span>
+      <span class="atom a2"></span>
+      <span class="atom a3"></span>
+    </div>
+
+
+    <div class="bio-readout r1">
+      <strong>RBL // SEQ-03</strong><br>
+      CELLULAR ARRAY<br>
+      MOLECULAR INDEX<br>
+      STATUS: ACTIVE
+    </div>
+
+    <div class="bio-readout r2">
+      <strong>RBL // MTX-17</strong><br>
+      MITOCHONDRIAL NODE<br>
+      DATA STREAM<br>
+      MATRIX ONLINE
+    </div>
+
+    <div class="bio-readout r3">
+      <strong>RBL // BIO-09</strong><br>
+      PEPTIDE SYSTEM<br>
+      SIGNAL LOCKED<br>
+      ANALYSIS ACTIVE
+    </div>
+
+
+    <div class="crosshair c1"></div>
+    <div class="crosshair c2"></div>
+
+  </div>
+
+
+  <!-- =========================================
+       AGE VERIFICATION
+  ========================================== -->
 
   <div id="ageGate">
 
@@ -2311,7 +2778,9 @@
   </div>
 
 
-  <!-- NAVIGATION -->
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
 
   <nav>
 
@@ -2342,45 +2811,18 @@
     id="mobileMenu"
   >
 
-    <a
-      href="#home"
-      onclick="closeMenu()"
-    >
-      Home
-    </a>
-
-    <a
-      href="#compounds"
-      onclick="closeMenu()"
-    >
-      Compounds
-    </a>
-
-    <a
-      href="#details"
-      onclick="closeMenu()"
-    >
-      Details
-    </a>
-
-    <a
-      href="#about"
-      onclick="closeMenu()"
-    >
-      About
-    </a>
-
-    <a
-      href="#contact"
-      onclick="closeMenu()"
-    >
-      Contact
-    </a>
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#compounds" onclick="closeMenu()">Compounds</a>
+    <a href="#details" onclick="closeMenu()">Details</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
 
   </div>
 
 
-  <!-- HERO -->
+  <!-- =========================================
+       HERO
+  ========================================== -->
 
   <header id="home">
 
@@ -2447,766 +2889,622 @@
   </header>
 
 
-  <!-- COMPOUNDS -->
-
-  <section id="compounds">
-
-    <div class="section-shell">
-
-      <div class="section-label">
-        Research Information Only
-      </div>
-
-      <h2>
-        Compound Information
-      </h2>
-
-      <div class="data-strip">
-        <span>RBL-CELLULAR</span>
-        <span>MITOCHONDRIAL</span>
-        <span>METABOLIC</span>
-        <span>PEPTIDE RESEARCH</span>
-      </div>
-
-      <p class="section-intro">
-        Educational information covering peptides,
-        metabolic compounds, mitochondrial research
-        and emerging areas of biomedical science.
-      </p>
+  <main>
 
 
-      <div class="products">
+    <!-- =========================================
+         COMPOUNDS
+    ========================================== -->
 
-        <div class="card">
+    <section id="compounds">
 
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-          </div>
+      <div class="section-shell">
 
-          <h3>
-            Tirzepatide
-          </h3>
-
-          <p>
-            A dual GIP and GLP-1 receptor agonist studied extensively
-            in metabolic and glucose-regulation research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
-          </div>
-
+        <div class="section-label">
+          Research Information Only
         </div>
 
+        <h2>
+          Compound Information
+        </h2>
 
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-          </div>
-
-          <h3>
-            Retatrutide
-          </h3>
-
-          <p>
-            Investigated for activity involving GLP-1, GIP
-            and glucagon receptor pathways in metabolic research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
-          </div>
-
+        <div class="data-strip">
+          <span>RBL-CELLULAR</span>
+          <span>MITOCHONDRIAL</span>
+          <span>METABOLIC</span>
+          <span>PEPTIDE RESEARCH</span>
         </div>
 
+        <p class="section-intro">
+          Educational information covering peptides,
+          metabolic compounds, mitochondrial research
+          and emerging areas of biomedical science.
+        </p>
 
-        <div class="card">
 
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
+        <div class="products">
+
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>Tirzepatide</h3>
+            <p>
+              A dual GIP and GLP-1 receptor agonist studied extensively
+              in metabolic and glucose-regulation research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-          <h3>
-            KLOW
-          </h3>
 
-          <p>
-            A peptide blend commonly discussed in relation
-            to tissue repair, collagen and recovery research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>Retatrutide</h3>
+            <p>
+              Investigated for activity involving GLP-1, GIP
+              and glucagon receptor pathways in metabolic research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-        </div>
 
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>KLOW</h3>
+            <p>
+              A peptide blend commonly discussed in relation
+              to tissue repair, collagen and recovery research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-          <h3>
-            Epitalon
-          </h3>
 
-          <p>
-            A synthetic peptide studied in aging biology,
-            cellular regulation and telomere-related research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>Epitalon</h3>
+            <p>
+              A synthetic peptide studied in aging biology,
+              cellular regulation and telomere-related research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-        </div>
 
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>SS-31</h3>
+            <p>
+              A mitochondria-targeted peptide investigated
+              for mitochondrial function and cellular energy research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-          <h3>
-            SS-31
-          </h3>
 
-          <p>
-            A mitochondria-targeted peptide investigated
-            for mitochondrial function and cellular energy research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>NAD+</h3>
+            <p>
+              A naturally occurring coenzyme involved
+              in cellular energy metabolism and redox processes.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-        </div>
 
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>MOTS-C</h3>
+            <p>
+              A mitochondria-derived peptide investigated
+              for cellular metabolism and metabolic signaling.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-          <h3>
-            NAD+
-          </h3>
 
-          <p>
-            A naturally occurring coenzyme involved
-            in cellular energy metabolism and redox processes.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>CJC-1295 Without DAC</h3>
+            <p>
+              A growth hormone-releasing hormone analog
+              investigated for growth-hormone signaling research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-        </div>
 
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>Ipamorelin</h3>
+            <p>
+              A growth hormone secretagogue investigated
+              for interactions involving ghrelin receptors.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
-          <h3>
-            MOTS-C
-          </h3>
 
-          <p>
-            A mitochondria-derived peptide investigated
-            for cellular metabolism and metabolic signaling.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-          </div>
-
-          <h3>
-            CJC-1295 Without DAC
-          </h3>
-
-          <p>
-            A growth hormone-releasing hormone analog
-            investigated for growth-hormone signaling research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-          </div>
-
-          <h3>
-            Ipamorelin
-          </h3>
-
-          <p>
-            A growth hormone secretagogue investigated
-            for interactions involving ghrelin receptors.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="molecule">
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-          </div>
-
-          <h3>
-            Pinealon
-          </h3>
-
-          <p>
-            A short peptide studied primarily in experimental
-            neuroscience and cellular-regulation research.
-          </p>
-
-          <div class="card-label">
-            Research Information Only
+          <div class="card">
+            <div class="molecule">
+              <span class="node n1"></span>
+              <span class="node n2"></span>
+              <span class="node n3"></span>
+            </div>
+            <h3>Pinealon</h3>
+            <p>
+              A short peptide studied primarily in experimental
+              neuroscience and cellular-regulation research.
+            </p>
+            <div class="card-label">
+              Research Information Only
+            </div>
           </div>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- DETAILS -->
+    <!-- =========================================
+         DETAILS
+    ========================================== -->
 
-  <section id="details">
+    <section id="details">
 
-    <div class="section-shell">
+      <div class="section-shell">
 
-      <div class="section-label">
-        Research Compound Details
-      </div>
+        <div class="section-label">
+          Research Compound Details
+        </div>
 
-      <h2>
-        Compound Details & Lot Information
-      </h2>
+        <h2>
+          Compound Details & Lot Information
+        </h2>
 
-      <div class="data-strip">
-        <span>SPECIMEN ID</span>
-        <span>VIAL FORMAT</span>
-        <span>REFERENCE DATA</span>
-      </div>
+        <div class="data-strip">
+          <span>SPECIMEN ID</span>
+          <span>VIAL FORMAT</span>
+          <span>REFERENCE DATA</span>
+        </div>
 
-      <p class="section-intro">
-        Compound name, vial amount and corresponding identifier.
-      </p>
-
-
-      <div class="details-grid">
+        <p class="section-intro">
+          Compound name, vial amount and corresponding identifier.
+        </p>
 
 
-        <div class="detail-card">
+        <div class="details-grid">
 
-          <div class="detail-name">
-            Tirzepatide
-          </div>
 
-          <div class="detail-mg">
-            15 mg
-          </div>
+          <div class="detail-card">
 
-          <div class="detail-id">
-            45
-          </div>
+            <div class="detail-name">
+              Tirzepatide
+            </div>
 
-          <div class="vial">
+            <div class="detail-mg">
+              15 mg
+            </div>
 
-            <div class="vial-label">
+            <div class="detail-id">
+              45
+            </div>
 
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              Retatrutide
+            </div>
 
-          <div class="detail-name">
-            Retatrutide
-          </div>
+            <div class="strength-tabs">
 
-          <div class="strength-tabs">
+              <button
+                class="strength-tab active"
+                onclick="changeReta(this,'10 mg','60')"
+              >
+                10 mg
+              </button>
 
-            <button
-              class="strength-tab active"
-              onclick="changeReta(this,'10 mg','60')"
+              <button
+                class="strength-tab"
+                onclick="changeReta(this,'30 mg','110')"
+              >
+                30 mg
+              </button>
+
+            </div>
+
+            <div
+              class="detail-mg"
+              id="retaMg"
             >
               10 mg
-            </button>
+            </div>
 
-            <button
-              class="strength-tab"
-              onclick="changeReta(this,'30 mg','110')"
+            <div
+              class="detail-id"
+              id="retaLot"
             >
-              30 mg
-            </button>
+              60
+            </div>
 
-          </div>
-
-          <div
-            class="detail-mg"
-            id="retaMg"
-          >
-            10 mg
-          </div>
-
-          <div
-            class="detail-id"
-            id="retaLot"
-          >
-            60
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              KLOW
+            </div>
 
-          <div class="detail-name">
-            KLOW
-          </div>
+            <div class="detail-mg">
+              80 mg
+            </div>
 
-          <div class="detail-mg">
-            80 mg
-          </div>
+            <div class="detail-id">
+              100
+            </div>
 
-          <div class="detail-id">
-            100
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              Epitalon
+            </div>
 
-          <div class="detail-name">
-            Epitalon
-          </div>
+            <div class="detail-mg">
+              40 mg
+            </div>
 
-          <div class="detail-mg">
-            40 mg
-          </div>
+            <div class="detail-id">
+              80
+            </div>
 
-          <div class="detail-id">
-            80
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              SS-31
+            </div>
 
-          <div class="detail-name">
-            SS-31
-          </div>
+            <div class="detail-mg">
+              45 mg
+            </div>
 
-          <div class="detail-mg">
-            45 mg
-          </div>
+            <div class="detail-id">
+              120
+            </div>
 
-          <div class="detail-id">
-            120
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              NAD+
+            </div>
 
-          <div class="detail-name">
-            NAD+
-          </div>
+            <div class="detail-mg">
+              500 mg
+            </div>
 
-          <div class="detail-mg">
-            500 mg
-          </div>
+            <div class="detail-id">
+              40
+            </div>
 
-          <div class="detail-id">
-            40
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              MOTS-C
+            </div>
 
-          <div class="detail-name">
-            MOTS-C
-          </div>
+            <div class="detail-mg">
+              10 mg
+            </div>
 
-          <div class="detail-mg">
-            10 mg
-          </div>
+            <div class="detail-id">
+              40
+            </div>
 
-          <div class="detail-id">
-            40
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              CJC-1295 Without DAC
+            </div>
 
-          <div class="detail-name">
-            CJC-1295 Without DAC
-          </div>
+            <div class="detail-mg">
+              5 mg
+            </div>
 
-          <div class="detail-mg">
-            5 mg
-          </div>
+            <div class="detail-id">
+              45
+            </div>
 
-          <div class="detail-id">
-            45
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              Ipamorelin
+            </div>
 
-          <div class="detail-name">
-            Ipamorelin
-          </div>
+            <div class="detail-mg">
+              5 mg
+            </div>
 
-          <div class="detail-mg">
-            5 mg
-          </div>
+            <div class="detail-id">
+              30
+            </div>
 
-          <div class="detail-id">
-            30
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
-        </div>
 
+          <div class="detail-card">
 
-        <div class="detail-card">
+            <div class="detail-name">
+              Pinealon
+            </div>
 
-          <div class="detail-name">
-            Pinealon
-          </div>
+            <div class="detail-mg">
+              10 mg
+            </div>
 
-          <div class="detail-mg">
-            10 mg
-          </div>
+            <div class="detail-id">
+              50
+            </div>
 
-          <div class="detail-id">
-            50
-          </div>
-
-          <div class="vial">
-
-            <div class="vial-label">
-
-              <strong>
-                REAPER BIOLABS
-              </strong>
-
-              <small>
-                RESEARCH USE
-              </small>
-
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
 
           </div>
 
+
         </div>
 
+
+        <p class="lot-note">
+          For research identification and informational purposes only.
+        </p>
 
       </div>
 
-
-      <p class="lot-note">
-        For research identification and informational purposes only.
-      </p>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- ABOUT -->
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
 
-  <section
-    id="about"
-    class="about"
-  >
+    <section
+      id="about"
+      class="about"
+    >
 
-    <div class="about-inner">
+      <div class="about-inner">
+
+        <div class="section-label">
+          Research & Educational Content
+        </div>
+
+        <h2>
+          About Reaper BioLabs
+        </h2>
+
+        <p>
+          Reaper BioLabs is an Albuquerque-based educational resource
+          focused on peptide science, metabolic research,
+          cellular biology and emerging biomedical compounds.
+        </p>
+
+        <p>
+          Content presented by Reaper BioLabs is intended
+          for research and educational purposes only.
+        </p>
+
+        <div class="notice">
+
+          <strong>
+            FOR RESEARCH PURPOSES ONLY.
+          </strong>
+
+          <br><br>
+
+          Information provided on this website is educational
+          in nature and is not medical advice.
+
+          <br><br>
+
+          Compounds discussed may have different regulatory statuses,
+          approved uses and safety profiles.
+
+          <br><br>
+
+          Not intended for human consumption or self-treatment.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section
+      id="contact"
+      class="contact"
+    >
 
       <div class="section-label">
-        Research & Educational Content
+        Research & Educational Inquiries
       </div>
 
       <h2>
-        About Reaper BioLabs
+        Contact Reaper BioLabs
       </h2>
 
       <p>
-        Reaper BioLabs is an Albuquerque-based educational resource
-        focused on peptide science, metabolic research,
-        cellular biology and emerging biomedical compounds.
+        Questions about the information presented on this site?
+        Get in touch.
       </p>
 
-      <p>
-        Content presented by Reaper BioLabs is intended
-        for research and educational purposes only.
-      </p>
+      <a
+        class="email-button"
+        href="mailto:reaperpeps@gmail.com"
+      >
+        ✉ EMAIL US
+      </a>
 
-      <div class="notice">
+      <span class="email-address">
+        reaperpeps@gmail.com
+      </span>
 
-        <strong>
-          FOR RESEARCH PURPOSES ONLY.
-        </strong>
-
-        <br><br>
-
-        Information provided on this website is educational
-        in nature and is not medical advice.
-
-        <br><br>
-
-        Compounds discussed may have different regulatory statuses,
-        approved uses and safety profiles.
-
-        <br><br>
-
-        Not intended for human consumption or self-treatment.
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- CONTACT -->
-
-  <section
-    id="contact"
-    class="contact"
-  >
-
-    <div class="section-label">
-      Research & Educational Inquiries
-    </div>
-
-    <h2>
-      Contact Reaper BioLabs
-    </h2>
-
-    <p>
-      Questions about the information presented on this site?
-      Get in touch.
-    </p>
-
-    <a
-      class="email-button"
-      href="mailto:reaperpeps@gmail.com"
-    >
-      ✉ EMAIL US
-    </a>
-
-    <span class="email-address">
-      reaperpeps@gmail.com
-    </span>
-
-  </section>
+  </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
   <footer>
 
@@ -3236,6 +3534,10 @@
 
   </footer>
 
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
 
   <script>
 
