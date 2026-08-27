@@ -465,9 +465,6 @@
         );
     }
 
-
-    /* DESKTOP HERO OPTICAL CENTER */
-
     .hero-art {
       position: absolute;
 
@@ -496,28 +493,22 @@
       -webkit-mask-image:
         linear-gradient(
           to bottom,
-
           black 0%,
           black 58%,
-
           rgba(0,0,0,.92) 67%,
           rgba(0,0,0,.55) 79%,
           rgba(0,0,0,.15) 91%,
-
           transparent 100%
         );
 
       mask-image:
         linear-gradient(
           to bottom,
-
           black 0%,
           black 58%,
-
           rgba(0,0,0,.92) 67%,
           rgba(0,0,0,.55) 79%,
           rgba(0,0,0,.15) 91%,
-
           transparent 100%
         );
     }
@@ -529,7 +520,6 @@
       background:
         radial-gradient(
           circle at center,
-
           transparent 0%,
           rgba(2,3,3,.03) 40%,
           rgba(2,3,3,.25) 70%,
@@ -587,7 +577,6 @@
     }
 
     @keyframes rotateHud {
-
       from {
         transform: rotate(0deg);
       }
@@ -595,7 +584,6 @@
       to {
         transform: rotate(360deg);
       }
-
     }
 
     .scan-line {
@@ -615,7 +603,6 @@
       background:
         linear-gradient(
           90deg,
-
           transparent,
           rgba(255,20,20,.95),
           transparent
@@ -629,7 +616,6 @@
     }
 
     @keyframes scan {
-
       0% {
         transform:
           translateX(-50%)
@@ -653,7 +639,6 @@
 
         opacity: 0;
       }
-
     }
 
     .hero {
@@ -1965,22 +1950,67 @@
         left: 4px;
       }
 
+
+      /* MOBILE VIAL LABEL FIX */
+
       .vial-label {
-        top: 24px;
+        top: 22px;
 
-        height: 34px;
+        height: 38px;
 
-        left: 4px;
-        right: 4px;
+        left: 3px;
+        right: 3px;
+
+        padding: 2px;
+
+        overflow: hidden;
+
+        line-height: 1;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .vial-label strong {
-        font-size: .42rem;
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        color: #ff2c2c;
+
+        font-size: .36rem;
+        line-height: 1;
+
+        letter-spacing: .15px;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
       }
 
       .vial-label small {
-        font-size: .32rem;
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 2px;
+
+        color: #888;
+
+        font-size: .28rem;
+        line-height: 1;
+
+        letter-spacing: .15px;
+
+        white-space: normal;
       }
+
 
       .lot-note {
         margin-top: 15px;
