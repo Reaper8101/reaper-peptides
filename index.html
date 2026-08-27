@@ -20,13 +20,11 @@
     :root {
       --bg: #020303;
       --panel: #080909;
-      --panel2: #0b0c0c;
       --red: #df1111;
       --red-bright: #ff3333;
       --red-dark: #5e0000;
       --white: #f2f2f2;
       --muted: #9b9b9b;
-      --line: rgba(255,255,255,.08);
     }
 
     * {
@@ -46,11 +44,7 @@
         linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px),
         radial-gradient(circle at top, rgba(170,0,0,.12), transparent 30%),
         #020303;
-      background-size:
-        42px 42px,
-        42px 42px,
-        auto,
-        auto;
+      background-size: 42px 42px, 42px 42px, auto, auto;
       color: var(--white);
       line-height: 1.6;
     }
@@ -72,65 +66,27 @@
     }
 
     /* =====================================
-       SCIENCE BACKGROUND ELEMENTS
+       BACKGROUND SCIENCE LAYER
     ===================================== */
 
     .science-layer {
       position: fixed;
       inset: 0;
-      pointer-events: none;
       z-index: -1;
+      pointer-events: none;
       overflow: hidden;
     }
 
     .hex-field {
       position: absolute;
       inset: 0;
-      opacity: .08;
+      opacity: .065;
+
       background-image:
-        linear-gradient(30deg, rgba(255,0,0,.22) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.22) 87.5%, rgba(255,0,0,.22)),
-        linear-gradient(150deg, rgba(255,0,0,.22) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.22) 87.5%, rgba(255,0,0,.22)),
-        linear-gradient(30deg, rgba(255,0,0,.22) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.22) 87.5%, rgba(255,0,0,.22)),
-        linear-gradient(150deg, rgba(255,0,0,.22) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.22) 87.5%, rgba(255,0,0,.22)),
-        linear-gradient(60deg, rgba(255,0,0,.14) 25%, transparent 25.5%, transparent 75%, rgba(255,0,0,.14) 75%);
-      background-size: 72px 126px;
-      background-position: 0 0, 0 0, 36px 63px, 36px 63px, 0 0;
-    }
+        linear-gradient(30deg, rgba(255,0,0,.25) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.25) 87.5%),
+        linear-gradient(150deg, rgba(255,0,0,.25) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.25) 87.5%);
 
-    .dna {
-      position: absolute;
-      width: 320px;
-      height: 720px;
-      right: -70px;
-      top: 520px;
-      opacity: .13;
-      transform: rotate(8deg);
-    }
-
-    .dna::before,
-    .dna::after {
-      content: "";
-      position: absolute;
-      width: 4px;
-      height: 100%;
-      border-radius: 999px;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          transparent 0 14px,
-          rgba(255,45,45,.8) 14px 24px,
-          transparent 24px 39px
-        );
-    }
-
-    .dna::before {
-      left: 85px;
-      transform: skewY(18deg);
-    }
-
-    .dna::after {
-      right: 85px;
-      transform: skewY(-18deg);
+      background-size: 76px 132px;
     }
 
     /* =====================================
@@ -141,10 +97,13 @@
       position: fixed;
       inset: 0;
       z-index: 99999;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 24px;
+
       background:
         radial-gradient(circle at center, rgba(150,0,0,.26), transparent 55%),
         rgba(0,0,0,.985);
@@ -153,13 +112,18 @@
     .age-box {
       width: 100%;
       max-width: 470px;
+
       padding: 38px 30px;
+
       text-align: center;
+
       background:
         linear-gradient(145deg, rgba(14,15,15,.98), rgba(4,4,4,.98));
+
       border: 1px solid #303030;
       border-top: 4px solid var(--red);
       border-radius: 10px;
+
       box-shadow: 0 30px 100px rgba(0,0,0,.9);
     }
 
@@ -176,7 +140,6 @@
     .age-box h2 {
       margin-top: 18px;
       font-size: 1.6rem;
-      letter-spacing: 1px;
     }
 
     .age-box p {
@@ -186,46 +149,62 @@
 
     .age-badge {
       display: inline-block;
+
       margin-top: 18px;
       padding: 7px 13px;
+
       color: #ff4545;
+
       border: 1px solid #7d0000;
       border-radius: 4px;
+
       font-size: .76rem;
       font-weight: 700;
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
     }
 
     .age-box label {
       display: block;
+
       margin-top: 24px;
       margin-bottom: 8px;
+
       font-weight: 600;
     }
 
     .age-box input {
       width: 100%;
+
       padding: 14px;
+
       background: #050505;
       color: white;
+
       border: 1px solid #414141;
       border-radius: 5px;
+
       font-size: 1rem;
     }
 
     .age-button {
       width: 100%;
+
       margin-top: 20px;
       padding: 14px;
+
       background: #a60000;
       color: white;
+
       border: 1px solid #ff2d2d;
       border-radius: 5px;
+
       font-family: "Barlow Condensed", sans-serif;
       font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: 1.5px;
+
       cursor: pointer;
     }
 
@@ -250,13 +229,19 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+
       height: 68px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 5%;
+
       background: rgba(2,3,3,.95);
+
       border-bottom: 1px solid #202020;
+
       backdrop-filter: blur(12px);
     }
 
@@ -277,10 +262,13 @@
 
     .nav-links a {
       color: #ddd;
+
       text-decoration: none;
+
       font-family: "Barlow Condensed", sans-serif;
       font-size: .95rem;
       font-weight: 700;
+
       letter-spacing: 1.1px;
       text-transform: uppercase;
     }
@@ -290,71 +278,453 @@
     }
 
     /* =====================================
-       HERO
+       BIOTECH HERO
     ===================================== */
 
     header {
-      min-height: 88vh;
+      min-height: 94vh;
+
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       overflow: hidden;
-      padding: 100px 20px 80px;
+
+      padding: 90px 20px 80px;
+
       text-align: center;
+
       background:
-        radial-gradient(circle at center, rgba(160,0,0,.18), transparent 50%),
-        linear-gradient(to bottom, #060000, #020303);
+        radial-gradient(circle at center, rgba(180,0,0,.15), transparent 48%),
+        linear-gradient(to bottom, #050000, #020303 90%);
     }
+
+    /* HERO GRID */
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+
+      opacity: .16;
+
+      background:
+        linear-gradient(rgba(255,0,0,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,0,.12) 1px, transparent 1px);
+
+      background-size: 55px 55px;
+
+      mask-image:
+        radial-gradient(circle at center, black 10%, transparent 75%);
+    }
+
+    /* HERO IMAGE */
 
     .hero-art {
       position: absolute;
-      top: 0;
+
+      top: 10px;
       left: 50%;
+
       transform: translateX(-50%);
-      width: min(900px, 100%);
-      height: 470px;
+
+      width: min(880px, 100%);
+      height: 465px;
+
       object-fit: cover;
       object-position: center top;
-      opacity: .9;
-      filter: contrast(1.05) brightness(.8);
+
+      opacity: .88;
+
+      filter:
+        contrast(1.15)
+        brightness(.72)
+        saturate(.85);
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to bottom,
-          rgba(2,3,3,.02),
-          rgba(2,3,3,.18) 32%,
-          rgba(2,3,3,.8) 62%,
-          #020303 94%
+          rgba(2,3,3,.04),
+          rgba(2,3,3,.1) 30%,
+          rgba(2,3,3,.72) 58%,
+          #020303 88%
         );
     }
 
+    /* HUD CIRCLES */
+
+    .hud {
+      position: absolute;
+
+      top: 65px;
+      left: 50%;
+
+      width: 430px;
+      height: 430px;
+
+      transform: translateX(-50%);
+
+      border: 1px solid rgba(255,40,40,.24);
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 45px rgba(200,0,0,.08),
+        inset 0 0 50px rgba(200,0,0,.04);
+    }
+
+    .hud::before {
+      content: "";
+
+      position: absolute;
+      inset: 30px;
+
+      border: 1px dashed rgba(255,50,50,.23);
+      border-radius: 50%;
+
+      animation: rotateHud 35s linear infinite;
+    }
+
+    .hud::after {
+      content: "";
+
+      position: absolute;
+      inset: 75px;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      border-radius: 50%;
+    }
+
+    @keyframes rotateHud {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* HUD TICKS */
+
+    .hud-tick {
+      position: absolute;
+
+      width: 45px;
+      height: 2px;
+
+      background: rgba(255,40,40,.5);
+    }
+
+    .hud-tick.t1 {
+      top: 210px;
+      left: -22px;
+    }
+
+    .hud-tick.t2 {
+      top: 210px;
+      right: -22px;
+    }
+
+    .hud-tick.t3 {
+      left: 192px;
+      top: -1px;
+
+      transform: rotate(90deg);
+    }
+
+    .hud-tick.t4 {
+      left: 192px;
+      bottom: -1px;
+
+      transform: rotate(90deg);
+    }
+
+    /* SCAN LINE */
+
+    .scan-line {
+      position: absolute;
+
+      left: 50%;
+      top: 80px;
+
+      width: min(720px, 90%);
+      height: 1px;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,20,20,.9),
+          transparent
+        );
+
+      box-shadow:
+        0 0 12px rgba(255,0,0,.6);
+
+      animation:
+        scan 7s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+
+      0% {
+        transform:
+          translateX(-50%)
+          translateY(0);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .9;
+      }
+
+      75% {
+        opacity: .7;
+      }
+
+      100% {
+        transform:
+          translateX(-50%)
+          translateY(390px);
+        opacity: 0;
+      }
+
+    }
+
+    /* DNA ELEMENTS */
+
+    .hero-dna {
+      position: absolute;
+
+      width: 120px;
+      height: 360px;
+
+      top: 105px;
+
+      opacity: .22;
+    }
+
+    .hero-dna.left {
+      left: 7%;
+    }
+
+    .hero-dna.right {
+      right: 7%;
+      transform: scaleX(-1);
+    }
+
+    .dna-strand {
+      position: absolute;
+
+      width: 3px;
+      height: 100%;
+
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0 10px,
+          rgba(255,40,40,.8) 10px 19px,
+          transparent 19px 33px
+        );
+    }
+
+    .dna-strand.s1 {
+      left: 30px;
+      transform: skewY(16deg);
+    }
+
+    .dna-strand.s2 {
+      right: 30px;
+      transform: skewY(-16deg);
+    }
+
+    .dna-rung {
+      position: absolute;
+
+      left: 29px;
+
+      width: 60px;
+      height: 1px;
+
+      background:
+        rgba(255,40,40,.35);
+    }
+
+    .dna-rung.r1 { top: 55px; }
+    .dna-rung.r2 { top: 105px; }
+    .dna-rung.r3 { top: 155px; }
+    .dna-rung.r4 { top: 205px; }
+    .dna-rung.r5 { top: 255px; }
+    .dna-rung.r6 { top: 305px; }
+
+    /* TECH READOUTS */
+
+    .tech-readout {
+      position: absolute;
+
+      color: rgba(255,255,255,.38);
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .68rem;
+
+      letter-spacing: 1.7px;
+
+      text-transform: uppercase;
+
+      line-height: 1.6;
+    }
+
+    .tech-readout strong {
+      color: rgba(255,50,50,.65);
+      font-weight: 700;
+    }
+
+    .readout-left {
+      left: 5%;
+      bottom: 200px;
+      text-align: left;
+    }
+
+    .readout-right {
+      right: 5%;
+      bottom: 200px;
+      text-align: right;
+    }
+
+    /* MOLECULE CLUSTERS */
+
+    .hero-molecule {
+      position: absolute;
+
+      width: 85px;
+      height: 85px;
+
+      opacity: .3;
+    }
+
+    .hero-molecule.hm1 {
+      top: 95px;
+      left: 20%;
+    }
+
+    .hero-molecule.hm2 {
+      top: 165px;
+      right: 20%;
+
+      transform: rotate(45deg);
+    }
+
+    .hero-molecule span {
+      position: absolute;
+
+      width: 12px;
+      height: 12px;
+
+      border: 1px solid #ff2d2d;
+
+      border-radius: 50%;
+    }
+
+    .hero-molecule span:nth-child(1) {
+      top: 0;
+      left: 36px;
+    }
+
+    .hero-molecule span:nth-child(2) {
+      left: 0;
+      bottom: 8px;
+    }
+
+    .hero-molecule span:nth-child(3) {
+      right: 0;
+      bottom: 8px;
+    }
+
+    .hero-molecule::before,
+    .hero-molecule::after {
+      content: "";
+
+      position: absolute;
+
+      top: 46px;
+
+      width: 51px;
+      height: 1px;
+
+      background: #ff2d2d;
+    }
+
+    .hero-molecule::before {
+      left: 2px;
+      transform: rotate(-45deg);
+    }
+
+    .hero-molecule::after {
+      right: 2px;
+      transform: rotate(45deg);
+    }
+
+    /* HERO COPY */
+
     .hero {
       position: relative;
-      z-index: 5;
+
+      z-index: 10;
+
       max-width: 950px;
-      padding-top: 270px;
+
+      padding-top: 285px;
     }
 
     .hero-tech {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+
       color: #ff4141;
+
       font-family: "Barlow Condensed", sans-serif;
-      font-size: .85rem;
+      font-size: .82rem;
+
       font-weight: 700;
-      letter-spacing: 3px;
+
+      letter-spacing: 3.2px;
+
       text-transform: uppercase;
     }
 
+    .hero-tech::before,
+    .hero-tech::after {
+      content: "";
+
+      display: inline-block;
+
+      width: 30px;
+      height: 1px;
+
+      margin: 0 12px 3px;
+
+      background: #7d0000;
+    }
+
     .brand-text {
-      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-size:
+        clamp(3.7rem, 10vw, 8rem);
+
       line-height: .82;
+
       font-weight: 900;
+
       letter-spacing: 4px;
+
       text-shadow:
         0 0 25px rgba(0,0,0,.9),
         0 0 35px rgba(170,0,0,.18);
@@ -362,120 +732,249 @@
 
     .brand-text span {
       display: block;
+
       margin-top: 20px;
+
       color: var(--red);
+
       letter-spacing: 9px;
+    }
+
+    .hero-division {
+      margin-top: 27px;
+
+      color: #b3b3b3;
+
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: .9rem;
+
+      font-weight: 600;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+    .hero-division span {
+      color: #ff3d3d;
+    }
+
+    .hero-modes {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 16px;
+    }
+
+    .hero-mode {
+      padding: 6px 12px;
+
+      background:
+        rgba(110,0,0,.1);
+
+      border:
+        1px solid rgba(255,30,30,.25);
+
+      color: #a9a9a9;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: .72rem;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
     }
 
     .research-badge {
       display: inline-block;
-      margin-top: 28px;
+
+      margin-top: 25px;
+
       padding: 10px 18px;
+
       border: 1px solid var(--red);
+
       border-radius: 4px;
+
       color: #ff4141;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: 1rem;
+
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     .tagline {
-      margin-top: 22px;
+      margin-top: 19px;
+
       color: #ddd;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.2rem;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.15rem;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
     }
 
     .location {
-      margin-top: 10px;
+      margin-top: 9px;
+
       color: #ff3333;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.05rem;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1rem;
+
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     /* =====================================
-       SECTION SHELLS
+       SECTIONS
     ===================================== */
 
     section {
       max-width: 1250px;
+
       margin: auto;
+
       padding: 75px 20px;
     }
 
     .section-shell {
       position: relative;
+
       overflow: hidden;
+
       padding: 48px 30px;
+
       background:
-        linear-gradient(145deg, rgba(13,14,14,.98), rgba(4,5,5,.98));
+        linear-gradient(
+          145deg,
+          rgba(13,14,14,.98),
+          rgba(4,5,5,.98)
+        );
+
       border: 1px solid #6c0000;
+
       border-radius: 10px;
-      box-shadow:
-        inset 0 0 50px rgba(255,255,255,.01),
-        0 0 40px rgba(110,0,0,.05);
     }
 
     .section-shell::before {
       content: "RBL // RESEARCH INTERFACE";
+
       position: absolute;
+
       top: 12px;
       right: 18px;
+
       color: rgba(255,255,255,.14);
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: .68rem;
+
       letter-spacing: 2px;
     }
 
     .section-label {
       text-align: center;
+
       color: #ff3535;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: .9rem;
+
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     h2 {
       margin-top: 5px;
+
       text-align: center;
+
       font-size: 2.55rem;
+
       font-weight: 800;
+
       letter-spacing: 2px;
     }
 
     .section-intro {
       max-width: 820px;
+
       margin: 10px auto 40px;
+
       text-align: center;
+
       color: var(--muted);
     }
 
     .data-strip {
       display: flex;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 20px;
+
       margin: 0 auto 30px;
+
       color: #727272;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: .72rem;
+
       letter-spacing: 1.4px;
+
       text-transform: uppercase;
     }
 
     .data-strip span::before {
       content: "●";
+
       color: var(--red);
+
       margin-right: 7px;
+
       font-size: .55rem;
     }
 
@@ -485,54 +984,60 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
       gap: 14px;
     }
 
     .card {
       min-height: 275px;
+
       display: flex;
+
       flex-direction: column;
+
       padding: 24px 18px;
+
       background:
         linear-gradient(145deg, #0d0e0e, #050505);
-      border: 1px solid #5e0000;
-      border-radius: 7px;
-      transition: .25s;
-      position: relative;
-      overflow: hidden;
-    }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 90px;
-      height: 90px;
-      right: -35px;
-      top: -35px;
-      border: 1px solid rgba(255,0,0,.15);
-      transform: rotate(45deg);
+      border: 1px solid #5e0000;
+
+      border-radius: 7px;
+
+      transition: .25s;
     }
 
     .card:hover {
       transform: translateY(-4px);
+
       border-color: var(--red);
-      box-shadow: 0 12px 30px rgba(150,0,0,.14);
+
+      box-shadow:
+        0 12px 30px rgba(150,0,0,.14);
     }
 
     .molecule {
       width: 64px;
       height: 64px;
+
       margin: 0 auto 16px;
+
       position: relative;
     }
 
     .molecule .node {
       position: absolute;
+
       width: 12px;
       height: 12px;
+
       border: 2px solid var(--red-bright);
+
       border-radius: 50%;
+
       background: #050505;
     }
 
@@ -554,10 +1059,14 @@
     .molecule::before,
     .molecule::after {
       content: "";
+
       position: absolute;
+
       height: 2px;
       width: 38px;
+
       top: 34px;
+
       background: var(--red);
     }
 
@@ -573,136 +1082,185 @@
 
     .card h3 {
       text-align: center;
+
       font-size: 1.45rem;
+
       font-weight: 800;
-      letter-spacing: .5px;
     }
 
     .card p {
       flex: 1;
+
       margin-top: 10px;
+
       color: #b8b8b8;
+
       text-align: center;
+
       font-size: .88rem;
     }
 
     .card-label {
       margin-top: 18px;
+
       padding-top: 11px;
-      border-top: 1px solid #410000;
+
+      border-top:
+        1px solid #410000;
+
       text-align: center;
+
       color: #ff3030;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: .74rem;
+
       font-weight: 700;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
     }
 
     /* =====================================
-       DETAILS GRID
+       DETAILS
     ===================================== */
 
     .details-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(5, minmax(0,1fr));
+
       gap: 15px;
+
       margin-top: 40px;
     }
 
     .detail-card {
       height: 330px;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       padding: 18px 12px;
+
       text-align: center;
+
       background:
         radial-gradient(circle at bottom, rgba(160,0,0,.13), transparent 45%),
         linear-gradient(to bottom, #0d0e0e, #050505);
-      border: 1px solid #720000;
-      border-radius: 7px;
-      position: relative;
-      overflow: hidden;
-    }
 
-    .detail-card::before {
-      content: "RBL";
-      position: absolute;
-      top: 9px;
-      right: 10px;
-      color: rgba(255,255,255,.11);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: .68rem;
-      letter-spacing: 1.5px;
+      border: 1px solid #720000;
+
+      border-radius: 7px;
     }
 
     .detail-name {
       height: 48px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       font-size: 1.15rem;
+
       font-weight: 800;
-      letter-spacing: .4px;
     }
 
     .strength-tabs {
       height: 34px;
+
       display: flex;
+
       justify-content: center;
+
       gap: 5px;
+
       margin-top: 5px;
     }
 
     .strength-tab {
       padding: 5px 10px;
+
       background: #090909;
+
       color: #aaa;
+
       border: 1px solid #4d0000;
+
       border-radius: 4px;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-weight: 700;
+
       cursor: pointer;
     }
 
     .strength-tab.active {
       background: #a90000;
+
       color: white;
+
       border-color: #ff2727;
     }
 
     .detail-mg {
       height: 34px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       margin-top: 6px;
+
       color: #ff3434;
+
       font-size: 1.35rem;
+
       font-weight: 800;
     }
 
     .detail-id {
       height: 28px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       color: #eee;
+
       font-size: 1rem;
+
       font-weight: 600;
+
       letter-spacing: 1px;
     }
-
-    /* LAB VIAL */
 
     .vial {
       width: 76px;
       height: 132px;
+
       margin-top: 23px;
+
       position: relative;
+
       border: 2px solid #aaa;
+
       border-radius: 8px 8px 14px 14px;
+
       background:
         linear-gradient(
           to right,
@@ -711,57 +1269,81 @@
           rgba(255,255,255,.05) 70%,
           rgba(255,255,255,.14)
         );
-      box-shadow:
-        inset 0 0 14px rgba(255,255,255,.04),
-        0 0 28px rgba(180,0,0,.15);
     }
 
     .vial::before {
       content: "";
+
       position: absolute;
+
       width: 60px;
       height: 18px;
+
       top: -18px;
       left: 5px;
-      background: linear-gradient(#777, #191919);
+
+      background:
+        linear-gradient(#777, #191919);
+
       border: 2px solid #aaa;
-      border-radius: 7px 7px 3px 3px;
+
+      border-radius:
+        7px 7px 3px 3px;
     }
 
     .vial-label {
       position: absolute;
+
       left: 7px;
       right: 7px;
+
       top: 40px;
+
       height: 57px;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
       justify-content: center;
+
       background: #070707;
+
       border: 1px solid #640000;
-      color: #eee;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
     }
 
     .vial-label strong {
       color: #ff2c2c;
+
       font-size: .7rem;
+
       letter-spacing: 1.2px;
     }
 
     .vial-label small {
       color: #888;
+
       margin-top: 2px;
+
       font-size: .54rem;
+
       letter-spacing: 1px;
     }
 
     .lot-note {
       max-width: 760px;
+
       margin: 32px auto 0;
+
       color: #777;
+
       text-align: center;
+
       font-size: .82rem;
     }
 
@@ -771,31 +1353,44 @@
 
     .about {
       max-width: none;
-      background:
-        linear-gradient(90deg, rgba(120,0,0,.04), transparent 30%, transparent 70%, rgba(120,0,0,.04)),
-        #070808;
-      border-top: 1px solid #1e1e1e;
-      border-bottom: 1px solid #1e1e1e;
+
+      background: #070808;
+
+      border-top:
+        1px solid #1e1e1e;
+
+      border-bottom:
+        1px solid #1e1e1e;
     }
 
     .about-inner {
       max-width: 850px;
+
       margin: auto;
+
       text-align: center;
     }
 
     .about-inner p {
       margin-top: 20px;
+
       color: #bbb;
     }
 
     .notice {
       margin-top: 30px;
+
       padding: 20px;
+
       text-align: left;
+
       background: #0f1010;
-      border-left: 4px solid var(--red);
+
+      border-left:
+        4px solid var(--red);
+
       color: #999;
+
       font-size: .9rem;
     }
 
@@ -809,34 +1404,52 @@
 
     .contact {
       text-align: center;
+
       background:
         radial-gradient(circle at center, rgba(150,0,0,.12), transparent 55%);
     }
 
     .contact p {
       margin-top: 10px;
+
       color: var(--muted);
     }
 
     .email-button {
       display: inline-block;
+
       margin-top: 25px;
+
       padding: 15px 32px;
+
       text-decoration: none;
+
       background: #a90000;
+
       color: white;
+
       border: 1px solid #ff3030;
+
       border-radius: 5px;
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: 1.15rem;
+
       font-weight: 800;
+
       letter-spacing: 1.5px;
     }
 
     .email-address {
       display: block;
+
       margin-top: 14px;
+
       color: #777;
+
       font-size: .88rem;
     }
 
@@ -846,28 +1459,42 @@
 
     footer {
       padding: 42px 20px;
+
       text-align: center;
+
       background: #010202;
-      border-top: 1px solid #222;
+
+      border-top:
+        1px solid #222;
     }
 
     footer strong {
       color: var(--red);
-      font-family: "Barlow Condensed", sans-serif;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
       font-size: 1.35rem;
+
       letter-spacing: 2px;
     }
 
     footer p {
       margin-top: 7px;
+
       color: #777;
+
       font-size: .82rem;
     }
 
     .footer-warning {
       color: #ff3030 !important;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
@@ -878,16 +1505,22 @@
     @media (max-width: 1000px) {
 
       .products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .details-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .hero-dna {
+        opacity: .12;
       }
 
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
 
       nav {
         height: 62px;
@@ -899,39 +1532,105 @@
       }
 
       header {
-        min-height: 82vh;
-        padding: 70px 18px 55px;
+        min-height: 92vh;
+
+        padding:
+          65px 15px 55px;
       }
 
       .hero-art {
-        height: 380px;
-        width: 100%;
+        height: 370px;
+      }
+
+      .hud {
+        width: 330px;
+        height: 330px;
+
+        top: 55px;
+      }
+
+      .hud::before {
+        inset: 25px;
+      }
+
+      .hud::after {
+        inset: 55px;
+      }
+
+      .hud-tick {
+        display: none;
+      }
+
+      .hero-dna {
+        display: none;
+      }
+
+      .hero-molecule {
+        opacity: .15;
+      }
+
+      .hero-molecule.hm1 {
+        left: 4%;
+      }
+
+      .hero-molecule.hm2 {
+        right: 4%;
+      }
+
+      .readout-left,
+      .readout-right {
+        display: none;
       }
 
       .hero {
-        padding-top: 250px;
+        padding-top: 265px;
       }
 
       .brand-text {
-        font-size: clamp(3rem, 17vw, 5rem);
+        font-size:
+          clamp(3rem, 17vw, 5rem);
       }
 
       .brand-text span {
         margin-top: 13px;
+
         letter-spacing: 5px;
+      }
+
+      .hero-tech {
+        font-size: .68rem;
+
+        letter-spacing: 2px;
+      }
+
+      .hero-tech::before,
+      .hero-tech::after {
+        width: 15px;
+
+        margin:
+          0 7px 3px;
+      }
+
+      .hero-division {
+        font-size: .75rem;
+
+        letter-spacing: 1.8px;
       }
 
       .tagline {
         font-size: .82rem;
+
         letter-spacing: 2px;
       }
 
       section {
-        padding: 55px 14px;
+        padding:
+          55px 14px;
       }
 
       .section-shell {
-        padding: 32px 13px;
+        padding:
+          32px 13px;
       }
 
       h2 {
@@ -939,19 +1638,13 @@
       }
 
       .products {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
       .details-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .detail-card {
-        height: 330px;
-      }
-
-      .dna {
-        display: none;
+        grid-template-columns:
+          1fr;
       }
 
     }
@@ -963,11 +1656,8 @@
 
 <body class="locked">
 
-  <!-- SCIENCE BACKGROUND -->
-
   <div class="science-layer">
     <div class="hex-field"></div>
-    <div class="dna"></div>
   </div>
 
 
@@ -997,9 +1687,15 @@
         Enter your date of birth
       </label>
 
-      <input type="date" id="birthdate">
+      <input
+        type="date"
+        id="birthdate"
+      >
 
-      <button class="age-button" onclick="verifyAge()">
+      <button
+        class="age-button"
+        onclick="verifyAge()"
+      >
         ENTER SITE
       </button>
 
@@ -1033,9 +1729,11 @@
   </nav>
 
 
-  <!-- HERO -->
+  <!-- BIOTECH HERO -->
 
   <header id="home">
+
+    <div class="hero-grid"></div>
 
     <img
       src="reaper-hero.png"
@@ -1045,24 +1743,140 @@
 
     <div class="hero-overlay"></div>
 
+
+    <div class="hud">
+
+      <div class="hud-tick t1"></div>
+      <div class="hud-tick t2"></div>
+      <div class="hud-tick t3"></div>
+      <div class="hud-tick t4"></div>
+
+    </div>
+
+
+    <div class="scan-line"></div>
+
+
+    <div class="hero-dna left">
+
+      <div class="dna-strand s1"></div>
+      <div class="dna-strand s2"></div>
+
+      <div class="dna-rung r1"></div>
+      <div class="dna-rung r2"></div>
+      <div class="dna-rung r3"></div>
+      <div class="dna-rung r4"></div>
+      <div class="dna-rung r5"></div>
+      <div class="dna-rung r6"></div>
+
+    </div>
+
+
+    <div class="hero-dna right">
+
+      <div class="dna-strand s1"></div>
+      <div class="dna-strand s2"></div>
+
+      <div class="dna-rung r1"></div>
+      <div class="dna-rung r2"></div>
+      <div class="dna-rung r3"></div>
+      <div class="dna-rung r4"></div>
+      <div class="dna-rung r5"></div>
+      <div class="dna-rung r6"></div>
+
+    </div>
+
+
+    <div class="hero-molecule hm1">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+
+    <div class="hero-molecule hm2">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+
+    <div class="tech-readout readout-left">
+
+      <strong>RBL.SEQ // 01</strong><br>
+      CELLULAR RESEARCH NODE<br>
+      SIGNAL ACTIVE<br>
+      MATRIX STATUS: ONLINE
+
+    </div>
+
+
+    <div class="tech-readout readout-right">
+
+      <strong>RBL.MTX // 27</strong><br>
+      BIOMOLECULAR SYSTEM<br>
+      ANALYSIS MODE<br>
+      GRID COORD: 35.08N
+
+    </div>
+
+
     <div class="hero">
 
       <div class="hero-tech">
         RBL // Biomedical Research Interface
       </div>
 
+
       <div class="brand-text">
+
         REAPER
-        <span>BIOLABS</span>
+
+        <span>
+          BIOLABS
+        </span>
+
       </div>
+
+
+      <div class="hero-division">
+
+        <span>RBL</span>
+        // Cellular Research Division
+
+      </div>
+
+
+      <div class="hero-modes">
+
+        <div class="hero-mode">
+          Peptide Research
+        </div>
+
+        <div class="hero-mode">
+          Mitochondrial Systems
+        </div>
+
+        <div class="hero-mode">
+          Metabolic Science
+        </div>
+
+      </div>
+
 
       <div class="research-badge">
         For Research Purposes Only
       </div>
 
+
       <div class="tagline">
         Research • Science • Innovation
       </div>
+
 
       <div class="location">
         Albuquerque, New Mexico
@@ -1088,158 +1902,265 @@
       </h2>
 
       <div class="data-strip">
+
         <span>RBL-CELLULAR</span>
         <span>MITOCHONDRIAL</span>
         <span>METABOLIC</span>
         <span>PEPTIDE RESEARCH</span>
+
       </div>
 
       <p class="section-intro">
-        Educational information covering peptides, metabolic compounds,
-        mitochondrial research and emerging areas of biomedical science.
+
+        Educational information covering peptides,
+        metabolic compounds, mitochondrial research
+        and emerging areas of biomedical science.
+
       </p>
+
 
       <div class="products">
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>Tirzepatide</h3>
+
           <p>
             A dual GIP and GLP-1 receptor agonist studied extensively
             in metabolic and glucose-regulation research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>Retatrutide</h3>
+
           <p>
-            Investigated for activity involving GLP-1, GIP and
-            glucagon receptor pathways in metabolic research.
+            Investigated for activity involving GLP-1, GIP
+            and glucagon receptor pathways in metabolic research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>KLOW</h3>
+
           <p>
-            A peptide blend commonly discussed in relation to
-            tissue repair, collagen and recovery research.
+            A peptide blend commonly discussed in relation
+            to tissue repair, collagen and recovery research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>Epitalon</h3>
+
           <p>
             A synthetic peptide studied in aging biology,
             cellular regulation and telomere-related research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>SS-31</h3>
+
           <p>
-            A mitochondria-targeted peptide investigated for
-            mitochondrial function and cellular energy research.
+            A mitochondria-targeted peptide investigated
+            for mitochondrial function and cellular energy research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>NAD+</h3>
+
           <p>
-            A naturally occurring coenzyme involved in cellular
-            energy metabolism, redox reactions and DNA-associated processes.
+            A naturally occurring coenzyme involved
+            in cellular energy metabolism and redox processes.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>MOTS-C</h3>
+
           <p>
-            A mitochondria-derived peptide investigated for
-            cellular metabolism, energy regulation and metabolic signaling.
+            A mitochondria-derived peptide investigated
+            for cellular metabolism and metabolic signaling.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>CJC-1295 Without DAC</h3>
+
           <p>
-            A growth hormone-releasing hormone analog investigated
-            for effects involving growth-hormone signaling.
+            A growth hormone-releasing hormone analog
+            investigated for growth-hormone signaling research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>Ipamorelin</h3>
+
           <p>
-            A growth hormone secretagogue investigated for
-            interaction with ghrelin receptors and growth-hormone release.
+            A growth hormone secretagogue investigated
+            for interactions involving ghrelin receptors.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
 
+
         <div class="card">
+
           <div class="molecule">
+
             <span class="node n1"></span>
             <span class="node n2"></span>
             <span class="node n3"></span>
+
           </div>
+
           <h3>Pinealon</h3>
+
           <p>
             A short peptide studied primarily in experimental
             neuroscience and cellular-regulation research.
           </p>
-          <div class="card-label">Research Information Only</div>
+
+          <div class="card-label">
+            Research Information Only
+          </div>
+
         </div>
+
 
       </div>
 
@@ -1263,31 +2184,59 @@
       </h2>
 
       <div class="data-strip">
+
         <span>SPECIMEN ID</span>
         <span>VIAL FORMAT</span>
         <span>REFERENCE DATA</span>
+
       </div>
 
       <p class="section-intro">
         Compound name, vial amount and corresponding identifier.
       </p>
 
+
       <div class="details-grid">
 
-        <div class="detail-card">
-          <div class="detail-name">Tirzepatide</div>
-          <div class="detail-mg">15 mg</div>
-          <div class="detail-id">45</div>
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-        </div>
 
         <div class="detail-card">
-          <div class="detail-name">Retatrutide</div>
+
+          <div class="detail-name">
+            Tirzepatide
+          </div>
+
+          <div class="detail-mg">
+            15 mg
+          </div>
+
+          <div class="detail-id">
+            45
+          </div>
+
+          <div class="vial">
+
+            <div class="vial-label">
+
+              <strong>
+                REAPER BIOLABS
+              </strong>
+
+              <small>
+                RESEARCH USE
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Retatrutide
+          </div>
 
           <div class="strength-tabs">
 
@@ -1307,114 +2256,199 @@
 
           </div>
 
-          <div class="detail-mg" id="retaMg">10 mg</div>
-          <div class="detail-id" id="retaLot">60</div>
+          <div
+            class="detail-mg"
+            id="retaMg"
+          >
+            10 mg
+          </div>
+
+          <div
+            class="detail-id"
+            id="retaLot"
+          >
+            60
+          </div>
 
           <div class="vial">
+
             <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
+
+              <strong>
+                REAPER BIOLABS
+              </strong>
+
+              <small>
+                RESEARCH USE
+              </small>
+
             </div>
+
           </div>
+
         </div>
 
+
         <div class="detail-card">
+
           <div class="detail-name">KLOW</div>
           <div class="detail-mg">80 mg</div>
           <div class="detail-id">100</div>
+
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
+
         <div class="detail-card">
+
           <div class="detail-name">Epitalon</div>
           <div class="detail-mg">40 mg</div>
           <div class="detail-id">80</div>
+
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
+
         <div class="detail-card">
+
           <div class="detail-name">SS-31</div>
           <div class="detail-mg">45 mg</div>
           <div class="detail-id">120</div>
+
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
+
         <div class="detail-card">
+
           <div class="detail-name">NAD+</div>
           <div class="detail-mg">500 mg</div>
           <div class="detail-id">40</div>
+
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
+
         <div class="detail-card">
+
           <div class="detail-name">MOTS-C</div>
           <div class="detail-mg">10 mg</div>
           <div class="detail-id">40</div>
+
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
-        <div class="detail-card">
-          <div class="detail-name">CJC-1295 Without DAC</div>
-          <div class="detail-mg">5 mg</div>
-          <div class="detail-id">45</div>
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-        </div>
 
         <div class="detail-card">
-          <div class="detail-name">Ipamorelin</div>
-          <div class="detail-mg">5 mg</div>
-          <div class="detail-id">30</div>
+
+          <div class="detail-name">
+            CJC-1295 Without DAC
+          </div>
+
+          <div class="detail-mg">
+            5 mg
+          </div>
+
+          <div class="detail-id">
+            45
+          </div>
+
           <div class="vial">
+
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
+
           </div>
+
         </div>
 
+
         <div class="detail-card">
-          <div class="detail-name">Pinealon</div>
-          <div class="detail-mg">10 mg</div>
-          <div class="detail-id">50</div>
+
+          <div class="detail-name">
+            Ipamorelin
+          </div>
+
+          <div class="detail-mg">
+            5 mg
+          </div>
+
+          <div class="detail-id">
+            30
+          </div>
+
           <div class="vial">
+
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
+
           </div>
+
         </div>
+
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Pinealon
+          </div>
+
+          <div class="detail-mg">
+            10 mg
+          </div>
+
+          <div class="detail-id">
+            50
+          </div>
+
+          <div class="vial">
+
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>RESEARCH USE</small>
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
+
 
       <p class="lot-note">
         For research identification and informational purposes only.
@@ -1427,7 +2461,10 @@
 
   <!-- ABOUT -->
 
-  <section id="about" class="about">
+  <section
+    id="about"
+    class="about"
+  >
 
     <div class="about-inner">
 
@@ -1440,24 +2477,31 @@
       </h2>
 
       <p>
+
         Reaper BioLabs is an Albuquerque-based educational resource
-        focused on peptide science, metabolic research, cellular biology
-        and emerging biomedical compounds.
+        focused on peptide science, metabolic research,
+        cellular biology and emerging biomedical compounds.
+
       </p>
 
       <p>
-        Content presented by Reaper BioLabs is intended for research
-        and educational purposes only.
+
+        Content presented by Reaper BioLabs is intended
+        for research and educational purposes only.
+
       </p>
+
 
       <div class="notice">
 
-        <strong>FOR RESEARCH PURPOSES ONLY.</strong>
+        <strong>
+          FOR RESEARCH PURPOSES ONLY.
+        </strong>
 
         <br><br>
 
-        Information provided on this website is educational in nature
-        and is not medical advice.
+        Information provided on this website is educational
+        in nature and is not medical advice.
 
         <br><br>
 
@@ -1477,7 +2521,10 @@
 
   <!-- CONTACT -->
 
-  <section id="contact" class="contact">
+  <section
+    id="contact"
+    class="contact"
+  >
 
     <div class="section-label">
       Research & Educational Inquiries
@@ -1545,20 +2592,30 @@
     function checkExistingApproval() {
 
       const approvalTime =
-        localStorage.getItem(approvalKey);
+        localStorage.getItem(
+          approvalKey
+        );
 
-      if (!approvalTime) return;
+      if (!approvalTime) {
+        return;
+      }
 
       const timePassed =
-        Date.now() - parseInt(approvalTime);
+        Date.now() -
+        parseInt(approvalTime);
 
-      if (timePassed < approvalDuration) {
+      if (
+        timePassed <
+        approvalDuration
+      ) {
 
         unlockSite();
 
       } else {
 
-        localStorage.removeItem(approvalKey);
+        localStorage.removeItem(
+          approvalKey
+        );
 
       }
 
@@ -1568,10 +2625,15 @@
     function verifyAge() {
 
       const input =
-        document.getElementById("birthdate");
+        document.getElementById(
+          "birthdate"
+        );
 
       const message =
-        document.getElementById("ageMessage");
+        document.getElementById(
+          "ageMessage"
+        );
+
 
       if (!input.value) {
 
@@ -1582,8 +2644,12 @@
 
       }
 
+
       const birthdate =
-        new Date(input.value + "T00:00:00");
+        new Date(
+          input.value +
+          "T00:00:00"
+        );
 
       const today =
         new Date();
@@ -1600,21 +2666,31 @@
         today.getDate() -
         birthdate.getDate();
 
+
       if (
+
         monthDifference < 0 ||
+
         (
           monthDifference === 0 &&
           dayDifference < 0
         )
+
       ) {
+
         age--;
+
       }
+
 
       if (age >= 18) {
 
         localStorage.setItem(
+
           approvalKey,
+
           Date.now().toString()
+
         );
 
         unlockSite();
@@ -1632,11 +2708,19 @@
     function unlockSite() {
 
       document
-        .getElementById("ageGate")
-        .style.display = "none";
+        .getElementById(
+          "ageGate"
+        )
+        .style
+        .display =
+        "none";
 
-      document.body
-        .classList.remove("locked");
+      document
+        .body
+        .classList
+        .remove(
+          "locked"
+        );
 
     }
 
@@ -1648,20 +2732,35 @@
     ) {
 
       document
-        .querySelectorAll(".strength-tab")
-        .forEach(tab =>
-          tab.classList.remove("active")
+        .querySelectorAll(
+          ".strength-tab"
+        )
+        .forEach(
+          tab =>
+            tab.classList.remove(
+              "active"
+            )
         );
 
-      button.classList.add("active");
+      button
+        .classList
+        .add(
+          "active"
+        );
 
       document
-        .getElementById("retaMg")
-        .textContent = mg;
+        .getElementById(
+          "retaMg"
+        )
+        .textContent =
+        mg;
 
       document
-        .getElementById("retaLot")
-        .textContent = lot;
+        .getElementById(
+          "retaLot"
+        )
+        .textContent =
+        lot;
 
     }
 
