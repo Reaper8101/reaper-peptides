@@ -152,6 +152,44 @@
       font-size: .9rem;
     }
 
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(130, 0, 0, .18), transparent 60%),
+        #070707;
+    }
+
+    .contact p {
+      color: #aaa;
+      margin: 10px 0 25px;
+    }
+
+    .email-button {
+      display: inline-block;
+      background: #b80000;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 32px;
+      border: 1px solid #e00000;
+      border-radius: 6px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: .25s;
+    }
+
+    .email-button:hover {
+      background: #e00000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(200, 0, 0, .25);
+    }
+
+    .email-address {
+      display: block;
+      margin-top: 18px;
+      color: #777;
+      font-size: .9rem;
+    }
+
     footer {
       padding: 45px 20px;
       text-align: center;
@@ -170,12 +208,40 @@
       color: #777;
       font-size: .9rem;
     }
+
+    @media (max-width: 600px) {
+
+      header {
+        min-height: 75vh;
+      }
+
+      .tagline {
+        font-size: .85rem;
+        letter-spacing: 2px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
   </style>
 </head>
 
+
 <body>
 
+  <!-- HERO -->
+
   <header>
+
     <div class="hero">
 
       <div class="logo">
@@ -191,8 +257,11 @@
       </div>
 
     </div>
+
   </header>
 
+
+  <!-- COMPOUNDS -->
 
   <section>
 
@@ -208,99 +277,133 @@
 
     <div class="products">
 
+
       <div class="card">
+
         <h3>Tirzepatide</h3>
+
         <p>
           A dual GIP and GLP-1 receptor agonist studied extensively
           in metabolic and glucose-regulation research.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>Retatrutide</h3>
+
         <p>
           Investigated for activity involving GLP-1, GIP and
           glucagon receptor pathways in metabolic research.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>KLOW</h3>
+
         <p>
           A peptide blend commonly discussed in relation to
           tissue repair, collagen and recovery research.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>Epitalon</h3>
+
         <p>
           A synthetic peptide studied in aging biology,
           cellular regulation and telomere-related research.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>SS-31</h3>
+
         <p>
           A mitochondria-targeted peptide investigated for
           mitochondrial function and cellular energy research.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>NAD+</h3>
+
         <p>
           A naturally occurring coenzyme involved in cellular
           energy metabolism, redox reactions and DNA-associated processes.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>MOTS-C</h3>
+
         <p>
           A mitochondria-derived peptide investigated for
           cellular metabolism, energy regulation and metabolic signaling.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>Tesamorelin</h3>
+
         <p>
           A growth hormone-releasing hormone analog studied
           for its effects on growth-hormone signaling and body composition.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>Ipamorelin</h3>
+
         <p>
           A growth hormone secretagogue investigated for
           its interaction with ghrelin receptors and growth-hormone release.
         </p>
+
       </div>
 
 
       <div class="card">
+
         <h3>Pinealon</h3>
+
         <p>
           A short peptide studied primarily in experimental
           neuroscience, cellular regulation and aging-related research.
         </p>
+
       </div>
+
 
     </div>
 
   </section>
 
+
+  <!-- ABOUT -->
 
   <section class="about">
 
@@ -316,12 +419,15 @@
         and emerging biomedical compounds.
       </p>
 
+
       <div class="notice">
+
         Information provided on this website is for educational purposes
         only and is not medical advice. Compounds discussed may have
         different regulatory statuses, approved uses and safety profiles.
         Consult an appropriately licensed healthcare professional regarding
         medical diagnosis or treatment.
+
       </div>
 
     </div>
@@ -329,9 +435,42 @@
   </section>
 
 
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <h2>
+      Contact <span class="red">Reaper BioLabs</span>
+    </h2>
+
+    <p>
+      Questions or inquiries? Get in touch.
+    </p>
+
+
+    <a
+      class="email-button"
+      href="mailto:reaperpeps@gmail.com">
+
+      ✉ EMAIL US
+
+    </a>
+
+
+    <span class="email-address">
+      reaperpeps@gmail.com
+    </span>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
   <footer>
 
-    <strong>REAPER BIOLABS</strong>
+    <strong>
+      REAPER BIOLABS
+    </strong>
 
     <p>
       Albuquerque, New Mexico
@@ -342,6 +481,7 @@
     </p>
 
   </footer>
+
 
 </body>
 
