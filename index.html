@@ -7,7 +7,6 @@
 
   <title>Reaper BioLabs | Albuquerque, NM</title>
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
 
@@ -86,6 +85,8 @@
         linear-gradient(150deg, rgba(255,0,0,.25) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,.25) 87.5%);
       background-size: 76px 132px;
     }
+
+    /* AGE GATE */
 
     #ageGate {
       position: fixed;
@@ -191,6 +192,8 @@
       font-size: .8rem;
     }
 
+    /* NAV */
+
     nav {
       position: sticky;
       top: 0;
@@ -233,6 +236,56 @@
     .nav-links a:hover {
       color: var(--red-bright);
     }
+
+    .menu-button {
+      display: none;
+      background: #090909;
+      color: white;
+      border: 1px solid #650000;
+      border-radius: 5px;
+      padding: 8px 12px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 62px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(3,3,3,.98);
+      border-bottom: 1px solid #660000;
+      padding: 8px 14px 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 10px;
+      color: #ddd;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* HERO */
 
     header {
       min-height: 94vh;
@@ -368,17 +421,13 @@
           rgba(255,20,20,.9),
           transparent
         );
-      box-shadow:
-        0 0 12px rgba(255,0,0,.6);
-      animation:
-        scan 7s ease-in-out infinite;
+      box-shadow: 0 0 12px rgba(255,0,0,.6);
+      animation: scan 7s ease-in-out infinite;
     }
 
     @keyframes scan {
       0% {
-        transform:
-          translateX(-50%)
-          translateY(0);
+        transform: translateX(-50%) translateY(0);
         opacity: 0;
       }
 
@@ -391,9 +440,7 @@
       }
 
       100% {
-        transform:
-          translateX(-50%)
-          translateY(390px);
+        transform: translateX(-50%) translateY(390px);
         opacity: 0;
       }
     }
@@ -443,8 +490,7 @@
       left: 29px;
       width: 60px;
       height: 1px;
-      background:
-        rgba(255,40,40,.35);
+      background: rgba(255,40,40,.35);
     }
 
     .dna-rung.r1 { top: 55px; }
@@ -560,8 +606,7 @@
     }
 
     .brand-text {
-      font-size:
-        clamp(3.7rem, 10vw, 8rem);
+      font-size: clamp(3.7rem, 10vw, 8rem);
       line-height: .82;
       font-weight: 900;
       letter-spacing: 4px;
@@ -601,14 +646,10 @@
 
     .hero-mode {
       padding: 6px 12px;
-      background:
-        rgba(110,0,0,.1);
-      border:
-        1px solid rgba(255,30,30,.25);
+      background: rgba(110,0,0,.1);
+      border: 1px solid rgba(255,30,30,.25);
       color: #a9a9a9;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: .72rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -621,9 +662,7 @@
       border: 1px solid var(--red);
       border-radius: 4px;
       color: #ff4141;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -633,9 +672,7 @@
     .tagline {
       margin-top: 19px;
       color: #ddd;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: 1.15rem;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -644,14 +681,14 @@
     .location {
       margin-top: 9px;
       color: #ff3333;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
+    /* SECTIONS */
 
     section {
       max-width: 1250px;
@@ -664,11 +701,7 @@
       overflow: hidden;
       padding: 48px 30px;
       background:
-        linear-gradient(
-          145deg,
-          rgba(13,14,14,.98),
-          rgba(4,5,5,.98)
-        );
+        linear-gradient(145deg, rgba(13,14,14,.98), rgba(4,5,5,.98));
       border: 1px solid #6c0000;
       border-radius: 10px;
     }
@@ -679,9 +712,7 @@
       top: 12px;
       right: 18px;
       color: rgba(255,255,255,.14);
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: .68rem;
       letter-spacing: 2px;
     }
@@ -689,9 +720,7 @@
     .section-label {
       text-align: center;
       color: #ff3535;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: .9rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -720,9 +749,7 @@
       gap: 20px;
       margin: 0 auto 30px;
       color: #727272;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: .72rem;
       letter-spacing: 1.4px;
       text-transform: uppercase;
@@ -737,8 +764,7 @@
 
     .products {
       display: grid;
-      grid-template-columns:
-        repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 14px;
     }
 
@@ -757,8 +783,7 @@
     .card:hover {
       transform: translateY(-4px);
       border-color: var(--red);
-      box-shadow:
-        0 12px 30px rgba(150,0,0,.14);
+      box-shadow: 0 12px 30px rgba(150,0,0,.14);
     }
 
     .molecule {
@@ -829,13 +854,10 @@
     .card-label {
       margin-top: 18px;
       padding-top: 11px;
-      border-top:
-        1px solid #410000;
+      border-top: 1px solid #410000;
       text-align: center;
       color: #ff3030;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: .74rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -844,8 +866,7 @@
 
     .details-grid {
       display: grid;
-      grid-template-columns:
-        repeat(5, minmax(0,1fr));
+      grid-template-columns: repeat(5, minmax(0,1fr));
       gap: 15px;
       margin-top: 40px;
     }
@@ -887,9 +908,7 @@
       color: #aaa;
       border: 1px solid #4d0000;
       border-radius: 4px;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-weight: 700;
       cursor: pointer;
     }
@@ -946,11 +965,9 @@
       height: 18px;
       top: -18px;
       left: 5px;
-      background:
-        linear-gradient(#777, #191919);
+      background: linear-gradient(#777, #191919);
       border: 2px solid #aaa;
-      border-radius:
-        7px 7px 3px 3px;
+      border-radius: 7px 7px 3px 3px;
     }
 
     .vial-label {
@@ -965,9 +982,7 @@
       justify-content: center;
       background: #070707;
       border: 1px solid #640000;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
     }
 
     .vial-label strong {
@@ -994,10 +1009,8 @@
     .about {
       max-width: none;
       background: #070808;
-      border-top:
-        1px solid #1e1e1e;
-      border-bottom:
-        1px solid #1e1e1e;
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
     }
 
     .about-inner {
@@ -1016,8 +1029,7 @@
       padding: 20px;
       text-align: left;
       background: #0f1010;
-      border-left:
-        4px solid var(--red);
+      border-left: 4px solid var(--red);
       color: #999;
       font-size: .9rem;
     }
@@ -1046,9 +1058,7 @@
       color: white;
       border: 1px solid #ff3030;
       border-radius: 5px;
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: 1.5px;
@@ -1065,15 +1075,12 @@
       padding: 42px 20px;
       text-align: center;
       background: #010202;
-      border-top:
-        1px solid #222;
+      border-top: 1px solid #222;
     }
 
     footer strong {
       color: var(--red);
-      font-family:
-        "Barlow Condensed",
-        sans-serif;
+      font-family: "Barlow Condensed", sans-serif;
       font-size: 1.35rem;
       letter-spacing: 2px;
     }
@@ -1091,16 +1098,16 @@
       letter-spacing: 1px;
     }
 
+    /* TABLET */
+
     @media (max-width: 1000px) {
 
       .products {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .details-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero-dna {
@@ -1109,117 +1116,300 @@
 
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
 
       nav {
         height: 62px;
-        padding: 0 15px;
+        padding: 0 14px;
+      }
+
+      .nav-logo {
+        font-size: 1.15rem;
       }
 
       .nav-links {
         display: none;
       }
 
+      .menu-button {
+        display: block;
+      }
+
       header {
-        min-height: 92vh;
-        padding:
-          65px 15px 55px;
+        min-height: 64vh;
+        padding: 55px 12px 35px;
       }
 
       .hero-art {
-        height: 370px;
+        height: 300px;
       }
 
       .hud {
-        width: 330px;
-        height: 330px;
-        top: 55px;
+        width: 270px;
+        height: 270px;
+        top: 44px;
       }
 
       .hud::before {
-        inset: 25px;
+        inset: 21px;
       }
 
       .hud::after {
-        inset: 55px;
+        inset: 48px;
       }
 
       .hud-tick {
         display: none;
       }
 
-      .hero-dna {
-        display: none;
-      }
-
-      .hero-molecule {
-        opacity: .15;
-      }
-
-      .hero-molecule.hm1 {
-        left: 4%;
-      }
-
-      .hero-molecule.hm2 {
-        right: 4%;
-      }
-
+      .hero-dna,
       .readout-left,
       .readout-right {
         display: none;
       }
 
+      .hero-molecule {
+        opacity: .12;
+      }
+
+      .hero-molecule.hm1 {
+        left: 2%;
+        top: 80px;
+      }
+
+      .hero-molecule.hm2 {
+        right: 2%;
+        top: 120px;
+      }
+
+      .scan-line {
+        width: 88%;
+        top: 65px;
+      }
+
       .hero {
-        padding-top: 265px;
-      }
-
-      .brand-text {
-        font-size:
-          clamp(3rem, 17vw, 5rem);
-      }
-
-      .brand-text span {
-        margin-top: 13px;
-        letter-spacing: 5px;
+        padding-top: 205px;
       }
 
       .hero-tech {
-        font-size: .68rem;
-        letter-spacing: 2px;
+        font-size: .58rem;
+        letter-spacing: 1.7px;
+        margin-bottom: 6px;
+      }
+
+      .brand-text {
+        font-size: clamp(2.6rem, 14vw, 4rem);
+      }
+
+      .brand-text span {
+        margin-top: 10px;
+        letter-spacing: 4px;
       }
 
       .hero-division {
-        font-size: .75rem;
-        letter-spacing: 1.8px;
+        margin-top: 18px;
+        font-size: .68rem;
+        letter-spacing: 1.5px;
+      }
+
+      .hero-modes {
+        gap: 5px;
+        margin-top: 11px;
+      }
+
+      .hero-mode {
+        font-size: .58rem;
+        padding: 4px 7px;
+      }
+
+      .research-badge {
+        margin-top: 14px;
+        padding: 7px 10px;
+        font-size: .72rem;
+        letter-spacing: 1px;
       }
 
       .tagline {
-        font-size: .82rem;
-        letter-spacing: 2px;
+        margin-top: 12px;
+        font-size: .7rem;
+        letter-spacing: 1.5px;
+      }
+
+      .location {
+        margin-top: 5px;
+        font-size: .72rem;
+        letter-spacing: 1.2px;
       }
 
       section {
-        padding:
-          55px 14px;
+        padding: 30px 10px;
       }
 
       .section-shell {
-        padding:
-          32px 13px;
+        padding: 28px 10px;
+      }
+
+      .section-shell::before {
+        display: none;
       }
 
       h2 {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
+      }
+
+      .section-label {
+        font-size: .72rem;
+      }
+
+      .section-intro {
+        margin-bottom: 24px;
+        font-size: .82rem;
+      }
+
+      .data-strip {
+        gap: 8px 12px;
+        margin-bottom: 20px;
+        font-size: .58rem;
       }
 
       .products {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .card {
+        min-height: 220px;
+        padding: 16px 10px;
+      }
+
+      .molecule {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 10px;
+        transform: scale(.8);
+      }
+
+      .card h3 {
+        font-size: 1.05rem;
+        line-height: 1.05;
+      }
+
+      .card p {
+        margin-top: 7px;
+        font-size: .68rem;
+        line-height: 1.35;
+      }
+
+      .card-label {
+        margin-top: 10px;
+        padding-top: 8px;
+        font-size: .55rem;
       }
 
       .details-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 26px;
+      }
+
+      .detail-card {
+        height: 255px;
+        padding: 13px 7px;
+      }
+
+      .detail-name {
+        height: 40px;
+        font-size: .95rem;
+        line-height: 1.05;
+      }
+
+      .strength-tabs {
+        height: 30px;
+        margin-top: 2px;
+        gap: 3px;
+      }
+
+      .strength-tab {
+        padding: 4px 6px;
+        font-size: .7rem;
+      }
+
+      .detail-mg {
+        height: 28px;
+        font-size: 1.05rem;
+        margin-top: 3px;
+      }
+
+      .detail-id {
+        height: 22px;
+        font-size: .8rem;
+      }
+
+      .vial {
+        width: 58px;
+        height: 100px;
+        margin-top: 17px;
+      }
+
+      .vial::before {
+        width: 45px;
+        height: 14px;
+        top: -14px;
+        left: 4px;
+      }
+
+      .vial-label {
+        top: 30px;
+        height: 45px;
+        left: 5px;
+        right: 5px;
+      }
+
+      .vial-label strong {
+        font-size: .52rem;
+      }
+
+      .vial-label small {
+        font-size: .42rem;
+      }
+
+      .about-inner p {
+        margin-top: 12px;
+        font-size: .82rem;
+      }
+
+      .notice {
+        margin-top: 18px;
+        padding: 15px;
+        font-size: .78rem;
+      }
+
+      .contact p {
+        font-size: .82rem;
+      }
+
+      .email-button {
+        margin-top: 18px;
+        padding: 11px 22px;
+        font-size: 1rem;
+      }
+
+      footer {
+        padding: 28px 14px;
+      }
+
+    }
+
+    @media (max-width: 390px) {
+
+      .card p {
+        font-size: .64rem;
+      }
+
+      .detail-name {
+        font-size: .88rem;
       }
 
     }
@@ -1235,6 +1425,8 @@
     <div class="hex-field"></div>
   </div>
 
+
+  <!-- AGE GATE -->
 
   <div id="ageGate">
 
@@ -1260,15 +1452,9 @@
         Enter your date of birth
       </label>
 
-      <input
-        type="date"
-        id="birthdate"
-      >
+      <input type="date" id="birthdate">
 
-      <button
-        class="age-button"
-        onclick="verifyAge()"
-      >
+      <button class="age-button" onclick="verifyAge()">
         ENTER SITE
       </button>
 
@@ -1282,6 +1468,8 @@
 
   </div>
 
+
+  <!-- NAV -->
 
   <nav>
 
@@ -1297,8 +1485,25 @@
       <a href="#contact">Contact</a>
     </div>
 
+    <button class="menu-button" onclick="toggleMenu()">
+      ☰ MENU
+    </button>
+
   </nav>
 
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#compounds" onclick="closeMenu()">Compounds</a>
+    <a href="#details" onclick="closeMenu()">Details</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+
+  </div>
+
+
+  <!-- HERO -->
 
   <header id="home">
 
@@ -1417,6 +1622,8 @@
 
   </header>
 
+
+  <!-- COMPOUNDS -->
 
   <section id="compounds">
 
@@ -1613,6 +1820,8 @@
   </section>
 
 
+  <!-- DETAILS -->
+
   <section id="details">
 
     <div class="section-shell">
@@ -1641,7 +1850,7 @@
         <div class="detail-card">
           <div class="detail-name">Tirzepatide</div>
           <div class="detail-mg">15 mg</div>
-          <div class="detail-id">$45</div>
+          <div class="detail-id">45</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1660,14 +1869,14 @@
 
             <button
               class="strength-tab active"
-              onclick="changeReta(this,'10 mg','$60')"
+              onclick="changeReta(this,'10 mg','60')"
             >
               10 mg
             </button>
 
             <button
               class="strength-tab"
-              onclick="changeReta(this,'30 mg','$110')"
+              onclick="changeReta(this,'30 mg','110')"
             >
               30 mg
             </button>
@@ -1679,7 +1888,7 @@
           </div>
 
           <div class="detail-id" id="retaLot">
-            $60
+            60
           </div>
 
           <div class="vial">
@@ -1694,7 +1903,7 @@
         <div class="detail-card">
           <div class="detail-name">KLOW</div>
           <div class="detail-mg">80 mg</div>
-          <div class="detail-id">$100</div>
+          <div class="detail-id">100</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1706,7 +1915,7 @@
         <div class="detail-card">
           <div class="detail-name">Epitalon</div>
           <div class="detail-mg">40 mg</div>
-          <div class="detail-id">$80</div>
+          <div class="detail-id">80</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1718,7 +1927,7 @@
         <div class="detail-card">
           <div class="detail-name">SS-31</div>
           <div class="detail-mg">45 mg</div>
-          <div class="detail-id">$120</div>
+          <div class="detail-id">120</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1730,7 +1939,7 @@
         <div class="detail-card">
           <div class="detail-name">NAD+</div>
           <div class="detail-mg">500 mg</div>
-          <div class="detail-id">$40</div>
+          <div class="detail-id">40</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1742,7 +1951,7 @@
         <div class="detail-card">
           <div class="detail-name">MOTS-C</div>
           <div class="detail-mg">10 mg</div>
-          <div class="detail-id">$40</div>
+          <div class="detail-id">40</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1756,7 +1965,7 @@
             CJC-1295 Without DAC
           </div>
           <div class="detail-mg">5 mg</div>
-          <div class="detail-id">$45</div>
+          <div class="detail-id">45</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1768,7 +1977,7 @@
         <div class="detail-card">
           <div class="detail-name">Ipamorelin</div>
           <div class="detail-mg">5 mg</div>
-          <div class="detail-id">$30</div>
+          <div class="detail-id">30</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1780,7 +1989,7 @@
         <div class="detail-card">
           <div class="detail-name">Pinealon</div>
           <div class="detail-mg">10 mg</div>
-          <div class="detail-id">$50</div>
+          <div class="detail-id">50</div>
           <div class="vial">
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
@@ -1800,10 +2009,9 @@
   </section>
 
 
-  <section
-    id="about"
-    class="about"
-  >
+  <!-- ABOUT -->
+
+  <section id="about" class="about">
 
     <div class="about-inner">
 
@@ -1853,10 +2061,9 @@
   </section>
 
 
-  <section
-    id="contact"
-    class="contact"
-  >
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
 
     <div class="section-label">
       Research & Educational Inquiries
@@ -2081,6 +2288,26 @@
         )
         .textContent =
         lot;
+
+    }
+
+
+    function toggleMenu() {
+
+      document
+        .getElementById("mobileMenu")
+        .classList
+        .toggle("open");
+
+    }
+
+
+    function closeMenu() {
+
+      document
+        .getElementById("mobileMenu")
+        .classList
+        .remove("open");
 
     }
 
