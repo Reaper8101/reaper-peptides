@@ -140,7 +140,6 @@
       max-width: 470px;
 
       padding: 38px 30px;
-
       text-align: center;
 
       background:
@@ -485,6 +484,43 @@
         brightness(.78)
         saturate(.95);
 
+      /*
+        DESKTOP CUTOUT:
+
+        The image is allowed to render normally
+        except for a notch entering from the
+        left edge underneath the original R.
+
+        That physically removes the old faded
+        SCIENCE / PRECISION / EVOLUTION pixels.
+      */
+
+      clip-path:
+        polygon(
+          0% 0%,
+          100% 0%,
+          100% 100%,
+          0% 100%,
+
+          0% 47%,
+          31% 47%,
+          31% 19%,
+          0% 19%
+        );
+
+      -webkit-clip-path:
+        polygon(
+          0% 0%,
+          100% 0%,
+          100% 100%,
+          0% 100%,
+
+          0% 47%,
+          31% 47%,
+          31% 19%,
+          0% 19%
+        );
+
       -webkit-mask-image:
         linear-gradient(
           to bottom,
@@ -516,7 +552,7 @@
 
 
     /* =========================================
-       HERO SIDE FADE
+       SIDE FADE
     ========================================== */
 
     .hero-art-wrap::after {
@@ -545,6 +581,7 @@
           transparent 20%,
 
           transparent 80%,
+
           rgba(2,3,3,.16) 85%,
           rgba(2,3,3,.42) 89%,
           rgba(2,3,3,.72) 93%,
@@ -555,47 +592,18 @@
 
 
     /* =========================================
-       CLEANED LEFT-SIDE ART TEXT
-
-       Anchored directly to hero image.
+       REPLACEMENT LEFT TEXT
     ========================================== */
-
-    .hero-art-cleanup {
-      position: absolute;
-
-      z-index: 6;
-
-      left: 60px;
-      top: 112px;
-
-      width: 280px;
-      height: 175px;
-
-      pointer-events: none;
-
-      background:
-        linear-gradient(
-          to right,
-
-          #020303 0%,
-          #020303 50%,
-          rgba(2,3,3,.98) 67%,
-          rgba(2,3,3,.86) 78%,
-          rgba(2,3,3,.55) 88%,
-          rgba(2,3,3,.20) 95%,
-          transparent 100%
-        );
-    }
 
     .hero-art-left-text {
       position: absolute;
 
       z-index: 7;
 
-      left: 112px;
-      top: 143px;
+      left: 105px;
+      top: 144px;
 
-      width: 180px;
+      width: 190px;
 
       text-align: left;
 
@@ -607,36 +615,36 @@
 
       margin-bottom: 8px;
 
-      color: rgba(220,220,220,.82);
+      color: rgba(215,215,215,.80);
 
       font-family: "Inter", sans-serif;
 
       font-size: .74rem;
       font-weight: 600;
 
-      letter-spacing: 4.5px;
+      letter-spacing: 4.7px;
 
       text-transform: uppercase;
 
       text-shadow:
-        0 2px 6px rgba(0,0,0,.95);
+        0 2px 5px rgba(0,0,0,.95);
     }
 
     .hero-art-left-line {
       width: 58px;
       height: 2px;
 
-      margin-top: 20px;
+      margin-top: 19px;
 
       background:
         linear-gradient(
           to right,
-          #9c0000,
-          #3f0000
+          #a30000,
+          #400000
         );
 
       box-shadow:
-        0 0 7px rgba(190,0,0,.20);
+        0 0 6px rgba(190,0,0,.20);
     }
 
 
@@ -1227,7 +1235,6 @@
 
     .research-material-notice strong {
       color: #ff3434;
-
       letter-spacing: 1.1px;
     }
 
@@ -1261,7 +1268,6 @@
         );
 
       border: 1px solid #5e0000;
-
       border-radius: 7px;
 
       transition: .25s;
@@ -1983,7 +1989,6 @@
           repeat(2,1fr);
       }
 
-      .hero-art-cleanup,
       .hero-art-left-text {
         display: none;
       }
@@ -2022,6 +2027,7 @@
         top: 58px;
       }
 
+
       header {
         min-height: 435px;
         height: 435px;
@@ -2054,10 +2060,16 @@
         display: none;
       }
 
-      .hero-art-cleanup,
       .hero-art-left-text {
         display: none;
       }
+
+
+      /*
+        IMPORTANT:
+        mobile returns to the original full image.
+        No desktop notch is applied.
+      */
 
       .hero-art {
         width: 100%;
@@ -2065,6 +2077,9 @@
 
         object-fit: cover;
         object-position: center 8%;
+
+        clip-path: none;
+        -webkit-clip-path: none;
 
         opacity: .98;
 
@@ -2790,13 +2805,6 @@
       >
 
 
-      <!-- Covers only the old faded words -->
-
-      <div class="hero-art-cleanup"></div>
-
-
-      <!-- Crisp replacement words -->
-
       <div class="hero-art-left-text">
 
         <span>Science</span>
@@ -2906,7 +2914,7 @@
       </div>
 
 
-      <!-- EDUCATION -->
+      <!-- PEPTIDE EDUCATION -->
 
       <div class="peptide-education">
 
@@ -2932,6 +2940,7 @@
 
 
         <div class="education-grid">
+
 
           <div class="education-card">
 
@@ -3042,9 +3051,12 @@
       <div class="products">
 
 
+        <!-- TIRZEPATIDE -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M11 9c4 4 4 18 0 22"></path>
               <path d="M29 9c-4 4-4 18 0 22"></path>
@@ -3052,6 +3064,7 @@
               <path d="M14 26h12"></path>
               <path d="M20 11v18"></path>
             </svg>
+
           </div>
 
           <h3>Tirzepatide</h3>
@@ -3088,15 +3101,17 @@
               </p>
 
               <p>
-                Research has also examined changes in broader cardiometabolic
-                measures including triglycerides, blood pressure, liver fat
-                and markers associated with cardiovascular and metabolic health.
+                Research has also examined changes in several broader
+                cardiometabolic measures including triglycerides, blood
+                pressure, liver fat and markers associated with cardiovascular
+                and metabolic health.
               </p>
 
               <p>
                 Its simultaneous activity at GIP and GLP-1 receptors has made
-                tirzepatide important for studying how multiple metabolic
-                pathways can influence energy balance and glucose regulation.
+                tirzepatide an important compound for studying how multiple
+                metabolic signaling pathways can influence energy balance
+                and glucose regulation.
               </p>
 
             </div>
@@ -3106,9 +3121,12 @@
         </div>
 
 
+        <!-- RETATRUTIDE -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <circle cx="20" cy="8" r="4"></circle>
               <circle cx="9" cy="27" r="4"></circle>
@@ -3117,6 +3135,7 @@
               <path d="M22 12l7 11"></path>
               <path d="M13 27h14"></path>
             </svg>
+
           </div>
 
           <h3>Retatrutide</h3>
@@ -3156,13 +3175,14 @@
               <p>
                 Clinical research has reported substantial dose-dependent
                 changes in body weight, making retatrutide one of the most
-                closely watched next-generation compounds in metabolic research.
+                closely watched next-generation compounds in metabolic
+                research.
               </p>
 
               <p>
                 Researchers are also exploring how glucagon receptor activity,
-                when combined with incretin signaling, may affect energy balance
-                and broader cardiometabolic physiology.
+                when combined with incretin signaling, may affect energy
+                balance and broader cardiometabolic physiology.
               </p>
 
             </div>
@@ -3172,9 +3192,12 @@
         </div>
 
 
+        <!-- KLOW -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M12 7l16 26"></path>
               <path d="M28 7L12 33"></path>
@@ -3182,6 +3205,7 @@
               <path d="M14 20h12"></path>
               <path d="M16 26h8"></path>
             </svg>
+
           </div>
 
           <h3>KLOW</h3>
@@ -3222,7 +3246,13 @@
               <p>
                 The biological properties of any peptide blend depend on its
                 exact ingredients and concentrations, so conclusions should
-                be based on the individual compounds within the formulation.
+                be based on the individual compounds contained within the
+                specific formulation.
+              </p>
+
+              <p class="compound-more-note">
+                Research descriptions for KLOW should be interpreted according
+                to the exact composition of the formulation being studied.
               </p>
 
             </div>
@@ -3232,9 +3262,12 @@
         </div>
 
 
+        <!-- EPITALON -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M12 5c15 8 1 22 16 30"></path>
               <path d="M28 5c-15 8-1 22-16 30"></path>
@@ -3243,6 +3276,7 @@
               <path d="M13 26h14"></path>
               <path d="M15 32h10"></path>
             </svg>
+
           </div>
 
           <h3>Epitalon</h3>
@@ -3280,7 +3314,20 @@
 
               <p>
                 Laboratory research has also explored relationships between
-                Epitalon, telomerase activity and telomere biology.
+                Epitalon, telomerase activity and telomere biology, which has
+                made it particularly interesting within experimental
+                longevity research.
+              </p>
+
+              <p>
+                Researchers continue to examine how short regulatory peptides
+                may influence age-associated cellular processes and molecular
+                signaling.
+              </p>
+
+              <p class="compound-more-note">
+                Much of the evidence surrounding Epitalon remains experimental
+                or laboratory-based.
               </p>
 
             </div>
@@ -3290,14 +3337,18 @@
         </div>
 
 
+        <!-- SS31 -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M7 20c3-9 11-13 20-10 7 2 9 9 5 15-5 7-18 8-25-5z"></path>
               <path d="M12 18c4-3 6 4 10 1 4-4 5 3 8 1"></path>
               <path d="M11 24c4 2 7-3 10 0 3 3 6-1 8-2"></path>
             </svg>
+
           </div>
 
           <h3>SS-31</h3>
@@ -3335,7 +3386,15 @@
 
               <p>
                 Research has focused on mitochondrial structure,
-                ATP production, oxidative stress and cellular-energy efficiency.
+                ATP production, oxidative stress and cellular-energy
+                efficiency.
+              </p>
+
+              <p>
+                The compound has been investigated across areas involving
+                skeletal muscle, cardiovascular biology, mitochondrial
+                disorders and other conditions associated with impaired
+                mitochondrial energy production.
               </p>
 
             </div>
@@ -3345,12 +3404,16 @@
         </div>
 
 
+        <!-- NAD -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M23 4L11 22h8l-2 14 12-19h-8z"></path>
             </svg>
+
           </div>
 
           <h3>NAD+</h3>
@@ -3391,6 +3454,13 @@
                 maintenance.
               </p>
 
+              <p>
+                Because NAD+ metabolism can change with age and metabolic
+                dysfunction, researchers continue to investigate NAD+
+                biology in relation to aging, mitochondrial function,
+                cellular resilience and cardiometabolic health.
+              </p>
+
             </div>
 
           </div>
@@ -3398,14 +3468,18 @@
         </div>
 
 
+        <!-- MOTS-C -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <ellipse cx="20" cy="20" rx="14" ry="10"></ellipse>
               <path d="M10 21c4-8 7 7 11-1 3-6 6 5 9-1"></path>
               <path d="M29 10l4 3-4 3"></path>
             </svg>
+
           </div>
 
           <h3>MOTS-C</h3>
@@ -3436,14 +3510,21 @@
               </div>
 
               <p>
+                MOTS-C is produced from mitochondrial genetic information
+                and has become an important research target in the emerging
+                field of mitochondrial-derived signaling peptides.
+              </p>
+
+              <p>
                 Research has explored its relationship with glucose utilization,
                 metabolic flexibility, skeletal-muscle function, cellular
                 stress responses and exercise adaptation.
               </p>
 
               <p>
-                Experimental work has also examined mitochondrial efficiency
-                and oxidative-stress regulation.
+                Experimental work has also examined mitochondrial efficiency,
+                oxidative-stress regulation and the mechanisms through which
+                mitochondria communicate with the rest of the cell.
               </p>
 
             </div>
@@ -3453,12 +3534,16 @@
         </div>
 
 
+        <!-- CJC -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M4 22h7l3-8 5 15 5-20 5 13h7"></path>
             </svg>
+
           </div>
 
           <h3>CJC-1295 Without DAC</h3>
@@ -3496,7 +3581,14 @@
 
               <p>
                 Research in this area examines GH secretion, IGF-1 signaling,
-                endocrine physiology and metabolic regulation.
+                endocrine physiology, metabolic regulation and pathways
+                involved in tissue growth and repair.
+              </p>
+
+              <p>
+                CJC-1295 without DAC is shorter acting than the DAC-linked
+                form, making the distinction between formulations important
+                when interpreting published research.
               </p>
 
             </div>
@@ -3506,13 +3598,17 @@
         </div>
 
 
+        <!-- IPAMORELIN -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M20 5c7 9 11 14 11 20a11 11 0 0 1-22 0c0-6 4-11 11-20z"></path>
               <path d="M15 26c2 2 4 3 7 3"></path>
             </svg>
+
           </div>
 
           <h3>Ipamorelin</h3>
@@ -3548,9 +3644,16 @@
               </p>
 
               <p>
+                Researchers have been particularly interested in its relatively
+                selective endocrine activity compared with some earlier
+                growth-hormone secretagogues.
+              </p>
+
+              <p>
                 Research areas associated with the GH axis include endocrine
                 signaling, body-composition biology, tissue recovery and
-                metabolic regulation.
+                metabolic regulation, although evidence for downstream
+                outcomes varies by study design.
               </p>
 
             </div>
@@ -3560,15 +3663,19 @@
         </div>
 
 
+        <!-- PINEALON -->
+
         <div class="card">
 
           <div class="compound-symbol">
+
             <svg viewBox="0 0 40 40">
               <path d="M17 7c-6 0-10 4-10 9 0 3 2 5 4 6-2 4 1 8 5 8 2 4 8 4 10 0 5 0 7-5 5-8 3-1 4-5 2-8-2-4-6-5-10-3-1-3-3-4-4-4z"></path>
               <path d="M20 11v19"></path>
               <path d="M13 17h7"></path>
               <path d="M20 22h8"></path>
             </svg>
+
           </div>
 
           <h3>Pinealon</h3>
@@ -3599,6 +3706,11 @@
               </div>
 
               <p>
+                Pinealon is a short tripeptide studied primarily in
+                experimental neurobiology and cellular-regulation research.
+              </p>
+
+              <p>
                 Laboratory studies have examined relationships with oxidative
                 stress, reactive oxygen species, cell viability and several
                 regulatory processes relevant to neuronal cells.
@@ -3606,7 +3718,13 @@
 
               <p>
                 These findings have generated interest in Pinealon within
-                neuroprotective and geroprotective research.
+                neuroprotective and geroprotective research, particularly
+                research examining cellular resilience during aging.
+              </p>
+
+              <p class="compound-more-note">
+                The available evidence remains considerably smaller and more
+                preclinical than that available for established metabolic therapies.
               </p>
 
             </div>
@@ -3727,7 +3845,6 @@
 
 
         <div class="detail-card">
-
           <div class="detail-name">KLOW</div>
           <div class="detail-mg">80 mg</div>
           <div class="detail-id">100</div>
@@ -3738,12 +3855,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">Epitalon</div>
           <div class="detail-mg">40 mg</div>
           <div class="detail-id">80</div>
@@ -3754,12 +3869,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">SS-31</div>
           <div class="detail-mg">45 mg</div>
           <div class="detail-id">120</div>
@@ -3770,12 +3883,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">NAD+</div>
           <div class="detail-mg">500 mg</div>
           <div class="detail-id">40</div>
@@ -3786,12 +3897,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">MOTS-C</div>
           <div class="detail-mg">10 mg</div>
           <div class="detail-id">40</div>
@@ -3802,12 +3911,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">CJC-1295 Without DAC</div>
           <div class="detail-mg">5 mg</div>
           <div class="detail-id">45</div>
@@ -3818,12 +3925,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">Ipamorelin</div>
           <div class="detail-mg">5 mg</div>
           <div class="detail-id">30</div>
@@ -3834,12 +3939,10 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
 
         <div class="detail-card">
-
           <div class="detail-name">Pinealon</div>
           <div class="detail-mg">10 mg</div>
           <div class="detail-id">50</div>
@@ -3850,7 +3953,6 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
-
         </div>
 
       </div>
