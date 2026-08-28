@@ -88,6 +88,7 @@
     .hex-field {
       position: absolute;
       inset: 0;
+
       opacity: .055;
 
       background-image:
@@ -139,6 +140,7 @@
       max-width: 470px;
 
       padding: 38px 30px;
+
       text-align: center;
 
       background:
@@ -168,6 +170,7 @@
 
     .age-slogan {
       margin-top: 4px;
+
       color: #aaa;
 
       font-family: "Barlow Condensed", sans-serif;
@@ -443,6 +446,11 @@
         );
     }
 
+
+    /* =========================================
+       HERO ART
+    ========================================== */
+
     .hero-art-wrap {
       position: absolute;
 
@@ -506,6 +514,11 @@
         );
     }
 
+
+    /* =========================================
+       HERO SIDE FADE
+    ========================================== */
+
     .hero-art-wrap::after {
       content: "";
 
@@ -540,6 +553,93 @@
         );
     }
 
+
+    /* =========================================
+       CLEANED LEFT-SIDE ART TEXT
+
+       Anchored directly to hero image.
+    ========================================== */
+
+    .hero-art-cleanup {
+      position: absolute;
+
+      z-index: 6;
+
+      left: 60px;
+      top: 112px;
+
+      width: 280px;
+      height: 175px;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          to right,
+
+          #020303 0%,
+          #020303 50%,
+          rgba(2,3,3,.98) 67%,
+          rgba(2,3,3,.86) 78%,
+          rgba(2,3,3,.55) 88%,
+          rgba(2,3,3,.20) 95%,
+          transparent 100%
+        );
+    }
+
+    .hero-art-left-text {
+      position: absolute;
+
+      z-index: 7;
+
+      left: 112px;
+      top: 143px;
+
+      width: 180px;
+
+      text-align: left;
+
+      pointer-events: none;
+    }
+
+    .hero-art-left-text span {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: rgba(220,220,220,.82);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: .74rem;
+      font-weight: 600;
+
+      letter-spacing: 4.5px;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 2px 6px rgba(0,0,0,.95);
+    }
+
+    .hero-art-left-line {
+      width: 58px;
+      height: 2px;
+
+      margin-top: 20px;
+
+      background:
+        linear-gradient(
+          to right,
+          #9c0000,
+          #3f0000
+        );
+
+      box-shadow:
+        0 0 7px rgba(190,0,0,.20);
+    }
+
+
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -549,6 +649,7 @@
       background:
         radial-gradient(
           circle at center,
+
           transparent 0%,
           rgba(2,3,3,.03) 40%,
           rgba(2,3,3,.25) 70%,
@@ -663,81 +764,6 @@
         opacity: 0;
       }
     }
-
-
-    /* =========================================
-       FIXED DESKTOP LEFT TEXT
-    ========================================== */
-
-    .hero-left-id {
-      position: absolute;
-
-      z-index: 9;
-
-      top: 132px;
-      left: max(44px, calc(50% - 455px));
-
-      width: 205px;
-      height: 155px;
-
-      padding: 10px 10px 8px 14px;
-
-      text-align: left;
-
-      pointer-events: none;
-
-      background:
-        linear-gradient(
-          to right,
-          rgba(2,3,3,1) 0%,
-          rgba(2,3,3,.99) 68%,
-          rgba(2,3,3,.92) 82%,
-          rgba(2,3,3,.45) 94%,
-          transparent 100%
-        );
-    }
-
-    .hero-left-words {
-      margin-top: 6px;
-    }
-
-    .hero-left-words span {
-      display: block;
-
-      margin-bottom: 8px;
-
-      color: rgba(230,230,230,.82);
-
-      font-family: "Inter", sans-serif;
-
-      font-size: .78rem;
-      font-weight: 600;
-
-      letter-spacing: 5px;
-
-      text-transform: uppercase;
-
-      text-shadow:
-        0 2px 6px #000;
-    }
-
-    .hero-left-line {
-      width: 58px;
-      height: 2px;
-
-      margin-top: 20px;
-
-      background:
-        linear-gradient(
-          to right,
-          #9b0000,
-          #3e0000
-        );
-
-      box-shadow:
-        0 0 6px rgba(200,0,0,.18);
-    }
-
 
     .hero {
       position: relative;
@@ -911,6 +937,7 @@
 
     .section-shell {
       position: relative;
+
       overflow: hidden;
 
       padding: 42px 28px;
@@ -1200,6 +1227,7 @@
 
     .research-material-notice strong {
       color: #ff3434;
+
       letter-spacing: 1.1px;
     }
 
@@ -1233,6 +1261,7 @@
         );
 
       border: 1px solid #5e0000;
+
       border-radius: 7px;
 
       transition: .25s;
@@ -1570,6 +1599,7 @@
       margin-top: 27px;
 
       position: relative;
+
       overflow: visible;
 
       border:
@@ -1635,6 +1665,9 @@
         inset 0 -2px 3px rgba(0,0,0,.7),
         0 3px 4px rgba(0,0,0,.5);
     }
+
+
+    /* WHITE LYOPHILIZED POWDER */
 
     .vial::after {
       content: "";
@@ -1950,7 +1983,8 @@
           repeat(2,1fr);
       }
 
-      .hero-left-id {
+      .hero-art-cleanup,
+      .hero-art-left-text {
         display: none;
       }
 
@@ -2020,7 +2054,8 @@
         display: none;
       }
 
-      .hero-left-id {
+      .hero-art-cleanup,
+      .hero-art-left-text {
         display: none;
       }
 
@@ -2646,6 +2681,8 @@
   </div>
 
 
+  <!-- AGE GATE -->
+
   <div id="ageGate">
 
     <div class="age-box">
@@ -2697,6 +2734,8 @@
   </div>
 
 
+  <!-- NAV -->
+
   <nav>
 
     <div class="nav-logo">
@@ -2735,9 +2774,12 @@
   </div>
 
 
+  <!-- HERO -->
+
   <header id="home">
 
     <div class="hero-grid"></div>
+
 
     <div class="hero-art-wrap">
 
@@ -2747,26 +2789,32 @@
         alt="Reaper BioLabs"
       >
 
+
+      <!-- Covers only the old faded words -->
+
+      <div class="hero-art-cleanup"></div>
+
+
+      <!-- Crisp replacement words -->
+
+      <div class="hero-art-left-text">
+
+        <span>Science</span>
+        <span>Precision</span>
+        <span>Evolution</span>
+
+        <div class="hero-art-left-line"></div>
+
+      </div>
+
     </div>
+
 
     <div class="hero-overlay"></div>
 
     <div class="hud"></div>
 
     <div class="scan-line"></div>
-
-
-    <div class="hero-left-id">
-
-      <div class="hero-left-words">
-        <span>Science</span>
-        <span>Precision</span>
-        <span>Evolution</span>
-      </div>
-
-      <div class="hero-left-line"></div>
-
-    </div>
 
 
     <div class="hero">
@@ -2817,6 +2865,8 @@
   </header>
 
 
+  <!-- COMPOUNDS -->
+
   <section id="compounds">
 
     <div class="section-shell">
@@ -2855,6 +2905,8 @@
 
       </div>
 
+
+      <!-- EDUCATION -->
 
       <div class="peptide-education">
 
@@ -2985,6 +3037,8 @@
       </div>
 
 
+      <!-- COMPOUND CARDS -->
+
       <div class="products">
 
 
@@ -3034,17 +3088,15 @@
               </p>
 
               <p>
-                Research has also examined changes in several broader
-                cardiometabolic measures including triglycerides, blood
-                pressure, liver fat and markers associated with cardiovascular
-                and metabolic health.
+                Research has also examined changes in broader cardiometabolic
+                measures including triglycerides, blood pressure, liver fat
+                and markers associated with cardiovascular and metabolic health.
               </p>
 
               <p>
                 Its simultaneous activity at GIP and GLP-1 receptors has made
-                tirzepatide an important compound for studying how multiple
-                metabolic signaling pathways can influence energy balance
-                and glucose regulation.
+                tirzepatide important for studying how multiple metabolic
+                pathways can influence energy balance and glucose regulation.
               </p>
 
             </div>
@@ -3104,14 +3156,13 @@
               <p>
                 Clinical research has reported substantial dose-dependent
                 changes in body weight, making retatrutide one of the most
-                closely watched next-generation compounds in metabolic
-                research.
+                closely watched next-generation compounds in metabolic research.
               </p>
 
               <p>
                 Researchers are also exploring how glucagon receptor activity,
-                when combined with incretin signaling, may affect energy
-                balance and broader cardiometabolic physiology.
+                when combined with incretin signaling, may affect energy balance
+                and broader cardiometabolic physiology.
               </p>
 
             </div>
@@ -3171,8 +3222,7 @@
               <p>
                 The biological properties of any peptide blend depend on its
                 exact ingredients and concentrations, so conclusions should
-                be based on the individual compounds contained within the
-                specific formulation.
+                be based on the individual compounds within the formulation.
               </p>
 
             </div>
@@ -3285,8 +3335,7 @@
 
               <p>
                 Research has focused on mitochondrial structure,
-                ATP production, oxidative stress and cellular-energy
-                efficiency.
+                ATP production, oxidative stress and cellular-energy efficiency.
               </p>
 
             </div>
@@ -3573,6 +3622,8 @@
   </section>
 
 
+  <!-- DETAILS -->
+
   <section id="details">
 
     <div class="section-shell">
@@ -3614,10 +3665,12 @@
           </div>
 
           <div class="vial">
+
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
+
           </div>
 
         </div>
@@ -3662,16 +3715,19 @@
           </div>
 
           <div class="vial">
+
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
+
           </div>
 
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">KLOW</div>
           <div class="detail-mg">80 mg</div>
           <div class="detail-id">100</div>
@@ -3682,10 +3738,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">Epitalon</div>
           <div class="detail-mg">40 mg</div>
           <div class="detail-id">80</div>
@@ -3696,10 +3754,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">SS-31</div>
           <div class="detail-mg">45 mg</div>
           <div class="detail-id">120</div>
@@ -3710,10 +3770,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">NAD+</div>
           <div class="detail-mg">500 mg</div>
           <div class="detail-id">40</div>
@@ -3724,10 +3786,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">MOTS-C</div>
           <div class="detail-mg">10 mg</div>
           <div class="detail-id">40</div>
@@ -3738,10 +3802,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">CJC-1295 Without DAC</div>
           <div class="detail-mg">5 mg</div>
           <div class="detail-id">45</div>
@@ -3752,10 +3818,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">Ipamorelin</div>
           <div class="detail-mg">5 mg</div>
           <div class="detail-id">30</div>
@@ -3766,10 +3834,12 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
 
         <div class="detail-card">
+
           <div class="detail-name">Pinealon</div>
           <div class="detail-mg">10 mg</div>
           <div class="detail-id">50</div>
@@ -3780,6 +3850,7 @@
               <small>RESEARCH USE</small>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -3793,6 +3864,8 @@
 
   </section>
 
+
+  <!-- ABOUT -->
 
   <section
     id="about"
@@ -3847,6 +3920,8 @@
   </section>
 
 
+  <!-- CONTACT -->
+
   <section
     id="contact"
     class="contact"
@@ -3878,6 +3953,8 @@
 
   </section>
 
+
+  <!-- FOOTER -->
 
   <footer>
 
