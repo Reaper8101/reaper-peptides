@@ -88,7 +88,6 @@
     .hex-field {
       position: absolute;
       inset: 0;
-
       opacity: .055;
 
       background-image:
@@ -140,7 +139,6 @@
       max-width: 470px;
 
       padding: 38px 30px;
-
       text-align: center;
 
       background:
@@ -170,7 +168,6 @@
 
     .age-slogan {
       margin-top: 4px;
-
       color: #aaa;
 
       font-family: "Barlow Condensed", sans-serif;
@@ -669,71 +666,47 @@
 
 
     /* =========================================
-       LIVE DESKTOP LEFT IDENTIFIER
+       FIXED DESKTOP LEFT TEXT
     ========================================== */
 
     .hero-left-id {
       position: absolute;
 
-      z-index: 8;
+      z-index: 9;
 
-      top: 120px;
-      left: max(44px, calc(50% - 445px));
+      top: 132px;
+      left: max(44px, calc(50% - 455px));
 
-      width: 210px;
+      width: 205px;
+      height: 155px;
+
+      padding: 10px 10px 8px 14px;
 
       text-align: left;
 
       pointer-events: none;
-    }
-
-    .hero-left-id::before {
-      content: "";
-
-      position: absolute;
-
-      z-index: -1;
-
-      top: -25px;
-      left: -22px;
-      right: -30px;
-      bottom: -30px;
 
       background:
-        radial-gradient(
-          ellipse at left center,
-          rgba(2,3,3,.98) 0%,
-          rgba(2,3,3,.90) 43%,
-          rgba(2,3,3,.58) 67%,
+        linear-gradient(
+          to right,
+          rgba(2,3,3,1) 0%,
+          rgba(2,3,3,.99) 68%,
+          rgba(2,3,3,.92) 82%,
+          rgba(2,3,3,.45) 94%,
           transparent 100%
         );
     }
 
-    .hero-r {
-      color: #9d1010;
-
-      font-family: "Barlow Condensed", sans-serif;
-
-      font-size: 4rem;
-      font-weight: 900;
-      line-height: .8;
-
-      letter-spacing: -4px;
-
-      text-shadow:
-        0 0 18px rgba(200,0,0,.22);
-    }
-
     .hero-left-words {
-      margin-top: 28px;
+      margin-top: 6px;
     }
 
     .hero-left-words span {
       display: block;
 
-      margin-bottom: 7px;
+      margin-bottom: 8px;
 
-      color: rgba(225,225,225,.78);
+      color: rgba(230,230,230,.82);
 
       font-family: "Inter", sans-serif;
 
@@ -752,7 +725,7 @@
       width: 58px;
       height: 2px;
 
-      margin-top: 21px;
+      margin-top: 20px;
 
       background:
         linear-gradient(
@@ -932,15 +905,12 @@
 
     section {
       max-width: 1250px;
-
       margin: auto;
-
       padding: 52px 20px;
     }
 
     .section-shell {
       position: relative;
-
       overflow: hidden;
 
       padding: 42px 28px;
@@ -1230,7 +1200,6 @@
 
     .research-material-notice strong {
       color: #ff3434;
-
       letter-spacing: 1.1px;
     }
 
@@ -1264,7 +1233,6 @@
         );
 
       border: 1px solid #5e0000;
-
       border-radius: 7px;
 
       transition: .25s;
@@ -1592,7 +1560,7 @@
 
 
     /* =========================================
-       REALISTIC RESEARCH VIAL
+       REALISTIC VIALS
     ========================================== */
 
     .vial {
@@ -1602,7 +1570,6 @@
       margin-top: 27px;
 
       position: relative;
-
       overflow: visible;
 
       border:
@@ -1669,9 +1636,6 @@
         0 3px 4px rgba(0,0,0,.5);
     }
 
-
-    /* WHITE LYOPHILIZED POWDER */
-
     .vial::after {
       content: "";
 
@@ -1730,7 +1694,6 @@
         rotate(-1deg)
         scaleX(.96);
     }
-
 
     .vial-label {
       position: absolute;
@@ -2025,9 +1988,6 @@
         top: 58px;
       }
 
-
-      /* MOBILE HERO */
-
       header {
         min-height: 435px;
         height: 435px;
@@ -2255,9 +2215,6 @@
         letter-spacing: .8px;
       }
 
-
-      /* MOBILE SECTIONS */
-
       section {
         padding: 18px 8px;
       }
@@ -2308,9 +2265,6 @@
 
         font-size: .48rem;
       }
-
-
-      /* PEPTIDE EDUCATION MOBILE */
 
       .peptide-education {
         margin-bottom: 20px;
@@ -2372,9 +2326,6 @@
         font-size: .54rem;
         line-height: 1.4;
       }
-
-
-      /* MOBILE COMPOUND CARDS */
 
       .products {
         grid-template-columns:
@@ -2459,9 +2410,6 @@
         font-size: .49rem !important;
       }
 
-
-      /* MOBILE DETAILS */
-
       .details-grid {
         grid-template-columns:
           repeat(
@@ -2544,9 +2492,6 @@
           45% 55% 18% 22% /
           38% 42% 16% 18%;
       }
-
-
-      /* MOBILE VIAL LABEL */
 
       .vial-label {
         top: 22px;
@@ -2701,8 +2646,6 @@
   </div>
 
 
-  <!-- AGE VERIFICATION -->
-
   <div id="ageGate">
 
     <div class="age-box">
@@ -2754,8 +2697,6 @@
   </div>
 
 
-  <!-- NAVIGATION -->
-
   <nav>
 
     <div class="nav-logo">
@@ -2794,8 +2735,6 @@
   </div>
 
 
-  <!-- HERO -->
-
   <header id="home">
 
     <div class="hero-grid"></div>
@@ -2817,13 +2756,7 @@
     <div class="scan-line"></div>
 
 
-    <!-- LIVE DESKTOP LEFT IDENTIFIER -->
-
     <div class="hero-left-id">
-
-      <div class="hero-r">
-        R
-      </div>
 
       <div class="hero-left-words">
         <span>Science</span>
@@ -2884,8 +2817,6 @@
   </header>
 
 
-  <!-- COMPOUNDS -->
-
   <section id="compounds">
 
     <div class="section-shell">
@@ -2924,8 +2855,6 @@
 
       </div>
 
-
-      <!-- PEPTIDE EDUCATION -->
 
       <div class="peptide-education">
 
@@ -3055,8 +2984,6 @@
 
       </div>
 
-
-      <!-- COMPOUND CARDS -->
 
       <div class="products">
 
@@ -3646,8 +3573,6 @@
   </section>
 
 
-  <!-- DETAILS -->
-
   <section id="details">
 
     <div class="section-shell">
@@ -3869,8 +3794,6 @@
   </section>
 
 
-  <!-- ABOUT -->
-
   <section
     id="about"
     class="about"
@@ -3924,8 +3847,6 @@
   </section>
 
 
-  <!-- CONTACT -->
-
   <section
     id="contact"
     class="contact"
@@ -3957,8 +3878,6 @@
 
   </section>
 
-
-  <!-- FOOTER -->
 
   <footer>
 
