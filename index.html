@@ -509,10 +509,6 @@
         );
     }
 
-
-    /* SIDE FADE NOW STARTS LOWER
-       SO TOP LEFT/RIGHT ART IS NOT CUT OFF */
-
     .hero-art-wrap::after {
       content: "";
 
@@ -556,7 +552,6 @@
       background:
         radial-gradient(
           circle at center,
-
           transparent 0%,
           rgba(2,3,3,.03) 40%,
           rgba(2,3,3,.25) 70%,
@@ -671,6 +666,105 @@
         opacity: 0;
       }
     }
+
+
+    /* =========================================
+       LIVE DESKTOP LEFT IDENTIFIER
+    ========================================== */
+
+    .hero-left-id {
+      position: absolute;
+
+      z-index: 8;
+
+      top: 120px;
+      left: max(44px, calc(50% - 445px));
+
+      width: 210px;
+
+      text-align: left;
+
+      pointer-events: none;
+    }
+
+    .hero-left-id::before {
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      top: -25px;
+      left: -22px;
+      right: -30px;
+      bottom: -30px;
+
+      background:
+        radial-gradient(
+          ellipse at left center,
+          rgba(2,3,3,.98) 0%,
+          rgba(2,3,3,.90) 43%,
+          rgba(2,3,3,.58) 67%,
+          transparent 100%
+        );
+    }
+
+    .hero-r {
+      color: #9d1010;
+
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: .8;
+
+      letter-spacing: -4px;
+
+      text-shadow:
+        0 0 18px rgba(200,0,0,.22);
+    }
+
+    .hero-left-words {
+      margin-top: 28px;
+    }
+
+    .hero-left-words span {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: rgba(225,225,225,.78);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: .78rem;
+      font-weight: 600;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 2px 6px #000;
+    }
+
+    .hero-left-line {
+      width: 58px;
+      height: 2px;
+
+      margin-top: 21px;
+
+      background:
+        linear-gradient(
+          to right,
+          #9b0000,
+          #3e0000
+        );
+
+      box-shadow:
+        0 0 6px rgba(200,0,0,.18);
+    }
+
 
     .hero {
       position: relative;
@@ -1185,9 +1279,6 @@
         0 12px 30px rgba(150,0,0,.14);
     }
 
-
-    /* UNIQUE COMPOUND SYMBOLS */
-
     .compound-symbol {
       width: 58px;
       height: 58px;
@@ -1501,7 +1592,7 @@
 
 
     /* =========================================
-       MORE REALISTIC RESEARCH VIAL
+       REALISTIC RESEARCH VIAL
     ========================================== */
 
     .vial {
@@ -1543,9 +1634,6 @@
         0 8px 16px rgba(0,0,0,.55);
     }
 
-
-    /* metal crimp cap */
-
     .vial::before {
       content: "";
 
@@ -1582,34 +1670,65 @@
     }
 
 
-    /* lyophilized powder */
+    /* WHITE LYOPHILIZED POWDER */
 
     .vial::after {
       content: "";
 
       position: absolute;
 
-      z-index: 1;
+      z-index: 2;
 
       left: 7px;
       right: 7px;
-      bottom: 6px;
+      bottom: 5px;
 
-      height: 13px;
+      height: 16px;
 
       border-radius:
-        50% 50% 8px 8px;
+        45% 55% 18% 22% /
+        38% 42% 16% 18%;
 
       background:
         radial-gradient(
-          ellipse at center,
-          rgba(245,245,245,.95),
-          rgba(215,215,215,.80) 45%,
-          rgba(160,160,160,.55) 72%,
-          transparent 76%
+          circle at 18% 38%,
+          rgba(255,255,255,.98) 0 2px,
+          transparent 2.5px
+        ),
+        radial-gradient(
+          circle at 35% 25%,
+          rgba(245,245,245,.95) 0 1.5px,
+          transparent 2px
+        ),
+        radial-gradient(
+          circle at 57% 35%,
+          rgba(255,255,255,.96) 0 2px,
+          transparent 2.5px
+        ),
+        radial-gradient(
+          circle at 76% 24%,
+          rgba(235,235,235,.92) 0 1.5px,
+          transparent 2px
+        ),
+        linear-gradient(
+          to bottom,
+          #f7f7f7 0%,
+          #ededed 40%,
+          #d5d5d5 75%,
+          #b8b8b8 100%
         );
 
-      opacity: .72;
+      box-shadow:
+        inset 0 3px 3px rgba(255,255,255,.85),
+        inset 0 -3px 4px rgba(80,80,80,.22),
+        0 -1px 4px rgba(255,255,255,.30),
+        0 2px 4px rgba(0,0,0,.35);
+
+      opacity: .98;
+
+      transform:
+        rotate(-1deg)
+        scaleX(.96);
     }
 
 
@@ -1868,6 +1987,10 @@
           repeat(2,1fr);
       }
 
+      .hero-left-id {
+        display: none;
+      }
+
     }
 
 
@@ -1934,6 +2057,10 @@
       }
 
       .hero-art-wrap::after {
+        display: none;
+      }
+
+      .hero-left-id {
         display: none;
       }
 
@@ -2407,11 +2534,15 @@
       }
 
       .vial::after {
-        left: 5px;
-        right: 5px;
+        left: 4px;
+        right: 4px;
         bottom: 3px;
 
-        height: 8px;
+        height: 10px;
+
+        border-radius:
+          45% 55% 18% 22% /
+          38% 42% 16% 18%;
       }
 
 
@@ -2686,6 +2817,25 @@
     <div class="scan-line"></div>
 
 
+    <!-- LIVE DESKTOP LEFT IDENTIFIER -->
+
+    <div class="hero-left-id">
+
+      <div class="hero-r">
+        R
+      </div>
+
+      <div class="hero-left-words">
+        <span>Science</span>
+        <span>Precision</span>
+        <span>Evolution</span>
+      </div>
+
+      <div class="hero-left-line"></div>
+
+    </div>
+
+
     <div class="hero">
 
       <div class="hero-tech">
@@ -2764,33 +2914,13 @@
 
       <div class="research-areas">
 
-        <span class="research-area">
-          Weight Management
-        </span>
-
-        <span class="research-area">
-          Cell Repair
-        </span>
-
-        <span class="research-area">
-          Recovery
-        </span>
-
-        <span class="research-area">
-          Mitochondrial Function
-        </span>
-
-        <span class="research-area">
-          Longevity
-        </span>
-
-        <span class="research-area">
-          Metabolic Health
-        </span>
-
-        <span class="research-area">
-          Endocrine Research
-        </span>
+        <span class="research-area">Weight Management</span>
+        <span class="research-area">Cell Repair</span>
+        <span class="research-area">Recovery</span>
+        <span class="research-area">Mitochondrial Function</span>
+        <span class="research-area">Longevity</span>
+        <span class="research-area">Metabolic Health</span>
+        <span class="research-area">Endocrine Research</span>
 
       </div>
 
@@ -2931,12 +3061,9 @@
       <div class="products">
 
 
-        <!-- TIRZEPATIDE -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M11 9c4 4 4 18 0 22"></path>
               <path d="M29 9c-4 4-4 18 0 22"></path>
@@ -2944,7 +3071,6 @@
               <path d="M14 26h12"></path>
               <path d="M20 11v18"></path>
             </svg>
-
           </div>
 
           <h3>Tirzepatide</h3>
@@ -3001,12 +3127,9 @@
         </div>
 
 
-        <!-- RETATRUTIDE -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <circle cx="20" cy="8" r="4"></circle>
               <circle cx="9" cy="27" r="4"></circle>
@@ -3015,7 +3138,6 @@
               <path d="M22 12l7 11"></path>
               <path d="M13 27h14"></path>
             </svg>
-
           </div>
 
           <h3>Retatrutide</h3>
@@ -3072,12 +3194,9 @@
         </div>
 
 
-        <!-- KLOW -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M12 7l16 26"></path>
               <path d="M28 7L12 33"></path>
@@ -3085,7 +3204,6 @@
               <path d="M14 20h12"></path>
               <path d="M16 26h8"></path>
             </svg>
-
           </div>
 
           <h3>KLOW</h3>
@@ -3130,11 +3248,6 @@
                 specific formulation.
               </p>
 
-              <p class="compound-more-note">
-                Research descriptions for KLOW should be interpreted according
-                to the exact composition of the formulation being studied.
-              </p>
-
             </div>
 
           </div>
@@ -3142,12 +3255,9 @@
         </div>
 
 
-        <!-- EPITALON -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M12 5c15 8 1 22 16 30"></path>
               <path d="M28 5c-15 8-1 22-16 30"></path>
@@ -3156,7 +3266,6 @@
               <path d="M13 26h14"></path>
               <path d="M15 32h10"></path>
             </svg>
-
           </div>
 
           <h3>Epitalon</h3>
@@ -3194,20 +3303,7 @@
 
               <p>
                 Laboratory research has also explored relationships between
-                Epitalon, telomerase activity and telomere biology, which has
-                made it particularly interesting within experimental
-                longevity research.
-              </p>
-
-              <p>
-                Researchers continue to examine how short regulatory peptides
-                may influence age-associated cellular processes and molecular
-                signaling.
-              </p>
-
-              <p class="compound-more-note">
-                Much of the evidence surrounding Epitalon remains experimental
-                or laboratory-based.
+                Epitalon, telomerase activity and telomere biology.
               </p>
 
             </div>
@@ -3217,18 +3313,14 @@
         </div>
 
 
-        <!-- SS31 -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M7 20c3-9 11-13 20-10 7 2 9 9 5 15-5 7-18 8-25-5z"></path>
               <path d="M12 18c4-3 6 4 10 1 4-4 5 3 8 1"></path>
               <path d="M11 24c4 2 7-3 10 0 3 3 6-1 8-2"></path>
             </svg>
-
           </div>
 
           <h3>SS-31</h3>
@@ -3270,13 +3362,6 @@
                 efficiency.
               </p>
 
-              <p>
-                The compound has been investigated across areas involving
-                skeletal muscle, cardiovascular biology, mitochondrial
-                disorders and other conditions associated with impaired
-                mitochondrial energy production.
-              </p>
-
             </div>
 
           </div>
@@ -3284,16 +3369,12 @@
         </div>
 
 
-        <!-- NAD -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M23 4L11 22h8l-2 14 12-19h-8z"></path>
             </svg>
-
           </div>
 
           <h3>NAD+</h3>
@@ -3334,13 +3415,6 @@
                 maintenance.
               </p>
 
-              <p>
-                Because NAD+ metabolism can change with age and metabolic
-                dysfunction, researchers continue to investigate NAD+
-                biology in relation to aging, mitochondrial function,
-                cellular resilience and cardiometabolic health.
-              </p>
-
             </div>
 
           </div>
@@ -3348,18 +3422,14 @@
         </div>
 
 
-        <!-- MOTS-C -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <ellipse cx="20" cy="20" rx="14" ry="10"></ellipse>
               <path d="M10 21c4-8 7 7 11-1 3-6 6 5 9-1"></path>
               <path d="M29 10l4 3-4 3"></path>
             </svg>
-
           </div>
 
           <h3>MOTS-C</h3>
@@ -3390,21 +3460,14 @@
               </div>
 
               <p>
-                MOTS-C is produced from mitochondrial genetic information
-                and has become an important research target in the emerging
-                field of mitochondrial-derived signaling peptides.
-              </p>
-
-              <p>
                 Research has explored its relationship with glucose utilization,
                 metabolic flexibility, skeletal-muscle function, cellular
                 stress responses and exercise adaptation.
               </p>
 
               <p>
-                Experimental work has also examined mitochondrial efficiency,
-                oxidative-stress regulation and the mechanisms through which
-                mitochondria communicate with the rest of the cell.
+                Experimental work has also examined mitochondrial efficiency
+                and oxidative-stress regulation.
               </p>
 
             </div>
@@ -3414,16 +3477,12 @@
         </div>
 
 
-        <!-- CJC -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M4 22h7l3-8 5 15 5-20 5 13h7"></path>
             </svg>
-
           </div>
 
           <h3>CJC-1295 Without DAC</h3>
@@ -3461,14 +3520,7 @@
 
               <p>
                 Research in this area examines GH secretion, IGF-1 signaling,
-                endocrine physiology, metabolic regulation and pathways
-                involved in tissue growth and repair.
-              </p>
-
-              <p>
-                CJC-1295 without DAC is shorter acting than the DAC-linked
-                form, making the distinction between formulations important
-                when interpreting published research.
+                endocrine physiology and metabolic regulation.
               </p>
 
             </div>
@@ -3478,17 +3530,13 @@
         </div>
 
 
-        <!-- IPAMORELIN -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M20 5c7 9 11 14 11 20a11 11 0 0 1-22 0c0-6 4-11 11-20z"></path>
               <path d="M15 26c2 2 4 3 7 3"></path>
             </svg>
-
           </div>
 
           <h3>Ipamorelin</h3>
@@ -3524,16 +3572,9 @@
               </p>
 
               <p>
-                Researchers have been particularly interested in its relatively
-                selective endocrine activity compared with some earlier
-                growth-hormone secretagogues.
-              </p>
-
-              <p>
                 Research areas associated with the GH axis include endocrine
                 signaling, body-composition biology, tissue recovery and
-                metabolic regulation, although evidence for downstream
-                outcomes varies by study design.
+                metabolic regulation.
               </p>
 
             </div>
@@ -3543,19 +3584,15 @@
         </div>
 
 
-        <!-- PINEALON -->
-
         <div class="card">
 
           <div class="compound-symbol">
-
             <svg viewBox="0 0 40 40">
               <path d="M17 7c-6 0-10 4-10 9 0 3 2 5 4 6-2 4 1 8 5 8 2 4 8 4 10 0 5 0 7-5 5-8 3-1 4-5 2-8-2-4-6-5-10-3-1-3-3-4-4-4z"></path>
               <path d="M20 11v19"></path>
               <path d="M13 17h7"></path>
               <path d="M20 22h8"></path>
             </svg>
-
           </div>
 
           <h3>Pinealon</h3>
@@ -3586,11 +3623,6 @@
               </div>
 
               <p>
-                Pinealon is a short tripeptide studied primarily in
-                experimental neurobiology and cellular-regulation research.
-              </p>
-
-              <p>
                 Laboratory studies have examined relationships with oxidative
                 stress, reactive oxygen species, cell viability and several
                 regulatory processes relevant to neuronal cells.
@@ -3598,13 +3630,7 @@
 
               <p>
                 These findings have generated interest in Pinealon within
-                neuroprotective and geroprotective research, particularly
-                research examining cellular resilience during aging.
-              </p>
-
-              <p class="compound-more-note">
-                The available evidence remains considerably smaller and more
-                preclinical than that available for established metabolic therapies.
+                neuroprotective and geroprotective research.
               </p>
 
             </div>
@@ -3663,12 +3689,10 @@
           </div>
 
           <div class="vial">
-
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
-
           </div>
 
         </div>
@@ -3713,12 +3737,10 @@
           </div>
 
           <div class="vial">
-
             <div class="vial-label">
               <strong>REAPER BIOLABS</strong>
               <small>RESEARCH USE</small>
             </div>
-
           </div>
 
         </div>
