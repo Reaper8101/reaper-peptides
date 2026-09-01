@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Reaper BioLabs | Evolution Engineered</title>
+  <title>Reaper BioLabs | Peptide Science</title>
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -381,13 +381,93 @@
 
 
     /* =========================================================
-       NEW HALO HERO
+       BRAND STRIP
+       ========================================================= */
+
+    .brand-strip {
+      position: relative;
+      width: 100%;
+
+      padding: 24px 20px 20px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(150,0,0,.14),
+          transparent 52%
+        ),
+        linear-gradient(
+          to bottom,
+          #050606,
+          #020303
+        );
+
+      border-bottom: 1px solid rgba(215,20,20,.35);
+    }
+
+    .brand-strip::after {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+
+      width: min(520px, 65%);
+      height: 1px;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,40,40,.8),
+          transparent
+        );
+    }
+
+    .brand-strip-title {
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 900;
+
+      line-height: .9;
+
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .brand-strip-title span {
+      color: var(--red);
+    }
+
+    .brand-strip-subtitle {
+      margin-top: 11px;
+
+      color: #929292;
+
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: .78rem;
+      font-weight: 600;
+
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       HALO HERO
        ========================================================= */
 
     .bio-hero {
       position: relative;
       width: 100%;
-      padding: 28px 0 34px;
+
+      padding: 20px 0 30px;
 
       overflow: hidden;
 
@@ -447,32 +527,39 @@
     .bio-hero-art {
       width: 100%;
       height: auto;
+      display: block;
     }
-
-    /*
-      Click areas over the two buttons baked into the image.
-      They scale with the image.
-    */
 
     .bio-hero-hotspot {
       position: absolute;
-      z-index: 5;
+
+      z-index: 10;
+
       display: block;
+
       cursor: pointer;
     }
 
+
+    /* EXPLORE COMPOUNDS */
+
     .bio-hot-products {
-      left: 2.6%;
-      top: 87.2%;
-      width: 16.6%;
-      height: 9%;
+      left: 3.1%;
+      top: 74.7%;
+
+      width: 21.2%;
+      height: 7.2%;
     }
 
+
+    /* LEARN MORE */
+
     .bio-hot-learn {
-      left: 19.6%;
-      top: 87.2%;
-      width: 14.2%;
-      height: 9%;
+      left: 3.1%;
+      top: 83.4%;
+
+      width: 18.9%;
+      height: 7%;
     }
 
 
@@ -1389,12 +1476,30 @@
         font-size: .86rem;
       }
 
+      .brand-strip {
+        padding: 17px 10px 15px;
+      }
+
+      .brand-strip-title {
+        font-size: 2.1rem;
+        letter-spacing: 3px;
+      }
+
+      .brand-strip-subtitle {
+        margin-top: 8px;
+
+        font-size: .61rem;
+
+        letter-spacing: 4px;
+      }
+
       .bio-hero {
         padding: 8px 0 12px;
       }
 
       .bio-hero-stage {
         width: 100%;
+
         border-left: 0;
         border-right: 0;
       }
@@ -1688,7 +1793,7 @@
 
 
   <!-- =========================================================
-       NAV
+       NAVIGATION
        ========================================================= -->
 
   <nav>
@@ -1728,7 +1833,24 @@
 
 
   <!-- =========================================================
-       NEW HALO HERO
+       BRAND STRIP
+       ========================================================= -->
+
+  <div class="brand-strip">
+
+    <div class="brand-strip-title">
+      REAPER <span>BIOLABS</span>
+    </div>
+
+    <div class="brand-strip-subtitle">
+      PEPTIDE SCIENCE
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       HALO HERO
        ========================================================= -->
 
   <header
@@ -1740,21 +1862,21 @@
 
       <img
         src="reaper-biolabs-hero-halo.png"
-        alt="Reaper BioLabs research laboratory"
+        alt="Reaper BioLabs peptide research"
         class="bio-hero-art"
       >
 
 
-      <!-- EXPLORE / SHOP PRODUCTS BUTTON -->
+      <!-- EXPLORE COMPOUNDS -->
 
       <a
-        href="#details"
+        href="#compounds"
         class="bio-hero-hotspot bio-hot-products"
-        aria-label="Explore Products"
+        aria-label="Explore Compounds"
       ></a>
 
 
-      <!-- LEARN MORE BUTTON -->
+      <!-- LEARN MORE -->
 
       <a
         href="#compounds"
@@ -1935,12 +2057,10 @@
       </div>
 
 
-      <!-- PRODUCTS -->
+      <!-- COMPOUNDS -->
 
       <div class="products">
 
-
-        <!-- TIRZEPATIDE -->
 
         <div class="card">
 
@@ -1954,9 +2074,7 @@
             </svg>
           </div>
 
-          <h3>
-            Tirzepatide
-          </h3>
+          <h3>Tirzepatide</h3>
 
           <p>
             A dual GIP and GLP-1 receptor agonist that has become
@@ -1967,16 +2085,12 @@
             Metabolism • Glucose Regulation • Body Composition
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -1996,13 +2110,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- RETATRUTIDE -->
 
         <div class="card">
 
@@ -2017,9 +2128,7 @@
             </svg>
           </div>
 
-          <h3>
-            Retatrutide
-          </h3>
+          <h3>Retatrutide</h3>
 
           <p>
             An investigational triple-receptor agonist studied across
@@ -2030,16 +2139,12 @@
             Metabolism • Energy Balance • Body-Fat Research
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2060,13 +2165,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- KLOW -->
 
         <div class="card">
 
@@ -2080,9 +2182,7 @@
             </svg>
           </div>
 
-          <h3>
-            KLOW
-          </h3>
+          <h3>KLOW</h3>
 
           <p>
             A multi-peptide research blend commonly discussed in relation
@@ -2093,16 +2193,12 @@
             Tissue Biology • Collagen • Recovery Research
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2122,13 +2218,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- EPITALON -->
 
         <div class="card">
 
@@ -2142,9 +2235,7 @@
             </svg>
           </div>
 
-          <h3>
-            Epitalon
-          </h3>
+          <h3>Epitalon</h3>
 
           <p>
             A synthetic tetrapeptide investigated in cellular-aging,
@@ -2155,16 +2246,12 @@
             Cellular Aging • Telomeres • Longevity Biology
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2183,13 +2270,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- SS31 -->
 
         <div class="card">
 
@@ -2200,9 +2284,7 @@
             </svg>
           </div>
 
-          <h3>
-            SS-31
-          </h3>
+          <h3>SS-31</h3>
 
           <p>
             A mitochondria-targeted peptide investigated for cellular
@@ -2213,16 +2295,12 @@
             Mitochondria • ATP • Cellular Energy
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2241,13 +2319,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- NAD -->
 
         <div class="card">
 
@@ -2257,9 +2332,7 @@
             </svg>
           </div>
 
-          <h3>
-            NAD+
-          </h3>
+          <h3>NAD+</h3>
 
           <p>
             A naturally occurring cellular coenzyme central to energy
@@ -2270,16 +2343,12 @@
             Cellular Energy • Redox Biology • DNA Repair
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2298,13 +2367,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- MOTS-C -->
 
         <div class="card">
 
@@ -2315,9 +2381,7 @@
             </svg>
           </div>
 
-          <h3>
-            MOTS-C
-          </h3>
+          <h3>MOTS-C</h3>
 
           <p>
             A mitochondria-derived peptide studied as a signaling molecule
@@ -2328,16 +2392,12 @@
             Metabolic Flexibility • Muscle • Mitochondrial Signaling
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2356,13 +2416,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- CJC -->
 
         <div class="card">
 
@@ -2372,9 +2429,7 @@
             </svg>
           </div>
 
-          <h3>
-            CJC-1295 Without DAC
-          </h3>
+          <h3>CJC-1295 Without DAC</h3>
 
           <p>
             A GHRH analog investigated for its effects on
@@ -2385,16 +2440,12 @@
             GH Signaling • IGF-1 Axis • Endocrine Research
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2414,13 +2465,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- IPAMORELIN -->
 
         <div class="card">
 
@@ -2431,9 +2479,7 @@
             </svg>
           </div>
 
-          <h3>
-            Ipamorelin
-          </h3>
+          <h3>Ipamorelin</h3>
 
           <p>
             A selective growth-hormone secretagogue investigated for
@@ -2444,16 +2490,12 @@
             Growth Hormone • Ghrelin Receptor • Recovery Biology
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2472,13 +2514,10 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
 
-
-        <!-- PINEALON -->
 
         <div class="card">
 
@@ -2489,9 +2528,7 @@
             </svg>
           </div>
 
-          <h3>
-            Pinealon
-          </h3>
+          <h3>Pinealon</h3>
 
           <p>
             A short synthetic peptide investigated primarily in experimental
@@ -2502,16 +2539,12 @@
             Neurobiology • Oxidative Stress • Cellular Aging
           </div>
 
-          <button
-            class="learn-button"
-            onclick="toggleCompound(this)"
-          >
+          <button class="learn-button" onclick="toggleCompound(this)">
             Research Overview
             <span class="arrow">▼</span>
           </button>
 
           <div class="compound-more">
-
             <div class="compound-more-inner">
 
               <div class="compound-more-title">
@@ -2531,7 +2564,6 @@
               </p>
 
             </div>
-
           </div>
 
         </div>
@@ -2577,8 +2609,6 @@
       <div class="details-grid">
 
 
-        <!-- TIRZ -->
-
         <div class="detail-card">
 
           <div class="detail-name">
@@ -2602,8 +2632,6 @@
 
         </div>
 
-
-        <!-- RETA -->
 
         <div class="detail-card">
 
@@ -2653,8 +2681,6 @@
         </div>
 
 
-        <!-- KLOW -->
-
         <div class="detail-card">
 
           <div class="detail-name">
@@ -2678,8 +2704,6 @@
 
         </div>
 
-
-        <!-- EPITALON -->
 
         <div class="detail-card">
 
@@ -2705,8 +2729,6 @@
         </div>
 
 
-        <!-- SS31 -->
-
         <div class="detail-card">
 
           <div class="detail-name">
@@ -2730,8 +2752,6 @@
 
         </div>
 
-
-        <!-- NAD -->
 
         <div class="detail-card">
 
@@ -2757,8 +2777,6 @@
         </div>
 
 
-        <!-- MOTSC -->
-
         <div class="detail-card">
 
           <div class="detail-name">
@@ -2782,8 +2800,6 @@
 
         </div>
 
-
-        <!-- CJC -->
 
         <div class="detail-card">
 
@@ -2809,8 +2825,6 @@
         </div>
 
 
-        <!-- IPA -->
-
         <div class="detail-card">
 
           <div class="detail-name">
@@ -2834,8 +2848,6 @@
 
         </div>
 
-
-        <!-- PINEALON -->
 
         <div class="detail-card">
 
