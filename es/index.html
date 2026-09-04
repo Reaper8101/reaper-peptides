@@ -1,0 +1,2956 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reaper BioLabs | Ciencia de Péptidos</title>
+
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #020303;
+      --panel: #080909;
+      --panel2: #0d0e0e;
+      --red: #d91414;
+      --red-bright: #ff3434;
+      --red-dark: #670000;
+      --white: #f2f2f2;
+      --muted: #999;
+      --line: rgba(255,255,255,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+
+      background:
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
+        radial-gradient(circle at top, rgba(140,0,0,.09), transparent 32%),
+        var(--bg);
+
+      background-size:
+        42px 42px,
+        42px 42px,
+        auto,
+        auto;
+    }
+
+    body.locked {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .nav-logo,
+    .age-logo,
+    .detail-name,
+    .detail-mg {
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .science-layer {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hex-field {
+      position: absolute;
+      inset: 0;
+      opacity: .045;
+
+      background-image:
+        linear-gradient(
+          30deg,
+          rgba(255,0,0,.25) 12%,
+          transparent 12.5%,
+          transparent 87%,
+          rgba(255,0,0,.25) 87.5%
+        ),
+        linear-gradient(
+          150deg,
+          rgba(255,0,0,.25) 12%,
+          transparent 12.5%,
+          transparent 87%,
+          rgba(255,0,0,.25) 87.5%
+        );
+
+      background-size: 76px 132px;
+    }
+
+    #ageGate {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 24px;
+
+      background:
+        radial-gradient(circle at center, rgba(150,0,0,.22), transparent 55%),
+        rgba(0,0,0,.985);
+    }
+
+    .age-box {
+      width: 100%;
+      max-width: 470px;
+      padding: 38px 30px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(circle at top, rgba(130,0,0,.10), transparent 40%),
+        linear-gradient(145deg, #111, #050505);
+
+      border: 1px solid #303030;
+      border-top: 4px solid var(--red);
+      border-radius: 10px;
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.9),
+        0 0 50px rgba(150,0,0,.10);
+    }
+
+    .age-logo {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: .9;
+    }
+
+    .age-logo span {
+      color: var(--red);
+    }
+
+    .age-slogan {
+      margin-top: 9px;
+      color: #aaa;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .age-box h2 {
+      margin-top: 20px;
+      font-size: 1.7rem;
+    }
+
+    .age-box p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .age-badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 7px 13px;
+
+      color: #ff4545;
+      border: 1px solid #7d0000;
+      border-radius: 4px;
+
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .age-box label {
+      display: block;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .age-box input {
+      width: 100%;
+      padding: 14px;
+
+      background: #050505;
+      color: white;
+
+      border: 1px solid #414141;
+      border-radius: 5px;
+    }
+
+    .age-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+
+      background: #a60000;
+      color: white;
+
+      border: 1px solid #ff2d2d;
+      border-radius: 5px;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .age-button:hover {
+      background: #c20909;
+    }
+
+    #ageMessage {
+      min-height: 24px;
+      margin-top: 15px;
+      color: #ff5555;
+      font-weight: 600;
+    }
+
+    .age-note {
+      margin-top: 14px;
+      color: #666;
+      font-size: .8rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 5%;
+
+      background: rgba(2,3,3,.96);
+      border-bottom: 1px solid #202020;
+
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #ddd;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red-bright);
+    }
+
+    .menu-button {
+      display: none;
+
+      padding: 8px 12px;
+
+      background: #090909;
+      color: white;
+
+      border: 1px solid #650000;
+      border-radius: 5px;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      position: fixed;
+      top: 58px;
+      left: 0;
+      right: 0;
+
+      z-index: 999;
+
+      padding: 8px 14px 14px;
+
+      background: rgba(3,3,3,.98);
+      border-bottom: 1px solid #660000;
+
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 10px;
+
+      color: #ddd;
+      border-bottom: 1px solid #222;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .brand-strip {
+      position: relative;
+      width: 100%;
+
+      padding: 24px 20px 20px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(150,0,0,.14),
+          transparent 52%
+        ),
+        linear-gradient(
+          to bottom,
+          #050606,
+          #020303
+        );
+
+      border-bottom: 1px solid rgba(215,20,20,.35);
+    }
+
+    .brand-strip::after {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+
+      width: min(520px, 65%);
+      height: 1px;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,40,40,.8),
+          transparent
+        );
+    }
+
+    .brand-strip-title {
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 900;
+
+      line-height: .9;
+
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .brand-strip-title span {
+      color: var(--red);
+    }
+
+    .brand-strip-subtitle {
+      margin-top: 11px;
+
+      color: #929292;
+
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: .78rem;
+      font-weight: 600;
+
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    .bio-hero {
+      position: relative;
+      width: 100%;
+
+      padding: 20px 0 30px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 58% 35%,
+          rgba(155,0,0,.13),
+          transparent 38%
+        ),
+        #020303;
+
+      border-bottom: 1px solid #2a0909;
+    }
+
+    .bio-hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: .13;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,.02) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.02) 1px,
+          transparent 1px
+        );
+
+      background-size: 42px 42px;
+    }
+
+    .bio-hero-stage {
+      position: relative;
+      z-index: 1;
+
+      width: min(1480px, 96vw);
+      margin: auto;
+
+      overflow: hidden;
+
+      background: #000;
+
+      border: 1px solid rgba(255,255,255,.06);
+
+      box-shadow:
+        0 28px 80px rgba(0,0,0,.72),
+        0 0 55px rgba(120,0,0,.09);
+    }
+
+    .bio-hero-art {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .bio-hero-hotspot {
+      position: absolute;
+      z-index: 10;
+      display: block;
+      cursor: pointer;
+    }
+
+    .bio-hot-products {
+      left: 3.1%;
+      top: 74.7%;
+      width: 21.2%;
+      height: 7.2%;
+    }
+
+    .bio-hot-learn {
+      left: 3.1%;
+      top: 83.4%;
+      width: 18.9%;
+      height: 7%;
+    }
+
+    section.content-section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 52px 20px;
+    }
+
+    .section-shell {
+      position: relative;
+      overflow: hidden;
+      padding: 42px 28px;
+
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(145,0,0,.08),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(13,14,14,.985),
+          rgba(4,5,5,.99)
+        );
+
+      border: 1px solid #6c0000;
+      border-radius: 10px;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025),
+        0 20px 55px rgba(0,0,0,.22);
+    }
+
+    .section-shell::before {
+      content: "RBL // INTERFAZ DE INVESTIGACIÓN";
+
+      position: absolute;
+      top: 12px;
+      right: 18px;
+
+      color: rgba(255,255,255,.12);
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .68rem;
+      letter-spacing: 2px;
+    }
+
+    .section-label {
+      text-align: center;
+      color: #ff3535;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 5px;
+      text-align: center;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2.55rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 860px;
+      margin: 10px auto 32px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .data-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 7px auto 22px;
+      color: #727272;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .72rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .data-strip span::before {
+      content: "●";
+      margin-right: 7px;
+      color: var(--red);
+      font-size: .55rem;
+    }
+
+    .research-areas {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      max-width: 900px;
+      margin: -19px auto 30px;
+    }
+
+    .research-area {
+      padding: 5px 10px;
+      background: rgba(95,0,0,.09);
+      border: 1px solid #400000;
+      border-radius: 3px;
+      color: #9b9b9b;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+    }
+
+    .peptide-education {
+      margin-bottom: 38px;
+      padding: 28px;
+
+      background:
+        radial-gradient(
+          circle at top center,
+          rgba(145,0,0,.10),
+          transparent 50%
+        ),
+        linear-gradient(145deg, #101111, #060707);
+
+      border: 1px solid #4d0000;
+      border-top: 3px solid var(--red);
+      border-radius: 9px;
+    }
+
+    .education-header {
+      max-width: 850px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .education-code {
+      color: #ff3939;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .education-header h3 {
+      margin-top: 3px;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .education-header p {
+      margin-top: 8px;
+      color: #aaa;
+      font-size: .93rem;
+      line-height: 1.7;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .education-card {
+      padding: 20px;
+      background: linear-gradient(145deg, #0d0e0e, #070707);
+      border: 1px solid #292929;
+      border-left: 3px solid #7d0000;
+      border-radius: 6px;
+    }
+
+    .education-number {
+      color: #ff3030;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .education-card h4 {
+      margin-top: 3px;
+      color: #eee;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: .8px;
+    }
+
+    .education-card p {
+      margin-top: 7px;
+      color: #aaa;
+      font-size: .82rem;
+      line-height: 1.65;
+    }
+
+    .research-material-notice {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: rgba(105,0,0,.10);
+      border: 1px solid #4e0000;
+      color: #aaa;
+      text-align: center;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .76rem;
+      letter-spacing: .6px;
+    }
+
+    .research-material-notice strong {
+      color: #ff3434;
+      letter-spacing: 1.1px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      padding: 22px 17px;
+
+      background:
+        radial-gradient(
+          circle at top center,
+          rgba(125,0,0,.06),
+          transparent 35%
+        ),
+        linear-gradient(145deg, #0d0e0e, #050505);
+
+      border: 1px solid #5e0000;
+      border-radius: 7px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+      box-shadow: 0 12px 30px rgba(150,0,0,.14);
+    }
+
+    .compound-symbol {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 13px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #ff3434;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(120,0,0,.22),
+          rgba(20,0,0,.06) 62%,
+          transparent 63%
+        );
+
+      border: 1px solid rgba(255,50,50,.18);
+      border-radius: 50%;
+    }
+
+    .compound-symbol svg {
+      width: 31px;
+      height: 31px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card h3 {
+      text-align: center;
+      font-size: 1.45rem;
+      font-weight: 800;
+    }
+
+    .card > p {
+      margin-top: 10px;
+      color: #b8b8b8;
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    .research-focus {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #320000;
+      text-align: center;
+      color: #777;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .learn-button {
+      width: 100%;
+      margin-top: auto;
+      padding: 9px 8px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(126,0,0,.18),
+          rgba(70,0,0,.08)
+        );
+
+      color: #ff3b3b;
+      border: 1px solid #580000;
+      border-radius: 4px;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+
+      cursor: pointer;
+      transition: .2s;
+    }    .learn-button:hover {
+      background: #770000;
+      color: white;
+      border-color: #d51b1b;
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-left: 5px;
+      transition: .2s;
+    }
+
+    .learn-button.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .compound-more {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+
+      transition:
+        max-height .45s ease,
+        opacity .25s ease,
+        margin-top .25s ease;
+    }
+
+    .compound-more.open {
+      max-height: 800px;
+      opacity: 1;
+      margin-top: 12px;
+    }
+
+    .compound-more-inner {
+      padding: 13px;
+      background: #080909;
+      border: 1px solid #292929;
+      border-left: 2px solid #7e0000;
+      border-radius: 4px;
+      text-align: left;
+    }
+
+    .compound-more-title {
+      color: #ff3939;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .compound-more p {
+      margin-top: 7px;
+      color: #aaa;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 15px;
+      margin-top: 32px;
+    }
+
+    .detail-card {
+      min-height: 325px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 18px 12px;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at bottom,
+          rgba(160,0,0,.13),
+          transparent 45%
+        ),
+        linear-gradient(to bottom, #0d0e0e, #050505);
+
+      border: 1px solid #720000;
+      border-radius: 7px;
+    }
+
+    .detail-name {
+      min-height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .detail-mg {
+      min-height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 7px;
+
+      color: #ff3434;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .detail-id {
+      min-height: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #eee;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .strength-tabs {
+      min-height: 34px;
+
+      display: flex;
+      justify-content: center;
+
+      gap: 5px;
+      margin-top: 5px;
+    }
+
+    .strength-tab {
+      padding: 5px 10px;
+
+      background: #090909;
+      color: #aaa;
+
+      border: 1px solid #4d0000;
+      border-radius: 4px;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .strength-tab.active {
+      background: #a90000;
+      color: white;
+      border-color: #ff2727;
+    }
+
+    .vial {
+      width: 72px;
+      height: 126px;
+
+      margin-top: 28px;
+      position: relative;
+
+      border: 1px solid rgba(220,225,230,.82);
+      border-radius: 9px 9px 16px 16px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.25),
+          rgba(255,255,255,.03) 25%,
+          rgba(255,255,255,.03) 70%,
+          rgba(255,255,255,.22)
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(210,220,225,.10),
+          rgba(20,23,24,.14)
+        );
+
+      box-shadow:
+        inset 5px 0 8px rgba(255,255,255,.07),
+        inset -5px 0 8px rgba(255,255,255,.05),
+        0 8px 16px rgba(0,0,0,.55);
+    }
+
+    .vial::before {
+      content: "";
+
+      position: absolute;
+
+      width: 58px;
+      height: 18px;
+
+      top: -20px;
+      left: 6px;
+
+      border: 1px solid #b8b8b8;
+      border-radius: 6px 6px 3px 3px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #b5b5b5,
+          #444 25%,
+          #1d1d1d 55%,
+          #555 80%,
+          #1a1a1a
+        );
+    }
+
+    .vial::after {
+      content: "";
+
+      position: absolute;
+
+      left: 7px;
+      right: 7px;
+      bottom: 5px;
+
+      height: 15px;
+
+      border-radius: 50% 50% 20% 20%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #f7f7f7,
+          #ededed 40%,
+          #cfcfcf
+        );
+    }
+
+    .vial-label {
+      position: absolute;
+
+      left: 7px;
+      right: 7px;
+      top: 38px;
+
+      height: 55px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      z-index: 2;
+
+      background: #050505;
+
+      border: 1px solid #690000;
+      border-radius: 2px;
+
+      font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .vial-label strong {
+      color: #ff2c2c;
+      font-size: .67rem;
+      line-height: 1;
+      letter-spacing: .7px;
+    }
+
+    .vial-label small {
+      margin-top: 4px;
+      color: #888;
+      font-size: .5rem;
+      letter-spacing: .6px;
+    }
+
+    .lot-note {
+      max-width: 760px;
+      margin: 28px auto 0;
+      text-align: center;
+      color: #777;
+      font-size: .82rem;
+    }
+
+    .about {
+      max-width: none;
+
+      padding: 70px 20px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(120,0,0,.08),
+          transparent 45%
+        ),
+        #070808;
+
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-inner p {
+      margin-top: 16px;
+      color: #bbb;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 18px;
+
+      text-align: left;
+
+      background: #0f1010;
+      border-left: 4px solid var(--red);
+
+      color: #999;
+      font-size: .9rem;
+    }
+
+    .notice strong {
+      color: #ff4141;
+    }
+
+    .contact {
+      max-width: none;
+      padding: 80px 20px;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(150,0,0,.12),
+          transparent 55%
+        );
+    }
+
+    .contact p {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .email-button {
+      display: inline-block;
+
+      margin-top: 20px;
+      padding: 14px 28px;
+
+      background: #a90000;
+      color: white;
+
+      border: 1px solid #ff3030;
+      border-radius: 5px;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+
+      transition: .2s;
+    }
+
+    .email-button:hover {
+      background: #c70a0a;
+    }
+
+    .email-address {
+      display: block;
+      margin-top: 12px;
+      color: #777;
+      font-size: .88rem;
+    }
+
+    footer {
+      padding: 34px 20px;
+      text-align: center;
+      background: #010202;
+      border-top: 1px solid #222;
+    }
+
+    footer strong {
+      color: var(--red);
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+    }
+
+    .footer-slogan {
+      margin-top: 5px;
+      color: #aaa;
+
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    footer p {
+      margin-top: 6px;
+      color: #777;
+      font-size: .82rem;
+    }
+
+    .footer-warning {
+      color: #ff3030;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 1000px) {
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bio-hero-stage {
+        width: 98vw;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      nav {
+        height: 58px;
+        padding: 0 11px;
+      }
+
+      .nav-logo {
+        font-size: 1.05rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+        padding: 6px 9px;
+        font-size: .86rem;
+      }
+
+      .brand-strip {
+        padding: 17px 10px 15px;
+      }
+
+      .brand-strip-title {
+        font-size: 2.1rem;
+        letter-spacing: 3px;
+      }
+
+      .brand-strip-subtitle {
+        margin-top: 8px;
+        font-size: .61rem;
+        letter-spacing: 4px;
+      }
+
+      .bio-hero {
+        padding: 8px 0 12px;
+      }
+
+      .bio-hero-stage {
+        width: 100%;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      section.content-section {
+        padding: 18px 8px;
+      }
+
+      .section-shell {
+        padding: 24px 9px;
+      }
+
+      .section-shell::before {
+        display: none;
+      }
+
+      h2 {
+        font-size: 1.55rem;
+        line-height: 1.05;
+      }
+
+      .section-label {
+        font-size: .65rem;
+      }
+
+      .section-intro {
+        margin: 7px auto 17px;
+        font-size: .72rem;
+      }
+
+      .research-areas {
+        gap: 4px;
+        margin: -4px auto 17px;
+      }
+
+      .research-area {
+        padding: 3px 6px;
+        font-size: .5rem;
+      }
+
+      .data-strip {
+        gap: 4px 8px;
+        margin-bottom: 13px;
+        font-size: .5rem;
+      }
+
+      .peptide-education {
+        margin-bottom: 20px;
+        padding: 15px 9px;
+      }
+
+      .education-header {
+        margin-bottom: 13px;
+      }
+
+      .education-header h3 {
+        font-size: 1.3rem;
+      }
+
+      .education-header p {
+        font-size: .67rem;
+        line-height: 1.45;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .education-card {
+        padding: 11px 10px;
+      }
+
+      .education-card h4 {
+        font-size: .9rem;
+      }
+
+      .education-card p {
+        font-size: .63rem;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 7px;
+      }
+
+      .card {
+        min-height: 225px;
+        padding: 11px 7px;
+      }
+
+      .compound-symbol {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 7px;
+      }
+
+      .compound-symbol svg {
+        width: 21px;
+        height: 21px;
+      }
+
+      .card h3 {
+        font-size: .9rem;
+        line-height: 1;
+      }
+
+      .card > p {
+        margin-top: 5px;
+        font-size: .59rem;
+        line-height: 1.3;
+      }
+
+      .research-focus {
+        margin-top: 6px;
+        padding-top: 5px;
+        font-size: .44rem;
+      }
+
+      .learn-button {
+        padding: 5px 4px;
+        font-size: .52rem;
+      }
+
+      .compound-more p {
+        font-size: .55rem;
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 7px;
+        margin-top: 17px;
+      }
+
+      .detail-card {
+        min-height: 220px;
+        padding: 9px 5px;
+      }
+
+      .detail-name {
+        min-height: 32px;
+        font-size: .8rem;
+      }
+
+      .detail-mg {
+        min-height: 22px;
+        font-size: .88rem;
+      }
+
+      .detail-id {
+        min-height: 18px;
+        font-size: .69rem;
+      }
+
+      .strength-tabs {
+        min-height: 24px;
+      }
+
+      .strength-tab {
+        padding: 2px 5px;
+        font-size: .58rem;
+      }
+
+      .vial {
+        width: 48px;
+        height: 80px;
+        margin-top: 16px;
+      }
+
+      .vial::before {
+        width: 36px;
+        height: 10px;
+        top: -11px;
+        left: 5px;
+      }
+
+      .vial::after {
+        left: 4px;
+        right: 4px;
+        bottom: 3px;
+        height: 9px;
+      }
+
+      .vial-label {
+        top: 22px;
+        height: 38px;
+        left: 3px;
+        right: 3px;
+      }
+
+      .vial-label strong {
+        font-size: .36rem;
+      }
+
+      .vial-label small {
+        font-size: .27rem;
+      }
+
+      .about {
+        padding: 35px 10px;
+      }
+
+      .about-inner p {
+        font-size: .72rem;
+      }
+
+      .notice {
+        padding: 11px;
+        font-size: .66rem;
+      }
+
+      .contact {
+        padding: 42px 10px;
+      }
+
+      .contact p {
+        font-size: .72rem;
+      }
+
+      footer {
+        padding: 20px 12px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="locked">
+
+  <div class="science-layer">
+    <div class="hex-field"></div>
+  </div>
+
+  <div id="ageGate">
+
+    <div class="age-box">
+
+      <div class="age-logo">
+        REAPER <span>BIOLABS</span>
+      </div>
+
+      <div class="age-slogan">
+        Evolution Engineered
+      </div>
+
+      <h2>
+        Verificación de edad requerida
+      </h2>
+
+      <p>
+        Debes tener 18 años de edad o más para acceder a este sitio web.
+      </p>
+
+      <div class="age-badge">
+        18+ • Solo para fines de investigación
+      </div>
+
+      <label for="birthdate">
+        Ingresa tu fecha de nacimiento
+      </label>
+
+      <input
+        type="date"
+        id="birthdate"
+      >
+
+      <button
+        class="age-button"
+        onclick="verifyAge()"
+      >
+        ENTRAR AL SITIO
+      </button>
+
+      <div id="ageMessage"></div>
+
+      <div class="age-note">
+        Al continuar, confirmas que tienes al menos 18 años de edad.
+      </div>
+
+    </div>
+
+  </div>
+
+  <nav>
+
+    <div class="nav-logo">
+      REAPER <span>BIOLABS</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">Inicio</a>
+      <a href="#compounds">Compuestos</a>
+      <a href="#details">Detalles</a>
+      <a href="#about">Acerca de</a>
+      <a href="#contact">Contacto</a>
+      <a href="../index.html">English</a>
+      <span aria-hidden="true"> | </span>
+      <a href="index.html">Spanish</a>
+    </div>
+
+    <button
+      class="menu-button"
+      onclick="toggleMenu()"
+    >
+      ☰ MENÚ
+    </button>
+
+  </nav>
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+    <a href="#home" onclick="closeMenu()">Inicio</a>
+    <a href="#compounds" onclick="closeMenu()">Compuestos</a>
+    <a href="#details" onclick="closeMenu()">Detalles</a>
+    <a href="#about" onclick="closeMenu()">Acerca de</a>
+    <a href="#contact" onclick="closeMenu()">Contacto</a>
+    <a href="../index.html" onclick="closeMenu()">English | Spanish</a>
+  </div>
+
+  <div class="brand-strip">
+
+    <div class="brand-strip-title">
+      REAPER <span>BIOLABS</span>
+    </div>
+
+    <div class="brand-strip-subtitle">
+      CIENCIA DE PÉPTIDOS
+    </div>
+
+  </div>
+
+  <header
+    class="bio-hero"
+    id="home"
+  >
+
+    <div class="bio-hero-stage">
+
+      <img
+        src="../reaper-biolabs-hero-halo.png"
+        alt="Investigación de péptidos de Reaper BioLabs"
+        class="bio-hero-art"
+      >
+
+      <a
+        href="#compounds"
+        class="bio-hero-hotspot bio-hot-products"
+        aria-label="Explorar compuestos"
+      ></a>
+
+      <a
+        href="#details"
+        class="bio-hero-hotspot bio-hot-learn"
+        aria-label="Consultar precio"
+      ></a>
+
+    </div>
+
+  </header>
+    <section
+    class="content-section"
+    id="compounds"
+  >
+
+    <div class="section-shell">
+
+      <div class="section-label">
+        Educación en investigación biomédica
+      </div>
+
+      <h2>
+        Biblioteca de investigación de compuestos
+      </h2>
+
+      <div class="data-strip">
+        <span>RBL-CELLULAR</span>
+        <span>MITOCONDRIAL</span>
+        <span>METABÓLICO</span>
+        <span>INVESTIGACIÓN DE PÉPTIDOS</span>
+      </div>
+
+      <p class="section-intro">
+        Explora péptidos y compuestos emergentes estudiados en áreas que incluyen
+        la biología del control del peso, la reparación celular y tisular, la salud metabólica,
+        la recuperación, la función mitocondrial, la investigación de longevidad, la señalización
+        endocrina y la resiliencia celular.
+      </p>
+
+      <div class="research-areas">
+        <span class="research-area">Control del peso</span>
+        <span class="research-area">Reparación celular</span>
+        <span class="research-area">Recuperación</span>
+        <span class="research-area">Función mitocondrial</span>
+        <span class="research-area">Longevidad</span>
+        <span class="research-area">Salud metabólica</span>
+        <span class="research-area">Investigación endocrina</span>
+      </div>
+
+      <div class="peptide-education">
+
+        <div class="education-header">
+
+          <div class="education-code">
+            RBL // Fundamentos de péptidos
+          </div>
+
+          <h3>
+            Comprendiendo los péptidos
+          </h3>
+
+          <p>
+            Los péptidos son cadenas cortas de aminoácidos que actúan como moléculas de señalización
+            y regulación en los sistemas biológicos. Debido a que estos pequeños mensajeros
+            moleculares pueden interactuar con vías biológicas específicas, los péptidos sintéticos
+            se han convertido en un área importante de investigación biomédica, metabólica,
+            mitocondrial y celular.
+          </p>
+
+        </div>
+
+        <div class="education-grid">
+
+          <div class="education-card">
+
+            <div class="education-number">
+              01 // Estructura molecular
+            </div>
+
+            <h4>
+              ¿Qué son los péptidos?
+            </h4>
+
+            <p>
+              Los péptidos están compuestos por aminoácidos unidos mediante enlaces peptídicos.
+              Están relacionados estructuralmente con las proteínas, pero generalmente son cadenas
+              moleculares más cortas. Los péptidos naturales participan en numerosos procesos
+              biológicos, incluida la comunicación celular, el metabolismo, la señalización endocrina
+              y la regulación de los tejidos.
+            </p>
+
+          </div>
+
+          <div class="education-card">
+
+            <div class="education-number">
+              02 // Síntesis
+            </div>
+
+            <h4>
+              Fabricación de péptidos para investigación
+            </h4>
+
+            <p>
+              Los péptidos sintéticos suelen producirse mediante métodos controlados,
+              como la síntesis de péptidos en fase sólida. Después de la síntesis,
+              los compuestos pueden someterse a purificación y evaluación analítica
+              mediante técnicas de laboratorio diseñadas para evaluar su identidad,
+              composición y pureza.
+            </p>
+
+          </div>
+
+          <div class="education-card">
+
+            <div class="education-number">
+              03 // Estabilización
+            </div>
+
+            <h4>
+              Material de investigación liofilizado
+            </h4>
+
+            <p>
+              Muchos péptidos de investigación se suministran como polvo liofilizado,
+              en lugar de una solución líquida. La liofilización elimina el agua
+              en condiciones controladas y puede mejorar la estabilidad durante
+              el almacenamiento y el transporte.
+            </p>
+
+          </div>
+
+          <div class="education-card">
+
+            <div class="education-number">
+              04 // Manejo en laboratorio
+            </div>
+
+            <h4>
+              Preparación para investigación
+            </h4>
+
+            <p>
+              Los métodos de preparación, las condiciones de almacenamiento, las concentraciones y
+              los protocolos experimentales varían según el compuesto y el diseño del estudio.
+              Reaper BioLabs no proporciona instrucciones para administración humana,
+              inyección, dosificación ni autotratamiento.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="research-material-notice">
+
+          <strong>
+            AVISO SOBRE MATERIAL DE INVESTIGACIÓN //
+          </strong>
+
+          Los materiales liofilizados están destinados a investigación controlada en laboratorio.
+
+        </div>
+
+      </div>
+
+      <div class="products">
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M11 9c4 4 4 18 0 22"></path>
+              <path d="M29 9c-4 4-4 18 0 22"></path>
+              <path d="M13 14h14"></path>
+              <path d="M14 26h12"></path>
+              <path d="M20 11v18"></path>
+            </svg>
+          </div>
+
+          <h3>Tirzepatide</h3>
+
+          <p>
+            Un agonista dual de los receptores GIP y GLP-1 que se ha convertido
+            en un importante foco de investigación metabólica y cardiometabólica.
+          </p>
+
+          <div class="research-focus">
+            Metabolismo • Regulación de glucosa • Composición corporal
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Tirzepatide ha sido estudiado ampliamente por sus efectos sobre
+                la regulación del apetito, el control de la glucosa, la sensibilidad a la insulina,
+                el peso corporal y la circunferencia de la cintura.
+              </p>
+
+              <p>
+                La investigación también ha examinado medidas cardiometabólicas más amplias,
+                incluidos los triglicéridos, la presión arterial, la grasa hepática y
+                los marcadores de salud metabólica.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <circle cx="20" cy="8" r="4"></circle>
+              <circle cx="9" cy="27" r="4"></circle>
+              <circle cx="31" cy="27" r="4"></circle>
+              <path d="M18 12L11 23"></path>
+              <path d="M22 12l7 11"></path>
+              <path d="M13 27h14"></path>
+            </svg>
+          </div>
+
+          <h3>Retatrutide</h3>
+
+          <p>
+            Un agonista experimental de triple receptor estudiado simultáneamente
+            en varias vías de señalización metabólica.
+          </p>
+
+          <div class="research-focus">
+            Metabolismo • Balance energético • Investigación de grasa corporal
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Retatrutide activa los receptores GLP-1, GIP y glucagón,
+                generando interés en cómo tres vías de señalización metabólica
+                pueden influir en el apetito, el gasto energético, el metabolismo de la glucosa
+                y la composición corporal.
+              </p>
+
+              <p>
+                La investigación clínica ha reportado cambios sustanciales en el peso corporal
+                dependientes de la dosis, lo que lo convierte en un compuesto metabólico
+                de próxima generación seguido de cerca.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M12 7l16 26"></path>
+              <path d="M28 7L12 33"></path>
+              <path d="M16 14h8"></path>
+              <path d="M14 20h12"></path>
+              <path d="M16 26h8"></path>
+            </svg>
+          </div>
+
+          <h3>KLOW</h3>
+
+          <p>
+            Una mezcla de múltiples péptidos de investigación comúnmente discutida en relación
+            con la reparación de tejidos, la biología del colágeno y la investigación sobre recuperación.
+          </p>
+
+          <div class="research-focus">
+            Biología tisular • Colágeno • Investigación de recuperación
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                El interés de investigación en mezclas de esta categoría
+                generalmente se centra en la biología del tejido conectivo,
+                la señalización del colágeno, los mecanismos de reparación celular y
+                las vías relacionadas con la recuperación.
+              </p>
+
+              <p>
+                Las propiedades biológicas dependen de los ingredientes exactos
+                y de las concentraciones de la formulación específica.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M12 5c15 8 1 22 16 30"></path>
+              <path d="M28 5c-15 8-1 22-16 30"></path>
+              <path d="M14 10h12"></path>
+              <path d="M13 18h14"></path>
+              <path d="M13 26h14"></path>
+            </svg>
+          </div>
+
+          <h3>Epitalon</h3>
+
+          <p>
+            Un tetrapéptido sintético investigado en estudios de envejecimiento celular,
+            longevidad y regulación genética.
+          </p>
+
+          <div class="research-focus">
+            Envejecimiento celular • Telómeros • Biología de la longevidad
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Epitalon ha sido investigado por posibles efectos relacionados
+                con la expresión genética, la regulación celular,
+                la biología de la cromatina y los mecanismos asociados con el envejecimiento.
+              </p>
+
+              <p>
+                La investigación experimental también ha explorado relaciones
+                con la actividad de la telomerasa y la biología de los telómeros.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M7 20c3-9 11-13 20-10 7 2 9 9 5 15-5 7-18 8-25-5z"></path>
+              <path d="M12 18c4-3 6 4 10 1 4-4 5 3 8 1"></path>
+            </svg>
+          </div>
+
+          <h3>SS-31</h3>
+
+          <p>
+            Un péptido dirigido a las mitocondrias investigado por su relación con
+            la producción de energía celular y la estructura mitocondrial.
+          </p>
+
+          <div class="research-focus">
+            Mitocondrias • ATP • Energía celular
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                SS-31, también conocido como elamipretide, está diseñado para
+                localizarse dentro de las mitocondrias e interactuar con
+                la cardiolipina de la membrana mitocondrial interna.
+              </p>
+
+              <p>
+                La investigación se ha centrado en la estructura mitocondrial,
+                la producción de ATP, el estrés oxidativo y la eficiencia energética celular.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M23 4L11 22h8l-2 14 12-19h-8z"></path>
+            </svg>
+          </div>
+
+          <h3>NAD+</h3>
+
+          <p>
+            Una coenzima celular presente de forma natural, fundamental para el metabolismo
+            energético y numerosos procesos regulatorios.
+          </p>
+
+          <div class="research-focus">
+            Energía celular • Biología redox • Reparación del ADN
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                NAD+ desempeña un papel esencial en las reacciones redox utilizadas
+                por las células para generar energía y mantener la función metabólica.
+              </p>
+
+              <p>
+                También participa en vías de señalización relacionadas con
+                la reparación del ADN, la actividad de las sirtuinas, las respuestas al estrés celular
+                y el mantenimiento mitocondrial.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <ellipse cx="20" cy="20" rx="14" ry="10"></ellipse>
+              <path d="M10 21c4-8 7 7 11-1 3-6 6 5 9-1"></path>
+            </svg>
+          </div>
+
+          <h3>MOTS-C</h3>
+
+          <p>
+            Un péptido derivado de las mitocondrias estudiado como molécula de señalización
+            implicada en la regulación celular y metabólica.
+          </p>
+
+          <div class="research-focus">
+            Flexibilidad metabólica • Músculo • Señalización mitocondrial
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                La investigación ha explorado relaciones con la utilización de glucosa,
+                la flexibilidad metabólica, la función del músculo esquelético,
+                las respuestas al estrés celular y la adaptación al ejercicio.
+              </p>
+
+              <p>
+                El trabajo experimental también ha examinado la eficiencia mitocondrial
+                y la comunicación entre las mitocondrias y el resto de la célula.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+                <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M4 22h7l3-8 5 15 5-20 5 13h7"></path>
+            </svg>
+          </div>
+
+          <h3>CJC-1295 Without DAC</h3>
+
+          <p>
+            Un análogo de GHRH investigado por sus efectos sobre
+            la señalización de la hormona del crecimiento y la fisiología endocrina.
+          </p>
+
+          <div class="research-focus">
+            Señalización de GH • Eje IGF-1 • Investigación endocrina
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Los compuestos CJC son análogos sintéticos de la hormona liberadora
+                de la hormona del crecimiento y se estudian por su
+                interacción con el eje de señalización de la hormona del crecimiento.
+              </p>
+
+              <p>
+                La investigación examina la secreción de GH, la señalización de IGF-1,
+                la fisiología endocrina, la regulación metabólica y
+                las vías de crecimiento tisular.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M20 5c7 9 11 14 11 20a11 11 0 0 1-22 0c0-6 4-11 11-20z"></path>
+              <path d="M15 26c2 2 4 3 7 3"></path>
+            </svg>
+          </div>
+
+          <h3>Ipamorelin</h3>
+
+          <p>
+            Un secretagogo selectivo de la hormona del crecimiento investigado por
+            la señalización del receptor de grelina y del eje de GH.
+          </p>
+
+          <div class="research-focus">
+            Hormona del crecimiento • Receptor de grelina • Biología de recuperación
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Ipamorelin interactúa con el receptor de grelina
+                y ha sido estudiado por su capacidad para estimular
+                la liberación de la hormona del crecimiento.
+              </p>
+
+              <p>
+                Las áreas de investigación asociadas con el eje de GH incluyen
+                la señalización endocrina, la recuperación tisular y la regulación metabólica.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M17 7c-6 0-10 4-10 9 0 3 2 5 4 6-2 4 1 8 5 8 2 4 8 4 10 0 5 0 7-5 5-8 3-1 4-5 2-8-2-4-6-5-10-3-1-3-3-4-4-4z"></path>
+              <path d="M20 11v19"></path>
+            </svg>
+          </div>
+
+          <h3>Pinealon</h3>
+
+          <p>
+            Un péptido sintético corto investigado principalmente en estudios experimentales
+            de neurociencia y envejecimiento celular.
+          </p>
+
+          <div class="research-focus">
+            Neurobiología • Estrés oxidativo • Envejecimiento celular
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Resumen de investigación
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Áreas de interés para la investigación
+              </div>
+
+              <p>
+                Los estudios de laboratorio han examinado relaciones con
+                el estrés oxidativo, las especies reactivas de oxígeno,
+                la viabilidad celular y procesos regulatorios relevantes
+                para las células neuronales.
+              </p>
+
+              <p>
+                La evidencia sigue siendo más limitada y preclínica que
+                la disponible para terapias metabólicas establecidas.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section
+    class="content-section"
+    id="details"
+  >
+
+    <div class="section-shell">
+
+      <div class="section-label">
+        Detalles de compuestos de investigación
+      </div>
+
+      <h2>
+        Detalles de compuestos e información de precios
+      </h2>
+
+      <div class="data-strip">
+        <span>ID DE MUESTRA</span>
+        <span>FORMATO DE VIAL</span>
+        <span>DATOS DE REFERENCIA</span>
+      </div>
+
+      <p class="section-intro">
+        Nombre del compuesto, cantidad del vial e información de precio correspondiente.
+      </p>
+
+      <div class="details-grid">
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Tirzepatide
+          </div>
+
+          <div class="detail-mg">
+            15 mg
+          </div>
+
+          <div class="detail-id">
+            $40
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Retatrutide
+          </div>
+
+          <div class="strength-tabs">
+
+            <button
+              class="strength-tab active"
+              onclick="changeReta(this,'10 mg','$50')"
+            >
+              10 mg
+            </button>
+
+            <button
+              class="strength-tab"
+              onclick="changeReta(this,'30 mg','$100')"
+            >
+              30 mg
+            </button>
+
+          </div>
+
+          <div
+            class="detail-mg"
+            id="retaMg"
+          >
+            10 mg
+          </div>
+
+          <div
+            class="detail-id"
+            id="retaPrice"
+          >
+            $50
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            KLOW
+          </div>
+
+          <div class="detail-mg">
+            80 mg
+          </div>
+
+          <div class="detail-id">
+            $80
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Epitalon
+          </div>
+
+          <div class="detail-mg">
+            40 mg
+          </div>
+
+          <div class="detail-id">
+            $75
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            SS-31
+          </div>
+
+          <div class="detail-mg">
+            45 mg
+          </div>
+
+          <div class="detail-id">
+            $100
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            NAD+
+          </div>
+
+          <div class="detail-mg">
+            500 mg
+          </div>
+
+          <div class="detail-id">
+            $35
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            MOTS-C
+          </div>
+
+          <div class="detail-mg">
+            10 mg
+          </div>
+
+          <div class="detail-id">
+            $35
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            CJC-1295 Without DAC
+          </div>
+
+          <div class="detail-mg">
+            5 mg
+          </div>
+
+          <div class="detail-id">
+            $40
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Ipamorelin
+          </div>
+
+          <div class="detail-mg">
+            5 mg
+          </div>
+
+          <div class="detail-id">
+            $25
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-card">
+
+          <div class="detail-name">
+            Pinealon
+          </div>
+
+          <div class="detail-mg">
+            10 mg
+          </div>
+
+          <div class="detail-id">
+            $45
+          </div>
+
+          <div class="vial">
+            <div class="vial-label">
+              <strong>REAPER BIOLABS</strong>
+              <small>USO DE INVESTIGACIÓN</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="lot-note">
+        Solo para identificación de investigación y fines informativos.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section
+    id="about"
+    class="about"
+  >
+
+    <div class="about-inner">
+
+      <div class="section-label">
+        Contenido educativo y de investigación
+      </div>
+
+      <h2>
+        Acerca de Reaper BioLabs
+      </h2>
+
+      <p>
+        Reaper BioLabs es un recurso educativo con sede en Albuquerque
+        enfocado en la ciencia de péptidos, la investigación metabólica,
+        la biología celular y los compuestos biomédicos emergentes.
+      </p>
+
+      <p>
+        El contenido presentado por Reaper BioLabs está destinado
+        únicamente a fines educativos y de investigación.
+      </p>
+
+      <div class="notice">
+
+        <strong>
+          SOLO PARA FINES DE INVESTIGACIÓN.
+        </strong>
+
+        <br><br>
+
+        La información proporcionada en este sitio web es de carácter educativo
+        y no constituye asesoramiento médico.
+
+        <br><br>
+
+        Los compuestos mencionados pueden tener diferentes estados regulatorios,
+        usos aprobados y perfiles de seguridad.
+
+        <br><br>
+
+        No está destinado al consumo humano ni al autotratamiento.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section
+    id="contact"
+    class="contact"
+  >
+
+    <div class="section-label">
+      Consultas educativas y de investigación
+    </div>
+
+    <h2>
+      Contactar a Reaper BioLabs
+    </h2>
+
+    <p>
+      ¿Preguntas sobre la información presentada en este sitio?
+      Ponte en contacto.
+    </p>
+
+    <a
+      class="email-button"
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=reaperpeps@gmail.com&su=Consulta%20de%20Reaper%20BioLabs"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ✉ ENVÍANOS UN CORREO
+    </a>
+
+    <a
+      class="email-address"
+      href="mailto:reaperpeps@gmail.com"
+    >
+      reaperpeps@gmail.com
+    </a>
+
+  </section>
+
+  <footer>
+
+    <strong>
+      REAPER BIOLABS
+    </strong>
+
+    <div class="footer-slogan">
+      Evolution Engineered
+    </div>
+
+    <p>
+      Albuquerque, New Mexico
+    </p>
+
+    <p class="footer-warning">
+      Solo para fines de investigación
+    </p>
+
+    <p>
+      No apto para consumo humano • No constituye asesoramiento médico
+    </p>
+
+    <p>
+      © 2026 Reaper BioLabs
+    </p>
+
+  </footer>
+
+  <script>
+
+    const approvalKey =
+      "reaperBioLabsAgeApproved";
+
+    const approvalDuration =
+      30 * 24 * 60 * 60 * 1000;
+
+    function checkExistingApproval() {
+
+      const approvalTime =
+        localStorage.getItem(approvalKey);
+
+      if (!approvalTime) {
+        return;
+      }
+
+      const timePassed =
+        Date.now() - parseInt(approvalTime);
+
+      if (timePassed < approvalDuration) {
+        unlockSite();
+      }
+
+      else {
+        localStorage.removeItem(approvalKey);
+      }
+
+    }
+
+    function verifyAge() {
+
+      const input =
+        document.getElementById("birthdate");
+
+      const message =
+        document.getElementById("ageMessage");
+
+      if (!input.value) {
+
+        message.textContent =
+          "Ingresa tu fecha de nacimiento.";
+
+        return;
+
+      }
+
+      const birthdate =
+        new Date(input.value + "T00:00:00");
+
+      const today =
+        new Date();
+
+      let age =
+        today.getFullYear() -
+        birthdate.getFullYear();
+
+      const monthDifference =
+        today.getMonth() -
+        birthdate.getMonth();
+
+      const dayDifference =
+        today.getDate() -
+        birthdate.getDate();
+
+      if (
+        monthDifference < 0 ||
+        (
+          monthDifference === 0 &&
+          dayDifference < 0
+        )
+      ) {
+        age--;
+      }
+
+      if (age >= 18) {
+
+        localStorage.setItem(
+          approvalKey,
+          Date.now().toString()
+        );
+
+        unlockSite();
+
+      }
+
+      else {
+
+        message.textContent =
+          "Acceso denegado. Debes tener 18 años o más.";
+
+      }
+
+    }
+
+    function unlockSite() {
+
+      document
+        .getElementById("ageGate")
+        .style
+        .display = "none";
+
+      document
+        .body
+        .classList
+        .remove("locked");
+
+    }
+
+    function changeReta(button, mg, price) {
+
+      button
+        .parentElement
+        .querySelectorAll(".strength-tab")
+        .forEach(
+          tab =>
+            tab
+              .classList
+              .remove("active")
+        );
+
+      button
+        .classList
+        .add("active");
+
+      document
+        .getElementById("retaMg")
+        .textContent = mg;
+
+      document
+        .getElementById("retaPrice")
+        .textContent = price;
+
+    }
+
+    function toggleCompound(button) {
+
+      const panel =
+        button.nextElementSibling;
+
+      const isOpen =
+        panel.classList.contains("open");
+
+      panel
+        .classList
+        .toggle("open");
+
+      button
+        .classList
+        .toggle("active");
+
+      if (isOpen) {
+
+        button.childNodes[0].nodeValue =
+          "Resumen de investigación ";
+
+      }
+
+      else {
+
+        button.childNodes[0].nodeValue =
+          "Cerrar resumen ";
+
+      }
+
+    }
+
+    function toggleMenu() {
+
+      document
+        .getElementById("mobileMenu")
+        .classList
+        .toggle("open");
+
+    }
+
+    function closeMenu() {
+
+      document
+        .getElementById("mobileMenu")
+        .classList
+        .remove("open");
+
+    }
+
+    checkExistingApproval();
+
+  </script>
+
+</body>
+</html>
