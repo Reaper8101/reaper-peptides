@@ -94,6 +94,86 @@
 
 
     /* =========================================================
+       SITE LASER SCANNER
+       ========================================================= */
+
+    .site-scan-line {
+      position: fixed;
+      z-index: 900;
+      top: 0;
+      left: 50%;
+
+      width: min(1100px, 94vw);
+      height: 1px;
+
+      pointer-events: none;
+      opacity: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,20,20,.18) 12%,
+          rgba(255,30,30,.95) 50%,
+          rgba(255,20,20,.18) 88%,
+          transparent 100%
+        );
+
+      box-shadow:
+        0 0 8px rgba(255,0,0,.72),
+        0 0 18px rgba(255,0,0,.34);
+
+      animation: siteScan 8s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+
+    .site-scan-line::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: -4px;
+      height: 9px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,0,0,.11),
+          transparent
+        );
+
+      filter: blur(4px);
+    }
+
+    @keyframes siteScan {
+      0% {
+        transform: translateX(-50%) translateY(-18px);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .9;
+      }
+
+      84% {
+        opacity: .72;
+      }
+
+      100% {
+        transform: translateX(-50%) translateY(calc(100vh + 18px));
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .site-scan-line {
+        display: none;
+      }
+    }
+
+
+    /* =========================================================
        BACKGROUND
        ========================================================= */
 
@@ -540,9 +620,6 @@
       cursor: pointer;
     }
 
-
-    /* EXPLORE COMPOUNDS */
-
     .bio-hot-products {
       left: 3.1%;
       top: 74.7%;
@@ -550,9 +627,6 @@
       width: 21.2%;
       height: 7.2%;
     }
-
-
-    /* LEARN MORE */
 
     .bio-hot-learn {
       left: 3.1%;
@@ -1344,10 +1418,20 @@
       color: var(--muted);
     }
 
-    .email-button {
-      display: inline-block;
-
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
       margin-top: 20px;
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
       padding: 14px 28px;
 
       background: #a90000;
@@ -1364,8 +1448,19 @@
       transition: .2s;
     }
 
-    .email-button:hover {
+    .contact-button:hover {
       background: #c70a0a;
+      transform: translateY(-1px);
+    }
+
+    .messenger-button {
+      background: #101214;
+      border-color: #666;
+    }
+
+    .messenger-button:hover {
+      background: #1a1d20;
+      border-color: #aaa;
     }
 
     .email-address {
@@ -1487,9 +1582,7 @@
 
       .brand-strip-subtitle {
         margin-top: 8px;
-
         font-size: .61rem;
-
         letter-spacing: 4px;
       }
 
@@ -1499,7 +1592,6 @@
 
       .bio-hero-stage {
         width: 100%;
-
         border-left: 0;
         border-right: 0;
       }
@@ -1719,6 +1811,20 @@
         font-size: .72rem;
       }
 
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-button {
+        width: 100%;
+        min-width: 0;
+        font-size: .95rem;
+      }
+
       footer {
         padding: 20px 12px;
       }
@@ -1731,6 +1837,7 @@
 
 <body class="locked">
 
+  <div class="site-scan-line" aria-hidden="true"></div>
 
   <div class="science-layer">
     <div class="hex-field"></div>
@@ -1805,7 +1912,7 @@
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#compounds">Compounds</a>
-      <a href="#details">Price</a>
+      <a href="#details">Details</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1866,22 +1973,16 @@
         class="bio-hero-art"
       >
 
-
-      <!-- EXPLORE COMPOUNDS -->
-
       <a
         href="#compounds"
         class="bio-hero-hotspot bio-hot-products"
         aria-label="Explore Compounds"
       ></a>
 
-
-      <!-- LEARN MORE -->
-
       <a
-          href="#details"
-  class="bio-hero-hotspot bio-hot-learn"
-  aria-label="Check Price"
+        href="#details"
+        class="bio-hero-hotspot bio-hot-learn"
+        aria-label="Check Price"
       ></a>
 
     </div>
@@ -1933,8 +2034,6 @@
       </div>
 
 
-      <!-- EDUCATION -->
-
       <div class="peptide-education">
 
         <div class="education-header">
@@ -1957,11 +2056,9 @@
 
         </div>
 
-
         <div class="education-grid">
 
           <div class="education-card">
-
             <div class="education-number">
               01 // Molecular Structure
             </div>
@@ -1977,12 +2074,9 @@
               in numerous biological processes including cellular communication,
               metabolism, endocrine signaling and tissue regulation.
             </p>
-
           </div>
 
-
           <div class="education-card">
-
             <div class="education-number">
               02 // Synthesis
             </div>
@@ -1998,12 +2092,9 @@
               using laboratory techniques designed to assess identity,
               composition and purity.
             </p>
-
           </div>
 
-
           <div class="education-card">
-
             <div class="education-number">
               03 // Stabilization
             </div>
@@ -2018,12 +2109,9 @@
               Lyophilization removes water under controlled conditions
               and can improve stability during storage and transportation.
             </p>
-
           </div>
 
-
           <div class="education-card">
-
             <div class="education-number">
               04 // Laboratory Handling
             </div>
@@ -2038,26 +2126,17 @@
               Reaper BioLabs does not provide instructions for human
               administration, injection, dosing or self-treatment.
             </p>
-
           </div>
 
         </div>
 
-
         <div class="research-material-notice">
-
-          <strong>
-            RESEARCH MATERIAL NOTICE //
-          </strong>
-
+          <strong>RESEARCH MATERIAL NOTICE //</strong>
           Lyophilized materials are intended for controlled laboratory research.
-
         </div>
 
       </div>
 
-
-      <!-- COMPOUNDS -->
 
       <div class="products">
 
@@ -2568,7 +2647,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -2604,7 +2682,6 @@
       <p class="section-intro">
         Compound name, vial amount and corresponding price information.
       </p>
-
 
       <div class="details-grid">
 
@@ -2872,7 +2949,6 @@
 
         </div>
 
-
       </div>
 
 
@@ -2914,7 +2990,6 @@
         Content presented by Reaper BioLabs is intended
         for research and educational purposes only.
       </p>
-
 
       <div class="notice">
 
@@ -2965,14 +3040,27 @@
       Get in touch.
     </p>
 
-    <a
-      class="email-button"
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=reaperpeps@gmail.com&su=Reaper%20BioLabs%20Inquiry"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ✉ EMAIL US
-    </a>
+    <div class="contact-actions">
+
+      <a
+        class="contact-button email-button"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=reaperpeps@gmail.com&su=Reaper%20BioLabs%20Inquiry"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ✉ EMAIL US
+      </a>
+
+      <a
+        class="contact-button messenger-button"
+        href="https://m.me/ReaperBiolabs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 MESSAGE US ON FACEBOOK
+      </a>
+
+    </div>
 
     <a
       class="email-address"
