@@ -3162,59 +3162,60 @@
     }
 
 
-    function verifyAge() {
+function verifyAge() {
 
-      const input =
-        document.getElementById("birthdate");
+  const monthInput =
+    document.getElementById("birthMonth");
 
-      const message =
-        document.getElementById("ageMessage");
+  const yearInput =
+    document.getElementById("birthYear");
 
-      if (!input.value) {
+  const message =
+    document.getElementById("ageMessage");
 
-        message.textContent =
-          "Please enter your date of birth.";
+  if (!monthInput.value || !yearInput.value) {
 
-        return;
+    message.textContent =
+      "Please select your birth month and year.";
 
-      }
+    return;
+  }
 
-      const birthdate =
-        new Date(input.value + "T00:00:00");
+  const birthMonth =
+    parseInt(monthInput.value);
 
-      const today =
-        new Date();
+  const birthYear =
+    parseInt(yearInput.value);
 
-      let age =
-        today.getFullYear() -
-        birthdate.getFullYear();
+  const today =
+    new Date();
 
-      const monthDifference =
-        today.getMonth() -
-        birthdate.getMonth();
+  let age =
+    today.getFullYear() - birthYear;
 
-      const dayDifference =
-        today.getDate() -
-        birthdate.getDate();
+  if (today.getMonth() < birthMonth) {
+    age--;
+  }
 
-      if (
-        monthDifference < 0 ||
-        (
-          monthDifference === 0 &&
-          dayDifference < 0
-        )
-      ) {
-        age--;
-      }
+  if (age >= 18) {
 
-      if (age >= 18) {
+    localStorage.setItem(
+      approvalKey,
+      Date.now().toString()
+    );
 
-        localStorage.setItem(
-          approvalKey,
-          Date.now().toString()
-        );
+    unlockSite();
 
-        unlockSite();
+  }
+
+  else {
+
+    message.textContent =
+      "Access denied. You must be 18 or older.";
+
+  }
+
+}
 
       }
 
