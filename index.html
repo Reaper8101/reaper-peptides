@@ -314,6 +314,24 @@
       border-radius: 5px;
     }
 
+    .age-date-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .age-date-row input {
+      min-width: 0;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .age-date-row input:focus {
+      outline: none;
+      border-color: var(--red-bright);
+    }
+
     .age-button {
       width: 100%;
       margin-top: 20px;
@@ -1878,25 +1896,25 @@
 
 <div class="age-date-row">
 
-  <select id="birthMonth">
-    <option value="">Month</option>
-    <option value="0">January</option>
-    <option value="1">February</option>
-    <option value="2">March</option>
-    <option value="3">April</option>
-    <option value="4">May</option>
-    <option value="5">June</option>
-    <option value="6">July</option>
-    <option value="7">August</option>
-    <option value="8">September</option>
-    <option value="9">October</option>
-    <option value="10">November</option>
-    <option value="11">December</option>
-  </select>
+  <input
+    type="number"
+    id="birthMonth"
+    inputmode="numeric"
+    min="1"
+    max="12"
+    placeholder="MM"
+    aria-label="Birth month"
+  >
 
-  <select id="birthYear">
-    <option value="">Year</option>
-  </select>
+  <input
+    type="number"
+    id="birthYear"
+    inputmode="numeric"
+    min="1900"
+    max="2026"
+    placeholder="YYYY"
+    aria-label="Birth year"
+  >
 
 </div>
 
@@ -3162,60 +3180,59 @@
     }
 
 
-function verifyAge() {
+    function verifyAge() {
 
-  const monthInput =
-    document.getElementById("birthMonth");
+      const monthInput =
+        document.getElementById("birthMonth");
 
-  const yearInput =
-    document.getElementById("birthYear");
+      const yearInput =
+        document.getElementById("birthYear");
 
-  const message =
-    document.getElementById("ageMessage");
+      const message =
+        document.getElementById("ageMessage");
 
-  if (!monthInput.value || !yearInput.value) {
+      const birthMonth =
+        parseInt(monthInput.value, 10);
 
-    message.textContent =
-      "Please select your birth month and year.";
+      const birthYear =
+        parseInt(yearInput.value, 10);
 
-    return;
-  }
+      const today =
+        new Date();
 
-  const birthMonth =
-    parseInt(monthInput.value);
+      const currentYear =
+        today.getFullYear();
 
-  const birthYear =
-    parseInt(yearInput.value);
+      if (
+        !Number.isInteger(birthMonth) ||
+        !Number.isInteger(birthYear) ||
+        birthMonth < 1 ||
+        birthMonth > 12 ||
+        birthYear < 1900 ||
+        birthYear > currentYear
+      ) {
 
-  const today =
-    new Date();
+        message.textContent =
+          "Please enter a valid birth month and year.";
 
-  let age =
-    today.getFullYear() - birthYear;
+        return;
+      }
 
-  if (today.getMonth() < birthMonth) {
-    age--;
-  }
+      let age =
+        currentYear - birthYear;
 
-  if (age >= 18) {
+      if (today.getMonth() + 1 < birthMonth) {
+        age--;
+      }
 
-    localStorage.setItem(
-      approvalKey,
-      Date.now().toString()
-    );
+      if (age >= 18) {
 
-    unlockSite();
+        localStorage.setItem(
+          approvalKey,
+          Date.now().toString()
+        );
 
-  }
-
-  else {
-
-    message.textContent =
-      "Access denied. You must be 18 or older.";
-
-  }
-
-}
+        unlockSite();
 
       }
 
@@ -3227,27 +3244,7 @@ function verifyAge() {
       }
 
     }
-function populateBirthYears() {
 
-  const yearSelect =
-    document.getElementById("birthYear");
-
-  const currentYear =
-    new Date().getFullYear();
-
-  for (let year = currentYear; year >= 1900; year--) {
-
-    const option =
-      document.createElement("option");
-
-    option.value = year;
-    option.textContent = year;
-
-    yearSelect.appendChild(option);
-  }
-}
-
-populateBirthYears();
 
     function unlockSite() {
 
