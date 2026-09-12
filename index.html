@@ -1543,6 +1543,456 @@
     }
 
 
+
+
+    /* =========================================================
+       2026 FACELIFT // WHITE LAB LIGHT + HEX ACCENTS
+       ========================================================= */
+
+    :root {
+      --ice: #f7fbff;
+      --ice-soft: rgba(238,247,255,.72);
+      --silver: #aeb8c2;
+      --white-line: rgba(238,247,255,.22);
+    }
+
+    .science-layer {
+      overflow: hidden;
+    }
+
+    .lab-light {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(18px);
+      opacity: .18;
+      background:
+        radial-gradient(
+          circle,
+          rgba(245,250,255,.85) 0%,
+          rgba(220,235,245,.22) 22%,
+          rgba(255,255,255,0) 68%
+        );
+    }
+
+    .lab-light-one {
+      top: 10vh;
+      right: -180px;
+    }
+
+    .lab-light-two {
+      top: 115vh;
+      left: -230px;
+      width: 560px;
+      height: 560px;
+      opacity: .12;
+    }
+
+    .lab-light-three {
+      top: 250vh;
+      right: -240px;
+      width: 620px;
+      height: 620px;
+      opacity: .11;
+    }
+
+    .hex-cluster {
+      position: absolute;
+      width: 240px;
+      height: 220px;
+      opacity: .22;
+      pointer-events: none;
+    }
+
+    .hex-cluster span {
+      position: absolute;
+      width: 92px;
+      height: 80px;
+      background: rgba(245,250,255,.85);
+      clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+    }
+
+    .hex-cluster span::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      background: #020303;
+      clip-path: inherit;
+    }
+
+    .hex-cluster span:nth-child(1) {
+      left: 0;
+      top: 55px;
+    }
+
+    .hex-cluster span:nth-child(2) {
+      left: 80px;
+      top: 8px;
+    }
+
+    .hex-cluster span:nth-child(3) {
+      left: 80px;
+      top: 102px;
+    }
+
+    .hex-cluster-one {
+      top: 58vh;
+      right: -45px;
+      transform: rotate(-9deg);
+    }
+
+    .hex-cluster-two {
+      top: 205vh;
+      left: -65px;
+      transform: rotate(13deg) scale(.82);
+      opacity: .14;
+    }
+
+    .section-shell {
+      border-color: rgba(255,255,255,.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 20px 55px rgba(0,0,0,.28),
+        0 0 34px rgba(230,245,255,.035);
+    }
+
+    .section-shell::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 13%;
+      right: 13%;
+      height: 1px;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(245,250,255,.55),
+          rgba(255,45,45,.55),
+          rgba(245,250,255,.55),
+          transparent
+        );
+    }
+
+    .products {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      border-color: rgba(255,255,255,.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.035),
+        0 10px 28px rgba(0,0,0,.22);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(245,250,255,.7),
+          transparent
+        );
+      opacity: .55;
+    }
+
+    .card:hover {
+      border-color: rgba(245,250,255,.32);
+      box-shadow:
+        0 14px 34px rgba(0,0,0,.42),
+        0 0 28px rgba(210,235,255,.06),
+        0 0 18px rgba(150,0,0,.10);
+    }
+
+    .compound-symbol {
+      color: #ff3b3b;
+      border-color: rgba(245,250,255,.17);
+      box-shadow: 0 0 18px rgba(235,248,255,.035);
+    }
+
+    .details-grid {
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .detail-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 430px;
+      padding: 18px 14px 15px;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(235,247,255,.07),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at bottom,
+          rgba(145,0,0,.12),
+          transparent 45%
+        ),
+        linear-gradient(to bottom, #0c0e0f, #040505);
+      border: 1px solid rgba(235,247,255,.22);
+      border-radius: 9px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 18px 38px rgba(0,0,0,.36);
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .detail-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.78),
+          transparent
+        );
+    }
+
+    .detail-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.38);
+      box-shadow:
+        0 22px 44px rgba(0,0,0,.46),
+        0 0 28px rgba(230,245,255,.06),
+        0 0 18px rgba(170,0,0,.10);
+    }
+
+    .photo-badge {
+      min-height: 18px;
+      margin-bottom: 5px;
+      color: rgba(235,247,255,.66);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .subtle-badge {
+      color: #777;
+    }
+
+    .detail-name {
+      min-height: 42px;
+      color: #f5f7f8;
+      font-size: 1.22rem;
+      letter-spacing: .5px;
+    }
+
+    .detail-mg {
+      min-height: 29px;
+      margin-top: 4px;
+      color: #ff3939;
+      font-size: 1.25rem;
+    }
+
+    .detail-id {
+      min-height: 30px;
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .product-photo-frame {
+      width: min(100%, 205px);
+      aspect-ratio: 3 / 4;
+      margin-top: 13px;
+      overflow: hidden;
+      position: relative;
+      background: #050606;
+      border: 1px solid rgba(245,250,255,.18);
+      border-radius: 7px;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,.48),
+        0 0 22px rgba(235,247,255,.035);
+    }
+
+    .product-photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow:
+        inset 0 0 26px rgba(0,0,0,.26),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .product-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.02) saturate(.98);
+    }
+
+    .placeholder-vial-frame {
+      width: min(100%, 205px);
+      aspect-ratio: 3 / 4;
+      margin-top: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(240,248,255,.06),
+          transparent 48%
+        ),
+        #050606;
+      border: 1px dashed rgba(235,247,255,.16);
+      border-radius: 7px;
+    }
+
+    .placeholder-vial-frame .vial {
+      margin-top: 18px;
+    }
+
+    .strength-tabs {
+      margin-top: 3px;
+    }
+
+    .strength-tab {
+      border-color: rgba(235,247,255,.19);
+      color: #c7ced4;
+    }
+
+    .strength-tab:hover {
+      border-color: rgba(255,255,255,.42);
+      color: #fff;
+    }
+
+    .strength-tab.active {
+      background:
+        linear-gradient(
+          180deg,
+          #c50a0a,
+          #8d0000
+        );
+      color: white;
+      border-color: #ff3a3a;
+      box-shadow:
+        0 0 14px rgba(215,20,20,.18);
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 260px;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(235,247,255,.08),
+          transparent 65%
+        );
+    }
+
+    .contact-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-button {
+      min-width: 255px;
+      border-color: rgba(255,255,255,.26);
+      box-shadow:
+        0 0 0 1px rgba(170,0,0,.18),
+        0 10px 28px rgba(0,0,0,.3);
+    }
+
+    @media (max-width: 1100px) {
+      .products,
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .lab-light {
+        opacity: .09;
+      }
+
+      .hex-cluster {
+        opacity: .11;
+        transform: scale(.62);
+      }
+
+      .products,
+      .details-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 8px;
+      }
+
+      .detail-card {
+        min-height: 315px;
+        padding: 10px 6px 8px;
+      }
+
+      .photo-badge {
+        min-height: 15px;
+        font-size: .43rem;
+        letter-spacing: .8px;
+      }
+
+      .detail-name {
+        min-height: 31px;
+        font-size: .82rem;
+      }
+
+      .detail-mg {
+        min-height: 20px;
+        font-size: .78rem;
+      }
+
+      .detail-id {
+        min-height: 20px;
+        font-size: .78rem;
+      }
+
+      .product-photo-frame,
+      .placeholder-vial-frame {
+        width: 100%;
+        max-width: 145px;
+        margin-top: 7px;
+      }
+
+      .strength-tab {
+        padding: 3px 5px;
+        font-size: .56rem;
+      }
+    }
+
+
     /* =========================================================
        TABLET
        ========================================================= */
@@ -1859,6 +2309,18 @@
 
   <div class="science-layer">
     <div class="hex-field"></div>
+
+    <div class="lab-light lab-light-one"></div>
+    <div class="lab-light lab-light-two"></div>
+    <div class="lab-light lab-light-three"></div>
+
+    <div class="hex-cluster hex-cluster-one" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="hex-cluster hex-cluster-two" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 
 
@@ -2686,6 +3148,208 @@
 
         </div>
 
+
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M10 29c5-10 9-16 20-18"></path>
+              <path d="M12 12h8v8h-8z"></path>
+              <path d="M24 22h7v7h-7z"></path>
+            </svg>
+          </div>
+
+          <h3>5-Amino-1MQ</h3>
+
+          <p>
+            A small-molecule research compound studied as an inhibitor
+            of nicotinamide N-methyltransferase, or NNMT.
+          </p>
+
+          <div class="research-focus">
+            NNMT • Cellular Metabolism • Metabolic Research
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Research Overview
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                5-Amino-1MQ is investigated for how NNMT inhibition may
+                influence cellular methylation balance, energy metabolism
+                and metabolic signaling.
+              </p>
+
+              <p>
+                Published research remains developing, with much of the
+                mechanistic work focused on preclinical models.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M8 24c5-8 9-12 12-12s7 4 12 12"></path>
+              <path d="M12 27h16"></path>
+              <path d="M15 31h10"></path>
+            </svg>
+          </div>
+
+          <h3>DSIP</h3>
+
+          <p>
+            A synthetic peptide investigated in experimental sleep,
+            stress-response and neurophysiology research.
+          </p>
+
+          <div class="research-focus">
+            Sleep Research • Neurobiology • Stress Signaling
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Research Overview
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Delta sleep-inducing peptide has been studied in relation
+                to sleep architecture, neuroendocrine signaling and
+                physiological stress responses.
+              </p>
+
+              <p>
+                Evidence is limited and heterogeneous, so it remains
+                primarily an experimental research peptide.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M20 5v30"></path>
+              <path d="M10 15c6-5 14-5 20 0"></path>
+              <path d="M10 25c6 5 14 5 20 0"></path>
+              <circle cx="20" cy="20" r="4"></circle>
+            </svg>
+          </div>
+
+          <h3>Somatotropin</h3>
+
+          <p>
+            Recombinant human growth hormone used in endocrine,
+            growth-signaling and metabolic research.
+          </p>
+
+          <div class="research-focus">
+            GH Signaling • IGF Axis • Endocrine Biology
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Research Overview
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Somatotropin interacts with the growth-hormone receptor
+                and influences downstream pathways including IGF-1 signaling,
+                protein metabolism and tissue-growth biology.
+              </p>
+
+              <p>
+                Research spans endocrine physiology, body-composition biology
+                and the broader growth-hormone signaling axis.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="13"></circle>
+              <path d="M12 23c3-8 6 5 10-2 3-5 5 3 7 0"></path>
+              <path d="M20 7v5"></path>
+            </svg>
+          </div>
+
+          <h3>IGF-1 LR3</h3>
+
+          <p>
+            A long-acting IGF-1 analog investigated in growth-factor,
+            receptor-signaling and cellular-metabolism research.
+          </p>
+
+          <div class="research-focus">
+            IGF-1 Receptor • Cell Signaling • Growth Biology
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Research Overview
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                IGF-1 LR3 is engineered for prolonged activity relative
+                to native IGF-1 and is used experimentally to study
+                IGF-receptor signaling and downstream cellular pathways.
+              </p>
+
+              <p>
+                Research interest includes cell growth, nutrient signaling,
+                glucose metabolism and tissue-development pathways.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -2725,268 +3389,220 @@
       <div class="details-grid">
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            Tirzepatide
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Tirzepatide</div>
+          <div class="detail-mg">15 mg</div>
+          <div class="detail-id">$40</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/tirzepatide-15mg.webp" alt="Reaper BioLabs Tirzepatide 15 mg vial">
           </div>
-
-          <div class="detail-mg">
-            15 mg
-          </div>
-
-          <div class="detail-id">
-            $40
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            Retatrutide
-          </div>
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Retatrutide</div>
 
           <div class="strength-tabs">
-
             <button
               class="strength-tab active"
-              onclick="changeReta(this,'10 mg','$50')"
+              onclick="changeStrength(this,'10 mg','$50','product-images/retatrutide-10mg.webp','retaPhoto','retaMg','retaPrice')"
             >
               10 mg
             </button>
 
             <button
               class="strength-tab"
-              onclick="changeReta(this,'30 mg','$100')"
+              onclick="changeStrength(this,'30 mg','$100','product-images/retatrutide-30mg.webp','retaPhoto','retaMg','retaPrice')"
             >
               30 mg
             </button>
-
           </div>
 
-          <div
-            class="detail-mg"
-            id="retaMg"
-          >
-            10 mg
-          </div>
+          <div class="detail-mg" id="retaMg">10 mg</div>
+          <div class="detail-id" id="retaPrice">$50</div>
 
-          <div
-            class="detail-id"
-            id="retaPrice"
-          >
-            $50
+          <div class="product-photo-frame">
+            <img
+              class="product-photo"
+              id="retaPhoto"
+              src="product-images/retatrutide-10mg.webp"
+              alt="Reaper BioLabs Retatrutide vial"
+            >
           </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            KLOW
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">KLOW</div>
+          <div class="detail-mg">80 mg</div>
+          <div class="detail-id">$80</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/klow-80mg.webp" alt="Reaper BioLabs KLOW 80 mg vial">
           </div>
-
-          <div class="detail-mg">
-            80 mg
-          </div>
-
-          <div class="detail-id">
-            $80
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            Epitalon
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Epitalon</div>
+          <div class="detail-mg">40 mg</div>
+          <div class="detail-id">$75</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/epitalon-40mg.webp" alt="Reaper BioLabs Epitalon 40 mg vial">
           </div>
-
-          <div class="detail-mg">
-            40 mg
-          </div>
-
-          <div class="detail-id">
-            $75
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            SS-31
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">SS-31</div>
+          <div class="detail-mg">45 mg</div>
+          <div class="detail-id">$100</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/ss31-45mg.webp" alt="Reaper BioLabs SS-31 45 mg vial">
           </div>
-
-          <div class="detail-mg">
-            45 mg
-          </div>
-
-          <div class="detail-id">
-            $100
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            NAD+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">NAD+</div>
+          <div class="detail-mg">500 mg</div>
+          <div class="detail-id">$35</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/nad-500mg.webp" alt="Reaper BioLabs NAD+ 500 mg vial">
           </div>
-
-          <div class="detail-mg">
-            500 mg
-          </div>
-
-          <div class="detail-id">
-            $35
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">MOTS-C</div>
 
-          <div class="detail-name">
-            MOTS-C
+          <div class="strength-tabs">
+            <button
+              class="strength-tab active"
+              onclick="changeStrength(this,'10 mg','$35','product-images/mots-c-10mg.webp','motsPhoto','motsMg','motsPrice')"
+            >
+              10 mg
+            </button>
+
+            <button
+              class="strength-tab"
+              onclick="changeStrength(this,'40 mg','$75','product-images/mots-c-40mg.webp','motsPhoto','motsMg','motsPrice')"
+            >
+              40 mg
+            </button>
           </div>
 
-          <div class="detail-mg">
-            10 mg
-          </div>
+          <div class="detail-mg" id="motsMg">10 mg</div>
+          <div class="detail-id" id="motsPrice">$35</div>
 
-          <div class="detail-id">
-            $35
+          <div class="product-photo-frame">
+            <img
+              class="product-photo"
+              id="motsPhoto"
+              src="product-images/mots-c-10mg.webp"
+              alt="Reaper BioLabs MOTS-C vial"
+            >
           </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
-            </div>
-          </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            CJC-1295 Without DAC
-          </div>
-
-          <div class="detail-mg">
-            5 mg
-          </div>
-
-          <div class="detail-id">
-            $40
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
+        <div class="detail-card photo-pending">
+          <div class="photo-badge subtle-badge">PHOTO COMING SOON</div>
+          <div class="detail-name">CJC-1295 Without DAC</div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$40</div>
+          <div class="placeholder-vial-frame">
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
           </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            Ipamorelin
-          </div>
-
-          <div class="detail-mg">
-            5 mg
-          </div>
-
-          <div class="detail-id">
-            $25
-          </div>
-
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
+        <div class="detail-card photo-pending">
+          <div class="photo-badge subtle-badge">PHOTO COMING SOON</div>
+          <div class="detail-name">Ipamorelin</div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$25</div>
+          <div class="placeholder-vial-frame">
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
           </div>
-
         </div>
 
 
-        <div class="detail-card">
-
-          <div class="detail-name">
-            Pinealon
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Pinealon</div>
+          <div class="detail-mg">10 mg</div>
+          <div class="detail-id">$45</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/pinealon-10mg.webp" alt="Reaper BioLabs Pinealon 10 mg vial">
           </div>
+        </div>
 
-          <div class="detail-mg">
-            10 mg
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">5-Amino-1MQ</div>
+          <div class="detail-mg">10 mg</div>
+          <div class="detail-id">$35</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/5-amino-1mq-10mg.webp" alt="Reaper BioLabs 5-Amino-1MQ 10 mg vial">
           </div>
+        </div>
 
-          <div class="detail-id">
-            $45
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">DSIP</div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$20</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/dsip-5mg.webp" alt="Reaper BioLabs DSIP 5 mg vial">
           </div>
+        </div>
 
-          <div class="vial">
-            <div class="vial-label">
-              <strong>REAPER BIOLABS</strong>
-              <small>RESEARCH USE</small>
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Somatotropin</div>
+          <div class="detail-mg">15 IU</div>
+          <div class="detail-id">$50</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="product-images/somatotropin-15iu.webp" alt="Reaper BioLabs Somatotropin 15 IU vial">
+          </div>
+        </div>
+
+
+        <div class="detail-card photo-pending">
+          <div class="photo-badge subtle-badge">PHOTO NEEDS LABEL MATCH</div>
+          <div class="detail-name">IGF-1 LR3</div>
+          <div class="detail-mg">0.1 mg</div>
+          <div class="detail-id">$15</div>
+          <div class="placeholder-vial-frame">
+            <div class="vial">
+              <div class="vial-label">
+                <strong>REAPER BIOLABS</strong>
+                <small>RESEARCH USE</small>
+              </div>
             </div>
           </div>
-
         </div>
+
 
       </div>
 
@@ -3087,16 +3703,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        ✉ EMAIL US
-      </a>
-
-      <a
-        class="contact-button messenger-button"
-        href="https://m.me/ReaperBiolabs"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        💬 MESSAGE US ON FACEBOOK
+        ✉ EMAIL REAPER BIOLABS
       </a>
 
     </div>
@@ -3261,7 +3868,7 @@
     }
 
 
-    function changeReta(button, mg, price) {
+    function changeStrength(button, mg, price, imageSrc, imageId, mgId, priceId) {
 
       button
         .parentElement
@@ -3278,12 +3885,19 @@
         .add("active");
 
       document
-        .getElementById("retaMg")
+        .getElementById(mgId)
         .textContent = mg;
 
       document
-        .getElementById("retaPrice")
+        .getElementById(priceId)
         .textContent = price;
+
+      const image =
+        document.getElementById(imageId);
+
+      if (image && imageSrc) {
+        image.src = imageSrc;
+      }
 
     }
 
