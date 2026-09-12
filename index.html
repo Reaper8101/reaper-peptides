@@ -478,6 +478,111 @@
     }
 
 
+
+    /* =========================================================
+       SMALL WHITE LAB HEX CHAINS
+       ========================================================= */
+
+    .micro-hex-chain {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      pointer-events: none;
+      opacity: .54;
+    }
+
+    .micro-hex-chain span {
+      position: relative;
+      width: 24px;
+      height: 21px;
+      flex: 0 0 auto;
+      background: rgba(242,248,255,.78);
+      clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+      filter: drop-shadow(0 0 5px rgba(225,242,255,.38));
+    }
+
+    .micro-hex-chain span::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: #030404;
+      clip-path: inherit;
+    }
+
+    .micro-hex-chain span:nth-child(2) {
+      width: 18px;
+      height: 16px;
+      opacity: .72;
+    }
+
+    .micro-hex-chain span:nth-child(3) {
+      width: 13px;
+      height: 12px;
+      opacity: .42;
+    }
+
+    .micro-hex-chain span:nth-child(4) {
+      width: 9px;
+      height: 8px;
+      opacity: .26;
+    }
+
+    .nav-logo,
+    .nav-links,
+    .menu-button,
+    .brand-strip-title,
+    .brand-strip-subtitle {
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav-hex-left {
+      left: 19%;
+      top: 50%;
+      transform: translateY(-50%) rotate(4deg);
+      opacity: .22;
+    }
+
+    .nav-hex-right {
+      right: 23%;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      opacity: .18;
+    }
+
+    .brand-hex-left {
+      left: 6%;
+      top: 50%;
+      transform: translateY(-50%) rotate(6deg);
+    }
+
+    .brand-hex-right {
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%) rotate(186deg);
+    }
+
+    .brand-strip .micro-hex-chain::before,
+    .brand-strip .micro-hex-chain::after {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(240,248,255,.38)
+        );
+    }
+
+    .brand-hex-right::before,
+    .brand-hex-right::after {
+      transform: rotate(180deg);
+    }
+
+
     /* =========================================================
        BRAND STRIP
        ========================================================= */
@@ -2037,6 +2142,25 @@
 
     @media (max-width: 700px) {
 
+      .nav-hex-left,
+      .nav-hex-right {
+        display: none;
+      }
+
+      .brand-hex-left,
+      .brand-hex-right {
+        opacity: .20;
+        transform: translateY(-50%) scale(.70);
+      }
+
+      .brand-hex-left {
+        left: -18px;
+      }
+
+      .brand-hex-right {
+        right: -18px;
+      }
+
       nav {
         height: 58px;
         padding: 0 11px;
@@ -2421,6 +2545,14 @@
 
   <nav>
 
+    <div class="micro-hex-chain nav-hex-left" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="micro-hex-chain nav-hex-right" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
     <div class="nav-logo">
       REAPER <span>BIOLABS</span>
     </div>
@@ -2460,6 +2592,14 @@
        ========================================================= -->
 
   <div class="brand-strip">
+
+    <div class="micro-hex-chain brand-hex-left" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="micro-hex-chain brand-hex-right" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
 
     <div class="brand-strip-title">
       REAPER <span>BIOLABS</span>
