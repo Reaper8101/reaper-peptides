@@ -585,7 +585,7 @@
 
 
     /* =========================================================
-       MOTION DNA HELIX // TITLE BANNER BACKGROUND
+       PREMIUM MOTION DNA // TITLE BANNER
        ========================================================= */
 
     .brand-strip {
@@ -593,37 +593,37 @@
       isolation: isolate;
     }
 
-    .dna-motion {
+    .dna-motion-premium {
       position: absolute;
-      inset: 8px 0 4px;
+      inset: 4px 0 2px;
       z-index: 0;
       overflow: hidden;
       pointer-events: none;
-      opacity: .34;
+      opacity: .56;
       -webkit-mask-image:
         linear-gradient(
           90deg,
           transparent 0%,
-          #000 8%,
-          #000 34%,
-          rgba(0,0,0,.34) 43%,
-          rgba(0,0,0,.12) 50%,
-          rgba(0,0,0,.34) 57%,
-          #000 66%,
-          #000 92%,
+          #000 7%,
+          #000 35%,
+          rgba(0,0,0,.20) 46%,
+          rgba(0,0,0,.08) 50%,
+          rgba(0,0,0,.20) 54%,
+          #000 65%,
+          #000 93%,
           transparent 100%
         );
       mask-image:
         linear-gradient(
           90deg,
           transparent 0%,
-          #000 8%,
-          #000 34%,
-          rgba(0,0,0,.34) 43%,
-          rgba(0,0,0,.12) 50%,
-          rgba(0,0,0,.34) 57%,
-          #000 66%,
-          #000 92%,
+          #000 7%,
+          #000 35%,
+          rgba(0,0,0,.20) 46%,
+          rgba(0,0,0,.08) 50%,
+          rgba(0,0,0,.20) 54%,
+          #000 65%,
+          #000 93%,
           transparent 100%
         );
     }
@@ -632,81 +632,190 @@
       width: 200%;
       height: 100%;
       display: flex;
-      animation: dnaDrift 24s linear infinite;
+      animation: dnaPremiumDrift 28s linear infinite;
       will-change: transform;
     }
 
-    .dna-motion-svg {
+    .premium-dna {
       flex: 0 0 50%;
       width: 50%;
       height: 100%;
       overflow: visible;
     }
 
-    .dna-strand {
+    .dna-shadow {
       fill: none;
-      stroke: rgba(245,250,255,.90);
-      stroke-width: 2.2;
+      stroke: rgba(0,0,0,.78);
+      stroke-width: 12;
+      vector-effect: non-scaling-stroke;
+      transform: translateY(4px);
+      filter: blur(2.2px);
+    }
+
+    .dna-shadow-b {
+      opacity: .66;
+      transform: translateY(-3px);
+    }
+
+    .dna-strand-premium {
+      fill: none;
+      stroke-width: 4.6;
       vector-effect: non-scaling-stroke;
       filter:
-        drop-shadow(0 0 3px rgba(235,248,255,.55))
-        drop-shadow(0 0 8px rgba(235,248,255,.16));
+        drop-shadow(0 0 2px rgba(255,255,255,.95))
+        drop-shadow(0 0 7px rgba(225,242,255,.44))
+        drop-shadow(0 0 16px rgba(225,242,255,.12));
     }
 
-    .dna-rungs line {
-      stroke: rgba(235,245,255,.40);
-      stroke-width: 1.2;
+    .strand-premium-a {
+      stroke: url(#strandGlowA);
+      animation: dnaPulseA 5.2s ease-in-out infinite;
+    }
+
+    .strand-premium-b {
+      stroke: url(#strandGlowB);
+      opacity: .84;
+      animation: dnaPulseB 5.2s ease-in-out infinite reverse;
+    }
+
+    .duplicate-a {
+      stroke: url(#strandGlowA2);
+    }
+
+    .duplicate-b {
+      stroke: url(#strandGlowB2);
+    }
+
+    .dna-rungs-premium line {
+      stroke: rgba(225,239,247,.64);
+      stroke-width: 1.5;
       vector-effect: non-scaling-stroke;
+      filter: drop-shadow(0 0 3px rgba(235,248,255,.28));
     }
 
-    .strand-b {
-      opacity: .72;
+    .dna-nodes circle {
+      fill: #f8fcff;
+      stroke: rgba(255,45,45,.78);
+      stroke-width: 1.5;
+      filter:
+        drop-shadow(0 0 3px rgba(255,255,255,.92))
+        drop-shadow(0 0 8px rgba(255,35,35,.34));
+      animation: dnaNodeGlow 3.4s ease-in-out infinite;
     }
 
-    @keyframes dnaDrift {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+    .dna-nodes circle:nth-child(3n+2) {
+      animation-delay: .8s;
+    }
+
+    .dna-nodes circle:nth-child(3n) {
+      animation-delay: 1.6s;
+    }
+
+    .dna-sparkles circle {
+      fill: #ffffff;
+      filter: drop-shadow(0 0 7px rgba(255,255,255,.8));
+      animation: dnaSpark 2.6s ease-in-out infinite;
+    }
+
+    .dna-sparkles circle:nth-child(2) { animation-delay: .6s; }
+    .dna-sparkles circle:nth-child(3) { animation-delay: 1.2s; }
+    .dna-sparkles circle:nth-child(4) { animation-delay: 1.8s; }
+
+    .dna-particles {
+      position: absolute;
+      inset: 0;
+      opacity: .33;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.82) 0 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(255,45,45,.74) 0 1px, transparent 1.5px);
+      background-size: 47px 39px, 83px 67px;
+      background-position: 0 0, 18px 9px;
+      animation: particleDrift 18s linear infinite;
     }
 
     .brand-strip-title,
     .brand-strip-subtitle {
       position: relative;
-      z-index: 3;
+      z-index: 4;
     }
 
     .brand-strip::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 1;
+      z-index: 2;
       pointer-events: none;
       background:
         radial-gradient(
           ellipse at center,
-          rgba(2,3,3,.88) 0%,
-          rgba(2,3,3,.56) 23%,
-          rgba(2,3,3,.15) 48%,
-          transparent 72%
+          rgba(2,3,3,.90) 0%,
+          rgba(2,3,3,.70) 22%,
+          rgba(2,3,3,.27) 40%,
+          rgba(2,3,3,.08) 56%,
+          transparent 76%
         );
     }
 
+    .brand-strip::after {
+      z-index: 5;
+    }
+
+    @keyframes dnaPremiumDrift {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes dnaPulseA {
+      0%,100% { opacity: .72; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes dnaPulseB {
+      0%,100% { opacity: .52; }
+      50% { opacity: .92; }
+    }
+
+    @keyframes dnaNodeGlow {
+      0%,100% { opacity: .55; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.28); }
+    }
+
+    @keyframes dnaSpark {
+      0%,100% { opacity: .18; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes particleDrift {
+      from { transform: translateX(0); }
+      to { transform: translateX(-47px); }
+    }
+
     @media (max-width: 700px) {
-      .dna-motion {
-        opacity: .22;
-        inset: 10px -35% 7px;
+      .dna-motion-premium {
+        opacity: .31;
+        inset: 8px -32% 5px;
       }
 
       .dna-motion-track {
-        animation-duration: 30s;
+        animation-duration: 34s;
+      }
+
+      .dna-strand-premium {
+        stroke-width: 3.4;
+      }
+
+      .dna-rungs-premium line {
+        stroke-width: 1.1;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .dna-motion-track {
+      .dna-motion-track,
+      .dna-particles,
+      .dna-nodes circle,
+      .dna-sparkles circle,
+      .strand-premium-a,
+      .strand-premium-b {
         animation: none;
       }
     }
@@ -2762,56 +2871,145 @@
 
   <div class="brand-strip">
 
-    <div class="dna-motion" aria-hidden="true">
+    <div class="dna-motion dna-motion-premium" aria-hidden="true">
+      <div class="dna-particles"></div>
+
       <div class="dna-motion-track">
 
-        <svg class="dna-motion-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path class="dna-strand strand-a"
-            d="M0 60 C75 8 150 8 225 60 S375 112 450 60 S600 8 675 60 S825 112 900 60 S1050 8 1200 60" />
-          <path class="dna-strand strand-b"
-            d="M0 60 C75 112 150 112 225 60 S375 8 450 60 S600 112 675 60 S825 8 900 60 S1050 112 1200 60" />
+        <svg class="dna-motion-svg premium-dna" viewBox="0 0 1200 150" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="strandGlowA" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".18"/>
+              <stop offset="30%" stop-color="#ffffff" stop-opacity=".95"/>
+              <stop offset="58%" stop-color="#dbe8ef" stop-opacity=".72"/>
+              <stop offset="82%" stop-color="#ffffff" stop-opacity=".98"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity=".18"/>
+            </linearGradient>
 
-          <g class="dna-rungs">
-            <line x1="55" y1="31" x2="55" y2="89" />
-            <line x1="115" y1="14" x2="115" y2="106" />
-            <line x1="175" y1="29" x2="175" y2="91" />
-            <line x1="280" y1="89" x2="280" y2="31" />
-            <line x1="340" y1="106" x2="340" y2="14" />
-            <line x1="400" y1="91" x2="400" y2="29" />
-            <line x1="505" y1="31" x2="505" y2="89" />
-            <line x1="565" y1="14" x2="565" y2="106" />
-            <line x1="625" y1="29" x2="625" y2="91" />
-            <line x1="730" y1="89" x2="730" y2="31" />
-            <line x1="790" y1="106" x2="790" y2="14" />
-            <line x1="850" y1="91" x2="850" y2="29" />
-            <line x1="955" y1="31" x2="955" y2="89" />
-            <line x1="1015" y1="14" x2="1015" y2="106" />
-            <line x1="1075" y1="29" x2="1075" y2="91" />
+            <linearGradient id="strandGlowB" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+              <stop offset="34%" stop-color="#f5fbff" stop-opacity=".62"/>
+              <stop offset="52%" stop-color="#ff2b2b" stop-opacity=".52"/>
+              <stop offset="72%" stop-color="#ffffff" stop-opacity=".72"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity=".08"/>
+            </linearGradient>
+
+            <filter id="dnaSoftGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="2.2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <path class="dna-shadow"
+            d="M0 75 C85 12 165 12 250 75 S415 138 500 75 S665 12 750 75 S915 138 1000 75 S1115 12 1200 75" />
+          <path class="dna-shadow dna-shadow-b"
+            d="M0 75 C85 138 165 138 250 75 S415 12 500 75 S665 138 750 75 S915 12 1000 75 S1115 138 1200 75" />
+
+          <path class="dna-strand-premium strand-premium-a"
+            d="M0 75 C85 12 165 12 250 75 S415 138 500 75 S665 12 750 75 S915 138 1000 75 S1115 12 1200 75" />
+          <path class="dna-strand-premium strand-premium-b"
+            d="M0 75 C85 138 165 138 250 75 S415 12 500 75 S665 138 750 75 S915 12 1000 75 S1115 138 1200 75" />
+
+          <g class="dna-rungs-premium">
+            <line x1="65" y1="34" x2="65" y2="116" />
+            <line x1="125" y1="18" x2="125" y2="132" />
+            <line x1="185" y1="31" x2="185" y2="119" />
+            <line x1="315" y1="119" x2="315" y2="31" />
+            <line x1="375" y1="132" x2="375" y2="18" />
+            <line x1="435" y1="116" x2="435" y2="34" />
+            <line x1="565" y1="34" x2="565" y2="116" />
+            <line x1="625" y1="18" x2="625" y2="132" />
+            <line x1="685" y1="31" x2="685" y2="119" />
+            <line x1="815" y1="119" x2="815" y2="31" />
+            <line x1="875" y1="132" x2="875" y2="18" />
+            <line x1="935" y1="116" x2="935" y2="34" />
+            <line x1="1065" y1="34" x2="1065" y2="116" />
+            <line x1="1125" y1="18" x2="1125" y2="132" />
+          </g>
+
+          <g class="dna-nodes">
+            <circle cx="65" cy="34" r="4.5"/><circle cx="65" cy="116" r="4.5"/>
+            <circle cx="185" cy="31" r="3.8"/><circle cx="185" cy="119" r="3.8"/>
+            <circle cx="375" cy="18" r="4.8"/><circle cx="375" cy="132" r="4.8"/>
+            <circle cx="565" cy="34" r="4.2"/><circle cx="565" cy="116" r="4.2"/>
+            <circle cx="685" cy="31" r="3.8"/><circle cx="685" cy="119" r="3.8"/>
+            <circle cx="875" cy="18" r="4.8"/><circle cx="875" cy="132" r="4.8"/>
+            <circle cx="1065" cy="34" r="4.2"/><circle cx="1065" cy="116" r="4.2"/>
+          </g>
+
+          <g class="dna-sparkles">
+            <circle cx="220" cy="23" r="2.5"/>
+            <circle cx="525" cy="126" r="2"/>
+            <circle cx="760" cy="24" r="2.5"/>
+            <circle cx="1010" cy="122" r="2"/>
           </g>
         </svg>
 
-        <svg class="dna-motion-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path class="dna-strand strand-a"
-            d="M0 60 C75 8 150 8 225 60 S375 112 450 60 S600 8 675 60 S825 112 900 60 S1050 8 1200 60" />
-          <path class="dna-strand strand-b"
-            d="M0 60 C75 112 150 112 225 60 S375 8 450 60 S600 112 675 60 S825 8 900 60 S1050 112 1200 60" />
+        <svg class="dna-motion-svg premium-dna" viewBox="0 0 1200 150" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="strandGlowA2" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".18"/>
+              <stop offset="30%" stop-color="#ffffff" stop-opacity=".95"/>
+              <stop offset="58%" stop-color="#dbe8ef" stop-opacity=".72"/>
+              <stop offset="82%" stop-color="#ffffff" stop-opacity=".98"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity=".18"/>
+            </linearGradient>
 
-          <g class="dna-rungs">
-            <line x1="55" y1="31" x2="55" y2="89" />
-            <line x1="115" y1="14" x2="115" y2="106" />
-            <line x1="175" y1="29" x2="175" y2="91" />
-            <line x1="280" y1="89" x2="280" y2="31" />
-            <line x1="340" y1="106" x2="340" y2="14" />
-            <line x1="400" y1="91" x2="400" y2="29" />
-            <line x1="505" y1="31" x2="505" y2="89" />
-            <line x1="565" y1="14" x2="565" y2="106" />
-            <line x1="625" y1="29" x2="625" y2="91" />
-            <line x1="730" y1="89" x2="730" y2="31" />
-            <line x1="790" y1="106" x2="790" y2="14" />
-            <line x1="850" y1="91" x2="850" y2="29" />
-            <line x1="955" y1="31" x2="955" y2="89" />
-            <line x1="1015" y1="14" x2="1015" y2="106" />
-            <line x1="1075" y1="29" x2="1075" y2="91" />
+            <linearGradient id="strandGlowB2" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".08"/>
+              <stop offset="34%" stop-color="#f5fbff" stop-opacity=".62"/>
+              <stop offset="52%" stop-color="#ff2b2b" stop-opacity=".52"/>
+              <stop offset="72%" stop-color="#ffffff" stop-opacity=".72"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity=".08"/>
+            </linearGradient>
+
+            <filter id="dnaSoftGlow2" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="2.2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <path class="dna-shadow"
+            d="M0 75 C85 12 165 12 250 75 S415 138 500 75 S665 12 750 75 S915 138 1000 75 S1115 12 1200 75" />
+          <path class="dna-shadow dna-shadow-b"
+            d="M0 75 C85 138 165 138 250 75 S415 12 500 75 S665 138 750 75 S915 12 1000 75 S1115 138 1200 75" />
+
+          <path class="dna-strand-premium strand-premium-a duplicate-a"
+            d="M0 75 C85 12 165 12 250 75 S415 138 500 75 S665 12 750 75 S915 138 1000 75 S1115 12 1200 75" />
+          <path class="dna-strand-premium strand-premium-b duplicate-b"
+            d="M0 75 C85 138 165 138 250 75 S415 12 500 75 S665 138 750 75 S915 12 1000 75 S1115 138 1200 75" />
+
+          <g class="dna-rungs-premium">
+            <line x1="65" y1="34" x2="65" y2="116" />
+            <line x1="125" y1="18" x2="125" y2="132" />
+            <line x1="185" y1="31" x2="185" y2="119" />
+            <line x1="315" y1="119" x2="315" y2="31" />
+            <line x1="375" y1="132" x2="375" y2="18" />
+            <line x1="435" y1="116" x2="435" y2="34" />
+            <line x1="565" y1="34" x2="565" y2="116" />
+            <line x1="625" y1="18" x2="625" y2="132" />
+            <line x1="685" y1="31" x2="685" y2="119" />
+            <line x1="815" y1="119" x2="815" y2="31" />
+            <line x1="875" y1="132" x2="875" y2="18" />
+            <line x1="935" y1="116" x2="935" y2="34" />
+            <line x1="1065" y1="34" x2="1065" y2="116" />
+            <line x1="1125" y1="18" x2="1125" y2="132" />
+          </g>
+
+          <g class="dna-nodes">
+            <circle cx="65" cy="34" r="4.5"/><circle cx="65" cy="116" r="4.5"/>
+            <circle cx="185" cy="31" r="3.8"/><circle cx="185" cy="119" r="3.8"/>
+            <circle cx="375" cy="18" r="4.8"/><circle cx="375" cy="132" r="4.8"/>
+            <circle cx="565" cy="34" r="4.2"/><circle cx="565" cy="116" r="4.2"/>
+            <circle cx="685" cy="31" r="3.8"/><circle cx="685" cy="119" r="3.8"/>
+            <circle cx="875" cy="18" r="4.8"/><circle cx="875" cy="132" r="4.8"/>
+            <circle cx="1065" cy="34" r="4.2"/><circle cx="1065" cy="116" r="4.2"/>
           </g>
         </svg>
 
