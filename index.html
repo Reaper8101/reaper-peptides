@@ -4256,51 +4256,6 @@
 
       }
 
-      function drawNode(p, alpha) {
-
-        const r =
-          2.4 + 2.6 * p.scale;
-
-        ctx.save();
-
-        const g =
-          ctx.createRadialGradient(
-            p.x, p.y, 0,
-            p.x, p.y, r * 2.4
-          );
-
-        g.addColorStop(
-          0,
-          `rgba(255,255,255,${alpha})`
-        );
-
-        g.addColorStop(
-          .36,
-          `rgba(232,245,255,${alpha * .7})`
-        );
-
-        g.addColorStop(
-          1,
-          "rgba(255,255,255,0)"
-        );
-
-        ctx.fillStyle =
-          g;
-
-        ctx.beginPath();
-        ctx.arc(
-          p.x,
-          p.y,
-          r * 2.4,
-          0,
-          Math.PI * 2
-        );
-        ctx.fill();
-
-        ctx.restore();
-
-      }
-
       function renderDNA(time) {
 
         if (!width || !height) resizeDNA();
@@ -4429,23 +4384,6 @@
               );
 
             });
-
-          for (let i = 0; i < points.length; i += 3) {
-
-            const p =
-              points[i];
-
-            const normalized =
-              (p.z + zDepth) / (zDepth * 2);
-
-            if (normalized > .45) {
-              drawNode(
-                p,
-                .35 + normalized * .5
-              );
-            }
-
-          }
 
         }
 
