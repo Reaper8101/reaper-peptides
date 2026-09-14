@@ -748,19 +748,19 @@
     }
 
     .bio-hot-products {
-      left: 47.0%;
-      top: 46.0%;
+      left: 50.8%;
+      top: 68.9%;
 
-      width: 28.5%;
-      height: 11.5%;
+      width: 19.2%;
+      height: 6.4%;
     }
 
     .bio-hot-learn {
-      left: 75.8%;
-      top: 46.0%;
+      left: 71.4%;
+      top: 68.9%;
 
-      width: 20.5%;
-      height: 11.5%;
+      width: 13.4%;
+      height: 6.4%;
     }
 
 
@@ -2222,17 +2222,17 @@
       }
 
       .bio-hot-products {
-        left: 47.0%;
-        top: 46.0%;
-        width: 28.5%;
-        height: 11.5%;
+        left: 50.8%;
+        top: 68.9%;
+        width: 19.2%;
+        height: 6.4%;
       }
 
       .bio-hot-learn {
-        left: 75.8%;
-        top: 46.0%;
-        width: 20.5%;
-        height: 11.5%;
+        left: 71.4%;
+        top: 68.9%;
+        width: 13.4%;
+        height: 6.4%;
       }
 
       section.content-section {
@@ -2485,26 +2485,32 @@
     }
 
   
-    /* =========================================================
-       WHATSAPP CONTACT BUTTON
-       ========================================================= */
-    .contact-button.whatsapp-button {
-      background: #25D366;
-      border-color: #59e684;
-      color: #ffffff;
-      box-shadow:
-        0 0 0 1px rgba(37,211,102,.20),
-        0 10px 28px rgba(0,0,0,.30),
-        0 0 18px rgba(37,211,102,.15);
+    .peptide-familiarity-callout {
+      width: min(860px, 94%);
+      margin: 14px auto 16px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 30, 30, .38);
+      border-radius: 5px;
+      background: rgba(110, 0, 0, .07);
+      color: rgba(235, 235, 235, .82);
+      font-size: .92rem;
+      line-height: 1.5;
+      text-align: center;
     }
 
-    .contact-button.whatsapp-button:hover {
-      background: #1fbd5b;
-      border-color: #79ef9d;
-      box-shadow:
-        0 0 0 1px rgba(37,211,102,.30),
-        0 12px 30px rgba(0,0,0,.34),
-        0 0 22px rgba(37,211,102,.22);
+    .peptide-familiarity-callout strong {
+      color: #ff2b2b;
+      font-family: "Barlow Condensed", sans-serif;
+      letter-spacing: .08em;
+      margin-right: 5px;
+    }
+
+    @media (max-width: 700px) {
+      .peptide-familiarity-callout {
+        width: 100%;
+        font-size: .82rem;
+        padding: 9px 11px;
+      }
     }
 
 </style>
@@ -2725,39 +2731,6 @@
 
     <div class="section-shell">
 
-      <div class="section-label">
-        Biomedical Research Education
-      </div>
-
-      <h2>
-        Compound Research Library
-      </h2>
-
-      <div class="data-strip">
-        <span>RBL-CELLULAR</span>
-        <span>MITOCHONDRIAL</span>
-        <span>METABOLIC</span>
-        <span>PEPTIDE RESEARCH</span>
-      </div>
-
-      <p class="section-intro">
-        Explore peptides and emerging compounds studied across areas including
-        weight-management biology, cell and tissue repair, metabolic health,
-        recovery, mitochondrial function, longevity research, endocrine
-        signaling and cellular resilience.
-      </p>
-
-      <div class="research-areas">
-        <span class="research-area">Weight Management</span>
-        <span class="research-area">Cell Repair</span>
-        <span class="research-area">Recovery</span>
-        <span class="research-area">Mitochondrial Function</span>
-        <span class="research-area">Longevity</span>
-        <span class="research-area">Metabolic Health</span>
-        <span class="research-area">Endocrine Research</span>
-      </div>
-
-
       <div class="peptide-education">
 
         <div class="education-header">
@@ -2769,6 +2742,11 @@
           <h3>
             New to Peptides? Start Here.
           </h3>
+
+          <div class="peptide-familiarity-callout">
+            <strong>DID YOU KNOW?</strong>
+            Popular names like Ozempic® and Mounjaro® are peptide-based medications you may already recognize.
+          </div>
 
           <p>
             Peptides are small chains of amino acids that researchers study
@@ -2857,6 +2835,39 @@
         </div>
 
       </div>
+
+      <div class="section-label">
+        Biomedical Research Education
+      </div>
+
+      <h2>
+        Compound Research Library
+      </h2>
+
+      <div class="data-strip">
+        <span>RBL-CELLULAR</span>
+        <span>MITOCHONDRIAL</span>
+        <span>METABOLIC</span>
+        <span>PEPTIDE RESEARCH</span>
+      </div>
+
+      <p class="section-intro">
+        Explore peptides and emerging compounds studied across areas including
+        weight-management biology, cell and tissue repair, metabolic health,
+        recovery, mitochondrial function, longevity research, endocrine
+        signaling and cellular resilience.
+      </p>
+
+      <div class="research-areas">
+        <span class="research-area">Weight Management</span>
+        <span class="research-area">Cell Repair</span>
+        <span class="research-area">Recovery</span>
+        <span class="research-area">Mitochondrial Function</span>
+        <span class="research-area">Longevity</span>
+        <span class="research-area">Metabolic Health</span>
+        <span class="research-area">Endocrine Research</span>
+      </div>
+
 
       <div class="products">
 
@@ -3932,16 +3943,6 @@
         rel="noopener noreferrer"
       >
         ✉ EMAIL REAPER BIOLABS
-      </a>
-
-      <a
-        class="contact-button whatsapp-button"
-        href="https://wa.me/15053780280"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Message Reaper BioLabs on WhatsApp"
-      >
-        💬 MESSAGE US ON WHATSAPP
       </a>
 
     </div>
