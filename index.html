@@ -182,6 +182,46 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
   .section-shell::before{animation:none!important}
 }
 
+
+/* V6 // Vial-to-info-card navigation */
+html{scroll-behavior:smooth}
+.card[id^="info-"]{scroll-margin-top:92px}
+.info-card-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:42px;
+  margin-top:10px;
+  padding:9px 12px;
+  border:1.5px solid var(--royal-purple,#6f18d9);
+  border-radius:10px;
+  background:#fff;
+  color:var(--royal-purple,#6f18d9);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-decoration:none;
+  transition:transform .16s ease,background .16s ease,color .16s ease,box-shadow .16s ease;
+}
+.info-card-button:hover{
+  background:var(--royal-purple,#6f18d9);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(111,24,217,.16);
+  transform:translateY(-1px);
+}
+@media(max-width:850px){
+  .card[id^="info-"]{scroll-margin-top:78px}
+  .info-card-button{
+    min-height:38px;
+    margin-top:8px;
+    padding:7px 5px;
+    font-size:13px;
+    border-radius:9px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -331,7 +371,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
       <div class="products">
 
 
-        <div class="card">
+        <div class="card" id="info-tirzepatide">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -383,7 +423,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-retatrutide">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -437,7 +477,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-klow">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -489,7 +529,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-epitalon">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -540,7 +580,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-ss31">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -588,7 +628,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-nad">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -635,7 +675,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-mots-c">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -683,7 +723,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-cjc-1295">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -731,7 +771,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-ipamorelin">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -779,7 +819,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-pinealon">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -829,7 +869,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
 
 
 
-        <div class="card">
+        <div class="card" id="info-5-amino-1mq">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -878,7 +918,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-dsip">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -927,7 +967,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-somatotropin">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -977,7 +1017,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
         </div>
 
 
-        <div class="card">
+        <div class="card" id="info-igf1-lr3">
 
           <div class="compound-symbol">
             <svg viewBox="0 0 40 40">
@@ -1070,6 +1110,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="tirzepatide-15mg.webp" alt="AR Molecular Tirzepatide 15 mg vial">
           </div>
+          <a class="info-card-button" href="#info-tirzepatide">INFO CARD ↑</a>
         </div>
 
 
@@ -1104,6 +1145,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
               alt="AR Molecular Retatrutide vial"
             >
           </div>
+          <a class="info-card-button" href="#info-retatrutide">INFO CARD ↑</a>
         </div>
 
 
@@ -1117,6 +1159,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="klow-80mg.webp" alt="AR Molecular KLOW 80 mg vial">
           </div>
+          <a class="info-card-button" href="#info-klow">INFO CARD ↑</a>
         </div>
 
 
@@ -1130,6 +1173,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="epitalon-40mg.webp" alt="AR Molecular Epitalon 40 mg vial">
           </div>
+          <a class="info-card-button" href="#info-epitalon">INFO CARD ↑</a>
         </div>
 
 
@@ -1143,6 +1187,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="ss31-45mg.webp" alt="AR Molecular SS-31 45 mg vial">
           </div>
+          <a class="info-card-button" href="#info-ss31">INFO CARD ↑</a>
         </div>
 
 
@@ -1156,6 +1201,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="nad-500mg.webp" alt="AR Molecular NAD+ 500 mg vial">
           </div>
+          <a class="info-card-button" href="#info-nad">INFO CARD ↑</a>
         </div>
 
 
@@ -1190,6 +1236,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
               alt="AR Molecular MOTS-C vial"
             >
           </div>
+          <a class="info-card-button" href="#info-mots-c">INFO CARD ↑</a>
         </div>
 
 
@@ -1203,6 +1250,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="cjc-1295-5mg.webp" alt="AR Molecular CJC-1295 5 mg vial">
           </div>
+          <a class="info-card-button" href="#info-cjc-1295">INFO CARD ↑</a>
         </div>
 
 
@@ -1216,6 +1264,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="ipamorelin-5mg.webp" alt="AR Molecular Ipamorelin 5 mg vial">
           </div>
+          <a class="info-card-button" href="#info-ipamorelin">INFO CARD ↑</a>
         </div>
 
 
@@ -1229,6 +1278,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="pinealon-10mg.webp" alt="AR Molecular Pinealon 10 mg vial">
           </div>
+          <a class="info-card-button" href="#info-pinealon">INFO CARD ↑</a>
         </div>
 
 
@@ -1242,6 +1292,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="5-amino-1mq-10mg.webp" alt="AR Molecular 5-Amino-1MQ 10 mg vial">
           </div>
+          <a class="info-card-button" href="#info-5-amino-1mq">INFO CARD ↑</a>
         </div>
 
 
@@ -1255,6 +1306,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="dsip-5mg.webp" alt="AR Molecular DSIP 5 mg vial">
           </div>
+          <a class="info-card-button" href="#info-dsip">INFO CARD ↑</a>
         </div>
 
 
@@ -1268,6 +1320,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="somatotropin-15iu.webp" alt="AR Molecular Somatotropin 15 IU vial">
           </div>
+          <a class="info-card-button" href="#info-somatotropin">INFO CARD ↑</a>
         </div>
 
 
@@ -1281,6 +1334,7 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
           <div class="product-photo-frame">
             <img class="product-photo" src="igf1-lr3-photo.webp" alt="AR Molecular IGF-1 LR3 0.1 mg vial">
           </div>
+          <a class="info-card-button" href="#info-igf1-lr3">INFO CARD ↑</a>
         </div>
 
 
