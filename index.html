@@ -37,6 +37,151 @@ body{font-size:15px;line-height:1.48;overflow-x:hidden}
 }
 @media(max-width:390px){.brand-copy strong{font-size:20px}.brand-copy span{font-size:8px}.menu-button{font-size:14px;padding:9px 10px}.card h3,.detail-name{font-size:20px!important}.product-photo-frame{height:165px!important;min-height:165px!important}}
 
+
+/* =========================================================
+   AR MOLECULAR V5 // PURPLE PRECISION FLARE
+   Clean royal-purple definition + subtle molecular atmosphere
+   ========================================================= */
+:root{
+  --royal-purple:#6f18d9;
+  --royal-purple-bright:#8424f4;
+  --purple-soft:rgba(111,24,217,.16);
+  --purple-glow:rgba(132,36,244,.13);
+}
+
+/* Give the main white surfaces a sharper AR Molecular edge */
+.peptide-education,
+.education-card,
+.card,
+.detail-card{
+  border:1.5px solid rgba(111,24,217,.38)!important;
+  box-shadow:0 10px 28px rgba(77,30,120,.07),0 0 0 1px rgba(132,36,244,.025)!important;
+}
+
+.card:hover,
+.detail-card:hover,
+.education-card:hover{
+  border-color:rgba(111,24,217,.68)!important;
+}
+
+/* Stronger purple definition around useful controls */
+.learn-button,
+.strength-tab,
+.contact-button,
+.menu-button{
+  border-color:rgba(111,24,217,.62)!important;
+}
+
+.product-photo-frame{
+  border:1.5px solid rgba(111,24,217,.28)!important;
+  box-shadow:inset 0 0 22px rgba(132,36,244,.035)!important;
+}
+
+.research-area,
+.data-strip span{
+  border-color:rgba(111,24,217,.35)!important;
+}
+
+.compound-symbol{
+  border:1px solid rgba(111,24,217,.24)!important;
+}
+
+/* Atmospheric molecule layer. Pure CSS/SVG-free so no new GitHub asset is needed. */
+.content-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+.content-section::before,
+.content-section::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.48;
+  width:260px;
+  height:260px;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(111,24,217,.20) 0 5px, transparent 6px),
+    radial-gradient(circle at 48% 12%, rgba(111,24,217,.13) 0 8px, transparent 9px),
+    radial-gradient(circle at 76% 35%, rgba(111,24,217,.17) 0 5px, transparent 6px),
+    radial-gradient(circle at 34% 58%, rgba(111,24,217,.12) 0 7px, transparent 8px),
+    radial-gradient(circle at 70% 76%, rgba(111,24,217,.16) 0 9px, transparent 10px),
+    linear-gradient(32deg, transparent 31%, rgba(111,24,217,.09) 31.5% 32.5%, transparent 33%),
+    linear-gradient(112deg, transparent 48%, rgba(111,24,217,.08) 48.5% 49.5%, transparent 50%);
+  filter:blur(.1px);
+}
+
+.content-section::before{
+  top:5%;
+  left:-120px;
+  transform:rotate(-12deg);
+}
+
+.content-section::after{
+  right:-125px;
+  bottom:10%;
+  transform:rotate(22deg) scale(.9);
+}
+
+/* A few faint DNA-like rails in the broad section background */
+.section-shell::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:-1;
+  top:17%;
+  right:-72px;
+  width:90px;
+  height:360px;
+  opacity:.11;
+  border-left:2px solid var(--royal-purple);
+  border-right:2px solid var(--royal-purple);
+  border-radius:50%;
+  transform:rotate(10deg);
+  background:repeating-linear-gradient(
+    0deg,
+    transparent 0 20px,
+    rgba(111,24,217,.65) 21px 23px,
+    transparent 24px 41px
+  );
+}
+
+.section-shell{
+  position:relative;
+  z-index:1;
+}
+
+/* Keep the atmosphere subtle on phones where space is tighter */
+@media(max-width:850px){
+  .peptide-education,.education-card,.card,.detail-card{
+    border-width:1.25px!important;
+    box-shadow:0 6px 18px rgba(77,30,120,.055)!important;
+  }
+  .content-section::before,
+  .content-section::after{
+    width:190px;
+    height:190px;
+    opacity:.34;
+  }
+  .content-section::before{left:-115px;top:8%}
+  .content-section::after{right:-120px;bottom:7%}
+  .section-shell::before{
+    right:-60px;
+    width:68px;
+    height:260px;
+    opacity:.075;
+  }
+}
+
+/* Respect reduced-motion users. Background stays decorative and static. */
+@media(prefers-reduced-motion:reduce){
+  .content-section::before,
+  .content-section::after,
+  .section-shell::before{animation:none!important}
+}
+
 </style>
 </head>
 <body>
