@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AR Molecular | Peptide Compounds</title>
+<meta name="description" content="AR Molecular peptide compound information, product photos and pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6816d9;--purple2:#8f42ff;--ink:#11142b;--muted:#5f6477;--line:#d9c9f7;--panel:#fff;--soft:#f7f4fc;--green:#20b765}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff 0,#faf9fd 55%,#f3effa 100%);font-size:17px;line-height:1.6}a{text-decoration:none;color:inherit}button{font:inherit}.site-nav{position:sticky;top:0;z-index:50;min-height:88px;display:flex;align-items:center;gap:28px;padding:12px clamp(18px,5vw,72px);background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid #eee8f8}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.lion-mini{width:52px;height:52px;border:2px solid var(--purple);border-radius:18px;display:grid;place-items:center;font-family:'Barlow Condensed';font-size:24px;font-weight:800;color:var(--purple);background:linear-gradient(145deg,#fff,#eee8fa)}.brand-copy strong{display:block;font-family:'Barlow Condensed';font-size:27px;letter-spacing:.03em;line-height:1}.brand-copy span{display:block;color:var(--purple);font-weight:800;font-size:11px;letter-spacing:.18em;margin-top:5px}.nav-links{margin-left:auto;display:flex;align-items:center;gap:28px;font-weight:700}.nav-links a:hover{color:var(--purple)}.wa{padding:13px 20px;border-radius:12px;background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(32,183,101,.2)}.menu-button{display:none;margin-left:auto;border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 16px;border-radius:10px;font-weight:800}.mobile-menu{display:none;padding:12px 20px;background:#fff;border-bottom:1px solid #eee}.mobile-menu.open{display:grid}.mobile-menu a{padding:14px 4px;border-bottom:1px solid #eee;font-weight:700}.hero{background:#fff}.hero-stage{position:relative;width:min(1536px,100%);margin:auto}.hero-stage img{display:block;width:100%;height:auto}.hero-hot{position:absolute;display:block;border-radius:12px}.hot-explore{left:10.3%;top:61.4%;width:30.1%;height:11.5%}.hot-learn{left:41.3%;top:61.4%;width:25.1%;height:11.5%}.content-section{padding:74px 24px}.section-shell{max-width:1180px;margin:auto}.peptide-education,.card,.detail-card,.about-card{background:rgba(255,255,255,.94)!important;border:1px solid #e7def6!important;box-shadow:0 14px 38px rgba(64,31,112,.07)!important;color:var(--ink)!important}.peptide-education{padding:34px;border-radius:22px;margin-bottom:54px}.education-header{text-align:center;max-width:920px;margin:auto}.education-code,.section-label{color:var(--purple)!important;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:14px}.education-header h3,.content-section h2,.contact h2{font-family:'Barlow Condensed';text-transform:uppercase;line-height:1.05;margin:12px 0 18px;font-size:clamp(34px,4vw,54px)}.education-header p,.section-intro{font-size:18px;color:var(--muted);max-width:900px;margin:0 auto 24px}.education-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}.education-card{padding:24px;border-radius:16px;background:#fbf9ff;border:1px solid #e8ddfb}.education-number{color:var(--purple);font-weight:800;font-size:14px;text-transform:uppercase}.education-card h4{font-family:'Barlow Condensed';font-size:27px;margin:7px 0}.education-card p{margin:0;color:var(--muted)}.research-material-notice{margin-top:18px;padding:16px 20px;border-left:4px solid var(--purple);background:#f6f0ff;border-radius:10px}.data-strip,.research-areas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 26px}.data-strip span,.research-area{border:1px solid var(--line)!important;color:#4e2b77!important;background:#faf7ff!important;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:800}.products{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:20px!important}.card{padding:25px!important;border-radius:18px!important}.card h3{font-family:'Barlow Condensed';font-size:30px!important;margin:12px 0 8px!important}.card>p{color:var(--muted)!important;font-size:16px!important}.compound-symbol{width:64px!important;height:64px!important;border-radius:18px!important;background:#f2eaff!important;display:grid!important;place-items:center!important}.compound-symbol svg{width:38px!important;stroke:var(--purple)!important;fill:none!important;stroke-width:2!important}.research-focus{color:var(--purple)!important;font-weight:800!important;margin:16px 0!important}.learn-button{width:100%;border:1px solid var(--purple)!important;background:#fff!important;color:var(--purple)!important;border-radius:11px!important;padding:13px!important;font-weight:800!important}.compound-more{max-height:0;overflow:hidden;transition:max-height .35s ease}.card.open .compound-more{max-height:700px}.compound-more-inner{padding-top:18px;color:var(--muted)!important}.compound-more-title{font-weight:800;color:var(--ink)!important;font-size:18px}.details-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:20px!important}.detail-card{padding:22px!important;border-radius:18px!important;text-align:center!important}.detail-name{font-family:'Barlow Condensed';font-size:29px!important;font-weight:800!important}.detail-mg{font-weight:800;color:var(--purple)!important;font-size:18px!important}.detail-id{font-size:28px!important;font-weight:800!important;margin:6px 0 12px!important}.photo-badge{display:inline-block;background:#f1e8ff!important;color:var(--purple)!important;border-radius:999px!important;padding:6px 10px!important;font-size:12px!important;font-weight:800!important}.product-photo-frame{height:250px!important;background:linear-gradient(#fff,#f6f2fb)!important;border:1px solid #ece5f6!important;border-radius:14px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;margin-top:14px!important}.product-photo{max-height:230px!important;max-width:95%!important;object-fit:contain!important}.strength-tabs{display:flex!important;justify-content:center!important;gap:7px!important;margin:10px 0!important}.strength-tab{border:1px solid var(--line)!important;background:#fff!important;color:var(--purple)!important;border-radius:8px!important;padding:7px 10px!important;font-weight:800!important}.strength-tab.active{background:var(--purple)!important;color:#fff!important}.contact{padding:72px 24px;text-align:center;background:#f5f0fb}.contact p{color:var(--muted);font-size:18px}.contact-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:25px 0}.contact-button{padding:15px 22px;border-radius:12px;font-weight:800;border:1px solid var(--purple);background:#fff;color:var(--purple)}.whatsapp-button{background:var(--green);border-color:var(--green);color:#fff}.email-address{font-size:18px;color:var(--purple);font-weight:700}footer{text-align:center;padding:35px 20px;background:#211438;color:#fff}footer strong{font-family:'Barlow Condensed';font-size:28px}footer p{margin:7px 0;color:#ddd}.footer-slogan{color:#c9aaff;font-weight:800}.age-gate{position:fixed;inset:0;z-index:1000;background:rgba(20,13,34,.93);display:flex;align-items:center;justify-content:center;padding:20px}.age-card{width:min(480px,100%);background:#fff;border-radius:22px;padding:30px;text-align:center}.age-card h2{font-family:'Barlow Condensed';font-size:38px;margin:0 0 8px}.age-card p{color:var(--muted)}.age-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.age-fields input{width:100%;font-size:20px;padding:14px;border:1px solid #d8cee8;border-radius:10px}.age-button{width:100%;margin-top:14px;padding:15px;border:0;border-radius:11px;background:var(--purple);color:#fff;font-weight:800;font-size:18px}#ageMessage{color:#b00020;margin-top:10px}.age-note{font-size:13px;color:#777;margin-top:10px}
+@media(max-width:850px){
+body{font-size:15px;line-height:1.48;overflow-x:hidden}
+.site-nav{min-height:66px;padding:8px 12px;gap:8px}.lion-mini{width:42px;height:42px;border-radius:13px;font-size:21px}.brand{gap:9px}.brand-copy strong{font-size:22px}.brand-copy span{font-size:9px;letter-spacing:.14em;margin-top:3px}.nav-links,.site-nav>.wa{display:none}.menu-button{display:block;padding:10px 12px;font-size:15px;border-radius:10px}
+/* MOBILE HERO: show the complete approved artwork instead of cropping it */
+.hero,.hero-stage{width:100%;overflow:visible}.hero-stage img{display:block;width:100%;max-width:100%;height:auto;min-height:0;object-fit:contain;object-position:center;position:static;transform:none}.hero-hot{display:none}
+.content-section{padding:38px 12px}.section-shell{width:100%}.peptide-education{padding:20px 14px;margin-bottom:34px;border-radius:18px}.education-header h3,.content-section h2,.contact h2{font-size:38px}.education-header p,.section-intro{font-size:16px;line-height:1.55}.education-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.education-card{padding:16px 13px}.education-card h4{font-size:22px}.education-card p{font-size:14px}.data-strip{display:none}.research-areas{gap:7px;margin:14px 0 20px}.research-area{padding:7px 10px!important;font-size:11px!important}
+/* Two compound info cards per row so the library is actually browsable on a phone */
+.products{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.card{padding:15px 12px!important;border-radius:15px!important;min-width:0}.compound-symbol{width:44px!important;height:44px!important;border-radius:13px!important}.compound-symbol svg{width:27px!important}.card h3{font-size:23px!important;line-height:1.02!important;margin:9px 0 6px!important;overflow-wrap:anywhere}.card>p{font-size:13px!important;line-height:1.42!important}.research-focus{font-size:12px!important;line-height:1.35!important;margin:10px 0!important}.learn-button{min-height:44px;padding:9px 6px!important;font-size:13px!important}.compound-more-inner{font-size:13px}.compound-more-title{font-size:15px!important}
+/* Two real vial cards per row with compact photography.
+   Every card reserves the same vertical space for name + strength controls,
+   so multi-strength vials (Retatrutide/MOTS-C) cannot push their photos down. */
+.details-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;align-items:stretch!important}
+.detail-card{padding:13px 9px!important;border-radius:15px!important;min-width:0;display:flex!important;flex-direction:column!important;align-items:stretch!important}
+.photo-badge{font-size:9px!important;padding:4px 7px!important;align-self:center!important;min-height:24px!important;display:inline-flex!important;align-items:center!important}
+.detail-name{font-size:22px!important;line-height:1.03!important;margin:8px 0 0!important;overflow-wrap:anywhere;height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.strength-tabs{height:42px!important;min-height:42px!important;margin:4px 0!important;gap:4px!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important}
+.strength-spacer{height:42px!important;min-height:42px!important}
+.strength-tab{padding:5px 6px!important;font-size:11px!important;white-space:nowrap!important}
+.detail-mg{font-size:14px!important;height:21px!important;line-height:21px!important}
+.detail-id{font-size:25px!important;height:38px!important;line-height:38px!important;margin:0 0 8px!important}
+.product-photo-frame{height:185px!important;min-height:185px!important;margin-top:0!important;border-radius:11px!important}
+.product-photo{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important}
+.contact{padding:48px 14px}.contact-button{min-height:48px;font-size:15px}
+}
+@media(max-width:390px){.brand-copy strong{font-size:20px}.brand-copy span{font-size:8px}.menu-button{font-size:14px;padding:9px 10px}.card h3,.detail-name{font-size:20px!important}.product-photo-frame{height:165px!important;min-height:165px!important}}
+
+
+/* =========================================================
+   AR MOLECULAR V5 // PURPLE PRECISION FLARE
+   Clean royal-purple definition + subtle molecular atmosphere
+   ========================================================= */
+:root{
+  --royal-purple:#6f18d9;
+  --royal-purple-bright:#8424f4;
+  --purple-soft:rgba(111,24,217,.16);
+  --purple-glow:rgba(132,36,244,.13);
+}
+
+/* Give the main white surfaces a sharper AR Molecular edge */
+.peptide-education,
+.education-card,
+.card,
+.detail-card{
+  border:1.5px solid rgba(111,24,217,.38)!important;
+  box-shadow:0 10px 28px rgba(77,30,120,.07),0 0 0 1px rgba(132,36,244,.025)!important;
+}
+
+.card:hover,
+.detail-card:hover,
+.education-card:hover{
+  border-color:rgba(111,24,217,.68)!important;
+}
+
+/* Stronger purple definition around useful controls */
+.learn-button,
+.strength-tab,
+.contact-button,
+.menu-button{
+  border-color:rgba(111,24,217,.62)!important;
+}
+
+.product-photo-frame{
+  border:1.5px solid rgba(111,24,217,.28)!important;
+  box-shadow:inset 0 0 22px rgba(132,36,244,.035)!important;
+}
+
+.research-area,
+.data-strip span{
+  border-color:rgba(111,24,217,.35)!important;
+}
+
+.compound-symbol{
+  border:1px solid rgba(111,24,217,.24)!important;
+}
+
+/* Atmospheric molecule layer. Pure CSS/SVG-free so no new GitHub asset is needed. */
+.content-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+.content-section::before,
+.content-section::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.48;
+  width:260px;
+  height:260px;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(111,24,217,.20) 0 5px, transparent 6px),
+    radial-gradient(circle at 48% 12%, rgba(111,24,217,.13) 0 8px, transparent 9px),
+    radial-gradient(circle at 76% 35%, rgba(111,24,217,.17) 0 5px, transparent 6px),
+    radial-gradient(circle at 34% 58%, rgba(111,24,217,.12) 0 7px, transparent 8px),
+    radial-gradient(circle at 70% 76%, rgba(111,24,217,.16) 0 9px, transparent 10px),
+    linear-gradient(32deg, transparent 31%, rgba(111,24,217,.09) 31.5% 32.5%, transparent 33%),
+    linear-gradient(112deg, transparent 48%, rgba(111,24,217,.08) 48.5% 49.5%, transparent 50%);
+  filter:blur(.1px);
+}
+
+.content-section::before{
+  top:5%;
+  left:-120px;
+  transform:rotate(-12deg);
+}
+
+.content-section::after{
+  right:-125px;
+  bottom:10%;
+  transform:rotate(22deg) scale(.9);
+}
+
+/* A few faint DNA-like rails in the broad section background */
+.section-shell::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:-1;
+  top:17%;
+  right:-72px;
+  width:90px;
+  height:360px;
+  opacity:.11;
+  border-left:2px solid var(--royal-purple);
+  border-right:2px solid var(--royal-purple);
+  border-radius:50%;
+  transform:rotate(10deg);
+  background:repeating-linear-gradient(
+    0deg,
+    transparent 0 20px,
+    rgba(111,24,217,.65) 21px 23px,
+    transparent 24px 41px
+  );
+}
+
+.section-shell{
+  position:relative;
+  z-index:1;
+}
+
+/* Keep the atmosphere subtle on phones where space is tighter */
+@media(max-width:850px){
+  .peptide-education,.education-card,.card,.detail-card{
+    border-width:1.25px!important;
+    box-shadow:0 6px 18px rgba(77,30,120,.055)!important;
+  }
+  .content-section::before,
+  .content-section::after{
+    width:190px;
+    height:190px;
+    opacity:.34;
+  }
+  .content-section::before{left:-115px;top:8%}
+  .content-section::after{right:-120px;bottom:7%}
+  .section-shell::before{
+    right:-60px;
+    width:68px;
+    height:260px;
+    opacity:.075;
+  }
+}
+
+/* Respect reduced-motion users. Background stays decorative and static. */
+@media(prefers-reduced-motion:reduce){
+  .content-section::before,
+  .content-section::after,
+  .section-shell::before{animation:none!important}
+}
+
+
+/* V6 // Vial-to-info-card navigation */
+html{scroll-behavior:smooth}
+.card[id^="info-"]{scroll-margin-top:92px}
+.info-card-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:42px;
+  margin-top:10px;
+  padding:9px 12px;
+  border:1.5px solid var(--royal-purple,#6f18d9);
+  border-radius:10px;
+  background:#fff;
+  color:var(--royal-purple,#6f18d9);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-decoration:none;
+  transition:transform .16s ease,background .16s ease,color .16s ease,box-shadow .16s ease;
+}
+.info-card-button:hover{
+  background:var(--royal-purple,#6f18d9);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(111,24,217,.16);
+  transform:translateY(-1px);
+}
+@media(max-width:850px){
+  .card[id^="info-"]{scroll-margin-top:78px}
+  .info-card-button{
+    min-height:38px;
+    margin-top:8px;
+    padding:7px 5px;
+    font-size:13px;
+    border-radius:9px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="age-gate" id="ageGate"><div class="age-card"><div class="lion-mini" style="margin:0 auto 12px">AR</div><h2>WELCOME TO AR MOLECULAR</h2><p>Please confirm you are 18 or older.</p><div class="age-fields"><input id="birthMonth" inputmode="numeric" placeholder="Month (1–12)" maxlength="2"><input id="birthYear" inputmode="numeric" placeholder="Year" maxlength="4"></div><button class="age-button" onclick="verifyAge()">ENTER SITE</button><div id="ageMessage"></div><div class="age-note">Approval is remembered for 30 days on this device.</div></div></div>
+<nav class="site-nav"><a class="brand" href="#home"><div class="lion-mini">AR</div><div class="brand-copy"><strong>AR MOLECULAR</strong><span>PEPTIDE COMPOUNDS</span></div></a><div class="nav-links"><a href="#home">Home</a><a href="#compounds">Compounds</a><a href="#details">Vials & Pricing</a><a href="#about">About</a><a href="#contact">Contact</a></div><a class="wa" href="https://wa.me/15053780280" target="_blank" rel="noopener">CHAT ON WHATSAPP</a><button class="menu-button" onclick="toggleMenu()">☰ MENU</button></nav><div class="mobile-menu" id="mobileMenu"><a href="#home" onclick="closeMenu()">Home</a><a href="#compounds" onclick="closeMenu()">Compounds</a><a href="#details" onclick="closeMenu()">Vials & Pricing</a><a href="#about" onclick="closeMenu()">About</a><a href="#contact" onclick="closeMenu()">Contact</a><a href="https://wa.me/15053780280">WhatsApp</a></div>
+<header class="hero" id="home"><div class="hero-stage"><img src="ar-molecular-hero.png" alt="AR Molecular peptide compounds"><a class="hero-hot hot-explore" href="#compounds" aria-label="Explore compounds"></a><a class="hero-hot hot-learn" href="#compounds" aria-label="Learn more"></a></div></header>
+  <section
+    class="content-section"
+    id="compounds"
+  >
+
+    <div class="section-shell">
+
+      <div class="peptide-education">
+
+        <div class="education-header">
+
+          <div class="education-code">
+            AR // Peptide Basics
+          </div>
+
+          <h3>
+            New to Peptides? Start Here.
+          </h3>
+
+<p>
+            Popular names like Ozempic® and Mounjaro® are peptide-based medications you may already recognize. Peptides are small chains of amino acids that researchers study
+            because they can act as signals in the body. Different compounds
+            are researched for different areas, including weight management,
+            recovery, sleep, cellular energy, healthy aging and body composition.
+          </p>
+
+        </div>
+
+        <div class="education-grid">
+
+          <div class="education-card">
+            <div class="education-number">
+              01 // The Basics
+            </div>
+
+            <h4>
+              What Are Peptides?
+            </h4>
+
+            <p>
+              Amino acids are often called the building blocks of proteins.
+              Peptides are simply shorter chains of those amino acids. Researchers
+              study them because different peptides can interact with different
+              processes in the body.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <div class="education-number">
+              02 // Different Research Areas
+            </div>
+
+            <h4>
+              Why Are There So Many?
+            </h4>
+
+            <p>
+              Each compound has a different research focus. Some are studied
+              mainly for appetite and metabolism, while others are researched
+              for recovery, energy, sleep, healthy aging, brain health or
+              muscle-related pathways.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <div class="education-number">
+              03 // The Powder
+            </div>
+
+            <h4>
+              Why Is It Freeze-Dried?
+            </h4>
+
+            <p>
+              Many research peptides come as a dry powder instead of a liquid.
+              This is called freeze-drying, or lyophilization. It is commonly
+              used to help keep research material stable during storage and
+              transportation.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <div class="education-number">
+              04 // Keep It Simple
+            </div>
+
+            <h4>
+              Don't Know the Science? That's Okay.
+            </h4>
+
+            <p>
+              Names like MOTS-C, SS-31 and CJC-1295 can look complicated.
+              You do not need to understand all of the chemistry to browse the
+              research. Each compound card below gives you the simple version
+              first, with more detail available if you want it.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="research-material-notice">
+          <strong>RESEARCH NOTE //</strong>
+          Information on this site is provided for research and educational purposes.
+        </div>
+
+      </div>
+
+      <div class="section-label">
+        Explore the Library
+      </div>
+
+      <h2>
+        Explore Compounds
+      </h2>
+
+      <div class="data-strip">
+        <span>CELL HEALTH</span>
+        <span>ENERGY</span>
+        <span>WEIGHT & METABOLISM</span>
+        <span>PEPTIDE BASICS</span>
+      </div>
+
+      <p class="section-intro">
+        Explore peptides and emerging compounds studied across areas including
+        weight-management biology, healing and repair, weight and metabolism,
+        recovery, energy, healthy aging, endocrine
+        signaling and cell health.
+      </p>
+
+      <div class="research-areas">
+        <span class="research-area">Weight Management</span>
+        <span class="research-area">Healing & Repair</span>
+        <span class="research-area">Recovery</span>
+        <span class="research-area">Energy</span>
+        <span class="research-area">Healthy Aging</span>
+        <span class="research-area">Weight & Metabolism</span>
+        <span class="research-area">Hormone Health</span>
+      </div>
+
+
+      <div class="products">
+
+
+        <div class="card" id="info-tirzepatide">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M11 9c4 4 4 18 0 22"></path>
+              <path d="M29 9c-4 4-4 18 0 22"></path>
+              <path d="M13 14h14"></path>
+              <path d="M14 26h12"></path>
+              <path d="M20 11v18"></path>
+            </svg>
+          </div>
+
+          <h3>Tirzepatide</h3>
+
+          <p>
+            Best known for weight-management research. It is used to study how stronger fullness signals can reduce appetite, improve blood-sugar control and support weight loss.
+          </p>
+
+          <div class="research-focus">
+            Weight Management • Appetite Control • Blood Sugar
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Tirzepatide has been studied extensively for its effects on
+                appetite regulation, glucose control, insulin sensitivity,
+                body weight and waist circumference.
+              </p>
+
+              <p>
+                Research has also examined broader cardiometabolic measures
+                including triglycerides, blood pressure, liver fat and
+                metabolic-health markers.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-retatrutide">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <circle cx="20" cy="8" r="4"></circle>
+              <circle cx="9" cy="27" r="4"></circle>
+              <circle cx="31" cy="27" r="4"></circle>
+              <path d="M18 12L11 23"></path>
+              <path d="M22 12l7 11"></path>
+              <path d="M13 27h14"></path>
+            </svg>
+          </div>
+
+          <h3>Retatrutide</h3>
+
+          <p>
+            Best known as a next-generation weight-management compound. It is studied for appetite control, fat loss, energy use and broader metabolic effects through three hormone pathways.
+          </p>
+
+          <div class="research-focus">
+            Weight Management • Appetite • Fat Loss • Metabolism
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Retatrutide activates GLP-1, GIP and glucagon receptors,
+                creating interest in how three metabolic signaling pathways
+                may influence appetite, energy expenditure, glucose metabolism
+                and body composition.
+              </p>
+
+              <p>
+                Clinical research has reported substantial dose-dependent
+                changes in body weight, making it a closely watched
+                next-generation metabolic research compound.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-klow">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M12 7l16 26"></path>
+              <path d="M28 7L12 33"></path>
+              <path d="M16 14h8"></path>
+              <path d="M14 20h12"></path>
+              <path d="M16 26h8"></path>
+            </svg>
+          </div>
+
+          <h3>KLOW</h3>
+
+          <p>
+            A multi-peptide blend popularly used in recovery-focused research, especially for healing, tissue repair, inflammation control and collagen or skin support.
+          </p>
+
+          <div class="research-focus">
+            Healing & Repair • Recovery • Inflammation • Collagen
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Research interest surrounding blends in this category
+                generally centers on connective-tissue biology,
+                collagen signaling, cellular repair mechanisms and
+                recovery-related pathways.
+              </p>
+
+              <p>
+                Biological properties depend on the exact ingredients
+                and concentrations in the specific formulation.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-epitalon">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M12 5c15 8 1 22 16 30"></path>
+              <path d="M28 5c-15 8-1 22-16 30"></path>
+              <path d="M14 10h12"></path>
+              <path d="M13 18h14"></path>
+              <path d="M13 26h14"></path>
+            </svg>
+          </div>
+
+          <h3>Epitalon</h3>
+
+          <p>
+            Best known in longevity research. It is studied for healthy aging, sleep-wake regulation, cell protection and age-related cellular processes.
+          </p>
+
+          <div class="research-focus">
+            Healthy Aging • Sleep Support • Cell Health • Longevity
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Epitalon has been investigated for potential effects
+                involving gene expression, cellular regulation,
+                chromatin biology and mechanisms associated with aging.
+              </p>
+
+              <p>
+                Experimental research has also explored relationships
+                with telomerase activity and telomere biology.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-ss31">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M7 20c3-9 11-13 20-10 7 2 9 9 5 15-5 7-18 8-25-5z"></path>
+              <path d="M12 18c4-3 6 4 10 1 4-4 5 3 8 1"></path>
+            </svg>
+          </div>
+
+          <h3>SS-31</h3>
+
+          <p>
+            A mitochondria-targeting peptide studied for helping stressed or damaged mitochondria work better. Think of it as mitochondrial repair support: protecting their inner structure, improving energy production and helping restore cell function.
+          </p>
+
+          <div class="research-focus">
+            Mitochondrial Repair • Cell Energy • Cell Protection • Recovery
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                SS-31, also known as elamipretide, is designed to
+                localize within mitochondria and interact with
+                cardiolipin in the inner mitochondrial membrane.
+              </p>
+
+              <p>
+                Research has focused on mitochondrial structure,
+                ATP production, oxidative stress and cellular-energy efficiency.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-nad">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M23 4L11 22h8l-2 14 12-19h-8z"></path>
+            </svg>
+          </div>
+
+          <h3>NAD+</h3>
+
+          <p>
+            A molecule every cell uses to turn food into usable energy. In plain English, NAD+ is part of the cell's fuel system and is also involved in DNA repair, cellular maintenance and healthy-aging pathways.
+          </p>
+
+          <div class="research-focus">
+            Cell Fuel • Energy Production • DNA Repair • Healthy Aging
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                NAD+ plays an essential role in redox reactions used
+                by cells to generate energy and maintain metabolic function.
+              </p>
+
+              <p>
+                It also participates in signaling pathways involving
+                DNA repair, sirtuin activity, cellular stress responses
+                and mitochondrial maintenance.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-mots-c">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <ellipse cx="20" cy="20" rx="14" ry="10"></ellipse>
+              <path d="M10 21c4-8 7 7 11-1 3-6 6 5 9-1"></path>
+            </svg>
+          </div>
+
+          <h3>MOTS-C</h3>
+
+          <p>
+            A peptide made from mitochondrial genetic material that is studied as a metabolic signal. Research focuses on how cells use glucose and energy, exercise adaptation, insulin sensitivity and metabolic health.
+          </p>
+
+          <div class="research-focus">
+            Metabolism • Energy Use • Exercise • Insulin Sensitivity
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Research has explored relationships with glucose utilization,
+                metabolic flexibility, skeletal-muscle function,
+                cellular stress responses and exercise adaptation.
+              </p>
+
+              <p>
+                Experimental work has also examined mitochondrial efficiency
+                and communication between mitochondria and the rest of the cell.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-cjc-1295">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M4 22h7l3-8 5 15 5-20 5 13h7"></path>
+            </svg>
+          </div>
+
+          <h3>CJC-1295 Without DAC</h3>
+
+          <p>
+            A short-acting growth-hormone releasing peptide used to study natural GH pulses. It is commonly researched for recovery, sleep, muscle-support and body-composition effects.
+          </p>
+
+          <div class="research-focus">
+            Growth Hormone • Recovery • Sleep • Body Composition
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                CJC compounds are synthetic analogs of growth
+                hormone-releasing hormone and are studied for their
+                interaction with the growth-hormone signaling axis.
+              </p>
+
+              <p>
+                Research examines GH secretion, IGF-1 signaling,
+                endocrine physiology, metabolic regulation and
+                tissue-growth pathways.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-ipamorelin">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M20 5c7 9 11 14 11 20a11 11 0 0 1-22 0c0-6 4-11 11-20z"></path>
+              <path d="M15 26c2 2 4 3 7 3"></path>
+            </svg>
+          </div>
+
+          <h3>Ipamorelin</h3>
+
+          <p>
+            A growth-hormone secretagogue studied for encouraging GH release with relatively targeted signaling. It is commonly researched for recovery, sleep, muscle support and body composition.
+          </p>
+
+          <div class="research-focus">
+            Growth Hormone • Recovery • Sleep • Muscle Support
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Ipamorelin interacts with the ghrelin receptor
+                and has been studied for its ability to stimulate
+                growth-hormone release.
+              </p>
+
+              <p>
+                Research areas associated with the GH axis include
+                hormone health, tissue recovery and metabolic regulation.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-pinealon">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M17 7c-6 0-10 4-10 9 0 3 2 5 4 6-2 4 1 8 5 8 2 4 8 4 10 0 5 0 7-5 5-8 3-1 4-5 2-8-2-4-6-5-10-3-1-3-3-4-4-4z"></path>
+              <path d="M20 11v19"></path>
+            </svg>
+          </div>
+
+          <h3>Pinealon</h3>
+
+          <p>
+            A short peptide studied mainly for brain and nerve-cell protection. Research interest centers on memory, cognitive aging, cellular stress and maintaining healthy brain function.
+          </p>
+
+          <div class="research-focus">
+            Brain Health • Memory • Cell Protection • Cognitive Aging
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Laboratory studies have examined relationships with
+                oxidative stress, reactive oxygen species,
+                cell viability and regulatory processes relevant
+                to neuronal cells.
+              </p>
+
+              <p>
+                Evidence remains more limited and preclinical than
+                that available for established metabolic therapies.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <div class="card" id="info-5-amino-1mq">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M10 29c5-10 9-16 20-18"></path>
+              <path d="M12 12h8v8h-8z"></path>
+              <path d="M24 22h7v7h-7z"></path>
+            </svg>
+          </div>
+
+          <h3>5-Amino-1MQ</h3>
+
+          <p>
+            A small-molecule NNMT inhibitor studied for metabolic and body-composition effects. Research interest centers on fat metabolism, cellular energy handling and pathways involved in weight control.
+          </p>
+
+          <div class="research-focus">
+            Fat Metabolism • Weight Research • Cell Energy • Body Composition
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                5-Amino-1MQ is investigated for how NNMT inhibition may
+                influence cellular methylation balance, energy metabolism
+                and metabolic signaling.
+              </p>
+
+              <p>
+                Published research remains developing, with much of the
+                mechanistic work focused on preclinical models.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-dsip">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M8 24c5-8 9-12 12-12s7 4 12 12"></path>
+              <path d="M12 27h16"></path>
+              <path d="M15 31h10"></path>
+            </svg>
+          </div>
+
+          <h3>DSIP</h3>
+
+          <p>
+            A small peptide most commonly associated with sleep research. It is studied for sleep quality, relaxation, stress-response pathways and recovery.
+          </p>
+
+          <div class="research-focus">
+            Sleep • Relaxation • Stress Response • Recovery
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Delta sleep-inducing peptide has been studied in relation
+                to sleep architecture, neurohormone health and
+                physiological stress responses.
+              </p>
+
+              <p>
+                Evidence is limited and heterogeneous, so it remains
+                primarily an experimental research peptide.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-somatotropin">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <path d="M20 5v30"></path>
+              <path d="M10 15c6-5 14-5 20 0"></path>
+              <path d="M10 25c6 5 14 5 20 0"></path>
+              <circle cx="20" cy="20" r="4"></circle>
+            </svg>
+          </div>
+
+          <h3>Somatotropin</h3>
+
+          <p>
+            Recombinant human growth hormone. It is used to study growth and IGF-1 signaling, muscle and tissue recovery, protein-building processes and changes in body composition.
+          </p>
+
+          <div class="research-focus">
+            Growth Hormone • Muscle & Tissue • Recovery • Body Composition
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                Somatotropin interacts with the growth-hormone receptor
+                and influences downstream pathways including IGF-1 signaling,
+                protein metabolism and tissue-growth biology.
+              </p>
+
+              <p>
+                Research spans endocrine physiology, body-composition biology
+                and the broader growth-hormone signaling axis.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="card" id="info-igf1-lr3">
+
+          <div class="compound-symbol">
+            <svg viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="13"></circle>
+              <path d="M12 23c3-8 6 5 10-2 3-5 5 3 7 0"></path>
+              <path d="M20 7v5"></path>
+            </svg>
+          </div>
+
+          <h3>IGF-1 LR3</h3>
+
+          <p>
+            A longer-acting IGF-1 analog used in research on muscle and tissue growth. It is studied for protein-building signals, recovery, nutrient uptake and cell-growth pathways.
+          </p>
+
+          <div class="research-focus">
+            Muscle Growth • Recovery • Nutrient Uptake • Cell Growth
+          </div>
+
+          <button class="learn-button" onclick="toggleCompound(this)">
+            Main Effects
+            <span class="arrow">▼</span>
+          </button>
+
+          <div class="compound-more">
+            <div class="compound-more-inner">
+
+              <div class="compound-more-title">
+                Areas of Research Interest
+              </div>
+
+              <p>
+                IGF-1 LR3 is engineered for prolonged activity relative
+                to native IGF-1 and is used experimentally to study
+                IGF-receptor signaling and downstream cellular pathways.
+              </p>
+
+              <p>
+                Research interest includes cell growth, nutrient signaling,
+                glucose metabolism and tissue-development pathways.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section
+    class="content-section"
+    id="details"
+  >
+
+    <div class="section-shell">
+
+      <div class="section-label">
+        Compound Details
+      </div>
+
+      <h2>
+        Vials & Pricing
+      </h2>
+
+      <div class="data-strip">
+        <span>COMPOUND</span>
+        <span>VIAL SIZE</span>
+        <span>PRICE</span>
+      </div>
+
+      <p class="section-intro">
+        Compound name, vial amount and corresponding price information.
+      </p>
+
+      <div class="details-grid">
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Tirzepatide</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">15 mg</div>
+          <div class="detail-id">$40</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="tirzepatide-15mg.webp" alt="AR Molecular Tirzepatide 15 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-tirzepatide">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Retatrutide</div>
+
+          <div class="strength-tabs">
+            <button
+              class="strength-tab active"
+              onclick="changeStrength(this,'10 mg','$50','retatrutide-10mg.webp','retaPhoto','retaMg','retaPrice')"
+            >
+              10 mg
+            </button>
+
+            <button
+              class="strength-tab"
+              onclick="changeStrength(this,'30 mg','$100','retatrutide-30mg.webp','retaPhoto','retaMg','retaPrice')"
+            >
+              30 mg
+            </button>
+          </div>
+
+          <div class="detail-mg" id="retaMg">10 mg</div>
+          <div class="detail-id" id="retaPrice">$50</div>
+
+          <div class="product-photo-frame">
+            <img
+              class="product-photo"
+              id="retaPhoto"
+              src="retatrutide-10mg.webp"
+              alt="AR Molecular Retatrutide vial"
+            >
+          </div>
+          <a class="info-card-button" href="#info-retatrutide">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">KLOW</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">80 mg</div>
+          <div class="detail-id">$80</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="klow-80mg.webp" alt="AR Molecular KLOW 80 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-klow">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Epitalon</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">40 mg</div>
+          <div class="detail-id">$75</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="epitalon-40mg.webp" alt="AR Molecular Epitalon 40 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-epitalon">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">SS-31</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">45 mg</div>
+          <div class="detail-id">$100</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="ss31-45mg.webp" alt="AR Molecular SS-31 45 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-ss31">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">NAD+</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">500 mg</div>
+          <div class="detail-id">$35</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="nad-500mg.webp" alt="AR Molecular NAD+ 500 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-nad">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">MOTS-C</div>
+
+          <div class="strength-tabs">
+            <button
+              class="strength-tab active"
+              onclick="changeStrength(this,'10 mg','$35','mots-c-10mg.webp','motsPhoto','motsMg','motsPrice')"
+            >
+              10 mg
+            </button>
+
+            <button
+              class="strength-tab"
+              onclick="changeStrength(this,'40 mg','$75','mots-c-40mg.webp','motsPhoto','motsMg','motsPrice')"
+            >
+              40 mg
+            </button>
+          </div>
+
+          <div class="detail-mg" id="motsMg">10 mg</div>
+          <div class="detail-id" id="motsPrice">$35</div>
+
+          <div class="product-photo-frame">
+            <img
+              class="product-photo"
+              id="motsPhoto"
+              src="mots-c-10mg.webp"
+              alt="AR Molecular MOTS-C vial"
+            >
+          </div>
+          <a class="info-card-button" href="#info-mots-c">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">PRODUCT PHOTO</div>
+          <div class="detail-name">CJC-1295 Without DAC</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$40</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="cjc-1295-5mg.webp" alt="AR Molecular CJC-1295 5 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-cjc-1295">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">PRODUCT PHOTO</div>
+          <div class="detail-name">Ipamorelin</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$25</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="ipamorelin-5mg.webp" alt="AR Molecular Ipamorelin 5 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-ipamorelin">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Pinealon</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">10 mg</div>
+          <div class="detail-id">$45</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="pinealon-10mg.webp" alt="AR Molecular Pinealon 10 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-pinealon">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">5-Amino-1MQ</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">10 mg</div>
+          <div class="detail-id">$35</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="5-amino-1mq-10mg.webp" alt="AR Molecular 5-Amino-1MQ 10 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-5-amino-1mq">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">DSIP</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$20</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="dsip-5mg.webp" alt="AR Molecular DSIP 5 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-dsip">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">Somatotropin</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">15 IU</div>
+          <div class="detail-id">$50</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="somatotropin-15iu.webp" alt="AR Molecular Somatotropin 15 IU vial">
+          </div>
+          <a class="info-card-button" href="#info-somatotropin">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">REAL PRODUCT PHOTO</div>
+          <div class="detail-name">IGF-1 LR3</div>
+
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">0.1 mg</div>
+          <div class="detail-id">$15</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="igf1-lr3-photo.webp" alt="AR Molecular IGF-1 LR3 0.1 mg vial">
+          </div>
+          <a class="info-card-button" href="#info-igf1-lr3">INFO CARD ↑</a>
+        </div>
+
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">PRODUCT IMAGE</div>
+          <div class="detail-name">Kisspeptin</div>
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$25</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="kisspeptin-5mg.png" alt="AR Molecular Kisspeptin 5 mg vial">
+          </div>
+          <a class="info-card-button" href="#contact">CONTACT ↑</a>
+        </div>
+
+        <div class="detail-card has-photo">
+          <div class="photo-badge">PRODUCT IMAGE</div>
+          <div class="detail-name">Eloralintide</div>
+          <div class="strength-tabs strength-spacer" aria-hidden="true"></div>
+          <div class="detail-mg">5 mg</div>
+          <div class="detail-id">$65</div>
+          <div class="product-photo-frame">
+            <img class="product-photo" src="eloralintide-5mg.png" alt="AR Molecular Eloralintide 5 mg vial">
+          </div>
+          <a class="info-card-button" href="#contact">CONTACT ↑</a>
+        </div>
+
+      </div>
+
+
+      <p class="lot-note">
+        For research identification and informational purposes only.
+      </p>
+
+    </div>
+
+  </section>
+
+
+<section class="content-section" id="about"><div class="section-shell"><div class="section-label">About AR Molecular</div><h2>Simple Information. Real Products.</h2><p class="section-intro">AR Molecular is built to make peptide and compound information easier to understand. Browse the main areas each compound is being studied for, see real product photos, compare vial sizes and pricing, and dig deeper only when you want to.</p><div class="education-grid"><div class="education-card"><div class="education-number">01 // EASY TO READ</div><h4>Plain English First</h4><p>We lead with the main effects people are researching, without burying the useful part under complicated terminology.</p></div><div class="education-card"><div class="education-number">02 // REAL PHOTOS</div><h4>See the Actual Vials</h4><p>Product listings use real photographed vials rather than computer-generated mock products.</p></div><div class="education-card"><div class="education-number">03 // LOCAL</div><h4>Albuquerque, New Mexico</h4><p>AR Molecular is locally based in Albuquerque with direct email and WhatsApp contact.</p></div><div class="education-card"><div class="education-number">04 // RESEARCH INFO</div><h4>Clear Context</h4><p>Benefits are presented as areas being studied, with additional detail available when useful.</p></div></div></div></section><section class="contact" id="contact"><div class="section-label">Questions?</div><h2>Contact AR Molecular</h2><p>Questions about a compound, vial size or the information on this site? Reach out directly.</p><div class="contact-actions"><a class="contact-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=reaperpeps@gmail.com&su=AR%20Molecular%20Inquiry" target="_blank" rel="noopener">EMAIL AR MOLECULAR</a><a class="contact-button whatsapp-button" href="https://wa.me/15053780280" target="_blank" rel="noopener">WHATSAPP US</a></div><a class="email-address" href="mailto:reaperpeps@gmail.com">reaperpeps@gmail.com</a></section><footer><strong>AR MOLECULAR</strong><div class="footer-slogan">PEPTIDE COMPOUNDS</div><p>Albuquerque, New Mexico</p><p>Research and educational information • Not medical advice</p></footer>
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}function toggleCompound(btn){btn.closest('.card').classList.toggle('open')}function setStrength(btn,mg,price,img){const c=btn.closest('.detail-card');c.querySelectorAll('.strength-tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const m=c.querySelector('.detail-mg'),p=c.querySelector('.detail-id'),im=c.querySelector('.product-photo');if(m)m.textContent=mg;if(p)p.textContent=price;if(im&&img)im.src=img}
+const approvalKey='arMolecularAgeApproved',approvalDuration=30*24*60*60*1000;function checkAgeApproval(){const t=Number(localStorage.getItem(approvalKey)||0);if(t&&Date.now()-t<approvalDuration)document.getElementById('ageGate').style.display='none'}function verifyAge(){const mo=Number(document.getElementById('birthMonth').value),yr=Number(document.getElementById('birthYear').value),now=new Date(),cy=now.getFullYear(),msg=document.getElementById('ageMessage');if(mo<1||mo>12||yr<1900||yr>cy){msg.textContent='Please enter a valid month and year.';return}let age=cy-yr-(now.getMonth()+1<mo?1:0);if(age<18){msg.textContent='You must be at least 18 to enter.';return}localStorage.setItem(approvalKey,String(Date.now()));document.getElementById('ageGate').style.display='none'}checkAgeApproval();
+</script></body></html>
