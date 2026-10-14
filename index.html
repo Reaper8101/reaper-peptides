@@ -247,12 +247,13 @@ html{scroll-behavior:smooth}
 @media(max-width:690px){.order-guide{padding:50px 16px}.order-steps{grid-template-columns:1fr;gap:12px}.order-step{padding:18px;gap:13px}.order-step h3{font-size:19px}.order-step p{font-size:15px}.order-step-number{width:41px;height:41px;font-size:17px}.order-actions{flex-direction:column}.order-actions .contact-button{width:100%}}
 
 #compounds,#peptide-basics{scroll-margin-top:84px}
+#info-cards,#details{scroll-margin-top:85px}
 </style>
 </head>
 <body>
 <div class="age-gate" id="ageGate"><div class="age-card"><div class="lion-mini" style="margin:0 auto 12px">AR</div><h2>WELCOME TO AR MOLECULAR</h2><p>Please confirm you are 18 or older.</p><div class="age-fields"><input id="birthMonth" inputmode="numeric" maxlength="2" placeholder="Month (1–12)"/><input id="birthYear" inputmode="numeric" maxlength="4" placeholder="Year"/></div><button class="age-button" onclick="verifyAge()">ENTER SITE</button><div id="ageMessage"></div><div class="age-note">Approval is remembered for 30 days on this device.</div></div></div>
 <nav class="site-nav"><a class="brand" href="#home"><div class="lion-mini">AR</div><div class="brand-copy"><strong>AR MOLECULAR</strong><span>PEPTIDE COMPOUNDS</span></div></a><div class="nav-links"><a href="#home">Home</a><a href="#compounds">Compounds</a><a href="#details">Vials &amp; Pricing</a><a href="#about">About</a><a href="#how-to-order">Order</a><a href="#contact">Contact</a></div><a class="wa" href="https://wa.me/15053780280" rel="noopener" target="_blank">CHAT ON WHATSAPP</a><button class="menu-button" onclick="toggleMenu()">☰ MENU</button></nav><div class="mobile-menu" id="mobileMenu"><a href="#home" onclick="closeMenu()">Home</a><a href="#compounds" onclick="closeMenu()">Compounds</a><a href="#details" onclick="closeMenu()">Vials &amp; Pricing</a><a href="#about" onclick="closeMenu()">About</a><a href="#how-to-order" onclick="closeMenu()">Order</a><a href="#contact" onclick="closeMenu()">Contact</a><a href="https://wa.me/15053780280">WhatsApp</a></div>
-<header class="hero" id="home"><div class="hero-stage"><img alt="AR Molecular peptide compounds" src="ar-molecular-hero.png"/><a aria-label="Explore compounds" class="hero-hot hot-explore" href="#compounds"></a><a aria-label="Learn more about peptides" class="hero-hot hot-learn" href="#peptide-basics"></a></div></header>
+<header class="hero" id="home"><div class="hero-stage"><img alt="AR Molecular peptide compounds" src="ar-molecular-hero.png"/><a aria-label="Explore compounds" class="hero-hot hot-explore" href="#details"></a><a aria-label="Learn more about peptides" class="hero-hot hot-learn" href="#info-cards"></a></div></header>
 <section class="content-section" id="compounds">
 <div class="section-shell">
 <div class="peptide-education" id="peptide-basics">
@@ -360,7 +361,7 @@ html{scroll-behavior:smooth}
 <span class="research-area">Weight &amp; Metabolism</span>
 <span class="research-area">Hormone Health</span>
 </div>
-<div class="products">
+<div class="products" id="info-cards">
 <div class="card" id="info-tirzepatide">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
