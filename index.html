@@ -226,11 +226,31 @@ html{scroll-behavior:smooth}
   }
 }
 
+
+/* AR Molecular // Ordering guide */
+.order-guide {padding:70px 20px;background:linear-gradient(160deg,#fbfaff,#f1e9fa);border-top:1px solid rgba(111,24,217,.18);scroll-margin-top:82px}
+.order-guide-inner {max-width:1080px;margin:0 auto}
+.order-guide .section-label,.order-guide h2,.order-guide-intro{text-align:center}
+.order-guide h2{font-size:clamp(36px,5vw,54px);margin:10px 0 5px}
+.order-guide-intro{font-size:18px;color:#51485b;margin:0 auto 30px}
+.order-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.order-step{display:flex;align-items:flex-start;gap:17px;padding:23px;border:1px solid rgba(111,24,217,.28);border-radius:16px;background:#fff;box-shadow:0 10px 26px rgba(80,30,100,.05)}
+.order-step-number{flex:none;display:grid;place-items:center;width:47px;height:47px;background:#7116da;color:white;font-size:20px;font-weight:800;border-radius:12px}
+.order-step h3{margin:1px 0 10px;font-size:21px;line-height:1.18;color:#271534}
+.order-step p{margin:0;font-size:16px;line-height:1.55;color:#4b4156}
+.order-step a{color:#6b16d0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.order-shipping{display:flex;gap:14px;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;background:#281633;color:white;border-radius:14px;padding:20px 24px;margin:22px 0}
+.order-shipping strong{color:#e7c6ff;font-size:17px}
+.order-shipping span{font-size:16px;line-height:1.45}
+.order-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px}
+.order-actions .contact-button{text-align:center;text-decoration:none}
+@media(max-width:690px){.order-guide{padding:50px 16px}.order-steps{grid-template-columns:1fr;gap:12px}.order-step{padding:18px;gap:13px}.order-step h3{font-size:19px}.order-step p{font-size:15px}.order-step-number{width:41px;height:41px;font-size:17px}.order-actions{flex-direction:column}.order-actions .contact-button{width:100%}}
+
 </style>
 </head>
 <body>
 <div class="age-gate" id="ageGate"><div class="age-card"><div class="lion-mini" style="margin:0 auto 12px">AR</div><h2>WELCOME TO AR MOLECULAR</h2><p>Please confirm you are 18 or older.</p><div class="age-fields"><input id="birthMonth" inputmode="numeric" maxlength="2" placeholder="Month (1–12)"/><input id="birthYear" inputmode="numeric" maxlength="4" placeholder="Year"/></div><button class="age-button" onclick="verifyAge()">ENTER SITE</button><div id="ageMessage"></div><div class="age-note">Approval is remembered for 30 days on this device.</div></div></div>
-<nav class="site-nav"><a class="brand" href="#home"><div class="lion-mini">AR</div><div class="brand-copy"><strong>AR MOLECULAR</strong><span>PEPTIDE COMPOUNDS</span></div></a><div class="nav-links"><a href="#home">Home</a><a href="#compounds">Compounds</a><a href="#details">Vials &amp; Pricing</a><a href="#about">About</a><a href="#contact">Contact</a></div><a class="wa" href="https://wa.me/15053780280" rel="noopener" target="_blank">CHAT ON WHATSAPP</a><button class="menu-button" onclick="toggleMenu()">☰ MENU</button></nav><div class="mobile-menu" id="mobileMenu"><a href="#home" onclick="closeMenu()">Home</a><a href="#compounds" onclick="closeMenu()">Compounds</a><a href="#details" onclick="closeMenu()">Vials &amp; Pricing</a><a href="#about" onclick="closeMenu()">About</a><a href="#contact" onclick="closeMenu()">Contact</a><a href="https://wa.me/15053780280">WhatsApp</a></div>
+<nav class="site-nav"><a class="brand" href="#home"><div class="lion-mini">AR</div><div class="brand-copy"><strong>AR MOLECULAR</strong><span>PEPTIDE COMPOUNDS</span></div></a><div class="nav-links"><a href="#home">Home</a><a href="#compounds">Compounds</a><a href="#details">Vials &amp; Pricing</a><a href="#about">About</a><a href="#how-to-order">Order</a><a href="#contact">Contact</a></div><a class="wa" href="https://wa.me/15053780280" rel="noopener" target="_blank">CHAT ON WHATSAPP</a><button class="menu-button" onclick="toggleMenu()">☰ MENU</button></nav><div class="mobile-menu" id="mobileMenu"><a href="#home" onclick="closeMenu()">Home</a><a href="#compounds" onclick="closeMenu()">Compounds</a><a href="#details" onclick="closeMenu()">Vials &amp; Pricing</a><a href="#about" onclick="closeMenu()">About</a><a href="#how-to-order" onclick="closeMenu()">Order</a><a href="#contact" onclick="closeMenu()">Contact</a><a href="https://wa.me/15053780280">WhatsApp</a></div>
 <header class="hero" id="home"><div class="hero-stage"><img alt="AR Molecular peptide compounds" src="ar-molecular-hero.png"/><a aria-label="Explore compounds" class="hero-hot hot-explore" href="#compounds"></a><a aria-label="Learn more" class="hero-hot hot-learn" href="#compounds"></a></div></header>
 <section class="content-section" id="compounds">
 <div class="section-shell">
@@ -593,10 +613,10 @@ html{scroll-behavior:smooth}
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Retatrutide</div>
 <div class="strength-tabs">
-<button class="strength-tab active" onclick="changeStrength(this,'10 mg','$50','retatrutide-10mg.webp','retaPhoto','retaMg','retaPrice')">
+<button class="strength-tab active" onclick="setStrength(this,'10 mg','$50','retatrutide-10mg.webp','retaPhoto','retaMg','retaPrice')">
               10 mg
             </button>
-<button class="strength-tab" onclick="changeStrength(this,'30 mg','$100','retatrutide-30mg.webp','retaPhoto','retaMg','retaPrice')">
+<button class="strength-tab" onclick="setStrength(this,'30 mg','$100','retatrutide-30mg.webp','retaPhoto','retaMg','retaPrice')">
               30 mg
             </button>
 </div>
@@ -655,10 +675,10 @@ html{scroll-behavior:smooth}
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">MOTS-C</div>
 <div class="strength-tabs">
-<button class="strength-tab active" onclick="changeStrength(this,'10 mg','$35','mots-c-10mg.webp','motsPhoto','motsMg','motsPrice')">
+<button class="strength-tab active" onclick="setStrength(this,'10 mg','$35','mots-c-10mg.webp','motsPhoto','motsMg','motsPrice')">
               10 mg
             </button>
-<button class="strength-tab" onclick="changeStrength(this,'40 mg','$75','mots-c-40mg.webp','motsPhoto','motsMg','motsPrice')">
+<button class="strength-tab" onclick="setStrength(this,'40 mg','$75','mots-c-40mg.webp','motsPhoto','motsMg','motsPrice')">
               40 mg
             </button>
 </div>
@@ -774,7 +794,27 @@ html{scroll-behavior:smooth}
       </p>
 </div>
 </section>
-<section class="content-section" id="about"><div class="section-shell"><div class="section-label">About AR Molecular</div><h2>Simple Information. Real Products.</h2><p class="section-intro">AR Molecular is built to make peptide and compound information easier to understand. Browse the main areas each compound is being studied for, see real product photos, compare vial sizes and pricing, and dig deeper only when you want to.</p><div class="education-grid"><div class="education-card"><div class="education-number">01 // EASY TO READ</div><h4>Plain English First</h4><p>We lead with the main effects people are researching, without burying the useful part under complicated terminology.</p></div><div class="education-card"><div class="education-number">02 // REAL PHOTOS</div><h4>See the Actual Vials</h4><p>Product listings use real photographed vials rather than computer-generated mock products.</p></div><div class="education-card"><div class="education-number">03 // LOCAL</div><h4>Albuquerque, New Mexico</h4><p>AR Molecular is locally based in Albuquerque with direct email and WhatsApp contact.</p></div><div class="education-card"><div class="education-number">04 // RESEARCH INFO</div><h4>Clear Context</h4><p>Benefits are presented as areas being studied, with additional detail available when useful.</p></div></div></div></section><section class="contact" id="contact"><div class="section-label">Questions?</div><h2>Contact AR Molecular</h2><p>Questions about a compound, vial size or the information on this site? Reach out directly.</p><div class="contact-actions"><a class="contact-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=reaperpeps@gmail.com&amp;su=AR%20Molecular%20Inquiry" rel="noopener" target="_blank">EMAIL AR MOLECULAR</a><a class="contact-button whatsapp-button" href="https://wa.me/15053780280" rel="noopener" target="_blank">WHATSAPP US</a></div><a class="email-address" href="mailto:reaperpeps@gmail.com">reaperpeps@gmail.com</a></section><footer><strong>AR MOLECULAR</strong><div class="footer-slogan">PEPTIDE COMPOUNDS</div><p>Albuquerque, New Mexico</p><p>Research and educational information • Not medical advice</p></footer>
+<section class="content-section" id="about"><div class="section-shell"><div class="section-label">About AR Molecular</div><h2>Simple Information. Real Products.</h2><p class="section-intro">AR Molecular is built to make peptide and compound information easier to understand. Browse the main areas each compound is being studied for, see real product photos, compare vial sizes and pricing, and dig deeper only when you want to.</p><div class="education-grid"><div class="education-card"><div class="education-number">01 // EASY TO READ</div><h4>Plain English First</h4><p>We lead with the main effects people are researching, without burying the useful part under complicated terminology.</p></div><div class="education-card"><div class="education-number">02 // REAL PHOTOS</div><h4>See the Actual Vials</h4><p>Product listings use real photographed vials rather than computer-generated mock products.</p></div><div class="education-card"><div class="education-number">03 // LOCAL</div><h4>Albuquerque, New Mexico</h4><p>AR Molecular is locally based in Albuquerque with direct email and WhatsApp contact.</p></div><div class="education-card"><div class="education-number">04 // RESEARCH INFO</div><h4>Clear Context</h4><p>Benefits are presented as areas being studied, with additional detail available when useful.</p></div></div></div></section>
+<section class="order-guide" id="how-to-order" aria-labelledby="order-guide-title">
+  <div class="order-guide-inner">
+    <div class="section-label">AR MOLECULAR // ORDERING GUIDE</div>
+    <h2 id="order-guide-title">How to Order</h2>
+    <p class="order-guide-intro">Four easy steps to place your order.</p>
+    <div class="order-steps">
+      <div class="order-step"><span class="order-step-number">01</span><div><h3>Browse the catalog &amp; prices</h3><p>See available products, vial sizes, and pricing in our <a href="#details">catalog</a>.</p></div></div>
+      <div class="order-step"><span class="order-step-number">02</span><div><h3>Pick your product &amp; size</h3><p>Choose the compound and vial size you want. Click the size buttons to see the matching price.</p></div></div>
+      <div class="order-step"><span class="order-step-number">03</span><div><h3>Contact us</h3><p>Send your selection through <a href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">email</a> or <a href="https://wa.me/15053780280" target="_blank" rel="noopener">WhatsApp</a>.</p></div></div>
+      <div class="order-step"><span class="order-step-number">04</span><div><h3>Include your name &amp; address</h3><p>Provide your full name and shipping address so we can calculate shipping and confirm the order.</p></div></div>
+    </div>
+    <div class="order-shipping"><strong>Shipping &amp; local pickup</strong><span>Orders are shipped out next day or available for local pickup in Albuquerque, NM.</span></div>
+    <div class="order-actions">
+      <a class="contact-button" href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">ORDER BY EMAIL</a>
+      <a class="contact-button" href="https://wa.me/15053780280" target="_blank" rel="noopener">ORDER VIA WHATSAPP</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact"><div class="section-label">Questions?</div><h2>Contact AR Molecular</h2><p>Questions about a compound, vial size or the information on this site? Reach out directly.</p><div class="contact-actions"><a class="contact-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=reaperpeps@gmail.com&amp;su=AR%20Molecular%20Inquiry" rel="noopener" target="_blank">EMAIL AR MOLECULAR</a><a class="contact-button whatsapp-button" href="https://wa.me/15053780280" rel="noopener" target="_blank">WHATSAPP US</a></div><a class="email-address" href="mailto:reaperpeps@gmail.com">reaperpeps@gmail.com</a></section><footer><strong>AR MOLECULAR</strong><div class="footer-slogan">PEPTIDE COMPOUNDS</div><p>Albuquerque, New Mexico</p><p>Research and educational information • Not medical advice</p></footer>
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}function toggleCompound(btn){btn.closest('.card').classList.toggle('open')}function setStrength(btn,mg,price,img){const c=btn.closest('.detail-card');c.querySelectorAll('.strength-tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const m=c.querySelector('.detail-mg'),p=c.querySelector('.detail-id'),im=c.querySelector('.product-photo');if(m)m.textContent=mg;if(p)p.textContent=price;if(im&&img)im.src=img}
 const approvalKey='arMolecularAgeApproved',approvalDuration=30*24*60*60*1000;function checkAgeApproval(){const t=Number(localStorage.getItem(approvalKey)||0);if(t&&Date.now()-t<approvalDuration)document.getElementById('ageGate').style.display='none'}function verifyAge(){const mo=Number(document.getElementById('birthMonth').value),yr=Number(document.getElementById('birthYear').value),now=new Date(),cy=now.getFullYear(),msg=document.getElementById('ageMessage');if(mo<1||mo>12||yr<1900||yr>cy){msg.textContent='Please enter a valid month and year.';return}let age=cy-yr-(now.getMonth()+1<mo?1:0);if(age<18){msg.textContent='You must be at least 18 to enter.';return}localStorage.setItem(approvalKey,String(Date.now()));document.getElementById('ageGate').style.display='none'}checkAgeApproval();
