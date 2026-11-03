@@ -247,6 +247,38 @@ html{scroll-behavior:smooth}
 
 #compounds,#peptide-basics{scroll-margin-top:84px}
 #info-cards,#details{scroll-margin-top:85px}
+
+/* V9: Clean, synchronized category browsing and compact benefit cards */
+.category-nav{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0 27px;align-items:center}
+.category-tab{border:1.5px solid rgba(104,22,217,.45);border-radius:12px;background:#fff;color:#5a249a;font-weight:800;font-size:13px;padding:12px 15px;cursor:pointer;line-height:1.3;transition:background .15s,color .15s,border-color .15s}
+.category-tab:hover{border-color:#6816d9;background:#f6f0ff}
+.category-tab.active{background:#6816d9;color:white;border-color:#6816d9;box-shadow:0 5px 14px rgba(104,22,217,.17)}
+.products .card[hidden],.details-grid .detail-card[hidden]{display:none!important}
+.benefit-list{padding:0!important;margin:14px 0 18px!important;list-style:none!important;display:grid;gap:10px}
+.benefit-list li{display:flex;align-items:flex-start;gap:9px;font-size:15px;font-weight:700;line-height:1.38;color:#39324c}
+.benefit-list li:before{content:"✓";flex:none;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#f0e5ff;color:#6816d9;font-size:12px;font-weight:900}
+.products .card{display:flex;flex-direction:column}
+.products .card .learn-button{margin-top:auto!important;cursor:pointer}
+.compound-more-inner{font-size:14px;line-height:1.6}
+.compound-more-inner p{margin:9px 0}
+.formula-list{margin:10px 0 0;padding-left:18px;font-size:13px;line-height:1.6}
+.photo-coming-soon{background:radial-gradient(circle at 50% 38%,#f1e7ff,#fff 70%)!important;border:1.5px dashed #c7abea!important}
+.placeholder-content{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px;text-align:center;color:#7447aa}
+.placeholder-symbol{font-size:46px;line-height:1;color:#b494df}
+.placeholder-content strong{font-size:13px;letter-spacing:.05em}
+.placeholder-content small{font-size:11px;color:#8d7ca0;line-height:1.4}
+.incoming-vial .detail-name{overflow-wrap:anywhere}
+@media(max-width:850px){
+.category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:17px 0 20px}
+.category-tab{font-size:11px;padding:10px 7px;border-radius:10px;min-height:48px}
+.benefit-list{gap:9px;margin:12px 0 14px!important}
+.benefit-list li{font-size:12px;gap:6px;line-height:1.3}
+.benefit-list li:before{width:16px;height:16px;font-size:10px}
+.placeholder-content strong{font-size:10px}
+.placeholder-content small{font-size:9px}
+.placeholder-symbol{font-size:35px}
+}
+@media(prefers-reduced-motion:reduce){.category-tab{transition:none}}
 </style>
 </head>
 <body>
@@ -351,17 +383,9 @@ html{scroll-behavior:smooth}
         recovery, energy, healthy aging, endocrine
         signaling and cell health.
       </p>
-<div class="research-areas">
-<span class="research-area">Weight Management</span>
-<span class="research-area">Healing &amp; Repair</span>
-<span class="research-area">Recovery</span>
-<span class="research-area">Energy</span>
-<span class="research-area">Healthy Aging</span>
-<span class="research-area">Weight &amp; Metabolism</span>
-<span class="research-area">Hormone Health</span>
-</div>
-<div class="products" id="info-cards">
-<div class="card" id="info-tirzepatide">
+
+<div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="products" id="info-cards">
+<div class="card" data-category="weight" id="info-tirzepatide">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M11 9c4 4 4 18 0 22"></path>
@@ -371,13 +395,13 @@ html{scroll-behavior:smooth}
 <path d="M20 11v18"></path>
 </svg>
 </div>
-<h3>Tirzepatide</h3>
-<p>A dual-action GLP-1/GIP peptide that supports appetite control, lasting fullness, weight reduction and healthier blood-sugar regulation.</p>
-<div class="research-focus">Appetite Control • Weight Management • Blood Sugar • Fullness</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Tirzepatide</h3><ul class="benefit-list"><li>Appetite control</li><li>Weight management</li><li>Blood sugar regulation</li><li>Longer-lasting fullness</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Appetite Control:</strong> Helps quiet hunger signals and reduce food cravings.</p><p><strong>Weight Management:</strong> Supports meaningful weight reduction through reduced food intake.</p><p><strong>Blood Sugar:</strong> Improves glucose-dependent insulin response and blood-sugar regulation.</p><p><strong>Fullness:</strong> Helps meals feel satisfying for longer.</p></div></div>
 </div>
-<div class="card" id="info-retatrutide">
+<div class="card" data-category="weight" id="info-retatrutide">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <circle cx="20" cy="8" r="4"></circle>
@@ -388,13 +412,13 @@ html{scroll-behavior:smooth}
 <path d="M13 27h14"></path>
 </svg>
 </div>
-<h3>Retatrutide</h3>
-<p>A triple-action peptide targeting GLP-1, GIP and glucagon pathways, drawing attention for weight reduction, appetite control and energy expenditure.</p>
-<div class="research-focus">Weight Management • Appetite • Energy Expenditure • Metabolism</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Retatrutide</h3><ul class="benefit-list"><li>Weight management</li><li>Appetite control</li><li>Energy expenditure</li><li>Glucose regulation</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Weight Management:</strong> Has produced substantial weight-loss results in clinical research.</p><p><strong>Appetite Control:</strong> Helps lower hunger and support smaller portions.</p><p><strong>Energy Expenditure:</strong> Its glucagon action can increase energy use.</p><p><strong>Metabolic Health:</strong> Influences glucose regulation and how the body uses stored fuel.</p></div></div>
 </div>
-<div class="card" id="info-klow">
+<div class="card" data-category="beauty" id="info-klow">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M12 7l16 26"></path>
@@ -404,13 +428,13 @@ html{scroll-behavior:smooth}
 <path d="M16 26h8"></path>
 </svg>
 </div>
-<h3>KLOW</h3>
-<p>KLOW combines GHK-Cu, BPC-157, TB-500 and KPV in one blend focused on skin health, collagen support, soft-tissue repair and recovery.</p>
-<div class="research-focus">Skin & Collagen • Tissue Repair • Inflammation Support • Recovery</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
-<div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Skin & Collagen:</strong> GHK-Cu supports research into collagen production, skin renewal and elasticity.</p><p><strong>Tissue Repair:</strong> BPC-157 and TB-500 target pathways involved in tendon, ligament and muscle recovery.</p><p><strong>Inflammation Support:</strong> KPV is studied for its role in regulating inflammatory responses.</p><p><strong>Recovery:</strong> Four complementary compounds bring together skin, tissue and cellular-repair research.</p></div></div>
+<h3>KLOW</h3><ul class="benefit-list"><li>Skin rejuvenation</li><li>Collagen support</li><li>Tissue recovery</li><li>Inflammation pathways</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
+<div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Skin &amp; Collagen:</strong> GHK-Cu supports research into collagen production, skin renewal and elasticity.</p><p><strong>Tissue Repair:</strong> BPC-157 and TB-500 target pathways involved in tendon, ligament and muscle recovery.</p><p><strong>Inflammation Support:</strong> KPV is studied for its role in regulating inflammatory responses.</p><p><strong>Recovery:</strong> Four complementary compounds bring together skin, tissue and cellular-repair research.</p></div></div>
 </div>
-<div class="card" id="info-epitalon">
+<div class="card" data-category="brain" id="info-epitalon">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M12 5c15 8 1 22 16 30"></path>
@@ -420,89 +444,89 @@ html{scroll-behavior:smooth}
 <path d="M13 26h14"></path>
 </svg>
 </div>
-<h3>Epitalon</h3>
-<p>Epitalon is a short peptide studied for healthy aging, cellular maintenance, telomere biology and the body’s natural sleep-wake rhythm.</p>
-<div class="research-focus">Healthy Aging • Cell Maintenance • Telomeres • Sleep Rhythm</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Epitalon</h3><ul class="benefit-list"><li>Healthy aging</li><li>Sleep-wake rhythms</li><li>Cell maintenance</li><li>Longevity research</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cellular Aging:</strong> Explored for its influence on age-related cellular processes.</p><p><strong>Telomere Biology:</strong> Studied for activity involving telomeres and cellular lifespan pathways.</p><p><strong>Sleep Rhythms:</strong> Investigated for connections to circadian and sleep-wake regulation.</p><p><strong>Longevity Research:</strong> A prominent compound in research on healthy aging and cell maintenance.</p></div></div>
 </div>
-<div class="card" id="info-ss31">
+<div class="card" data-category="cell" id="info-ss31">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M7 20c3-9 11-13 20-10 7 2 9 9 5 15-5 7-18 8-25-5z"></path>
 <path d="M12 18c4-3 6 4 10 1 4-4 5 3 8 1"></path>
 </svg>
 </div>
-<h3>SS-31</h3>
-<p>SS-31, also called elamipretide, targets mitochondria, the parts of cells that produce energy. It helps support mitochondrial structure, cell energy and resilience under stress.</p>
-<div class="research-focus">Mitochondrial Health • Cell Energy • Cell Protection • Tissue Support</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>SS-31</h3><ul class="benefit-list"><li>Mitochondrial protection</li><li>Cell energy support</li><li>Cellular resilience</li><li>Tissue function</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Mitochondrial Support:</strong> Interacts with the inner mitochondrial membrane to help preserve its structure.</p><p><strong>Cell Energy:</strong> Supports the machinery cells use to produce usable energy.</p><p><strong>Cell Protection:</strong> Studied for reducing mitochondrial stress in demanding conditions.</p><p><strong>Tissue Function:</strong> Attracts interest in energy-hungry tissues such as muscle and heart.</p></div></div>
 </div>
-<div class="card" id="info-nad">
+<div class="card" data-category="cell" id="info-nad">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M23 4L11 22h8l-2 14 12-19h-8z"></path>
 </svg>
 </div>
-<h3>NAD+</h3>
-<p>NAD+ helps cells turn food into usable energy. It also plays an important role in DNA repair, metabolism and everyday cellular maintenance.</p>
-<div class="research-focus">Cell Energy • Metabolism • DNA Repair • Cell Health</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>NAD+</h3><ul class="benefit-list"><li>Cellular energy</li><li>DNA maintenance</li><li>Metabolic processes</li><li>Healthy aging pathways</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cell Fuel:</strong> Carries electrons that help cells convert food into usable energy.</p><p><strong>Energy Production:</strong> Plays a central role in mitochondrial energy metabolism.</p><p><strong>DNA Repair:</strong> Is used by enzymes involved in responding to DNA damage.</p><p><strong>Cell Maintenance:</strong> Supports normal metabolic signaling and cellular upkeep.</p></div></div>
 </div>
-<div class="card" id="info-mots-c">
+<div class="card" data-category="cell" id="info-mots-c">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <ellipse cx="20" cy="20" rx="14" ry="10"></ellipse>
 <path d="M10 21c4-8 7 7 11-1 3-6 6 5 9-1"></path>
 </svg>
 </div>
-<h3>MOTS-C</h3>
-<p>MOTS-C is a mitochondria-derived peptide studied for how the body uses energy, manages blood sugar and adapts to exercise and metabolic stress.</p>
-<div class="research-focus">Energy Use • Glucose Metabolism • Exercise Response • Metabolic Health</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>MOTS-C</h3><ul class="benefit-list"><li>Mitochondrial signaling</li><li>Metabolic flexibility</li><li>Glucose use</li><li>Exercise adaptation</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Metabolic Flexibility:</strong> Studied for how cells adapt when energy demands change.</p><p><strong>Fuel Utilization:</strong> Influences pathways involved in using and managing available energy.</p><p><strong>Glucose Handling:</strong> Explored for its relationship with insulin sensitivity.</p><p><strong>Exercise Response:</strong> Draws interest for signaling associated with physical and metabolic stress.</p></div></div>
 </div>
-<div class="card" id="info-cjc-1295">
+<div class="card" data-category="growth" id="info-cjc-1295">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M4 22h7l3-8 5 15 5-20 5 13h7"></path>
 </svg>
 </div>
-<h3>CJC-1295 Without DAC</h3>
-<p>A growth-hormone-releasing hormone analog that encourages the body’s own GH signaling, making it studied for hormone signaling, tissue maintenance and recovery.</p>
-<div class="research-focus">GH Signaling • IGF-1 • Tissue Maintenance • Recovery</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>CJC-1295 Without DAC</h3><ul class="benefit-list"><li>Growth hormone release</li><li>Recovery pathways</li><li>Body composition</li><li>Sleep-related GH signaling</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Growth Hormone:</strong> Activates a pathway that signals the pituitary to release GH.</p><p><strong>IGF-1 Signaling:</strong> GH can stimulate IGF-1, an important growth and maintenance signal.</p><p><strong>Tissue Maintenance:</strong> GH pathways are involved in muscle, bone and tissue turnover.</p><p><strong>Recovery Research:</strong> Popular in research exploring the GH system and recovery biology.</p></div></div>
 </div>
-<div class="card" id="info-ipamorelin">
+<div class="card" data-category="growth" id="info-ipamorelin">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M20 5c7 9 11 14 11 20a11 11 0 0 1-22 0c0-6 4-11 11-20z"></path>
 <path d="M15 26c2 2 4 3 7 3"></path>
 </svg>
 </div>
-<h3>Ipamorelin</h3>
-<p>A selective growth-hormone secretagogue that stimulates the ghrelin receptor, attracting interest in GH release, body composition and recovery signaling.</p>
-<div class="research-focus">GH Release • Growth Pathways • Body Composition • Recovery</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Ipamorelin</h3><ul class="benefit-list"><li>Growth hormone signaling</li><li>Recovery research</li><li>Body composition</li><li>GH pulse research</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>GH Release:</strong> Stimulates receptors involved in growth-hormone secretion.</p><p><strong>Growth Pathways:</strong> Connects with the GH and IGF-1 signaling system.</p><p><strong>Body Composition:</strong> Investigated for hormone pathways involved in lean tissue and fat metabolism.</p><p><strong>Recovery:</strong> Studied for tissue maintenance and recovery-related signaling.</p></div></div>
 </div>
-<div class="card" id="info-pinealon">
+<div class="card" data-category="brain" id="info-pinealon">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M17 7c-6 0-10 4-10 9 0 3 2 5 4 6-2 4 1 8 5 8 2 4 8 4 10 0 5 0 7-5 5-8 3-1 4-5 2-8-2-4-6-5-10-3-1-3-3-4-4-4z"></path>
 <path d="M20 11v19"></path>
 </svg>
 </div>
-<h3>Pinealon</h3>
-<p>Pinealon is a short peptide studied for brain-cell protection, healthy cognitive function, memory-related pathways and cellular resilience.</p>
-<div class="research-focus">Brain-Cell Health • Cell Protection • Memory Pathways • Healthy Aging</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Pinealon</h3><ul class="benefit-list"><li>Cognitive health</li><li>Neuron protection</li><li>Memory research</li><li>Brain cell function</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Brain-Cell Support:</strong> Studied for its effects on neurons under cellular stress.</p><p><strong>Oxidative Stress:</strong> Explored for activity involving the cell’s response to oxidative damage.</p><p><strong>Memory Pathways:</strong> Attracts interest in learning and cognitive signaling.</p><p><strong>Brain Aging:</strong> Included in research on long-term neural cell maintenance.</p></div></div>
 </div>
-<div class="card" id="info-5-amino-1mq">
+<div class="card" data-category="weight" id="info-5-amino-1mq">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M10 29c5-10 9-16 20-18"></path>
@@ -510,13 +534,13 @@ html{scroll-behavior:smooth}
 <path d="M24 22h7v7h-7z"></path>
 </svg>
 </div>
-<h3>5-Amino-1MQ</h3>
-<p>5-Amino-1MQ targets NNMT, an enzyme involved in metabolism. Research focuses on fat-cell activity, energy balance and body-composition pathways.</p>
-<div class="research-focus">NNMT • Fat Metabolism • Energy Balance • Body Composition</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>5-Amino-1MQ</h3><ul class="benefit-list"><li>Fat metabolism research</li><li>Cellular energy balance</li><li>Metabolic pathways</li><li>Body composition research</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>NNMT Inhibition:</strong> Blocks an enzyme involved in metabolic regulation.</p><p><strong>Fat-Tissue Biology:</strong> Studied for effects on how fat cells manage and store energy.</p><p><strong>Energy Balance:</strong> Studied for its effects on metabolic signaling.</p><p><strong>Body Composition:</strong> Studied for fat metabolism and weight-related pathways.</p></div></div>
 </div>
-<div class="card" id="info-dsip">
+<div class="card" data-category="brain" id="info-dsip">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M8 24c5-8 9-12 12-12s7 4 12 12"></path>
@@ -524,13 +548,13 @@ html{scroll-behavior:smooth}
 <path d="M15 31h10"></path>
 </svg>
 </div>
-<h3>DSIP</h3>
-<p>DSIP, short for delta sleep-inducing peptide, is studied for sleep regulation, relaxation, stress responses and the connection between rest and recovery.</p>
-<div class="research-focus">Sleep Regulation • Relaxation • Stress Response • Recovery</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>DSIP</h3><ul class="benefit-list"><li>Sleep regulation</li><li>Restful sleep research</li><li>Stress response</li><li>Recovery pathways</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Sleep Regulation:</strong> Investigated for interactions with biological sleep pathways.</p><p><strong>Rest &amp; Relaxation:</strong> Studied for sleep-related nervous-system signaling.</p><p><strong>Stress Response:</strong> Studied for links between stress physiology and sleep.</p><p><strong>Recovery:</strong> Sleep and recovery are closely connected, making this a common research focus.</p></div></div>
 </div>
-<div class="card" id="info-somatotropin">
+<div class="card" data-category="growth" id="info-somatotropin">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <path d="M20 5v30"></path>
@@ -539,13 +563,13 @@ html{scroll-behavior:smooth}
 <circle cx="20" cy="20" r="4"></circle>
 </svg>
 </div>
-<h3>Somatotropin</h3>
-<p>Somatotropin is human growth hormone (HGH), a major regulator of growth, protein synthesis, tissue maintenance and fat metabolism.</p>
-<div class="research-focus">Growth • Protein Synthesis • Fat Metabolism • Bone Health</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Somatotropin</h3><ul class="benefit-list"><li>Growth hormone signaling</li><li>Protein metabolism</li><li>Body composition</li><li>Tissue growth</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Growth &amp; Repair:</strong> Regulates growth and maintenance across many tissues.</p><p><strong>Protein Synthesis:</strong> Supports protein-building processes and lean-tissue regulation.</p><p><strong>Fat Metabolism:</strong> Promotes lipolysis, the breakdown of stored fat.</p><p><strong>Bone Health:</strong> Participates in normal bone growth and turnover.</p></div></div>
 </div>
-<div class="card" id="info-igf1-lr3">
+<div class="card" data-category="growth" id="info-igf1-lr3">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
 <circle cx="20" cy="20" r="13"></circle>
@@ -553,33 +577,33 @@ html{scroll-behavior:smooth}
 <path d="M20 7v5"></path>
 </svg>
 </div>
-<h3>IGF-1 LR3</h3>
-<p>A modified, longer-acting IGF-1 analog used in research on cell growth, protein metabolism, nutrient signaling and muscle-related pathways.</p>
-<div class="research-focus">Cell Growth • Protein Metabolism • Nutrient Signaling • Muscle Research</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>IGF-1 LR3</h3><ul class="benefit-list"><li>Growth signaling</li><li>Protein synthesis pathways</li><li>Muscle research</li><li>Tissue development</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cell Growth:</strong> Activates receptors involved in growth-related signaling.</p><p><strong>Protein Metabolism:</strong> Connects with pathways that regulate tissue building and maintenance.</p><p><strong>Nutrient Signaling:</strong> Influences cellular responses to nutrients and glucose.</p><p><strong>Muscle Research:</strong> Of interest in studies of muscle-cell growth and repair biology.</p></div></div>
 </div>
-<div class="card" id="info-kisspeptin">
+<div class="card" data-category="fertility" id="info-kisspeptin">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40"><path d="M20 5v30M8 13c7-5 17-5 24 0M8 27c7 5 17 5 24 0"></path></svg>
 </div>
-<h3>Kisspeptin</h3>
-<p>Kisspeptin helps start the body’s reproductive hormone signals. It plays a role in LH and FSH release, fertility and sex-hormone regulation.</p>
-<div class="research-focus">Hormone Signaling • LH & FSH • Fertility • Sexual Response</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Kisspeptin</h3><ul class="benefit-list"><li>Reproductive signaling</li><li>LH &amp; FSH regulation</li><li>Fertility research</li><li>Hormone communication</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Hormone Signaling:</strong> Stimulates GnRH, a key signal in reproductive hormone regulation.</p><p><strong>LH &amp; FSH:</strong> Prompts the pituitary to release hormones that coordinate reproductive function.</p><p><strong>Fertility:</strong> Plays an important role in ovulation and reproductive signaling.</p><p><strong>Sexual Response:</strong> Investigated for its effects on brain pathways related to sexual and emotional cues.</p></div></div>
 </div>
-<div class="card" id="info-eloralintide">
+<div class="card" data-category="weight" id="info-eloralintide">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40"><path d="M9 13c3-3 7-5 11-5s8 2 11 5M8 20h24M12 27c3 3 5 5 8 5s5-2 8-5"></path></svg>
 </div>
-<h3>Eloralintide</h3>
-<p>Eloralintide targets amylin receptors involved in hunger and fullness. It is being studied for appetite control, satisfying meals and weight management.</p>
-<div class="research-focus">Appetite Control • Fullness • Weight Management • Metabolic Health</div>
-<button class="learn-button" onclick="toggleCompound(this)">Main Effects <span class="arrow">▼</span></button>
+<h3>Eloralintide</h3><ul class="benefit-list"><li>Appetite regulation</li><li>Fullness signaling</li><li>Weight management</li><li>Amylin pathways</li></ul>
+
+
+<button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Appetite Regulation:</strong> Activates pathways that help control hunger.</p><p><strong>Feeling Full:</strong> Supports satiety signals that make smaller meals more satisfying.</p><p><strong>Weight Management:</strong> Being evaluated for its ability to reduce food intake and body weight.</p><p><strong>Metabolic Health:</strong> Studied alongside weight-related measures such as glucose regulation.</p></div></div>
 </div>
-</div>
+<div class="card" data-category="weight" id="info-lipo-c"><div class="compound-symbol"><svg viewbox="0 0 40 40"><circle cx="20" cy="20" r="11"></circle><path d="M20 4v6M20 30v6M4 20h6M30 20h6"></path></svg></div><h3>Lipo-C Fat Blaster</h3><ul class="benefit-list"><li>Fat transport pathways</li><li>Energy metabolism</li><li>Nutrient processing</li><li>Metabolic support</li></ul><button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button><div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">What it is</div><p>A lipotropic blend featuring L-carnitine, B vitamins, and nutrients involved in energy and fat-processing pathways.</p><div class="compound-more-title">Formula</div><ul class="formula-list"><li>L-Carnitine: 300 mg/mL</li><li>Methionine: 25 mg/mL</li><li>Inositol: 50 mg/mL</li><li>Choline: 50 mg/mL</li><li>Vitamin B12: 1 mg/mL</li><li>Vitamin B6: 50 mg/mL</li><li>NADH: 50 mg/mL</li></ul></div></div></div><div class="card" data-category="cell" id="info-glutathione"><div class="compound-symbol"><svg viewbox="0 0 40 40"><circle cx="20" cy="20" r="11"></circle><path d="M20 4v6M20 30v6M4 20h6M30 20h6"></path></svg></div><h3>Glutathione</h3><ul class="benefit-list"><li>Antioxidant defense</li><li>Cell protection</li><li>Oxidative stress balance</li><li>Detoxification pathways</li></ul><button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button><div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">What it is</div><p>A naturally occurring antioxidant involved in protecting cells and maintaining the body’s antioxidant balance.</p></div></div></div><div class="card" data-category="brain" id="info-selank-semax"><div class="compound-symbol"><svg viewbox="0 0 40 40"><circle cx="20" cy="20" r="11"></circle><path d="M20 4v6M20 30v6M4 20h6M30 20h6"></path></svg></div><h3>Selank + Semax</h3><ul class="benefit-list"><li>Focus &amp; attention research</li><li>Stress response</li><li>Cognitive function</li><li>Calmness pathways</li></ul><button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button><div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">What it is</div><p>A two-peptide combination explored for cognitive function, attention, and stress-response pathways.</p></div></div></div><div class="card" data-category="growth" id="info-super-human"><div class="compound-symbol"><svg viewbox="0 0 40 40"><circle cx="20" cy="20" r="11"></circle><path d="M20 4v6M20 30v6M4 20h6M30 20h6"></path></svg></div><h3>Super Human Blend</h3><ul class="benefit-list"><li>Circulation pathways</li><li>Amino acid support</li><li>Exercise metabolism</li><li>Recovery research</li></ul><button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button><div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">What it is</div><p>An amino acid and antioxidant blend focused on circulation-related pathways, exercise metabolism, and recovery.</p><div class="compound-more-title">Formula</div><ul class="formula-list"><li>L-Arginine: 110 mg / 10 mL</li><li>L-Ornithine: 110 mg / 10 mL</li><li>L-Citrulline: 120 mg / 10 mL</li><li>L-Lysine: 70 mg / 10 mL</li><li>L-Glutamine: 40 mg / 10 mL</li><li>L-Proline: 60 mg / 10 mL</li><li>L-Taurine: 60 mg / 10 mL</li><li>L-Carnitine: 220 mg / 10 mL</li><li>NAC: 75 mg / 10 mL</li></ul></div></div></div><div class="card" data-category="beauty" id="info-snap-8"><div class="compound-symbol"><svg viewbox="0 0 40 40"><circle cx="20" cy="20" r="11"></circle><path d="M20 4v6M20 30v6M4 20h6M30 20h6"></path></svg></div><h3>SNAP-8</h3><ul class="benefit-list"><li>Expression line appearance</li><li>Smoother-looking skin</li><li>Cosmetic peptide research</li><li>Skin appearance</li></ul><button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button><div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">What it is</div><p>A cosmetic peptide studied for softening the appearance of expression lines and supporting smoother-looking skin.</p></div></div></div></div>
 </div>
 </section>
 <section class="content-section" id="details">
@@ -598,8 +622,8 @@ html{scroll-behavior:smooth}
 <p class="section-intro">
         Compound name, vial amount and corresponding price information.
       </p>
-<div class="details-grid">
-<div class="detail-card has-photo">
+<div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="details-grid">
+<div class="detail-card has-photo" data-category="weight">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Tirzepatide</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -610,7 +634,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-tirzepatide">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="weight">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Retatrutide</div>
 <div class="strength-tabs">
@@ -628,7 +652,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-retatrutide">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="beauty">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">KLOW</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -639,7 +663,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-klow">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="brain">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Epitalon</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -650,7 +674,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-epitalon">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="cell">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">SS-31</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -661,7 +685,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-ss31">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="cell">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">NAD+</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -672,7 +696,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-nad">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="cell">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">MOTS-C</div>
 <div class="strength-tabs">
@@ -690,7 +714,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-mots-c">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="growth">
 <div class="photo-badge">PRODUCT PHOTO</div>
 <div class="detail-name">CJC-1295 Without DAC</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -701,7 +725,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-cjc-1295">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="growth">
 <div class="photo-badge">PRODUCT PHOTO</div>
 <div class="detail-name">Ipamorelin</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -712,7 +736,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-ipamorelin">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="brain">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Pinealon</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -723,7 +747,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-pinealon">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="weight">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">5-Amino-1MQ</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -734,7 +758,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-5-amino-1mq">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="brain">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">DSIP</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -745,7 +769,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-dsip">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="growth">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Somatotropin</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -756,7 +780,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-somatotropin">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="growth">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">IGF-1 LR3</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -767,7 +791,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-igf1-lr3">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="fertility">
 <div class="photo-badge">PRODUCT IMAGE</div>
 <div class="detail-name">Kisspeptin</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -778,7 +802,7 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-kisspeptin">INFO CARD ↑</a>
 </div>
-<div class="detail-card has-photo">
+<div class="detail-card has-photo" data-category="weight">
 <div class="photo-badge">PRODUCT IMAGE</div>
 <div class="detail-name">Eloralintide</div>
 <div aria-hidden="true" class="strength-tabs strength-spacer"></div>
@@ -789,34 +813,63 @@ html{scroll-behavior:smooth}
 </div>
 <a class="info-card-button" href="#info-eloralintide">INFO CARD ↑</a>
 </div>
-</div>
+<div class="detail-card incoming-vial" data-category="weight"><div class="photo-badge">COMING SOON</div><div class="detail-name">Lipo-C Fat Blaster</div><div aria-hidden="true" class="strength-tabs strength-spacer"></div><div class="detail-mg">526 mg/mL</div><div class="detail-id">$40</div><div class="product-photo-frame photo-coming-soon"><div class="placeholder-content"><span class="placeholder-symbol">✧</span><strong>PHOTO COMING SOON</strong><small>Product image will be added on arrival</small></div></div><a class="info-card-button" href="#info-lipo-c">INFO CARD ↑</a></div><div class="detail-card incoming-vial" data-category="cell"><div class="photo-badge">COMING SOON</div><div class="detail-name">Glutathione</div><div aria-hidden="true" class="strength-tabs strength-spacer"></div><div class="detail-mg">1500 mg</div><div class="detail-id">$30</div><div class="product-photo-frame photo-coming-soon"><div class="placeholder-content"><span class="placeholder-symbol">✧</span><strong>PHOTO COMING SOON</strong><small>Product image will be added on arrival</small></div></div><a class="info-card-button" href="#info-glutathione">INFO CARD ↑</a></div><div class="detail-card incoming-vial" data-category="brain"><div class="photo-badge">COMING SOON</div><div class="detail-name">Selank + Semax</div><div aria-hidden="true" class="strength-tabs strength-spacer"></div><div class="detail-mg">10 mg + 10 mg</div><div class="detail-id">$35</div><div class="product-photo-frame photo-coming-soon"><div class="placeholder-content"><span class="placeholder-symbol">✧</span><strong>PHOTO COMING SOON</strong><small>Product image will be added on arrival</small></div></div><a class="info-card-button" href="#info-selank-semax">INFO CARD ↑</a></div><div class="detail-card incoming-vial" data-category="growth"><div class="photo-badge">COMING SOON</div><div class="detail-name">Super Human Blend</div><div aria-hidden="true" class="strength-tabs strength-spacer"></div><div class="detail-mg">10 mL</div><div class="detail-id">$35</div><div class="product-photo-frame photo-coming-soon"><div class="placeholder-content"><span class="placeholder-symbol">✧</span><strong>PHOTO COMING SOON</strong><small>Product image will be added on arrival</small></div></div><a class="info-card-button" href="#info-super-human">INFO CARD ↑</a></div><div class="detail-card incoming-vial" data-category="beauty"><div class="photo-badge">COMING SOON</div><div class="detail-name">SNAP-8</div><div aria-hidden="true" class="strength-tabs strength-spacer"></div><div class="detail-mg">10 mg</div><div class="detail-id">$20</div><div class="product-photo-frame photo-coming-soon"><div class="placeholder-content"><span class="placeholder-symbol">✧</span><strong>PHOTO COMING SOON</strong><small>Product image will be added on arrival</small></div></div><a class="info-card-button" href="#info-snap-8">INFO CARD ↑</a></div></div>
 <p class="lot-note">
         For research identification and informational purposes only.
       </p>
 </div>
 </section>
 <section class="content-section" id="about"><div class="section-shell"><div class="section-label">About AR Molecular</div><h2>Simple Information. Real Products.</h2><p class="section-intro">AR Molecular is built to make peptide and compound information easier to understand. Browse the main areas each compound is being studied for, see real product photos, compare vial sizes and pricing, and dig deeper only when you want to.</p><div class="education-grid"><div class="education-card"><div class="education-number">01 // EASY TO READ</div><h4>Plain English First</h4><p>We lead with the main effects people are researching, without burying the useful part under complicated terminology.</p></div><div class="education-card"><div class="education-number">02 // REAL PHOTOS</div><h4>See the Actual Vials</h4><p>Product listings use real photographed vials rather than computer-generated mock products.</p></div><div class="education-card"><div class="education-number">03 // LOCAL</div><h4>Albuquerque, New Mexico</h4><p>AR Molecular is locally based in Albuquerque with direct email and WhatsApp contact.</p></div><div class="education-card"><div class="education-number">04 // RESEARCH INFO</div><h4>Clear Context</h4><p>Benefits are presented as areas being studied, with additional detail available when useful.</p></div></div></div></section>
-<section class="order-guide" id="how-to-order" aria-labelledby="order-guide-title">
-  <div class="order-guide-inner">
-    <div class="section-label">AR MOLECULAR // ORDERING GUIDE</div>
-    <h2 id="order-guide-title">How to Order</h2>
-    <p class="order-guide-intro">Four easy steps to place your order.</p>
-    <div class="order-steps">
-      <div class="order-step"><span class="order-step-number">01</span><div><h3>Browse the catalog &amp; prices</h3><p>See available products, vial sizes, and pricing in our <a href="#details">catalog</a>.</p></div></div>
-      <div class="order-step"><span class="order-step-number">02</span><div><h3>Pick your product &amp; size</h3><p>Choose the compound and vial size you want. Click the size buttons to see the matching price.</p></div></div>
-      <div class="order-step"><span class="order-step-number">03</span><div><h3>Contact us</h3><p>Send your selection through <a href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">email</a> or <a href="https://wa.me/15053780280" target="_blank" rel="noopener">WhatsApp</a>.</p></div></div>
-      <div class="order-step"><span class="order-step-number">04</span><div><h3>Include your name &amp; address</h3><p>Provide your full name and shipping address so we can calculate shipping and confirm the order.</p></div></div>
-    </div>
-    <div class="order-shipping"><strong>Shipping &amp; local pickup</strong><span>Orders are shipped out next day or available for local pickup in Albuquerque, NM.</span></div>
-    <div class="order-actions">
-      <a class="contact-button" href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">ORDER BY EMAIL</a>
-      <a class="contact-button" href="https://wa.me/15053780280" target="_blank" rel="noopener">ORDER VIA WHATSAPP</a>
-    </div>
-  </div>
+<section aria-labelledby="order-guide-title" class="order-guide" id="how-to-order">
+<div class="order-guide-inner">
+<div class="section-label">AR MOLECULAR // ORDERING GUIDE</div>
+<h2 id="order-guide-title">How to Order</h2>
+<p class="order-guide-intro">Four easy steps to place your order.</p>
+<div class="order-steps">
+<div class="order-step"><span class="order-step-number">01</span><div><h3>Browse the catalog &amp; prices</h3><p>See available products, vial sizes, and pricing in our <a href="#details">catalog</a>.</p></div></div>
+<div class="order-step"><span class="order-step-number">02</span><div><h3>Pick your product &amp; size</h3><p>Choose the compound and vial size you want. Click the size buttons to see the matching price.</p></div></div>
+<div class="order-step"><span class="order-step-number">03</span><div><h3>Contact us</h3><p>Send your selection through <a href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">email</a> or <a href="https://wa.me/15053780280" rel="noopener" target="_blank">WhatsApp</a>.</p></div></div>
+<div class="order-step"><span class="order-step-number">04</span><div><h3>Include your name &amp; address</h3><p>Provide your full name and shipping address so we can calculate shipping and confirm the order.</p></div></div>
+</div>
+<div class="order-shipping"><strong>Shipping &amp; local pickup</strong><span>Orders are shipped out next day or available for local pickup in Albuquerque, NM.</span></div>
+<div class="order-actions">
+<a class="contact-button" href="mailto:reaperpeps@gmail.com?subject=AR%20Molecular%20Order">ORDER BY EMAIL</a>
+<a class="contact-button" href="https://wa.me/15053780280" rel="noopener" target="_blank">ORDER VIA WHATSAPP</a>
+</div>
+</div>
 </section>
-
 <section class="contact" id="contact"><div class="section-label">Questions?</div><h2>Contact AR Molecular</h2><p>Questions about a compound, vial size or the information on this site? Reach out directly.</p><div class="contact-actions"><a class="contact-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=reaperpeps@gmail.com&amp;su=AR%20Molecular%20Inquiry" rel="noopener" target="_blank">EMAIL AR MOLECULAR</a><a class="contact-button whatsapp-button" href="https://wa.me/15053780280" rel="noopener" target="_blank">WHATSAPP US</a></div><a class="email-address" href="mailto:reaperpeps@gmail.com">reaperpeps@gmail.com</a></section><footer><strong>AR MOLECULAR</strong><div class="footer-slogan">PEPTIDE COMPOUNDS</div><p>Albuquerque, New Mexico</p><p>Research and educational information • Not medical advice</p></footer>
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}function toggleCompound(btn){btn.closest('.card').classList.toggle('open')}function setStrength(btn,mg,price,img){const c=btn.closest('.detail-card');c.querySelectorAll('.strength-tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const m=c.querySelector('.detail-mg'),p=c.querySelector('.detail-id'),im=c.querySelector('.product-photo');if(m)m.textContent=mg;if(p)p.textContent=price;if(im&&img)im.src=img}
 const approvalKey='arMolecularAgeApproved',approvalDuration=30*24*60*60*1000;function checkAgeApproval(){const t=Number(localStorage.getItem(approvalKey)||0);if(t&&Date.now()-t<approvalDuration)document.getElementById('ageGate').style.display='none'}function verifyAge(){const mo=Number(document.getElementById('birthMonth').value),yr=Number(document.getElementById('birthYear').value),now=new Date(),cy=now.getFullYear(),msg=document.getElementById('ageMessage');if(mo<1||mo>12||yr<1900||yr>cy){msg.textContent='Please enter a valid month and year.';return}let age=cy-yr-(now.getMonth()+1<mo?1:0);if(age<18){msg.textContent='You must be at least 18 to enter.';return}localStorage.setItem(approvalKey,String(Date.now()));document.getElementById('ageGate').style.display='none'}checkAgeApproval();
+
+(function(){
+ const tabs=Array.from(document.querySelectorAll('.category-tab'));
+ const items=Array.from(document.querySelectorAll('.products .card[data-category],.details-grid .detail-card[data-category]'));
+ function setCategory(cat){
+   items.forEach(el=>{el.hidden=el.dataset.category!==cat;});
+   tabs.forEach(tab=>{
+     const active=tab.dataset.filter===cat;
+     tab.classList.toggle('active',active);
+     tab.setAttribute('aria-pressed',String(active));
+   });
+ }
+ tabs.forEach(tab=>tab.addEventListener('click',()=>setCategory(tab.dataset.filter)));
+ document.querySelectorAll('.info-card-button[href^="#info-"]').forEach(link=>{
+   link.addEventListener('click',()=>{
+     const target=document.getElementById(link.getAttribute('href').slice(1));
+     if(target){setCategory(target.dataset.category);}
+   });
+ });
+ const hash=decodeURIComponent(location.hash.slice(1));
+ const target=hash?document.getElementById(hash):null;
+ setCategory(target?.dataset.category||'weight');
+ if(target?.dataset.category){
+   window.addEventListener('load',()=>target.scrollIntoView({block:'start'}),{once:true});
+ }
+ window.addEventListener('hashchange',()=>{
+   const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+   if(target?.dataset.category){setCategory(target.dataset.category);target.scrollIntoView({block:'start'});}
+ });
+})();
 </script></body></html>
