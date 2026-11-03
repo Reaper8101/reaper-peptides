@@ -279,6 +279,28 @@ html{scroll-behavior:smooth}
 .placeholder-symbol{font-size:35px}
 }
 @media(prefers-reduced-motion:reduce){.category-tab{transition:none}}
+
+/* V10 mobile polish: airy cards, compact header, one-row swipe categories */
+@media(max-width:850px){
+ #compounds.content-section,#details.content-section{padding-top:28px!important}
+ #compounds .section-label,#compounds .education-code{letter-spacing:.09em}
+ #compounds h2,#details h2{font-size:34px!important;margin:7px 0 12px!important;line-height:1.02!important}
+ #compounds .section-intro{font-size:14px!important;line-height:1.5!important;margin:0 0 10px!important;color:#666074!important}
+ .category-swipe-hint{font-size:10px;font-weight:800;letter-spacing:.1em;color:#8553b8;margin:13px 0 6px}
+ .category-nav{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 0 22px!important;padding:4px 3px 9px!important;overscroll-behavior-x:contain}
+ .category-nav::-webkit-scrollbar{display:none}
+ .category-tab{flex:0 0 auto!important;white-space:nowrap!important;width:auto!important;min-height:40px!important;padding:10px 13px!important;font-size:12px!important;border-radius:999px!important;scroll-snap-align:start;box-shadow:none!important}
+ .category-tab.active{box-shadow:0 3px 9px rgba(104,22,217,.14)!important}
+ .products{gap:12px!important}
+ .products .card{padding:17px 13px!important;border-radius:17px!important;box-shadow:0 6px 20px rgba(64,31,112,.055)!important}
+ .products .card h3{font-size:22px!important;margin:11px 0 5px!important;line-height:1.08!important}
+ .benefit-list{gap:12px!important;margin:15px 0 19px!important}
+ .benefit-list li{font-size:12px!important;line-height:1.38!important;gap:7px!important;font-weight:650!important}
+ .benefit-list li:before{width:17px!important;height:17px!important}
+ .products .card .learn-button{font-size:12px!important;line-height:1.25!important;padding:11px 5px!important;min-height:44px!important}
+ .details-grid{gap:12px!important}
+}
+@media(min-width:851px){.category-swipe-hint{display:none}}
 </style>
 </head>
 <body>
@@ -377,14 +399,8 @@ html{scroll-behavior:smooth}
 <span>WEIGHT &amp; METABOLISM</span>
 <span>PEPTIDE BASICS</span>
 </div>
-<p class="section-intro">
-        Explore peptides and emerging compounds studied across areas including
-        weight management, healing and repair,
-        recovery, energy, healthy aging, endocrine
-        signaling and cell health.
-      </p>
-
-<div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="products" id="info-cards">
+<p class="section-intro">Browse by goal, then tap a compound to explore its key research interests.</p>
+<div class="category-swipe-hint">SWIPE TO EXPLORE CATEGORIES  →</div><div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="products" id="info-cards">
 <div class="card" data-category="weight" id="info-tirzepatide">
 <div class="compound-symbol">
 <svg viewbox="0 0 40 40">
@@ -396,8 +412,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Tirzepatide</h3><ul class="benefit-list"><li>Appetite control</li><li>Weight management</li><li>Blood sugar regulation</li><li>Longer-lasting fullness</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Appetite Control:</strong> Helps quiet hunger signals and reduce food cravings.</p><p><strong>Weight Management:</strong> Supports meaningful weight reduction through reduced food intake.</p><p><strong>Blood Sugar:</strong> Improves glucose-dependent insulin response and blood-sugar regulation.</p><p><strong>Fullness:</strong> Helps meals feel satisfying for longer.</p></div></div>
 </div>
@@ -413,8 +427,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Retatrutide</h3><ul class="benefit-list"><li>Weight management</li><li>Appetite control</li><li>Energy expenditure</li><li>Glucose regulation</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Weight Management:</strong> Has produced substantial weight-loss results in clinical research.</p><p><strong>Appetite Control:</strong> Helps lower hunger and support smaller portions.</p><p><strong>Energy Expenditure:</strong> Its glucagon action can increase energy use.</p><p><strong>Metabolic Health:</strong> Influences glucose regulation and how the body uses stored fuel.</p></div></div>
 </div>
@@ -429,8 +441,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>KLOW</h3><ul class="benefit-list"><li>Skin rejuvenation</li><li>Collagen support</li><li>Tissue recovery</li><li>Inflammation pathways</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Skin &amp; Collagen:</strong> GHK-Cu supports research into collagen production, skin renewal and elasticity.</p><p><strong>Tissue Repair:</strong> BPC-157 and TB-500 target pathways involved in tendon, ligament and muscle recovery.</p><p><strong>Inflammation Support:</strong> KPV is studied for its role in regulating inflammatory responses.</p><p><strong>Recovery:</strong> Four complementary compounds bring together skin, tissue and cellular-repair research.</p></div></div>
 </div>
@@ -445,8 +455,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Epitalon</h3><ul class="benefit-list"><li>Healthy aging</li><li>Sleep-wake rhythms</li><li>Cell maintenance</li><li>Longevity research</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cellular Aging:</strong> Explored for its influence on age-related cellular processes.</p><p><strong>Telomere Biology:</strong> Studied for activity involving telomeres and cellular lifespan pathways.</p><p><strong>Sleep Rhythms:</strong> Investigated for connections to circadian and sleep-wake regulation.</p><p><strong>Longevity Research:</strong> A prominent compound in research on healthy aging and cell maintenance.</p></div></div>
 </div>
@@ -458,8 +466,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>SS-31</h3><ul class="benefit-list"><li>Mitochondrial protection</li><li>Cell energy support</li><li>Cellular resilience</li><li>Tissue function</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Mitochondrial Support:</strong> Interacts with the inner mitochondrial membrane to help preserve its structure.</p><p><strong>Cell Energy:</strong> Supports the machinery cells use to produce usable energy.</p><p><strong>Cell Protection:</strong> Studied for reducing mitochondrial stress in demanding conditions.</p><p><strong>Tissue Function:</strong> Attracts interest in energy-hungry tissues such as muscle and heart.</p></div></div>
 </div>
@@ -470,8 +476,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>NAD+</h3><ul class="benefit-list"><li>Cellular energy</li><li>DNA maintenance</li><li>Metabolic processes</li><li>Healthy aging pathways</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cell Fuel:</strong> Carries electrons that help cells convert food into usable energy.</p><p><strong>Energy Production:</strong> Plays a central role in mitochondrial energy metabolism.</p><p><strong>DNA Repair:</strong> Is used by enzymes involved in responding to DNA damage.</p><p><strong>Cell Maintenance:</strong> Supports normal metabolic signaling and cellular upkeep.</p></div></div>
 </div>
@@ -483,8 +487,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>MOTS-C</h3><ul class="benefit-list"><li>Mitochondrial signaling</li><li>Metabolic flexibility</li><li>Glucose use</li><li>Exercise adaptation</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Metabolic Flexibility:</strong> Studied for how cells adapt when energy demands change.</p><p><strong>Fuel Utilization:</strong> Influences pathways involved in using and managing available energy.</p><p><strong>Glucose Handling:</strong> Explored for its relationship with insulin sensitivity.</p><p><strong>Exercise Response:</strong> Draws interest for signaling associated with physical and metabolic stress.</p></div></div>
 </div>
@@ -495,8 +497,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>CJC-1295 Without DAC</h3><ul class="benefit-list"><li>Growth hormone release</li><li>Recovery pathways</li><li>Body composition</li><li>Sleep-related GH signaling</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Growth Hormone:</strong> Activates a pathway that signals the pituitary to release GH.</p><p><strong>IGF-1 Signaling:</strong> GH can stimulate IGF-1, an important growth and maintenance signal.</p><p><strong>Tissue Maintenance:</strong> GH pathways are involved in muscle, bone and tissue turnover.</p><p><strong>Recovery Research:</strong> Popular in research exploring the GH system and recovery biology.</p></div></div>
 </div>
@@ -508,8 +508,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Ipamorelin</h3><ul class="benefit-list"><li>Growth hormone signaling</li><li>Recovery research</li><li>Body composition</li><li>GH pulse research</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>GH Release:</strong> Stimulates receptors involved in growth-hormone secretion.</p><p><strong>Growth Pathways:</strong> Connects with the GH and IGF-1 signaling system.</p><p><strong>Body Composition:</strong> Investigated for hormone pathways involved in lean tissue and fat metabolism.</p><p><strong>Recovery:</strong> Studied for tissue maintenance and recovery-related signaling.</p></div></div>
 </div>
@@ -521,8 +519,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Pinealon</h3><ul class="benefit-list"><li>Cognitive health</li><li>Neuron protection</li><li>Memory research</li><li>Brain cell function</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Brain-Cell Support:</strong> Studied for its effects on neurons under cellular stress.</p><p><strong>Oxidative Stress:</strong> Explored for activity involving the cell’s response to oxidative damage.</p><p><strong>Memory Pathways:</strong> Attracts interest in learning and cognitive signaling.</p><p><strong>Brain Aging:</strong> Included in research on long-term neural cell maintenance.</p></div></div>
 </div>
@@ -535,8 +531,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>5-Amino-1MQ</h3><ul class="benefit-list"><li>Fat metabolism research</li><li>Cellular energy balance</li><li>Metabolic pathways</li><li>Body composition research</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>NNMT Inhibition:</strong> Blocks an enzyme involved in metabolic regulation.</p><p><strong>Fat-Tissue Biology:</strong> Studied for effects on how fat cells manage and store energy.</p><p><strong>Energy Balance:</strong> Studied for its effects on metabolic signaling.</p><p><strong>Body Composition:</strong> Studied for fat metabolism and weight-related pathways.</p></div></div>
 </div>
@@ -549,8 +543,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>DSIP</h3><ul class="benefit-list"><li>Sleep regulation</li><li>Restful sleep research</li><li>Stress response</li><li>Recovery pathways</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Sleep Regulation:</strong> Investigated for interactions with biological sleep pathways.</p><p><strong>Rest &amp; Relaxation:</strong> Studied for sleep-related nervous-system signaling.</p><p><strong>Stress Response:</strong> Studied for links between stress physiology and sleep.</p><p><strong>Recovery:</strong> Sleep and recovery are closely connected, making this a common research focus.</p></div></div>
 </div>
@@ -564,8 +556,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>Somatotropin</h3><ul class="benefit-list"><li>Growth hormone signaling</li><li>Protein metabolism</li><li>Body composition</li><li>Tissue growth</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Growth &amp; Repair:</strong> Regulates growth and maintenance across many tissues.</p><p><strong>Protein Synthesis:</strong> Supports protein-building processes and lean-tissue regulation.</p><p><strong>Fat Metabolism:</strong> Promotes lipolysis, the breakdown of stored fat.</p><p><strong>Bone Health:</strong> Participates in normal bone growth and turnover.</p></div></div>
 </div>
@@ -578,8 +568,6 @@ html{scroll-behavior:smooth}
 </svg>
 </div>
 <h3>IGF-1 LR3</h3><ul class="benefit-list"><li>Growth signaling</li><li>Protein synthesis pathways</li><li>Muscle research</li><li>Tissue development</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Cell Growth:</strong> Activates receptors involved in growth-related signaling.</p><p><strong>Protein Metabolism:</strong> Connects with pathways that regulate tissue building and maintenance.</p><p><strong>Nutrient Signaling:</strong> Influences cellular responses to nutrients and glucose.</p><p><strong>Muscle Research:</strong> Of interest in studies of muscle-cell growth and repair biology.</p></div></div>
 </div>
@@ -588,8 +576,6 @@ html{scroll-behavior:smooth}
 <svg viewbox="0 0 40 40"><path d="M20 5v30M8 13c7-5 17-5 24 0M8 27c7 5 17 5 24 0"></path></svg>
 </div>
 <h3>Kisspeptin</h3><ul class="benefit-list"><li>Reproductive signaling</li><li>LH &amp; FSH regulation</li><li>Fertility research</li><li>Hormone communication</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Hormone Signaling:</strong> Stimulates GnRH, a key signal in reproductive hormone regulation.</p><p><strong>LH &amp; FSH:</strong> Prompts the pituitary to release hormones that coordinate reproductive function.</p><p><strong>Fertility:</strong> Plays an important role in ovulation and reproductive signaling.</p><p><strong>Sexual Response:</strong> Investigated for its effects on brain pathways related to sexual and emotional cues.</p></div></div>
 </div>
@@ -598,8 +584,6 @@ html{scroll-behavior:smooth}
 <svg viewbox="0 0 40 40"><path d="M9 13c3-3 7-5 11-5s8 2 11 5M8 20h24M12 27c3 3 5 5 8 5s5-2 8-5"></path></svg>
 </div>
 <h3>Eloralintide</h3><ul class="benefit-list"><li>Appetite regulation</li><li>Fullness signaling</li><li>Weight management</li><li>Amylin pathways</li></ul>
-
-
 <button class="learn-button" onclick="toggleCompound(this)">EXPAND FOR INFO <span class="arrow">▼</span></button>
 <div class="compound-more"><div class="compound-more-inner"><div class="compound-more-title">Key Benefits &amp; Research Interests</div><p><strong>Appetite Regulation:</strong> Activates pathways that help control hunger.</p><p><strong>Feeling Full:</strong> Supports satiety signals that make smaller meals more satisfying.</p><p><strong>Weight Management:</strong> Being evaluated for its ability to reduce food intake and body weight.</p><p><strong>Metabolic Health:</strong> Studied alongside weight-related measures such as glucose regulation.</p></div></div>
 </div>
@@ -622,7 +606,7 @@ html{scroll-behavior:smooth}
 <p class="section-intro">
         Compound name, vial amount and corresponding price information.
       </p>
-<div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="details-grid">
+<div class="category-swipe-hint">SWIPE TO EXPLORE CATEGORIES  →</div><div aria-label="Filter compounds by category" class="category-nav" role="group"><button class="category-tab" data-filter="weight" type="button">Weight Loss &amp; Metabolism</button><button class="category-tab" data-filter="cell" type="button">Cellular Repair &amp; Function</button><button class="category-tab" data-filter="brain" type="button">Brain Health &amp; Longevity</button><button class="category-tab" data-filter="growth" type="button">Body Composition &amp; Muscle Growth</button><button class="category-tab" data-filter="fertility" type="button">Fertility &amp; Hormone Health</button><button class="category-tab" data-filter="beauty" type="button">Collagen, Recovery &amp; Repair</button></div><div class="details-grid">
 <div class="detail-card has-photo" data-category="weight">
 <div class="photo-badge">REAL PRODUCT PHOTO</div>
 <div class="detail-name">Tirzepatide</div>
